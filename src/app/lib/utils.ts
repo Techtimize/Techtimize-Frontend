@@ -16,10 +16,13 @@ const DEFAULT_METADATA: Metadata = {
 };
 
 export async function generateMetadataFromBE(slug: string): Promise<Metadata> {
+    console.log("slug", slug)
     try {
+        console.log('seo url :', SEO_ENDPOINT(slug))
         const response = await fetch(SEO_ENDPOINT(slug));
+        console.log("response", response)
         if (!response.ok) {
-            throw new Error("Failed to fetch SEO data");
+         return DEFAULT_METADATA;
         }
 
         const seoData = await response.json();

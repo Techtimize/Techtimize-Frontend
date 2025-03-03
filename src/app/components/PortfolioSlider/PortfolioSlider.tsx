@@ -24,6 +24,7 @@ const PortfolioSlider = () => {
       });
     }
   }, [emblaApi]);
+  
 
   return (
     <div className="overflow-hidden">

@@ -1,16 +1,11 @@
 "use client";
 import Button from "@/app/components/Button/Button";
-import InputField from "@/app/components/InputField/InputField";
 import SelectInput from "@/app/components/SelectInput/SelectInput";
-import TextArea from "@/app/components/TextArea/TextArea";
-import { budget, timeOptions } from "@/app/constants/select-options";
 import React, { useState } from "react";
-import { IoChevronBackCircleOutline } from "react-icons/io5";
-import { expertiseRequirements } from "@/app/constants/select-options";
 import HiringForm from "@/app/components/HiringForm/HiringForm";
 import GoBackButton from "@/app/components/GoBackButton/GoBackButton";
-import { Contract, VideoCallIcon } from "../../../../../public/assets";
 import Image from "next/image";
+import { timeOptions } from "@/app/constants/select-options";
 
 const NeedToHire = () => {
   const [goBack, setGoBack] = useState(false);

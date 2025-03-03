@@ -1,6 +1,6 @@
 "use client";
 import Button from "@/app/components/Button/Button";
-import HiringForm from "@/app/components/HiringForm/HiringForm";
+import HiringForm from "@/app/components/HiringForm/HiringForm";      
 import SelectInput from "@/app/components/SelectInput/SelectInput";
 import { timeOptions } from "@/app/constants/select-options";
 import { timings } from "@/app/constants/timings";

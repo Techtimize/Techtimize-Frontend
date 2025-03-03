@@ -42,29 +42,27 @@ const Home = () => {
             clients' success.
           </p>
           <Link href="/hiring-staff/questionaire">
-          <Button
-            textClass="text"
-            text="Book a Quote"
-            className="md:mb-[60.61px]"
-           
-          /></Link>
-        
+            <Button
+              textClass="text"
+              text="Book a Quote"
+              className="md:mb-[60.61px]"
+
+            /></Link>
+
         </div>
         <div className="xl:mr-[70px] sm:pr-[20px] md:pr-[25px] lg:pr-[30px] md:mt-[84px] sm:mt-[84px] xl:mt-[98px] mt-[55px]">
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-2 xl:gap-[26px] md:gap-[12px] sm:gap-[12px] gap-[15px] md:px-0 px-[16px] pb-[60.61px]">
-              {services?.map((item) => {
-                return (
-                  <ServiceCard 
-                    text={item?.title}
-                    image={item?.image}
-                    key={item?.id}
-                    imgClass={item?.styling}
-                  
-                  />
-                );
-              })}
-    
+            {services?.map((item) => (
+              <Link key={item?.id} href={`/services`}>
+                <ServiceCard
+                  text={item?.title}
+                  image={item?.image}
+                  imgClass={item?.styling}
+                />
+              </Link>
+            ))}
           </div>
+
         </div>
       </div>
       <div>
@@ -127,15 +125,15 @@ const Home = () => {
                 your website and digital platform? then we’re ready to help!
               </p>
             </div>
-            
+
             <Link href="/hiring-staff/questionaire">
-            <Button
-              className="bg-white text-black border-0 sm:w-auto w-[53%]"
-              text={"Getting Started"}
-              textClass="text"
-              icon={<HiArrowLongRight size={30} />}
-            /></Link>
-         
+              <Button
+                className="bg-white text-black border-0 sm:w-auto w-[53%]"
+                text={"Getting Started"}
+                textClass="text"
+                icon={<HiArrowLongRight size={30} />}
+              /></Link>
+
           </div>
         </div>
       </div>

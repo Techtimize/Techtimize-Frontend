@@ -3,9 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ServiceCard = ({ title, description, image }: any) => {
+interface ServiceCardProps {
+  title: string;
+  description: string;
+  image: string;
+  styling?: string;
+  link?: string; 
+}
+
+const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
   return (
-    <div className="border rounded-[10px] w-full p-[20px] h-full flex flex-col items-start">
+    <div className="border rounded-[10px] w-full p-[20px] h-full flex flex-col items-start ">
       <div className="flex flex-col flex-1 items-center">
         <Image
           src={image}
