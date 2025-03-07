@@ -1,10 +1,10 @@
 "use client";
-import Button from "@/app/components/Button/Button";
 import { projectTags, projectsData } from "@/app/constants/portfolioData";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 const ProjectsList = () => {
   const [selectedTag, setSelectedTag] = useState("All");
@@ -131,7 +131,7 @@ const ProjectsList = () => {
                           />
                         ))}
                       </div>
-                      <Button text="View Project" textClass="text" />
+                      <Button className=" bg-blue-1 text-white">View Project</Button>
                     </div>
                   </div>
                   <div className="sm:basis-[30%] basis-[40%]">

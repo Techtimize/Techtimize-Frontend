@@ -34,7 +34,7 @@ const About = () => {
           </p>
           <Link href="/contact-us">
           <Button
-            className="bg-white  lg:h-[60px] md:h-[43px] px-[10px] h-[40px] border border-[#0B4D8E] mt-10 rounded-[7px] text-[14px] flex items-center justify-center gap-[10px]"
+            className="bg-blue-1  lg:h-[60px] md:h-[43px] px-[10px] h-[40px] border border-[#0B4D8E] mt-10 rounded-[7px] text-[14px] flex items-center justify-center gap-[10px]"
             text="Create your App with us"
             icon={<HiArrowLongRight size={30}  />}
             variant="outlined"

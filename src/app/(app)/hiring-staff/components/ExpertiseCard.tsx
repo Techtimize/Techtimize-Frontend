@@ -37,7 +37,7 @@ const ExpertiseCard = ({ data }: any) => {
         </div>
       </div>
       <div className="p-[25px]">
-        <Link href={"/hiring-staff/questionaire"}>
+        <Link href={"/hiring-staff/need-to-consult"}>
           <Button
             textClass="text"
             text="Schedule Interview"

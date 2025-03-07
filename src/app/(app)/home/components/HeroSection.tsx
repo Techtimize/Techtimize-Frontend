@@ -11,6 +11,7 @@ const imageVariants = {
 };
 
 const HeroSection = () => {
+  
   return (
     <div className="flex md:justify-between my-[45px] sm:my-0 sm:mb-[45px] md:mt-[45px] sm:justify-between justify-center md:flex-row sm:flex-row flex-col md:gap-[10px] sm:px-[25px] md:px-[30px] lg:px-[40px] px-[16px]">
       <motion.div
@@ -31,7 +32,7 @@ const HeroSection = () => {
         </p>
 
         <Link href="/about">
-          <Button text="Learn More" textClass="text" variant="outlined"  />
+          <Button text="Learn More" variant="outlined" className="bg-blue-1"  />
         </Link>
       </motion.div>
       <div className="xl:mr-[74.53px] mt-[50px] md:mt-0">

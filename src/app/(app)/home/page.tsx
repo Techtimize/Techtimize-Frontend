@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "@/app/components/Button/Button";
 import { services } from "@/app/constants/services";
 import ServiceCard from "./components/ServiceCard";
 import ProjectLogoSlider from "./components/ProjectLogoSlider";
@@ -11,13 +10,16 @@ import Stats from "./components/Stats";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
+import getServices from "@/app/lib/get_services";
+import { Button } from "@/components/ui/button"
 
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("home");
 }
 
-const Home = () => {
+export default async function Home(){
+  const services = await getServices();
 
   return (
     <div className="bg-white">
@@ -28,7 +30,7 @@ const Home = () => {
       </div>
       <div className="flex xl:flex-row md:flex-row sm:flex-row flex-col xl:gap-[135px] lg:gap-[135px] justify-between bg-[#FBFCFF]">
         <div className="xl:ml-[63px] sm:pl-[25px] md:pl-[30px] lg:pl-[40px] sm:pr-0 px-[16px]">
-          <p className="page-blue-heading xl:mt-[90px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px]">
+          <p className="text-blue-1 xl:mt-[90px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px]">
             What do we do?
           </p>
           <h3 className="page-sub-heading font-bold xl:mb-[54px] mb-[19px]">
@@ -39,25 +41,24 @@ const Home = () => {
             help businesses stay ahead in the ever-evolving digital landscape.
             Our mission is to provide top-notch technology solutions that drive
             growth, maximize ROI, and create a sustainable impact on our
-            clients' success.
+            clients success.
           </p>
           <Link href="/hiring-staff/questionaire">
             <Button
-              textClass="text"
-              text="Book a Quote"
-              className="md:mb-[60.61px]"
+              variant="outline" 
+              className="md:mb-[60.61px] bg-blue-1 text-white"
 
-            /></Link>
+            >Book a Quote</Button></Link>
 
         </div>
         <div className="xl:mr-[70px] sm:pr-[20px] md:pr-[25px] lg:pr-[30px] md:mt-[84px] sm:mt-[84px] xl:mt-[98px] mt-[55px]">
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-2 xl:gap-[26px] md:gap-[12px] sm:gap-[12px] gap-[15px] md:px-0 px-[16px] pb-[60.61px]">
-            {services?.map((item) => (
-              <Link key={item?.id} href={`/services`}>
+            {services.map((item) => (
+              <Link key={item._id} href={`/services`}>
                 <ServiceCard
-                  text={item?.title}
-                  image={item?.image}
-                  imgClass={item?.styling}
+                  text={item.serviceName}
+                  // image={item?.iconUrl}
+                  // imgClass={item?.styling}
                 />
               </Link>
             ))}
@@ -77,7 +78,7 @@ const Home = () => {
         </div>
         <div className="flex items-center justify-center mt-[46px]">
           <Link href={"/projects"}>
-            <Button text="View all Projects" textClass="text" />
+            <Button variant="outline" className="md:mb-[60.61px] bg-blue-1 text-white">View all Projects</Button>
           </Link>
         </div>
       </div>
@@ -129,10 +130,8 @@ const Home = () => {
             <Link href="/hiring-staff/questionaire">
               <Button
                 className="bg-white text-black border-0 sm:w-auto w-[53%]"
-                text={"Getting Started"}
-                textClass="text"
-                icon={<HiArrowLongRight size={30} />}
-              /></Link>
+                variant='secondary'
+              >Getting Started{<HiArrowLongRight size={30} />}</Button></Link>
 
           </div>
         </div>
@@ -145,11 +144,11 @@ const Home = () => {
           Client Success Stories
         </h5>
         <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[100px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[144px]">
-          <TestimonialSlider />
+          <TestimonialSlider  />
         </div>
       </div>
     </div>
   );
 };
 
-export default Home;
+

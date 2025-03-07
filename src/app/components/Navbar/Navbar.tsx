@@ -4,8 +4,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { links } from "@/app/constants/nav-links";
-import Button from "../Button/Button";
 import { usePathname } from "next/navigation";
+import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -60,7 +60,7 @@ const Navbar = () => {
           </ul>
 
           <Link href="/contact-us">
-            <Button text="Get in Touch" className="bg-secondary text-white px-5 py-2" />
+            <Button  className=" bg-blue-1 text-white" >Get in Touch</Button>
           </Link>
         </div>
 
@@ -95,7 +95,10 @@ const Navbar = () => {
           ))}
           <li>
             <Link href="/contact-us" className="block">
-              Get In Touch
+            <Button>
+            Get In Touch
+            </Button>
+            
             </Link>
           </li>
         </ul>
