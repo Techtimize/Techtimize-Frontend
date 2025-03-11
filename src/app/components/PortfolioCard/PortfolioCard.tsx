@@ -9,7 +9,7 @@ const PortfolioCard = ({ cardData }: {cardData:projectsProps}) => {
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.push(`/projects/${cardData?._id}`); 
+    router.push(`/projects/${cardData._id}`); 
   };
    
   return (
@@ -29,10 +29,10 @@ const PortfolioCard = ({ cardData }: {cardData:projectsProps}) => {
       </div>
       <div className="lg:px-[27px] md:px-[26px] px-[20px]">
         <h5 className="lg:text-[20px] md:text-[20px] text-[19px] font-semibold mt-[20px] lg:mb-[10px] mb-[5px] text-black">
-          {cardData?.name}
+          {cardData.name}
         </h5>
         <p className="text text-darkGrey">
-          {cardData?.description}
+          {cardData.description}
         </p>
         <div className="flex justify-end lg:mt-[25px] mt-[10px]">
           <button

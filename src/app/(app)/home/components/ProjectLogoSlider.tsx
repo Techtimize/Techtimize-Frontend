@@ -16,7 +16,7 @@ const ProjectLogoSlider = () => {
     if (embla) {
       const intervalId = setInterval(() => {
         embla.scrollNext();
-      }, 3000); // Adjust the interval as needed (in milliseconds)
+      }, 3000); 
 
       return () => clearInterval(intervalId);
     }

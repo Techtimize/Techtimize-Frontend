@@ -131,7 +131,7 @@ const ProjectsList = () => {
                           />
                         ))}
                       </div>
-                      <Button className=" bg-blue-1 text-white">View Project</Button>
+                      <Button variant="outline" className=" bg-blue-1 text-white">View Project</Button>
                     </div>
                   </div>
                   <div className="sm:basis-[30%] basis-[40%]">

@@ -10,16 +10,19 @@ import Stats from "./components/Stats";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
-import getServices from "@/app/lib/get_services";
+import getServices from "@/app/api/services/get_services";
 import { Button } from "@/components/ui/button"
+import { CardContent } from "@/components/ui/card";
+import Image from "next/image";
 
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("home");
 }
 
-export default async function Home(){
-  const services = await getServices();
+export default async function Home() {
+  const Apiservices = await getServices();
+  const servicesToDisplay = Apiservices.length ? Apiservices : services;
 
   return (
     <div className="bg-white">
@@ -43,10 +46,10 @@ export default async function Home(){
             growth, maximize ROI, and create a sustainable impact on our
             clients success.
           </p>
-          <Link href="/hiring-staff/questionaire">
+          <Link href="/hiring-staff/need-to-consult">
             <Button
-              variant="outline" 
-              className="md:mb-[60.61px] bg-blue-1 text-white"
+              variant="outline"
+              className="md:mb-[60.61px] bg-[#0B4D8E] h-12 text-white"
 
             >Book a Quote</Button></Link>
 
@@ -55,11 +58,18 @@ export default async function Home(){
           <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-2 xl:gap-[26px] md:gap-[12px] sm:gap-[12px] gap-[15px] md:px-0 px-[16px] pb-[60.61px]">
             {services.map((item) => (
               <Link key={item._id} href={`/services`}>
-                <ServiceCard
-                  text={item.serviceName}
-                  // image={item?.iconUrl}
-                  // imgClass={item?.styling}
-                />
+                <CardContent className="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                  <div className=" flex items-center space-x-4 rounded-md border p-4">
+                    <Image src={item.iconUrl} alt={item.serviceName} width={item.width || 30} height={item.height || 30} /> 
+                    <div className="flex-1 space-y-1">
+                      <p className="text-sm font-medium leading-none">
+                        {item.serviceName}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+
+
               </Link>
             ))}
           </div>
@@ -78,7 +88,7 @@ export default async function Home(){
         </div>
         <div className="flex items-center justify-center mt-[46px]">
           <Link href={"/projects"}>
-            <Button variant="outline" className="md:mb-[60.61px] bg-blue-1 text-white">View all Projects</Button>
+            <Button variant="outline" className="md:mb-[60.61px] bg-[#0B4D8E] h-12 text-white">View all Projects</Button>
           </Link>
         </div>
       </div>
@@ -144,7 +154,7 @@ export default async function Home(){
           Client Success Stories
         </h5>
         <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[100px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[144px]">
-          <TestimonialSlider  />
+          <TestimonialSlider />
         </div>
       </div>
     </div>

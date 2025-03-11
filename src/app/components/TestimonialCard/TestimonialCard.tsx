@@ -5,8 +5,8 @@ import { Successstoriesprops } from "@/app/types/successtrories.type";
 const TestimonialCard = ({ testimonialData }: { testimonialData: Successstoriesprops }) => {
   return (
     <div className="w-[288px] h-[390px] md:w-[302px] md:h-[490px] lg:w-[467px] lg:h-[500px] rounded-[15px] shadow-lg">
-      <div className="w-[64px] h-[64px] lg:w-[82px] lg:h-[82px] flex items-center justify-center bg-primary rounded-br-[15px]">
-        <Image src={"/assets/svgs/double-quotes.svg"} alt={"quotes icon"} width={80} height={80} />
+      <div className="w-[64px] h-[64px] lg:w-[82px] lg:h-[82px] flex items-center justify-center bg-blue-1 rounded-br-[15px]">
+        <Image src={"/assets/svgs/double-quotes.svg"} alt={"quotes icon"} width={80} height={80}  />
       </div>
       <p className="w-[240px] lg:w-[365px] ml-[24px] lg:ml-[71px] mt-[18px] lg:mt-[25px] text text-darkGrey">
         {testimonialData.review}

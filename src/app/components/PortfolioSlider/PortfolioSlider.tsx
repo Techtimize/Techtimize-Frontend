@@ -2,7 +2,7 @@ import PortfolioCard from '../PortfolioCard/PortfolioCard'
 import { EmblaCarouselType } from 'embla-carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 // import projectsProps from '@/app/types/project.type';
-import { getProjects } from '@/app/lib/get_project';
+import { getProjects } from '@/app/api/projects/get_project';
 
 
 export default async function PortfolioSlider(){

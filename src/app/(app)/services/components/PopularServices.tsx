@@ -41,7 +41,7 @@ const PopularServices = () => {
       <ul className="flex flex-nowrap items-center sm:justify-center lg:justify-between gap-3 sm:gap-6 overflow-hidden overflow-x-auto w-full scrollbar-hide px-[20px] text">
         {serviceOptions?.map((service) => (
           <li
-            key={service?.id}
+            key={service?._id}
             className={`whitespace-nowrap sm:w-auto cursor-pointer satoshi-medium ${
               selectedService?.serviceName === service.text
                 ? "text-primary"

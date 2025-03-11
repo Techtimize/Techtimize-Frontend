@@ -28,7 +28,7 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
         <p className="text mb-[20px] text-black">{description}</p>
       </div>
      
-      <Link href="/hiring-staff/questionaire"> 
+      <Link href="/hiring-staff/need-to-consult"> 
       <Button
         text="Hire Us"
         textClass="text"

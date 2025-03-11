@@ -60,7 +60,7 @@ const Navbar = () => {
           </ul>
 
           <Link href="/contact-us">
-            <Button  className=" bg-blue-1 text-white" >Get in Touch</Button>
+            <Button  className=" bg-[#0B4D8E] text-white" >Get in Touch</Button>
           </Link>
         </div>
 

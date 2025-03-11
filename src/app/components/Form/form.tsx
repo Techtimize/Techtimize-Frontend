@@ -101,7 +101,6 @@ const FormComponent = () => {
                   <SelectItem value="UI UX Design">UI UX Design</SelectItem>
                   <SelectItem value="Staff Augmentation">Staff Augmentation</SelectItem>
                   <SelectItem value="Project Management">Project Management</SelectItem>
-
                 </SelectContent>
               </Select>
               <FormMessage />

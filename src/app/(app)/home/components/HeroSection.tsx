@@ -2,8 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Button from "@/app/components/Button/Button";
 import Link from 'next/link'
+import { Button } from "@/components/ui/button";
 
 const imageVariants = {
   hidden: { opacity: 0, x: 15 },
@@ -32,7 +32,7 @@ const HeroSection = () => {
         </p>
 
         <Link href="/about">
-          <Button text="Learn More" variant="outlined" className="bg-blue-1"  />
+          <Button variant="outline"  className="md:mb-[60.61px] bg-[#0B4D8E] h-12 text-white" >Learn More</Button>
         </Link>
       </motion.div>
       <div className="xl:mr-[74.53px] mt-[50px] md:mt-0">

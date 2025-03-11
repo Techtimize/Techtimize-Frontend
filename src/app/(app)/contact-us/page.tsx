@@ -23,15 +23,10 @@ const ContactUs = () => {
           <h3 className="page-sub-heading font-bold xl:mb-[34px] mb-[19px] xl:w-[600px] lg:w-[400px] sm:w-[370px]">
             Let's Start a New project together! Connect with Us
           </h3>
-  
-          {/* Container for parallel layout */}
           <div className="flex flex-col lg:flex-row gap-[50px]">
-            {/* Form Section */}
             <div className="lg:basis-[65%] w-full">
               <FormComponent />
             </div>
-  
-            {/* Company Info Section */}
             <div className="lg:basis-[35%] flex flex-col items-center lg:items-end lg:justify-center gap-[20px]">
               <CompanyInfoCard
                 icon={

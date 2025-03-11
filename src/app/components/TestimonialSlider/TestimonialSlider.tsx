@@ -1,7 +1,7 @@
 // import useEmblaCarousel from "embla-carousel-react";
 // import AutoScroll from "embla-carousel-auto-scroll";
 import TestimonialCard from "../TestimonialCard/TestimonialCard";
-import { getStories } from "@/app/lib/get_Stories";
+import { getStories } from "@/app/api/stories/get_Stories";
 
 export default async function TestimonialSlider() {
   const stories = await getStories();

@@ -1,5 +1,4 @@
 import React from "react";
-// import { SuitcaseIcon } from "../../../../../public/assets";
 import Tag from "@/app/components/Tag/Tag";
 import { BsClock } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
@@ -12,7 +11,7 @@ const JobOpeningCard = () => {
       <div className="flex xl:h-[215px] md:h-[157px] h-[136px] border absolute w-[98.5%] bg-white xl:gap-[20px] gap-[10px] rounded-[10px] lg:px-[30px] xl:py-[25px] md:py-[20px]">
         <div className="">
           <Image src={"/assets/svgs/suitcaseIcon.svg"} alt={"suitcase"} width={40} height={40}/>
-          {/* <SuitcaseIcon /> */}
+         
         </div>
         <div className="w-full flex flex-col justify-between">
           <div className="flex justify-between w-full">

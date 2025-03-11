@@ -1,5 +1,5 @@
-import { Servicesprops } from "../types/services.type";
-import { ApiEndpoint } from "../api";
+import { Servicesprops } from "@/app/types/services.type";
+import { ApiEndpoint } from "@/app/api/endpoints";
 export default async function getServices():Promise<Servicesprops[]>{
     try {
         const response = await fetch(ApiEndpoint.SERVICES,{
