@@ -45,6 +45,7 @@ const Questionaire = () => {
                       </div>
                     </div>
                     <div className="w-full flex justify-end">
+                  
                       <Image src={"/assets/svgs/longArrow.svg"} alt={"arrow"} width={25} height={25} />
                   
                     </div>

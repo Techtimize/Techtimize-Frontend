@@ -1,62 +1,62 @@
 export const services = [
   {
-    id: 0,
-    title: "Web App Development",
-    image: "/assets/svgs/webDev.svg",
+    _id: 0,
+    serviceName: "Web App Development",
+    iconUrl: "/assets/svgs/webDev.svg",
     width: 30,
     height: 30,
     styling:
       "lg:w-[38px] lg:h-[28px] md:w-[31.5px] md:h-[26.83px] sm:w-[31.5px] sm:h-[26.83px] w-[28px] h-[28px]",
   },
   {
-    id: 1,
-    title: "Mobile App Development",
-    image: "/assets/svgs/mobDev.svg",
+    _id: 1,
+    serviceName: "Mobile App Development",
+    iconUrl: "/assets/svgs/mobDev.svg",
     width: 30,
     height: 30,
     styling:
       "lg:w-[39px] lg:h-[46px] md:w-[27.03px] md:h-[30.91px] sm:w-[27.03px] sm:h-[30.91px] w-[30px] h-[31px]",
   },
   {
-    id: 2,
-    title: "UI UX Designing",
-    image: "/assets/svgs/ui.svg",
+    _id: 2,
+    serviceName: "UI UX Designing",
+    iconUrl: "/assets/svgs/ui.svg",
     width: 30,
     height: 30,
     styling:
       "lg:w-[45px] lg:h-[45px] md:w-[28px] md:h-[28px] sm:w-[28px] sm:h-[28px] w-[36px] h-[33px]",
   },
   {
-    id: 3,
-    title: "AI Machine Learning",
-    image: "/assets/svgs/ai.svg",
+    _id: 3,
+    serviceName: "AI Machine Learning",
+    iconUrl: "/assets/svgs/ai.svg",
     width: 30,
     height: 30,
     styling:
       "lg:w-[45px] lg:h-[45px] md:w-[26.83px] md:h-[30.33px] sm:w-[26.83px] sm:h-[30.33px] w-[31px] h-[33px]",
   },
   {
-    id: 4,
-    title: "Staff Augmentation",
-    image: "/assets/svgs/staff.svg",
+    _id: 4,
+    serviceName: "Staff Augmentation",
+    iconUrl: "/assets/svgs/staff.svg",
     width: 30,
     height: 30,
     styling:
       "lg:w-[43px] lg:h-[43px] md:w-[29.38px] md:h-[33.6px] sm:w-[29.38px] sm:h-[33.6px] w-[33px] h-[33px]",
   },
   {
-    id: 5,
-    title: "Cloud Services",
-    image: "/assets/svgs/cloud.svg",
+    _id: 5,
+    serviceName: "Cloud Services",
+    iconUrl: "/assets/svgs/cloud.svg",
     width: 30,
     height: 30,
     styling:
       "lg:w-[45px] lg:h-[45px] md:w-[31.5px] md:h-[31.5px] sm:w-[31.5px] sm:h-[31.5px] w-[32px] h-[34px]",
   },
   {
-    id: 6,
-    title: "Project Management",
-    image: "/assets/svgs/projectManage.svg",
+    _id: 6,
+    serviceName: "Project Management",
+    iconUrl: "/assets/svgs/projectManage.svg",
     width: 30,
     height: 30,
     styling:
@@ -66,27 +66,27 @@ export const services = [
 
 export const serviceOptions = [
   {
-    id: 0,
+    _id: 0,
     text: "App Development",
   },
   {
-    id: 1,
+    _id: 1,
     text: "UI UX",
   },
   {
-    id: 2,
+    _id: 2,
     text: "Artificial Intelligence",
   },
   {
-    id: 3,
+    _id: 3,
     text: "Staff Augmentation",
   },
   {
-    id: 4,
+    _id: 4,
     text: "Cloud Services",
   },
   {
-    id: 5,
+    _id: 5,
     text: "Management",
   },
 ];
@@ -118,7 +118,7 @@ export const serviceCardInfo = [
     services: [
       {
         id: 0,
-        title: "UI UX Design",
+        serviceName: "UI UX Design",
         description:
           "We specialize in crafting intuitive, visually appealing interfaces that captivate and engage. From responsive web design to mobile app interfaces, we ensure your users have an unforgettable journey.",
         image: "/assets/svgs/ui.svg",
@@ -131,7 +131,7 @@ export const serviceCardInfo = [
     services: [
       {
         id: 0,
-        title: "Artificial Intelligence",
+        serviceName: "Artificial Intelligence",
         description:
           "We harness the power of artificial intelligence to drive business growth and innovation. Our tailored solutions, including machine learning, natural language processing, and computer vision, empower you to make data-driven decisions and automate processes, unlocking new opportunities for success.",
         image: "/assets/svgs/ai.svg",
@@ -144,7 +144,7 @@ export const serviceCardInfo = [
     services: [
       {
         id: 0,
-        title: "Staff Augmentation",
+        serviceName: "Staff Augmentation",
         description:
           "Our goal is to seamlessly integrate skilled professionals into your projects, enhancing your team's capabilities. Whether you need additional technical expertise, increased productivity, or specialized skills, our staff augmentation solutions ensure a harmonious and effective collaboration.",
         image: "/assets/svgs/staff.svg",
@@ -157,7 +157,7 @@ export const serviceCardInfo = [
     services: [
       {
         id: 0,
-        title: "Cloud Services",
+        serviceName: "Cloud Services",
         description:
           "Techtimize provides a comprehensive range of cloud services, offering expert solutions across AWS, Azure, and Google Cloud Platform. With a focus on seamless integration, security, and scalability, we empower your business to harness the full potential of cloud computing for your digital transformation needs. Trust us to empower your digital transformation journey with top-tier cloud services tailored to your unique needs.",
         image: "/assets/svgs/cloud.svg",

@@ -1,4 +1,3 @@
-import Button from "@/app/components/Button/Button";
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import TestimonialSlider from "@/app/components/TestimonialSlider/TestimonialSlider";
 import Image from "next/image";
@@ -8,6 +7,8 @@ import { HiArrowLongRight } from "react-icons/hi2";
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
  import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import CommentSlider from "../home/service/fetchtestimonial";
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("about");
@@ -34,11 +35,9 @@ const About = () => {
           </p>
           <Link href="/contact-us">
           <Button
-            className="bg-white  lg:h-[60px] md:h-[43px] px-[10px] h-[40px] border border-[#0B4D8E] mt-10 rounded-[7px] text-[14px] flex items-center justify-center gap-[10px]"
-            text="Create your App with us"
-            icon={<HiArrowLongRight size={30}  />}
-            variant="outlined"
-          />
+            className="bg-[#0B4D8E] text-white w-30 mt-8"
+            variant="outline"
+          >Create your App with us{<HiArrowLongRight size={30}  />}</Button>
           </Link>
         </div>
         <div className="flex flex-col justify-center">
@@ -117,10 +116,10 @@ const About = () => {
           
             <Link href="/contact-us">
             <Button
-              text="Contact Us"
-              textClass="text"
-              className="bg-primaryBlue rounded-[7px] text-white mt-[30px] px-[20px] py-[10px]"
-            />
+             
+              variant='outline'
+              className="bg-[#0B4D8E] h-12 rounded-[7px] text-white mt-[30px] px-[20px] py-[10px]"
+            >Contact Us</Button>
              </Link>
          
           </div>
@@ -271,7 +270,7 @@ const About = () => {
           Client Success Stories
         </h5>
         <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[60px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[144px] pb-[30px]">
-          <TestimonialSlider />
+          <CommentSlider />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import React from "react";
-import ProjectsList from "./components/ProjectsList";
+import ProjectsList from "@/app/(app)/projects/service/ProjectsList";
 
 const Projects = () => {
   return (

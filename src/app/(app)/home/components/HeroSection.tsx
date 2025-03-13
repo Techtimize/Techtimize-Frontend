@@ -2,8 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Button from "@/app/components/Button/Button";
 import Link from 'next/link'
+import { Button } from "@/components/ui/button";
 
 const imageVariants = {
   hidden: { opacity: 0, x: 15 },
@@ -11,6 +11,7 @@ const imageVariants = {
 };
 
 const HeroSection = () => {
+  
   return (
     <div className="flex md:justify-between my-[45px] sm:my-0 sm:mb-[45px] md:mt-[45px] sm:justify-between justify-center md:flex-row sm:flex-row flex-col md:gap-[10px] sm:px-[25px] md:px-[30px] lg:px-[40px] px-[16px]">
       <motion.div
@@ -31,7 +32,7 @@ const HeroSection = () => {
         </p>
 
         <Link href="/about">
-          <Button text="Learn More" textClass="text" variant="outlined"  />
+          <Button variant="outline"  className="md:mb-[60.61px] bg-[#0B4D8E] h-12 text-white" >Learn More</Button>
         </Link>
       </motion.div>
       <div className="xl:mr-[74.53px] mt-[50px] md:mt-0">

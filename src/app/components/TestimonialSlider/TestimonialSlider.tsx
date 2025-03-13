@@ -1,38 +1,39 @@
 'use client'
-import React from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import { testimonials } from '@/app/constants/testimonialData';
-import TestimonialCard from '../TestimonialCard/TestimonialCard';
 import AutoScroll from "embla-carousel-auto-scroll";
+import TestimonialCard from "../TestimonialCard/TestimonialCard";
+import useEmblaCarousel from "embla-carousel-react";
+import { Successstoriesprops } from "@/app/types/successtrories.type";
 
-const TestimonialSlider = () => {
-  const [emblaRef] = useEmblaCarousel(
-    {
-      loop: true,
-      align: "start", 
-    },
-    [
-      AutoScroll({
-        speed: 2, 
-        playOnInit: true, 
-        stopOnInteraction: false, 
-      })
-    ]
-  );
-
+export default function TestimonialSlider({clientreviews}:{clientreviews:Successstoriesprops[]}) {
+const [emblaRef] = useEmblaCarousel(
+  {
+    loop: true,
+    align: "start",
+  },
+  [
+    AutoScroll({
+      speed: 2,
+      playOnInit: true,
+      stopOnInteraction: false,
+    })
+  ]
+);
   return (
-    <div className="overflow-hidden">
+    <div >
       <div className="embla" ref={emblaRef}>
-        <div className="flex py-2 px-1 gap-[20px]">
-          {testimonials?.map((slide) => (
-            <div key={slide?.id} className="embla__slide flex-none w-auto">
-              <TestimonialCard testimonialData={slide} />
+        <div className="flex gap-10">
+          {clientreviews.map((story) => (
+            <div key={story._id} className="embla__slide flex-none min-w-[288px] md:min-w-[302px] lg:min-w-[467px]">
+              <TestimonialCard testimonialData={story} />
             </div>
           ))}
+
         </div>
       </div>
     </div>
   );
-};
+}
 
-export default TestimonialSlider;
+
+
+

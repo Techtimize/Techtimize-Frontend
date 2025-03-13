@@ -3,7 +3,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import StatCard from "./StatCard";
 import { stats } from "@/app/constants/stats";
-import CountUp from "react-countup";
 
 const statVariants = {
   hidden: { opacity: 0, y: 15 },

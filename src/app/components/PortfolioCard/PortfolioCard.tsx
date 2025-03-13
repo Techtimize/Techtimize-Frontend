@@ -3,14 +3,15 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation"; 
 import React from "react";
+import projectsProps from "@/app/types/project.type";
 
-const PortfolioCard = ({ cardData }: any) => {
+const PortfolioCard = ({ cardData }: {cardData:projectsProps}) => {
   const router = useRouter();
 
   const handleNavigation = () => {
-    router.push(`/projects/${cardData?.id}`); 
+    router.push(`/projects/${cardData._id}`); 
   };
-
+   
   return (
     <div
       onClick={handleNavigation} 
@@ -18,7 +19,7 @@ const PortfolioCard = ({ cardData }: any) => {
     >
       <div>
         <Image
-          src={cardData?.image}
+          src={cardData?.posterImage}
           alt={"project image"}
           width={460}
           height={300}
@@ -27,10 +28,10 @@ const PortfolioCard = ({ cardData }: any) => {
       </div>
       <div className="lg:px-[27px] md:px-[26px] px-[20px]">
         <h5 className="lg:text-[20px] md:text-[20px] text-[19px] font-semibold mt-[20px] lg:mb-[10px] mb-[5px] text-black">
-          {cardData?.title}
+          {cardData.name}
         </h5>
         <p className="text text-darkGrey">
-          {cardData?.description}
+          {cardData.description}
         </p>
         <div className="flex justify-end lg:mt-[25px] mt-[10px]">
           <button
