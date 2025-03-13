@@ -21,7 +21,7 @@ const [emblaRef] = useEmblaCarousel(
   return (
     <div >
       <div className="embla" ref={emblaRef}>
-        <div className="flex gap-10">
+        <div className="flex py-2 px-1 gap-[20px] pl-[20px]">
           {clientreviews.map((story) => (
             <div key={story._id} className="embla__slide flex-none min-w-[288px] md:min-w-[302px] lg:min-w-[467px]">
               <TestimonialCard testimonialData={story} />

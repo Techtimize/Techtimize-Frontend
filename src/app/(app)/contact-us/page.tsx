@@ -21,7 +21,7 @@ const ContactUs = () => {
         <div className="pt-[30px] xl:px-[90px] lg:px-[45px] md:px-[30px] sm:px-[25px] px-[15px] pb-[90px]">
           <p className="page-blue-heading xl:mb-[11px] mb-[5px]">Contact Us</p>
           <h3 className="page-sub-heading font-bold xl:mb-[34px] mb-[19px] xl:w-[600px] lg:w-[400px] sm:w-[370px]">
-            Let's Start a New project together! Connect with Us
+            Lets Start a New project together! Connect with Us
           </h3>
           <div className="flex flex-col lg:flex-row gap-[50px]">
             <div className="lg:basis-[65%] w-full">
