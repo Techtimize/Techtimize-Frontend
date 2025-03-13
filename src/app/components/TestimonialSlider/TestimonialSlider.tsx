@@ -1,18 +1,29 @@
-// import useEmblaCarousel from "embla-carousel-react";
-// import AutoScroll from "embla-carousel-auto-scroll";
+'use client'
+import AutoScroll from "embla-carousel-auto-scroll";
 import TestimonialCard from "../TestimonialCard/TestimonialCard";
-import { getStories } from "@/app/api/stories/get_Stories";
+import useEmblaCarousel from "embla-carousel-react";
+import { Successstoriesprops } from "@/app/types/successtrories.type";
 
-export default async function TestimonialSlider() {
-  const stories = await getStories();
-
-
+export default function TestimonialSlider({clientreviews}:{clientreviews:Successstoriesprops[]}) {
+const [emblaRef] = useEmblaCarousel(
+  {
+    loop: true,
+    align: "start",
+  },
+  [
+    AutoScroll({
+      speed: 2,
+      playOnInit: true,
+      stopOnInteraction: false,
+    })
+  ]
+);
   return (
-    <div className="overflow-hidden">
-      <div className="embla">
-        <div className="flex py-2 px-1 gap-[20px]">
-          {stories.map((story) => (
-            <div key={story._id} className="embla__slide flex-none w-auto">
+    <div >
+      <div className="embla" ref={emblaRef}>
+        <div className="flex gap-10">
+          {clientreviews.map((story) => (
+            <div key={story._id} className="embla__slide flex-none min-w-[288px] md:min-w-[302px] lg:min-w-[467px]">
               <TestimonialCard testimonialData={story} />
             </div>
           ))}
@@ -26,16 +37,3 @@ export default async function TestimonialSlider() {
 
 
 
-// const [emblaRef] = useEmblaCarousel(
-//   {
-//     loop: true,
-//     align: "start",
-//   },
-//   [
-//     AutoScroll({
-//       speed: 2,
-//       playOnInit: true,
-//       stopOnInteraction: false,
-//     })
-//   ]
-// );

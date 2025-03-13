@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
  import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import CommentSlider from "../home/service/fetchtestimonial";
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("about");
@@ -269,7 +270,7 @@ const About = () => {
           Client Success Stories
         </h5>
         <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[60px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[144px] pb-[30px]">
-          <TestimonialSlider />
+          <CommentSlider />
         </div>
       </div>
     </div>

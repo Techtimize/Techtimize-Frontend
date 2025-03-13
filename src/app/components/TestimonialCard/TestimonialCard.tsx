@@ -13,8 +13,7 @@ const TestimonialCard = ({ testimonialData }: { testimonialData: Successstoriesp
       </p>
       <div className="flex ml-[24px] lg:ml-[71px] lg:mt-[49px] mt-[32px] gap-[10px]">
         <Image
-          // src={testimonialData.countryIconUrl} 
-          src={"/assets/svgs/US.svg"} 
+          src={testimonialData.countryIconUrl} 
           alt={"flag"}
           width={30}
           height={25}

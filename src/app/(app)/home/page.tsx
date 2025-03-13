@@ -1,19 +1,17 @@
 import React from "react";
 import { services } from "@/app/constants/services";
-import ServiceCard from "./components/ServiceCard";
 import ProjectLogoSlider from "./components/ProjectLogoSlider";
-import PortfolioSlider from "@/app/components/PortfolioSlider/PortfolioSlider";
-import TestimonialSlider from "@/app/components/TestimonialSlider/TestimonialSlider";
 import { HiArrowLongRight } from "react-icons/hi2";
 import HeroSection from "./components/HeroSection";
 import Stats from "./components/Stats";
 import Link from "next/link";
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
-import getServices from "@/app/api/services/get_services";
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import ProjectList from "./service/fetchproduct";
+import CommentSlider from "./service/fetchtestimonial";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,8 +19,6 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function Home() {
-  const Apiservices = await getServices();
-  const servicesToDisplay = Apiservices.length ? Apiservices : services;
 
   return (
     <div className="bg-white">
@@ -84,7 +80,7 @@ export default async function Home() {
           Our Portfolio
         </h3>
         <div className="xl:pl-[84px] xl:pr-[30px] lg:pl-[30px] lg:pr-[10px] lg:px-0 md:px-[18px] sm:px-[18px]">
-          <PortfolioSlider />
+          <ProjectList/>
         </div>
         <div className="flex items-center justify-center mt-[46px]">
           <Link href={"/projects"}>
@@ -137,7 +133,7 @@ export default async function Home() {
               </p>
             </div>
 
-            <Link href="/hiring-staff/questionaire">
+            <Link href="hiring-staff/need-to-consult">
               <Button
                 className="bg-white text-black border-0 sm:w-auto w-[53%]"
                 variant='secondary'
@@ -154,7 +150,7 @@ export default async function Home() {
           Client Success Stories
         </h5>
         <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[100px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[144px]">
-          <TestimonialSlider />
+          <CommentSlider />
         </div>
       </div>
     </div>

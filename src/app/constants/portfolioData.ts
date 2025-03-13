@@ -247,12 +247,15 @@ export const projectTags = [
     name: "SaaS",
   },
   {
-    name: "Lifestyle",
+    name: "AutomotiveTech",
   },
   {
-    name: "Medical",
+    name: "HealthTech",
   },
   {
-    name: "Economics",
+    name: "E-commerce",
+  },
+  {
+    name:"Lifestyle SaaS"
   },
 ];

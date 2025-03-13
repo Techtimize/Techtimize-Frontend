@@ -19,8 +19,7 @@ const PortfolioCard = ({ cardData }: {cardData:projectsProps}) => {
     >
       <div>
         <Image
-          // src={cardData?.posterImage}
-          src={"/assets/images/fresha.png"}
+          src={cardData?.posterImage}
           alt={"project image"}
           width={460}
           height={300}
