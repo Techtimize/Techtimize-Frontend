@@ -9,14 +9,12 @@ import { projectTags } from "@/app/constants/portfolioData";
 import projectsProps from "@/app/types/project.type";
 export default function ProjectsFilter({ projects }: { projects: projectsProps[] }) {
     const [selectedTag, setSelectedTag] = useState("All");
-
     const filteredProjects =
         selectedTag === "All"
             ? projects
             : projects.filter((project) =>
                 project.tags.some((tag) => tag === selectedTag)
             );
-
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -26,7 +24,6 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
             },
         },
     };
-
     const itemVariants = {
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0 },
@@ -106,17 +103,14 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                             exit="hidden"
                             transition={{ duration: 0.5 }}
                         >
-
-                            <Link href={`/projects/${project._id}`}>
-                                <div className="flex rounded-[10px] bg-gray-100">
+                            <Link href={`/projects/${project._id}`} className="no-underline">
+                                <div className="flex rounded-[10px] bg-gray-100 cursor-pointer">
                                     <div className="basis-[70%] p-[3%]">
                                         <p className="mb-[25px]">{project.name}</p>
                                         <p className="text-tertiary mb-[40px]">{project.description}</p>
-                                        <Link href={`/projects/${project._id}`}>
-                                            <Button variant="outline" className="bg-blue-1 text-white">
-                                                View Project
-                                            </Button>
-                                        </Link>
+                                        <Button variant="outline" className="bg-blue-1 text-white">
+                                            View Project
+                                        </Button>
                                     </div>
                                     <div className="basis-[30%]">
                                         <Image src={project.previewImage} alt="Project image" width={552} height={358} />
@@ -124,6 +118,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                 </div>
                             </Link>
                         </motion.div>
+
                     ))}
                 </AnimatePresence>
             </motion.div>

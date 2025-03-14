@@ -1,5 +1,4 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
-import TestimonialSlider from "@/app/components/TestimonialSlider/TestimonialSlider";
 import Image from "next/image";
 import React from "react";
 import { HiArrowLongRight } from "react-icons/hi2";
@@ -24,7 +23,7 @@ const About = () => {
             Meet Our Team
           </p>
           <h4 className="page-sub-heading font-semibold xl:mb-[54px] mb-[19px]">
-            We’re a Digital Professional Team
+            We are a Digital Professional Team
           </h4>
           <p className="text-tertiary text xl:max-w-[576px]">
             We are a leading software development company dedicated to creating
@@ -178,7 +177,7 @@ const About = () => {
               Customer Experience
             </p>
             <p className="xl:w-[202px] text-center text text-tertiary">
-              In the end, it's all about the customer. Build Trust and harmony
+              In the end, its all about the customer. Build Trust and harmony
               with us.
             </p>
           </div>
@@ -254,7 +253,7 @@ const About = () => {
                 </p>
                 <p className="xl:text-[16px] md:text-[12px] text-[10px] xl:w-[330px] text-tertiary">
                   We help you maximize your online visibility with our
-                  software's SEO optimization tools and improve your search
+                  softwares SEO optimization tools and improve your search
                   engine rankings
                 </p>
               </div>

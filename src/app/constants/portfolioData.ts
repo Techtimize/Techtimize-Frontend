@@ -1,4 +1,3 @@
-import sales from "../../public/images/sales.png";
 export const portfolioData = [
   {
     id: 0,
