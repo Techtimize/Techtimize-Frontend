@@ -1,9 +1,9 @@
-import { ApiEndpoint } from "@/app/api/endpoints";
+import { SUCCESS_STORIES_ENDPOINT } from "@/app/api/endpoints";
 import { Successstoriesprops } from "@/app/types/successtrories.type";
 
 export async function getStories(): Promise<Successstoriesprops[]> {
   try {
-    const response = await fetch(ApiEndpoint.SUCCESS_STORIES, {
+    const response = await fetch(SUCCESS_STORIES_ENDPOINT, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

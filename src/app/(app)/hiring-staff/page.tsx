@@ -33,7 +33,7 @@ const HiringStaff = () => {
           Select Expertise
         </h4>
         <div className="py-[20px] grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 xl:gap-[60px] sm:gap-[30px] gap-[60px]">
-          {expertiseData?.map((item) => {
+          {expertiseData.map((item) => {
             return <ExpertiseCard key={item.id} data={item} />;
           })}
         </div>

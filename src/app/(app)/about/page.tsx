@@ -5,7 +5,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
- import Link from "next/link";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CommentSlider from "../home/service/fetchtestimonial";
 
@@ -33,10 +33,10 @@ const About = () => {
             meets the unique needs of each client
           </p>
           <Link href="/contact-us">
-          <Button
-            className="bg-[#0B4D8E] text-white w-30 mt-8"
-            variant="outline"
-          >Create your App with us{<HiArrowLongRight size={30}  />}</Button>
+            <Button
+              className="bg-[#0B4D8E] text-white w-30 mt-8"
+              variant="outline"
+            >Create your App with us{<HiArrowLongRight size={30} />}</Button>
           </Link>
         </div>
         <div className="flex flex-col justify-center">
@@ -112,15 +112,15 @@ const About = () => {
               worldwide. With a strong team of experienced professionals, we
               have established ourselves as a leading player in the industry.
             </p>
-          
+
             <Link href="/contact-us">
-            <Button
-             
-              variant='outline'
-              className="bg-[#0B4D8E] h-12 rounded-[7px] text-white mt-[30px] px-[20px] py-[10px]"
-            >Contact Us</Button>
-             </Link>
-         
+              <Button
+
+                variant='outline'
+                className="bg-[#0B4D8E] h-12 rounded-[7px] text-white mt-[30px] px-[20px] py-[10px]"
+              >Contact Us</Button>
+            </Link>
+
           </div>
         </div>
       </div>
@@ -268,9 +268,10 @@ const About = () => {
         <h5 className="page-sub-heading font-semibold mb-[42px] page-px">
           Client Success Stories
         </h5>
-        <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[60px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[144px] pb-[30px]">
+        <div className="overflow-hidden">
           <CommentSlider />
         </div>
+
       </div>
     </div>
   );

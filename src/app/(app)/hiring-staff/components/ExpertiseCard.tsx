@@ -41,7 +41,7 @@ const ExpertiseCard = ({ data }: any) => {
           <Button
             textClass="text"
             text="Schedule Interview"
-            className="bg-[#0697D5] rounded-[7px] text-white w-full p-[12px]"
+            className="bg-[#0697D5] border-[#0697D5] rounded-[7px] text-white w-full p-[12px]"
           />
         </Link>
       </div>

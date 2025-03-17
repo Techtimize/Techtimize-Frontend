@@ -32,7 +32,7 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
       <Button
         text="Hire Us"
         textClass="text"
-        className="bg-primaryBlue text-white p-[10px] rounded-[7px]"
+        className="bg-primaryBlue border-[#0697D5] text-white p-[10px] rounded-[7px]"
       /></Link>
     
     </div>
