@@ -30,7 +30,9 @@ const Footer: React.FC = () => {
              
             </div>
             <div className="rounded-full h-[36px] w-[36px] bg-[#26A4DA] flex items-center justify-center shadow-lg">
+            <Link href={"https://www.instagram.com/techtimize.pk/"}>
               <FaInstagram size={20} color="white" />
+              </Link>
             </div>
             <div className="rounded-full h-[36px] w-[36px] bg-[#26A4DA] flex items-center justify-center shadow-lg">
               <FaWhatsapp size={20} color="white" />

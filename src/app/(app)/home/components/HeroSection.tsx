@@ -32,7 +32,7 @@ const HeroSection = () => {
         </p>
 
         <Link href="/about">
-          <Button variant="outline"  className="md:mb-[60.61px] bg-[#0B4D8E] h-12 text-white" >Learn More</Button>
+          <Button variant="outline"  className="md:mb-[60.61px] bg-transparent border-[#0B4D8E] h-12 text-[#0B4D8E]" >Learn More</Button>
         </Link>
       </motion.div>
       <div className="xl:mr-[74.53px] mt-[50px] md:mt-0">

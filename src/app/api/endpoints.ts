@@ -1,8 +1,11 @@
 const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 export const SEO_ENDPOINT = (slug: string) =>
   `${baseUrl}/api/v1/seo-meta/getSeoMetaData?slug=${slug}`;
+console.log("Base URL:", baseUrl);
+export const SUCCESS_STORIES_ENDPOINT = `${baseUrl}/api/v1/successStories/getAllSuccessStories`;
+
 export const ApiEndpoint = {
-  SUCCESS_STORIES: `${baseUrl}/api/v1/successStories/getAllSuccessStories`,
+  
   PROJECTS: `${baseUrl}/api/v1/projects/getAllProjects`,
   HOME_SLIDER: `${baseUrl}/api/v1/homeSlider/getAllHomeSliders`,
   STACKS: `${baseUrl}/api/v1/stacks/all`,

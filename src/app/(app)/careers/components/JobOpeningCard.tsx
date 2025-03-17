@@ -48,7 +48,7 @@ const JobOpeningCard = () => {
               <Button
                 text="View Details"
                 textClass="text"
-                className="bg-[#069AD8] text-white xl:p-[10px] p-[5px] rounded-[7px]"
+                className="bg-[#069AD8] border-[#0697D5] text-white xl:p-[10px] p-[5px] rounded-[7px]"
               />
             </Link>
           </div>
