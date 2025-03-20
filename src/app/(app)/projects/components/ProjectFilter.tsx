@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { projectTags } from "@/app/constants/portfolioData";
-import projectsProps from "@/app/types/project.type";
+import projectsProps, { StackProps } from "@/app/types/project.type";
 export default function ProjectsFilter({ projects }: { projects: projectsProps[] }) {
     const [selectedTag, setSelectedTag] = useState("All");
     const filteredProjects =
@@ -108,6 +108,19 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                     <div className="basis-[70%] p-[3%]">
                                         <p className="mb-[25px]">{project.name}</p>
                                         <p className="text-tertiary mb-[40px]">{project.description}</p>
+                                        {/* <div className="flex items-center gap-[15px]">
+                                            {project.stackId.map((tech: StackProps) => (
+                                                <Image
+                                                    key={tech._id}
+                                                    
+                                                    src={tech.serviceImage} 
+                                                    alt={tech.name}
+                                                    width={50}
+                                                    height={50}
+                                                    className="lg:w-[56.78px] lg:h-[47.87px] w-[41px] h-[38px]"
+                                                />
+                                            ))}
+                                        </div> */}
                                         <Button variant="outline" className="bg-blue-1 text-white">
                                             View Project
                                         </Button>

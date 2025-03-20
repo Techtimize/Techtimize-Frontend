@@ -10,11 +10,6 @@ export async function getProjects():Promise<projectsProps[]>{
             },
         });
 
-        if (!response.ok) {
-            console.error("Error fetching projects:", response.statusText);
-            return [];
-        }
-
         const result = await response.json();
         return result.data;
     } catch (error) {

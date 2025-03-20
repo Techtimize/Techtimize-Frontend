@@ -7,7 +7,7 @@ import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import CommentSlider from "../home/service/fetchtestimonial";
+import CommentSlider from "../home/http/fetchtestimonial";
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("about");

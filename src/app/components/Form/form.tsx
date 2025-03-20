@@ -75,7 +75,7 @@ const FormComponent = () => {
             <FormItem className="flex-1 w-full">
               <FormLabel>Phone Number</FormLabel>
               <FormControl>
-                <Input placeholder="+92 344 78057 45" type='number' {...field} />
+                <Input placeholder="03447805745" type='number' {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -112,9 +112,9 @@ const FormComponent = () => {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem >
+            <FormItem>
               <FormLabel>Message</FormLabel>
-              <FormControl>
+              <FormControl className='h-32'>
                 <Textarea placeholder="Your message here" id='message' {...field} />
               </FormControl>
               <FormMessage />
@@ -124,7 +124,7 @@ const FormComponent = () => {
         <Button
         type='submit'
           text="Send Message"
-          className="bg-[#0697D5] text-white rounded-[7px] p-[11px] w-full mt-[20px]"
+          className="bg-[#0697D5] border-[#0697D5] text-white rounded-[7px] p-[11px] w-full mt-[20px]"
         />
       </div>
     </div>
