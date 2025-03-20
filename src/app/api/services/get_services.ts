@@ -8,9 +8,6 @@ export default async function getServices():Promise<Servicesprops[]>{
                 "Content-Type": "application/json",
             },
         });
-        if(!response){
-            throw new Error('Failed to fetch services');
-        }
         const result = await response.json();
         return result.data;
 

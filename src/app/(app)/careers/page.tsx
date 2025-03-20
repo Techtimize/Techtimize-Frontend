@@ -2,16 +2,21 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import { departments } from "@/app/constants/departments";
 import React from "react";
 import JobOpeningCard from "./components/JobOpeningCard";
-
+import getJobs from "@/app/(app)/careers/http/getjobs";
+import { Button } from "@/components/ui/button";
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
- 
+import { Card, CardTitle } from "@/components/ui/card";
+import { HiArrowLongRight } from "react-icons/hi2";
+import { Link } from "lucide-react";
+import GetJobsList from "@/app/(app)/careers/http/getjobs";
+
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("careers");
 }
 
-const Careers = () => {
+const Careers = async () => {
   return (
     <div>
       <PageHeader subHeading="Career" heading="Opportunity Corner" />
@@ -22,29 +27,27 @@ const Careers = () => {
         <h4 className="page-sub-heading font-semibold xl:mb-[27px] mb-[19px]">
           Explore New Openings
         </h4>
-        <div className="flex flex-col gap-[10px] xl:flex-row">
-          <div className="border xl:basis-[30%] flex xl:flex-col flex-wrap items-start gap-[50px]">
-            {departments?.map((department) => {
-              return (
-                <div
-                  key={department?.id}
-                  className="flex flex-col items-center gap-[8px]"
-                >
-                  <p className="cursor-pointer text">{department?.text}</p>
-                  <div className="h-[3px] w-[25px] bg-[#069AD8] rounded-full" />
+        <div className="flex flex-row gap-x-9">
+          {/* Department Card */}
+          <Card className="flex flex-col pl-10 py-10 w-80 h-auto">
+            <CardTitle className="space-y-10 font-semibold">
+              {departments?.map((department) => (
+                <div key={department?.id}>
+                  <p className="cursor-pointer">{department?.text}</p>
                 </div>
-              );
-            })}
-          </div>
-          <div className="border xl:basis-[2%] flex justify-center">
-            <div className="drop-shadow-lg xl:block hidden w-[3px] h-[616px] bg-white rounded-full" />
-            <div className="drop-shadow-lg xl:hidden block h-[3px] w-full bg-white rounded-full" />
-          </div>
-          <div className="border xl:basis-[68%] pt-[10px]">
-            <JobOpeningCard />
-          </div>
+              ))}
+            </CardTitle>
+          </Card>
+
+          {/* Job Openings Card */}
+          <Card className="flex flex-col w-full h-auto pl-4 pr-4 pt-4 pb-4">
+            <GetJobsList />
+          </Card>
         </div>
+
+
       </div>
+      
     </div>
   );
 };

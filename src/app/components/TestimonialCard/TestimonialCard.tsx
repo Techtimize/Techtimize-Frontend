@@ -27,6 +27,9 @@ const TestimonialCard = ({ testimonialData }: { testimonialData: Successstoriesp
           <p className="text-[12px] lg:text-[16px] lg:mb-[10px] text-darkGrey">
             {testimonialData.countryName}
           </p>
+          <p className="text-[12px] lg:text-[16px] lg:mb-[10px] text-darkGrey">
+            {testimonialData.designation}
+          </p>
           <Image src="/assets/svgs/ratings.svg" alt="rating" width={100} height={100} /> 
         </div>
       </div>

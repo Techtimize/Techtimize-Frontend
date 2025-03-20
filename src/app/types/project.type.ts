@@ -1,3 +1,9 @@
+export interface StackProps {
+    _id: string;
+    name: string;
+    serviceImage: string;
+  }
+
 interface projectsProps{
     _id: string;
     name: string;
@@ -8,6 +14,7 @@ interface projectsProps{
     isSlider: boolean;
     previewImage: string;
     description: string;
+    stackId: StackProps[]; 
 }
 
 

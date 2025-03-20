@@ -10,8 +10,8 @@ import { generateMetadataFromBE } from "@/app/lib/utils";
 import { Button } from "@/components/ui/button"
 import { CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import ProjectList from "./service/fetchproduct";
-import CommentSlider from "./service/fetchtestimonial";
+import ProjectList from "./http/fetchproduct";
+import CommentSlider from "./http/fetchtestimonial";
 
 
 export async function generateMetadata(): Promise<Metadata> {

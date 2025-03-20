@@ -53,7 +53,7 @@ const Navbar = () => {
                   {item?.link}
                 </Link>
                 {item?.path === pathname && (
-                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5px] w-[25px] h-[3px] bg-primary rounded-full"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5px] w-[25px] h-[3px] bg-[#0B4D8E] rounded-full"></div>
                 )}
               </li>
             ))}
@@ -104,14 +104,14 @@ const Navbar = () => {
         </ul>
 
         {/* Sidebar Buttons */}
-        <div className="absolute bottom-5 left-0 w-full px-5">
+        {/* <div className="absolute bottom-5 left-0 w-full px-5">
           <button className="w-full rounded-[5px] bg-red text-white text-[14px] py-[10px] mb-[10px]">
             Get Consultation
           </button>
           <button className="w-full rounded-[5px] bg-green text-white text-[14px] py-[10px]">
             Hire Now
           </button>
-        </div>
+        </div> */}
       </div>
     </header>
   );

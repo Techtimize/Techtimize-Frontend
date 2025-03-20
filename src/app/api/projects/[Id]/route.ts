@@ -1,5 +1,5 @@
 import projectsProps from "@/app/types/project.type";
-import { ApiEndpoint } from "../../endpoints";
+import { ApiEndpoint } from "@/app/api/endpoints";
 
 export async function getProjectById({ params }: { params: Promise<{ id: string }> }): Promise<projectsProps | null> {
     const id = (await params).id;

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import ProjectDetails from  "../components/ProjectDetails";
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const { id } = await params; 
+  const { id } = params;
   return generateMetadataFromBE(`projects/${id}`);
 }
 

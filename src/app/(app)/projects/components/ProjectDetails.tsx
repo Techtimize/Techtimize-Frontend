@@ -2,19 +2,15 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import PortfolioSlider from "@/app/components/PortfolioSlider/PortfolioSlider";
 import Image from "next/image";
 import { getProjects } from "@/app/api/projects/get_project";
+import projectsProps, { StackProps } from "@/app/types/project.type";
 
-export default async function ProjectDetails({ params }: { params: { id: string } }){
+export default async function ProjectDetails({ params }: { params: { id: string } }) {
   const projectsData = await getProjects();
-  const projectId =await params.id;
-  const project = projectsData.find((proj) => proj._id.includes(projectId));
+  const projectId = params.id;
+  const project:projectsProps | undefined = projectsData.find((proj) => proj._id.includes(projectId));
 
   if (!project) {
-    return (
-      <div className="text-center py-20">
-        <h2 className="text-2xl font-bold">Project Not Found</h2>
-        <p>Please check the project ID and try again.</p>
-      </div>
-    );
+    return <div>Project not found</div>;
   }
 
   return (
@@ -36,17 +32,19 @@ export default async function ProjectDetails({ params }: { params: { id: string 
         </p>
         <h5 className="lg:text-[25px] md:mb-[3%] mb-[5%] sm:text-[20px] text-black">Technologies</h5>
         {/* <div className="flex items-center gap-[15px]">
-          {project.technologies.map((tech) => (
-            <Image
-              key={tech.id}
-              src={tech.image}
-              alt={"stack"}
-              width={tech.width}
-              height={tech.height}
-              className="lg:w-[56.78px] lg:h-[47.87px] w-[41px] h-[38px]"
-            />
+          {project.stackId.map((tech: StackProps) => (
+              <div key={tech._id}> 
+              <Image
+                src={tech.serviceImage}
+                alt={tech.name}
+                width={50}
+                height={50}
+                className="lg:w-[56.78px] lg:h-[47.87px] w-[41px] h-[38px]"
+              />
+            </div>
           ))}
         </div> */}
+
       </div>
       <div className="bg-[#FBFCFF] pl-[5%] py-[5%]">
         <h2 className="lg:text-[40px] sm:text-[20px] mb-[5%] text-black">More Projects</h2>

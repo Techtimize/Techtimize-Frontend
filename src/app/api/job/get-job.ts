@@ -1,6 +1,6 @@
 
-import { ApiEndpoint } from "../endpoints"
-export default async function getJobs() {
+import { ApiEndpoint } from "@/app/api/endpoints"
+export default async function getCareersJobs() {
     try {
         const response = await fetch(ApiEndpoint.JOB_TYPE, {
             method: "GET",
@@ -8,9 +8,6 @@ export default async function getJobs() {
                 "Content-Type": "application/json",
             },
         });
-        if (!response) {
-            throw new Error('Failed to fetch job types');
-        }
         const result = await response.json();
         return result.data;
     } catch (error) {
