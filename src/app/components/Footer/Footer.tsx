@@ -42,12 +42,14 @@ const Footer: React.FC = () => {
             <p className="text-grey text-[16px] mb-[8px]">
               We are Available on
             </p>
+            <Link href="https://review.clutch.co/review/">
             <Image
               src={"/assets/svgs/clutchLogo.svg"}
               width={139.24}
               height={38.57}
               alt={"clutch logo"}
             />
+             </Link>
           </div>
         </div>
         <div className="pl-[19px] sm:pl-0 md:pl-0 lg:pl-0 md:w-[150px] sm:w-[100px] xl:w-[156px] text-black">
@@ -79,6 +81,7 @@ const Footer: React.FC = () => {
           <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[87px] lg:mt-[160px] md:mt-[110px] sm:mt-[130px] mb-[26px]">
             Services
           </h3>
+          <Link href="/services">
           <ul className="text-[14px] lg:text-[15px] gap-[10px] flex flex-col md:mb-[51px]">
             <li>Artificial Intelligence</li>
             <li>Mobile App Development</li>
@@ -87,7 +90,8 @@ const Footer: React.FC = () => {
             <li>UI UX Design</li>
             <li>Project Management</li>
             <li>Staff Augmentation</li>
-          </ul>
+          </ul></Link>
+       
         </div>
         <div className="pl-[19px] lg:pl-0 md:pl-0 sm:pl-0 lg:pr-5 xl:w-[340px] lg:w-[173px] sm:w-[173px] text-black">
           <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[87px] lg:mt-[160px] sm:mt-[130px] md:mt-[110px] mb-[26px] lg:w-[156px]">
@@ -100,12 +104,12 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex gap-[9px] items-center">
             <Image src="/assets/svgs/pin2.svg" alt="pin" width={20} height={20}/>
-              <p>5cc DHA Rahbar Phase 1, Lahore, 54000</p>
+              <p>30 N Gould St Ste N, Wyoming 82801</p>
             </li>
             <li className="flex gap-[9px] items-center">
               <Image src="/assets/svgs/email2.svg" alt="email" width={20} height={20} />
             
-              <p>hr@techtimize.co</p>
+              <p>contact@techtimize.co</p>
             </li>
           </ul>
         </div>

@@ -6,6 +6,7 @@ import TechSlider from "./components/TechSlider";
 
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
+import GetAllStacks from "./http/fetchstack";
  
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -38,7 +39,8 @@ const Services = () => {
             className="block sm:hidden"
           />
         </div>
-        <TechSlider />
+        {/* <TechSlider /> */}
+        <GetAllStacks/>
         <div className="flex flex-col items-center pt-[40px] pb-[60px] px-[5%] bg-[#FBFCFF]">
           <p className="page-blue-heading xl:mb-[11px] mb-[5px]">Our Work</p>
           <h3 className="page-sub-heading font-bold xl:mb-[34px] mb-[19px]">

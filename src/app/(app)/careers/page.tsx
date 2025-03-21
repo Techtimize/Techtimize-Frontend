@@ -47,6 +47,11 @@ const Careers = async () => {
 
 
       </div>
+      {/* <div className="items-center">
+      <Card className="h-60 w-80 items-center bg-[#0B4D8E]">
+
+</Card>
+      </div> */}
       
     </div>
   );
