@@ -53,7 +53,7 @@ const Navbar = () => {
                   {item?.link}
                 </Link>
                 {item?.path === pathname && (
-                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5px] w-[25px] h-[3px] bg-[#0B4D8E] rounded-full"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5px] w-[25px] h-[3px] bg-blue-1 text-blue-1 rounded-full"></div>
                 )}
               </li>
             ))}
