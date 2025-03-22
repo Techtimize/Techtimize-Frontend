@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { jobProps } from "../../../types/job.type";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Card } from "@/components/ui/card";
 
 export default function JobOpeningCard({ jobs }: { jobs: jobProps[] }) {
   return (
@@ -32,7 +31,8 @@ export default function JobOpeningCard({ jobs }: { jobs: jobProps[] }) {
                   <Tag text={job?.workMode || "On-Site"} textClass="text-[10px]" className="bg-[#F7F7F7]" />
                   <Tag text={job?.location || "Lahore"} textClass="text-[#069AD8] text-[10px]" className="bg-[#F2F6FF]" icon={<ImLocation size="20px" color="#069AD8" />} />
                 </div>
-                <Link href={`/job-description/${job._id}`}>
+                {/*<Link href={`/job-description/${job._id}`}>*/}
+                <Link href={`/job-description`}>
                   <Button text="View Details" textClass="text" className="bg-[#069AD8] border-[#0697D5] text-white xl:p-[10px] p-[5px] rounded-[7px]" />
                 </Link>
               </div>

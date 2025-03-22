@@ -51,10 +51,10 @@ export default async function Home() {
 
         </div>
         <div className="xl:mr-[70px] sm:pr-[20px] md:pr-[25px] lg:pr-[30px] md:mt-[84px] sm:mt-[84px] xl:mt-[98px] mt-[55px]">
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-2 xl:gap-[26px] md:gap-[12px] sm:gap-[12px] gap-[15px] md:px-0 px-[16px] pb-[60.61px]">
+          <div className="grid xl:grid-cols-3 md:grid-cols-2 grid-cols-2  md:px-0 px-[16px] pb-[60.61px]">
             {services.map((item) => (
               <Link key={item._id} href={`/services`}>
-                <CardContent className="transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110">
+                <CardContent className=" hover:scale-110">
                   <div className=" flex items-center space-x-4 rounded-md border p-4">
                     <Image src={item.iconUrl} alt={item.serviceName} width={item.width || 30} height={item.height || 30} /> 
                     <div className="flex-1 space-y-1">
@@ -132,7 +132,6 @@ export default async function Home() {
                 your website and digital platform? then we’re ready to help!
               </p>
             </div>
-
             <Link href="hiring-staff/need-to-consult">
               <Button
                 className="bg-white text-black border-0 sm:w-auto w-[53%]"

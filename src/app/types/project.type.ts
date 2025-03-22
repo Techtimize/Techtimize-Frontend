@@ -2,9 +2,9 @@ export interface StackProps {
     _id: string;
     name: string;
     serviceImage: string;
-  }
+}
 
-interface projectsProps{
+export default interface ProjectsProps {
     _id: string;
     name: string;
     posterImage: string;
@@ -14,9 +14,5 @@ interface projectsProps{
     isSlider: boolean;
     previewImage: string;
     description: string;
-    stackId: StackProps[]; 
+    stackId: StackProps[];
 }
-
-
-
-export default projectsProps;

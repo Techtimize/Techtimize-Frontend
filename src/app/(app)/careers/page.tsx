@@ -65,7 +65,6 @@ const Careers = async () => {
         <h1 className="text-2xl font-thin mb-10">Benefits in Working with Us</h1>
       </div>
 
-      {/* Benefits Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full text-center mt-10 px-4">
         {data.map((item) => (
           <div key={item.heading} className="flex flex-col items-center p-4">
