@@ -42,7 +42,7 @@ const Careers = async () => {
         </div>
       </div>
 
-      {/* Join Us Section */}
+  
       <div className="flex justify-center mt-10 px-4">
         <Card className="h-auto w-full max-w-5xl flex flex-col lg:flex-row items-center lg:items-start justify-between bg-[#0B4D8E] p-6 text-center lg:text-left">
           <div className="flex flex-col mb-4 lg:mb-0">
