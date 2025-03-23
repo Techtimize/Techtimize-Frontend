@@ -18,7 +18,7 @@ const TestimonialCard = ({ testimonialData }: { testimonialData: Successstoriesp
           width={30}
           height={25}
           className="mb-[33px] lg:w-[39px] lg:h-[34px]"
-          unoptimized={true}
+         
         />
         <div>
           <p className="text-[16px] lg:text-[19px] font-semibold text-darkGrey">
