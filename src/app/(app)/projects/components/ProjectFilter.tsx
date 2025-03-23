@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { projectTags } from "@/app/constants/portfolioData";
-import projectsProps, { StackProps } from "@/app/types/project.type";
+import projectsProps from "@/app/types/project.type";
 export default function ProjectsFilter({ projects }: { projects: projectsProps[] }) {
     const [selectedTag, setSelectedTag] = useState("All");
     const filteredProjects =
@@ -61,7 +61,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                         />
                     </div>
                     <div className="flex items-center xl:gap-[15px] sm:gap-[5px]">
-                        {projectTags.map((tag: any, index: number) => {
+                        {projectTags.map((tag, index: number) => {
                             return (
                                 <div
                                     key={index}
@@ -126,7 +126,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                         </Button>
                                     </div>
                                     <div className="basis-[30%]">
-                                        <Image src={project.previewImage} alt="Project image" width={552} height={358} />
+                                        <Image src={project.previewImage} alt="Project image" width={552} height={358} unoptimized />
                                     </div>
                                 </div>
                             </Link>

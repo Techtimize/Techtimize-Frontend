@@ -5,21 +5,10 @@ const Overview = () => {
     <div>
       <h5 className="xl:text-[20px] mb-[10px] text-black">Description</h5>
       <p className="text mb-[40px] text-tertiary">
-        Techtimize is a dynamic and innovative tech company that specializes in
-        JS frameworks, .Net, machine learning, and AI!. We are passionate about
-        creating cutting-edge software solutions that drive businesses forward
-        and enhance user experiences. As a Full Stack Developer at Techtimize,
-        you will have the opportunity to work on exciting projects, collaborate
-        with a talented team, and make a significant impact in the world of
-        technology. We are looking for a highly skilled and motivated Full Stack
-        Developer to join our team. In this role, you will be responsible for
-        designing, developing, and maintaining both front-end and back-end
-        components of our software applications. You will work on a wide range
-        of projects, from building user interfaces that delight users to
-        optimizing server-side performance. Your expertise will be crucial in
-        helping us deliver high-quality, scalable, and efficient software
-        solutions.
+        Techtimize is a dynamic and innovative tech company that specializes in JS frameworks, .Net, machine learning, and AI!. We are passionate about creating cutting-edge software solutions that drive businesses forward and enhance user experiences. As a Full Stack Developer at Techtimize, you will have the opportunity to work on exciting projects, collaborate with a talented team, and make a significant impact in the world of technology.
+        <p> We are looking for a highly skilled and motivated Full Stack Developer to join our team. In this role, you will be responsible for designing, developing, and maintaining both front-end and back-end components of our software applications. You will work on a wide range of projects, from building user interfaces that delight users to optimizing server-side performance. Your expertise will be crucial in helping us deliver high-quality, scalable, and efficient software solutions.</p>
       </p>
+
       <h5 className="xl:text-[20px] mb-[10px] text-black">
         Key Responsibilities
       </h5>
