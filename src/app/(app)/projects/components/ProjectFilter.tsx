@@ -110,11 +110,11 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                     style={{ backgroundColor: project.backgroundColor || "#f3f4f6" }}
                                 >
                                     <div className="basis-[70%] p-[3%]">
-                                        <Image src={project?.logoImage} alt="logo" width={20} height={20} />
+                                        {/* <Image src={project?.logoImage} alt="logo" width={20} height={20} /> */}
 
                                         <p className="mb-[25px]">{project.name}</p>
                                         <p className="text-tertiary mb-[40px]">{project.description}</p>
-                                        <Button variant="outline" className="bg-blue-1 text-white">
+                                        <Button  className="bg-blue-1 hover:bg-white hover:text-black text-white">
                                             View Project
                                         </Button>
                                     </div>
