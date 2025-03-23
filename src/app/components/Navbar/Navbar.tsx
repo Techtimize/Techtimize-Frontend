@@ -47,20 +47,21 @@ const Navbar = () => {
               <li key={item?.id} className="relative">
                 <Link
                   href={item?.path}
-                  className={`cursor-pointer ${item?.path === pathname ? "text-primary font-bold" : "text-gray-700"
+                  className={`cursor-pointer ${item?.path === pathname ? "text-blue-600 font-bold" : "text-gray-700"
                     }`}
                 >
                   {item?.link}
                 </Link>
                 {item?.path === pathname && (
-                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5px] w-[25px] h-[3px] bg-blue-1 text-blue-1 rounded-full"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5px] w-[25px] h-[3px] bg-blue-600 rounded-full"></div>
                 )}
+
               </li>
             ))}
           </ul>
 
           <Link href="/contact-us">
-            <Button  className=" bg-[#0B4D8E] text-white" >Get in Touch</Button>
+            <Button className=" bg-[#0B4D8E] text-white" >Get in Touch</Button>
           </Link>
         </div>
 
@@ -95,23 +96,15 @@ const Navbar = () => {
           ))}
           <li>
             <Link href="/contact-us" className="block">
-            <Button className="bg-[#0B4D8E] text-white hover:bg-[#0B4D8E] ">
-            Get In Touch
-            </Button>
-            
+              <Button className="bg-[#0B4D8E] text-white hover:bg-[#0B4D8E] ">
+                Get In Touch
+              </Button>
+
             </Link>
           </li>
         </ul>
 
-        {/* Sidebar Buttons */}
-        {/* <div className="absolute bottom-5 left-0 w-full px-5">
-          <button className="w-full rounded-[5px] bg-red text-white text-[14px] py-[10px] mb-[10px]">
-            Get Consultation
-          </button>
-          <button className="w-full rounded-[5px] bg-green text-white text-[14px] py-[10px]">
-            Hire Now
-          </button>
-        </div> */}
+
       </div>
     </header>
   );
