@@ -124,7 +124,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                             alt="Project image"
                                             width={552}
                                             height={358}
-                                            unoptimized
+                                            
                                         />
                                     </div>
                                 </div>

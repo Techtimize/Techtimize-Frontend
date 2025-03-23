@@ -16,10 +16,10 @@ export default async function JobDescriptionPage({ params }: { params: { id: str
   return (
     <div className="relative">
 
-      <div className="flex items-center justify-between mb-6">
-        <PageHeader subHeading="Overview" heading={job.jobTitle}/>
-      
-      </div>
+<div className="flex items-center justify-center text-center mb-6">
+  <PageHeader subHeading="Overview" heading={job.jobTitle} />
+</div>
+
 
 <div className="flex flex-row gap-x-6 text-2xl h-20 mt-8 border-b border-gray-300 ml-6">
   <Button className="bg-transparent text-black hover:bg-transparent ">{job.jobType}</Button>
