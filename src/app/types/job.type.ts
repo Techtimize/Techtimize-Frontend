@@ -3,4 +3,8 @@ export interface jobProps{
     jobTitle:string
     jobType: string;
     description: string;
+    workMode:string;
+    location:string;
+    positionRequirement:string
+    responsibilities:string
 }

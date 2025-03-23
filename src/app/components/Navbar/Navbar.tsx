@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <nav className="container mx-auto flex items-center justify-between px-5 lg:px-[69px] py-4">
-        {/* Logo */}
+      
         <Link href="/">
           <Image
             priority
@@ -61,7 +61,7 @@ const Navbar = () => {
           </ul>
 
           <Link href="/contact-us">
-            <Button className=" bg-[#0B4D8E] text-white" >Get in Touch</Button>
+            <Button className=" bg-[#0B4D8E] hover:bg-[#0B4D8E] text-white" >Get in Touch</Button>
           </Link>
         </div>
 

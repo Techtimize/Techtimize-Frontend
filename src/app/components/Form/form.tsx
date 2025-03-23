@@ -42,14 +42,14 @@ const FormComponent = () => {
             });
 
             if (response.ok) {
-                console.log("Email sent successfully!");
+
                 form.reset();
             } else {
-                console.error("Failed to send email");
+
                 form.setError("root", { message: "Failed to send email. Try again later." });
             }
         } catch (error) {
-            console.error("Error sending email:", error);
+
             form.setError("root", { message: "Something went wrong. Please try again." });
         } finally {
             setLoading(false);

@@ -8,7 +8,6 @@ import GetStacks from "@/app/api/stacks/get_stacks";
 
 export default async function ProjectDetails({ params }: { params: { id: string } }) {
     const projectsData = await getProjects();
-    const stacksData = await GetStacks();
 
     const projectId = params.id;
     const project: projectsProps | undefined = projectsData.find((proj) => proj._id.includes(projectId));
@@ -16,9 +15,6 @@ export default async function ProjectDetails({ params }: { params: { id: string 
     if (!project) {
         return <div>Project not found</div>;
     }
-
-    // const projectStacks: StackProps[] = project.stackId
-    //     .map((stackId: string) => stacksData.find((stack: StackProps) => stack._id === stackId))
 
 
     return (
