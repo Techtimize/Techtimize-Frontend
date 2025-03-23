@@ -95,7 +95,7 @@ const Navbar = () => {
           ))}
           <li>
             <Link href="/contact-us" className="block">
-            <Button>
+            <Button className="bg-[#0B4D8E] text-white hover:bg-[#0B4D8E] ">
             Get In Touch
             </Button>
             
