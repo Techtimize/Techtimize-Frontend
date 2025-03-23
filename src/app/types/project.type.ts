@@ -14,5 +14,7 @@ export default interface ProjectsProps {
     isSlider: boolean;
     previewImage: string;
     description: string;
+    backgroundColor:string;
+    logoImage:string;
     stackId: StackProps[];
 }
