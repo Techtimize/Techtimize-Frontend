@@ -23,6 +23,7 @@ const PortfolioCard = ({ cardData }: {cardData:projectsProps}) => {
           alt={"project image"}
           width={460}
           height={300}
+          unoptimized
           className="rounded-t-[10px] lg:w-[460px] lg:h-[230px] md:w-[308px] md:h-[216px] w-[294px] h-[205px] object-cover"
         />
       </div>
