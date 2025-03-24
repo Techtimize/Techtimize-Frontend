@@ -1,20 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { projectTags } from "@/app/constants/portfolioData";
 import projectsProps from "@/app/types/project.type";
+
 export default function ProjectsFilter({ projects }: { projects: projectsProps[] }) {
     const [selectedTag, setSelectedTag] = useState("All");
+    const [loading, setLoading] = useState(true);
+    
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 2000); // Simulating data fetching delay
+    }, []);
+
     const filteredProjects =
         selectedTag === "All"
             ? projects
             : projects.filter((project) =>
                 project.tags.some((tag) => tag === selectedTag)
             );
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -29,7 +37,6 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
         visible: { opacity: 1, y: 0 },
     };
 
-
     return (
         <div className="p-[5%] min-h-screen">
             <div className="flex w-full justify-between items-center sm:gap-[20px]">
@@ -41,99 +48,58 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                         Here’s a Look at Our Work
                     </h4>
                 </div>
-                <div className="sm:flex items-center xl:gap-[15px] sm:gap-[5px] hidden">
-                    <div
-                        className={`flex flex-col xl:px-[20px] sm:px-[10px] py-[5px] rounded-[10px] items-center justify-center ${selectedTag === "All" ? "shadow-xl" : "shadow-none"
-                            }`}
-                        onClick={() => setSelectedTag("All")}
-                    >
-                        <p
-                            className={`cursor-pointer xl:text-[16px] text-[14px] ${selectedTag === "All"
-                                ? "satoshi-variable-bold text-primary"
-                                : "satoshi-medium"
-                                }`}
-                        >
-                            All
-                        </p>
-                        <div
-                            className={`h-[3px] w-full mt-[5px] rounded-full ${selectedTag === "All" ?
-                                "bg-primary" : "bg-transparent"
-                                }`}
-                        />
-                    </div>
-                    <div className="flex items-center xl:gap-[15px] sm:gap-[5px]">
-                        {projectTags.map((tag, index: number) => {
-                            return (
-                                <div
-                                    key={index}
-                                    className={`flex flex-col xl:px-[20px] sm:px-[10px] py-[5px] rounded-[10px] items-center justify-center ${selectedTag === tag.name ? "shadow-xl" : "shadow-none"
-                                        }`}
-                                    onClick={() => setSelectedTag(tag.name)}
-                                >
-                                    <p
-                                        className={`cursor-pointer xl:text-[16px] text-[14px] ${selectedTag === tag.name
-                                            ? "satoshi-variable-bold text-primary"
-                                            : "satoshi-medium"
-                                            }`}
-                                    >
-                                        {tag.name}
-                                    </p>
-                                    <div
-                                        className={`h-[3px] w-full mt-[5px] rounded-full ${selectedTag === tag.name ? "bg-primary" : "bg-transparent"
-                                            }`}
-                                    />
-                                </div>
-                            );
-                        })}
-                    </div>
-                </div>
             </div>
-            <motion.div
-                className="flex flex-col gap-[30px]"
-                variants={containerVariants}
-                initial="hidden"
-                animate="visible"
-            >
-                <AnimatePresence>
-                    {filteredProjects.map((project) => (
-                        <motion.div
-                            key={project._id}
-                            variants={itemVariants}
-                            initial="hidden"
-                            animate="visible"
-                            exit="hidden"
-                            transition={{ duration: 0.5 }}
-                        >
-                            <Link href={`/projects/${project._id}`} className="no-underline">
-                                <div
-                                    className="flex rounded-[10px] cursor-pointer"
-                                    style={{ backgroundColor: project.backgroundColor || "#f3f4f6" }}
-                                >
-                                    <div className="basis-[70%] p-[3%]">
-                                        {/* <Image src={project?.logoImage} alt="logo" width={20} height={20} /> */}
 
-                                        <p className="mb-[25px]">{project.name}</p>
-                                        <p className="text-tertiary mb-[40px]">{project.description}</p>
-                                        <Button  className="bg-blue-1 hover:bg-white hover:text-black text-white">
-                                            View Project
-                                        </Button>
-                                    </div>
-                                    <div className="basis-[30%]">
-                                        <Image
-                                            src={project.previewImage}
-                                            alt="Project image"
-                                            width={552}
-                                            height={358}
-                                            
-                                        />
-                                    </div>
-                                </div>
-                            </Link>
-                        </motion.div>
+            {loading ? (
+                <div className="flex flex-col gap-[30px]">
+                    {[...Array(3)].map((_, index) => (
+                        <div key={index} className="animate-pulse flex rounded-[10px] bg-gray-200 h-[150px] w-full"></div>
                     ))}
-                </AnimatePresence>
-            </motion.div>
-
+                </div>
+            ) : (
+                <motion.div
+                    className="flex flex-col gap-[30px]"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <AnimatePresence>
+                        {filteredProjects.map((project) => (
+                            <motion.div
+                                key={project._id}
+                                variants={itemVariants}
+                                initial="hidden"
+                                animate="visible"
+                                exit="hidden"
+                                transition={{ duration: 0.5 }}
+                            >
+                                <Link href={`/projects/${project._id}`} className="no-underline">
+                                    <div
+                                        className="flex rounded-[10px] cursor-pointer"
+                                        style={{ backgroundColor: project.backgroundColor || "#f3f4f6" }}
+                                    >
+                                        <div className="basis-[70%] p-[3%]">
+                                            <p className="mb-[25px]">{project.name}</p>
+                                            <p className="text-tertiary mb-[40px]">{project.description}</p>
+                                            <Button className="bg-blue-1 hover:bg-white hover:text-black text-white">
+                                                View Project
+                                            </Button>
+                                        </div>
+                                        <div className="basis-[30%]">
+                                            <Image
+                                                src={project.previewImage}
+                                                alt="Project image"
+                                                width={552}
+                                                height={358}
+                                            />
+                                        </div>
+                                    </div>
+                                </Link>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                </motion.div>
+            )}
         </div>
     );
 }
