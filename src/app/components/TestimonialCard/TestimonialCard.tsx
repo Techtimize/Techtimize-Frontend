@@ -29,10 +29,11 @@ const TestimonialCard = ({ testimonialData }: { testimonialData?: Successstories
           <Skeleton className="w-[39px] h-[34px] rounded-md" />
         ) : (
           <Image
-             src={testimonialData.countryIconUrl}
+            src={testimonialData.countryIconUrl}
             alt="flag"
-            width={50}
-            height={50}
+            width={39}  
+            height={34} 
+            className="object-cover"
           />
         )}
 
@@ -61,7 +62,6 @@ const TestimonialCard = ({ testimonialData }: { testimonialData?: Successstories
               alt="Ratings"
               width={50}
               height={50}
-              style={{ width: "auto", height: "auto" }}
             />
           )}
         </div>
