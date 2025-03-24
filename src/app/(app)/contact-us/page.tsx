@@ -64,7 +64,7 @@ const ContactUs = () => {
                   <Link href={"https://www.linkedin.com/company/techtimize/posts/?feedView=all"}>
                     <SocialIcon icon={<FaLinkedinIn color="#0697D5" size={30} />} />
                   </Link>
-                  <Link href="https://review.clutch.co/review/">
+                  <Link href="http://clutch.co/profile/techtimize">
                     <SocialIcon
                       icon={
                         <Image
