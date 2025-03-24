@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex gap-[9px] items-center">
             <Image src="/assets/svgs/pin2.svg" alt="pin" width={20} height={20}/>
-              <p>30 N Gould St Ste N, Wyoming 82801</p>
+              <p>30 N Gould St Ste N, Wyoming 82801<br></br>5cc DHA Rahbar Phase 1, Lahore, 54000</p>
             </li>
             <li className="flex gap-[9px] items-center">
               <Image src="/assets/svgs/email2.svg" alt="email" width={20} height={20} />
