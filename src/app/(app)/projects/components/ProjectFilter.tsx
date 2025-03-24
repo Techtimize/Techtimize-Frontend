@@ -13,7 +13,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-        setTimeout(() => setLoading(false), 2000); // Simulating data fetching delay
+        setTimeout(() => setLoading(false), 2000); 
     }, []);
 
     const filteredProjects =
@@ -85,12 +85,15 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                                 View Project
                                             </Button>
                                         </div>
-                                        <div className="basis-[30%]">
+                                        
+                                        {/* Fixed Image Size */}
+                                        <div className="basis-[30%] flex items-center justify-center">
                                             <Image
                                                 src={project.previewImage}
                                                 alt="Project image"
-                                                width={552}
-                                                height={358}
+                                                width={250}
+                                                height={180}
+                                                className="w-[250px] h-[180px] object-cover rounded-lg"
                                             />
                                         </div>
                                     </div>
