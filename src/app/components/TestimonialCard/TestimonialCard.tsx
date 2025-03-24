@@ -7,7 +7,7 @@ const TestimonialCard = ({ testimonialData }: { testimonialData?: Successstories
   const isLoading = !testimonialData;
 
   return (
-    <div className="w-[288px] h-[390px] md:w-[302px] md:h-[490px] lg:w-[467px] lg:h-[500px] rounded-[15px] shadow-lg p-4">
+    <div className="w-[288px] h-[390px] md:w-[302px] md:h-[490px] lg:w-[467px] lg:h-[500px] rounded-[15px] shadow-lg p-4 flex flex-col justify-between">
       {/* Quote Icon */}
       <div className="w-[64px] h-[64px] lg:w-[82px] lg:h-[82px] flex items-center justify-center bg-blue-1 rounded-br-[15px]">
         {isLoading ? (
@@ -18,53 +18,56 @@ const TestimonialCard = ({ testimonialData }: { testimonialData?: Successstories
       </div>
 
       {/* Review Text */}
-      <p className="w-[240px] lg:w-[365px] ml-[24px] lg:ml-[71px] mt-[18px] lg:mt-[25px] text text-darkGrey">
+      <p className="w-[240px] lg:w-[365px] ml-[24px] lg:ml-[71px] mt-[18px] lg:mt-[25px] text text-darkGrey h-[100px] overflow-hidden text-ellipsis">
         {isLoading ? <Skeleton className="h-5 w-full" /> : testimonialData.review}
       </p>
 
-      {/* Client Info */}
-      <div className="flex ml-[24px] lg:ml-[71px] lg:mt-[49px] mt-[32px] gap-[10px]">
-        {/* Country Icon */}
-        {isLoading ? (
-          <Skeleton className="w-[39px] h-[34px] rounded-md" />
-        ) : (
-          <Image
-            src={testimonialData.countryIconUrl}
-            alt="flag"
-            width={50}
-            height={50}
-            style={{ width: "auto", height: "auto" }}
-          />
-        )}
+      {/* Client Info Section */}
+      <div className="ml-[24px] lg:ml-[71px] lg:mt-[49px] mt-[32px] flex flex-col">
+        <div className="flex items-center gap-2">
+          {/* Country Flag */}
+          {isLoading ? (
+            <Skeleton className="w-[24px] h-[18px] rounded-md" />
+          ) : (
+            <Image
+              src={testimonialData.countryIconUrl}
+              alt="flag"
+              width={24}
+              height={18}
+              className="object-cover rounded-sm"
+            />
+          )}
 
-        <div>
           {/* Client Name */}
           <p className="text-[16px] lg:text-[19px] font-semibold text-darkGrey">
             {isLoading ? <Skeleton className="h-5 w-[120px]" /> : testimonialData.clientName}
           </p>
+        </div>
 
+        <div className="flex flex-col mt-2">
           {/* Country Name */}
-          <p className="text-[12px] lg:text-[16px] lg:mb-[10px] text-darkGrey">
+          <p className="text-[12px] lg:text-[16px] text-darkGrey">
             {isLoading ? <Skeleton className="h-4 w-[100px]" /> : testimonialData.countryName}
           </p>
 
           {/* Designation */}
-          <p className="text-[12px] lg:text-[16px] lg:mb-[10px] text-darkGrey">
+          <p className="text-[12px] lg:text-[16px] text-darkGrey">
             {isLoading ? <Skeleton className="h-4 w-[150px]" /> : testimonialData.designation}
           </p>
 
           {/* Ratings */}
-          {isLoading ? (
-            <Skeleton className="h-[20px] w-[100px]" />
-          ) : (
-            <Image
-              src="/assets/svgs/ratings.svg"
-              alt="Ratings"
-              width={50}
-              height={50}
-              style={{ width: "auto", height: "auto" }}
-            />
-          )}
+          <div className="mt-2">
+            {isLoading ? (
+              <Skeleton className="h-[20px] w-[100px]" />
+            ) : (
+              <Image
+                src="/assets/svgs/ratings.svg"
+                alt="Ratings"
+                width={50}
+                height={50}
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

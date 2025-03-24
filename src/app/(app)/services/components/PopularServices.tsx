@@ -42,14 +42,21 @@ const PopularServices = () => {
         {serviceOptions?.map((service) => (
           <li
             key={service?._id}
-            className={`whitespace-nowrap sm:w-auto cursor-pointer satoshi-medium ${
-              selectedService?.serviceName === service.text
-                ? "text-primary"
-                : "text-black"
-            }`}
+            className="relative whitespace-nowrap sm:w-auto cursor-pointer satoshi-medium transition-colors duration-300"
             onClick={() => handleServiceSelect(service.text)}
           >
-            {service?.text}
+            <span
+              className={`${
+                selectedService?.serviceName === service.text
+                  ? "text-[#26A4DA] font-bold"
+                  : "text-black"
+              }`}
+            >
+              {service?.text}
+            </span>
+            {selectedService?.serviceName === service.text && (
+              <div className="absolute left-0 right-0 bottom-[-4px] w-[40%] h-[3px] bg-[#26A4DA] mx-auto transition-all duration-300" />
+            )}
           </li>
         ))}
       </ul>

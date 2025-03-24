@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
             <p className="text-grey text-[16px] mb-[8px]">
               We are Available on
             </p>
-            <Link href="https://review.clutch.co/review/">
+            <Link href="http://clutch.co/profile/techtimize">
             <Image
               src={"/assets/svgs/clutchLogo.svg"}
               width={139.24}
