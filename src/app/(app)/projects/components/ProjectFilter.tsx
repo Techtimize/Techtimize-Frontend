@@ -86,7 +86,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                             </Button>
                                         </div>
                                         
-                                        {/* Fixed Image Size */}
+                                      
                                         <div className="basis-[30%] flex items-center justify-center">
                                             <Image
                                                 src={project.previewImage}
