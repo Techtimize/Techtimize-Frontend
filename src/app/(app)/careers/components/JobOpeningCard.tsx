@@ -4,7 +4,7 @@ import { BsClock } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import Link from "next/link";
 import Image from "next/image";
-import { jobProps } from "../../../types/job.type";
+import { jobProps } from "@/app/types/job.type";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "@/components/ui/button";
 
@@ -44,7 +44,6 @@ export default function JobOpeningCard({ jobs }: { jobs: jobProps[] }) {
                       </Button>
                     </div>
 
-                    {/* View Details Button */}
                     <Link href={`/careers/${job._id}`} className="mt-3 md:mt-0">
                       <Button className="bg-[#069AD8] border-[#0697D5] hover:bg-[#0697D5] text-white p-[7px] rounded-[7px]">
                         View Details
