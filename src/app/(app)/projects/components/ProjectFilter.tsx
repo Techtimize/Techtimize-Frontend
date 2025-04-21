@@ -73,7 +73,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                 exit="hidden"
                                 transition={{ duration: 0.5 }}
                             >
-                                <Link href={`/projects/${project._id}`} className="no-underline">
+                                <Link href={`/projects/${project.slug}`} className="no-underline">
                                     <div
                                         className="flex rounded-[10px] cursor-pointer"
                                         style={{ backgroundColor: project.backgroundColor || "#f3f4f6" }}
@@ -86,7 +86,7 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                                             </Button>
                                         </div>
                                         
-                                        {/* Fixed Image Size */}
+                                      
                                         <div className="basis-[30%] flex items-center justify-center">
                                             <Image
                                                 src={project.previewImage}

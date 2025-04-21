@@ -17,4 +17,5 @@ export default interface ProjectsProps {
     backgroundColor:string;
     logoImage:string;
     stackId: StackProps[];
+    slug: string;
 }

@@ -6,16 +6,15 @@ import projectsProps from "@/app/types/project.type";
 import StackProps from "@/app/types/stacks.type";
 import GetStacks from "@/app/api/stacks/get_stacks";
 
-export default async function ProjectDetails({ params }: { params: { id: string } }) {
+export default async function ProjectDetails({ params }: { params: { slug: string } }) {
     const projectsData = await getProjects();
-
-    const projectId = params.id;
-    const project: projectsProps | undefined = projectsData.find((proj) => proj._id.includes(projectId));
+    const project: projectsProps | undefined = projectsData.find(
+        (proj) => proj.slug === params.slug
+    );
 
     if (!project) {
         return <div>Project not found</div>;
     }
-
 
     return (
         <div>
