@@ -45,6 +45,7 @@ const config: Config = {
   			service: '#3D3D3D',
   			modelText: '#909090',
   			projectDetails: '#898989',
+			'primary-highlight': '#069AD8',
   			'blue-1': '#1CB2E8',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

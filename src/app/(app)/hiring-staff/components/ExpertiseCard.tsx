@@ -6,7 +6,7 @@ import React from "react";
 const ExpertiseCard = ({ data }: any) => {
   return (
     <div className="rounded-[10px] flex flex-col drop-shadow-lg bg-white">
-      <div className="p-[20px] flex flex-col xl:h-[446.33px] lg:h-[422.24px] md:h-[384.98px] sm:h-[359.15px]">
+      <div className="p-[20px] flex flex-col flex-1">
         <Image
           src={data?.image}
           alt={"image"}
@@ -14,12 +14,14 @@ const ExpertiseCard = ({ data }: any) => {
           height={218}
           className="w-full"
         />
-        <h5 className="xl:text-[25px] text-[20px] my-[15px] text-black">{data?.heading}</h5>
-        <p className="text text-darkGrey">{data?.text}</p>
+        <h5 className="xl:text-[25px] text-[20px] my-[15px] text-black">
+          {data?.heading}
+        </h5>
+        <p className="text text-darkGrey line-clamp-4">{data?.text}</p>
       </div>
       <div className="bg-[#FAFAFA] flex p-[15px] xl:h-[133px] sm:h-[111px]">
         <div className="flex justify-end basis-[20%]">
-          <p className="satoshi-bold text-darkGrey">Stacks:</p>
+          <p className="satoshi-bold text-darkGrey pt-1 text-[14px] xl:pt-2 xl:text-[16px]">Stacks:</p>
         </div>
         <div className="basis-[80%] flex gap-[15px] flex-wrap items-start px-[10px]">
           {data?.stack?.map((item: any) => {
