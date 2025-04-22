@@ -17,7 +17,7 @@ const HiringStaff = () => {
     <div>
       <PageHeader subHeading="Hiring Staff" heading="Hire Our Top Talent" />
       <div className="page-px pt-[30px] pb-[50px] bg-white">
-        <p className="page-blue-heading xl:mb-[11px] mb-[5px]">
+        <p className="page-blue-heading xl:mb-[11px] mb-[5px] !text-primary-highlight">
           Our Hiring Models
         </p>
         <h4 className="page-sub-heading font-semibold xl:mb-[27px] mb-[19px]">
@@ -26,7 +26,7 @@ const HiringStaff = () => {
         <ModelSlider />
       </div>
       <div className="bg-[#FBFCFF] page-px py-[40px]">
-        <p className="page-blue-heading xl:mb-[11px] mb-[5px]">
+        <p className="page-blue-heading xl:mb-[11px] mb-[5px] !text-primary-highlight">
           Our Top Talent
         </p>
         <h4 className="page-sub-heading font-semibold xl:mb-[27px] mb-[19px]">
