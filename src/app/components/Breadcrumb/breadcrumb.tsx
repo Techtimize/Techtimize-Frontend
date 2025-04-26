@@ -9,7 +9,11 @@ const Breadcrumb = () => {
   const pathname = usePathname();
   const [root, ...rest] = pathname.split("/");
 
-  const formatDisplay = (label: string): string => label.split("-").join(" ");
+  const formatDisplay = (label: string): string =>
+    label
+      .split("-")
+      .map((s) => s.replace(/^(?=.*[A-Za-z])(?=.*\d).+$/, ""))
+      .join(" ");
 
   const constructHref = (path: string): string => {
     const precedingPart = rest.join("").split(path)[0];

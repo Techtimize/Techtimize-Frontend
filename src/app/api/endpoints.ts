@@ -13,5 +13,7 @@ export const ApiEndpoint = {
   HIRE_US_HIRINGTYPE: `${baseUrl}/api/v1/hireUsHiringType/getAllHireUsHiringType`,
   HIRE_US_EXPERTDATA: `${baseUrl}/api/v1/hireUsExpertData/getAllHireUsExpertData`,
   WHY_US: `${baseUrl}/api/v1/whyUs/getAllWhyUs`,
-  JOB_TYPE: `${baseUrl}/api/v1/jobType`,
+  JOB_TYPE: `${baseUrl}/api/v1/job-opening`,
+  DEPARTMENT_JOB_OPENINGS: (departmentId: string) => `${baseUrl}/api/v1/departments/${departmentId}/job-openings`,
+  DEPARTMENTS: `${baseUrl}/api/v1/departments`
 };
