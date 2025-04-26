@@ -4,7 +4,7 @@
 
 @layer utilities {
   .container {
-    @apply max-w-[1536px] mx-auto bg-white !important;
+    @apply max-w-[1536px] mx-auto bg-white;
   }
   .text {
     @apply lg:text-[16px] md:text-[14px] text-[12.5px];
