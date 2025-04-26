@@ -1,25 +1,23 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
-import { departments } from "@/app/constants/departments";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { generateMetadataFromBE } from "@/app/lib/utils";
-import { Card, CardTitle } from "@/components/ui/card";
-import GetJobsList from "@/app/(app)/careers/http/getjobs";
+import { Card } from "@/components/ui/card";
 import data from "./data/static";
 import Link from "next/link";
-import { Departments } from "./components/department-item";
 import { ApiEndpoint } from "@/app/api";
 import { Department } from "@/app/types/departments";
+import { Departments } from "./components";
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("careers");
 }
 
 const Careers = async () => {
-  const departmentsResponse = await fetch(ApiEndpoint.DEPARTMENTS)
-  const response = await departmentsResponse.json()
-  const departmentsList = response.data as Department[]
+  const departmentsResponse = await fetch(ApiEndpoint.DEPARTMENTS);
+  const response = await departmentsResponse.json();
+  const departmentsList = response.data as Department[];
   return (
     <div className="px-4 md:px-6 lg:px-8">
       <PageHeader subHeading="Career" heading="Opportunity Corner" />
@@ -31,26 +29,8 @@ const Careers = async () => {
         <h4 className="page-sub-heading font-semibold mb-4 md:mb-6">
           Explore New Openings
         </h4>
-
-        {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <Card className="flex flex-col p-6 w-full h-auto">
-            <CardTitle className="space-y-5 font-semibold">
-              {departments?.map((department) => (
-                <div key={department?.id}>
-                  <p className="cursor-pointer text-gray-700 hover:text-blue-500 transition-colors duration-200">
-                    {department?.text}
-                  </p>
-                </div>
-              ))}
-            </CardTitle>
-          </Card>
-
-          <Card className="flex flex-col w-full h-auto p-4 lg:col-span-2">
-            <GetJobsList />
-          </Card>
-        </div> */}
       </div>
-        <Departments departments={departmentsList} />
+      <Departments departments={departmentsList} />
       <div className="flex justify-center mt-10 px-4">
         <Card className="h-auto w-full max-w-5xl flex flex-col lg:flex-row items-center lg:items-start justify-between bg-[#0B4D8E] p-6 text-center lg:text-left">
           <div className="flex flex-col mb-4 lg:mb-0">

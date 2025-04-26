@@ -25,15 +25,7 @@ const OpeningCardTag = ({
 };
 
 const JobOpeningCard = ({
-  jobOpening: {
-    jobTitle,
-    jobType,
-    _id,
-    description,
-    workMode,
-    location,
-    departmentId,
-  },
+  jobOpening: { jobTitle, jobType, _id, workMode, location },
 }: {
   jobOpening: jobProps;
 }) => {
@@ -64,14 +56,6 @@ const JobOpeningCard = ({
           </div>
 
           <div className="flex flex-col w-full">
-            {/* <div className="flex justify-between w-full">
-            <Tag
-              text={jobTitle}
-              textClass="font-semibold text-[12px]"
-              className="bg-[#F7F7F7]"
-            />
-          </div> */}
-            {/* <p className="text-sm mt-2 text-wrap">{description}</p> */}
             <div className="flex flex-row md:items-center justify-end sm:justify-between w-full mt-3">
               <div className="flex-wrap items-center gap-2 md:gap-3 hidden sm:flex">
                 <OpeningCardTag className="bg-white rounded-[7px] text-[#4F4F4F] h-[42px] hover:bg-transparent border flex items-center gap-2 px-[10px]">
