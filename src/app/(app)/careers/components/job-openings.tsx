@@ -1,6 +1,6 @@
 import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { JobOpeningCard } from "./job-opening-card";
-import { ApiEndpoint } from "@/app/api";
+import { API, ApiEndpoint } from "@/app/api";
 import { useEffect, useState } from "react";
 import { jobProps } from "@/app/types/job.type";
 
@@ -11,8 +11,8 @@ const JobOpenings = ({ departmentId }: { departmentId: string | null }) => {
     let ignore = false;
     (async () => {
       const url = departmentId
-        ? ApiEndpoint.DEPARTMENT_JOB_OPENINGS(departmentId)
-        : ApiEndpoint.JOB_TYPE;
+        ? API.DEPARTMENT_JOB_OPENINGS(departmentId)
+        : API.JOB_OPENING;
       const response = await fetch(url);
       const result = await response.json();
       if (!ignore) {

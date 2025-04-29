@@ -4,7 +4,6 @@ export const SEO_ENDPOINT = (slug: string) =>
 export const SUCCESS_STORIES_ENDPOINT = `${baseUrl}/api/v1/successStories/getAllSuccessStories`;
 
 export const ApiEndpoint = {
-  
   PROJECTS: `${baseUrl}/api/v1/projects/getAllProjects`,
   HOME_SLIDER: `${baseUrl}/api/v1/homeSlider/getAllHomeSliders`,
   STACKS: `${baseUrl}/api/v1/stacks/all`,
@@ -14,6 +13,13 @@ export const ApiEndpoint = {
   HIRE_US_EXPERTDATA: `${baseUrl}/api/v1/hireUsExpertData/getAllHireUsExpertData`,
   WHY_US: `${baseUrl}/api/v1/whyUs/getAllWhyUs`,
   JOB_TYPE: `${baseUrl}/api/v1/job-opening`,
-  DEPARTMENT_JOB_OPENINGS: (departmentId: string) => `${baseUrl}/api/v1/departments/${departmentId}/job-openings`,
-  DEPARTMENTS: `${baseUrl}/api/v1/departments`
+  DEPARTMENT_JOB_OPENINGS: (departmentId: string) =>
+    `${baseUrl}/api/v1/departments/${departmentId}/job-openings`,
+  DEPARTMENTS: `${baseUrl}/api/v1/departments`,
+};
+
+export const API = {
+  JOB_OPENING: `/api/v1/job-opening`,
+  DEPARTMENT_JOB_OPENINGS: (departmentId: string) =>
+    `/api/v1/departments/${departmentId}/job-openings`,
 };
