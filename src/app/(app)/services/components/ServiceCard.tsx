@@ -8,7 +8,7 @@ interface ServiceCardProps {
   description: string;
   image: string;
   styling?: string;
-  link?: string; 
+  link?: string;
 }
 
 const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
@@ -27,14 +27,14 @@ const ServiceCard = ({ title, description, image }: ServiceCardProps) => {
         </p>
         <p className="text mb-[20px] text-black">{description}</p>
       </div>
-     
-      <Link href="/hiring-staff/need-to-consult"> 
-      <Button
-        text="Hire Us"
-        textClass="text"
-        className="bg-primaryBlue border-[#0697D5] text-white p-[10px] rounded-[7px]"
-      /></Link>
-    
+
+      <Link href="/hiring-staff/need-to-consult">
+        <Button
+          text="Hire Us"
+          textClass="text"
+          className="bg-primaryBlue border-[#0697D5] text-white p-[10px] rounded-[7px]"
+        />
+      </Link>
     </div>
   );
 };

@@ -1,20 +1,16 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 import PopularServices from "./components/PopularServices";
-import TechSlider from "./components/TechSlider";
-
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 import { generateMetadataFromBE } from "@/app/lib/utils";
 import GetAllStacks from "./http/fetchstack";
- 
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("services");
 }
 
 const Services = () => {
-
   return (
     <div>
       <PageHeader subHeading="Services" heading="Our Services" />
@@ -40,13 +36,15 @@ const Services = () => {
           />
         </div>
         {/* <TechSlider /> */}
-        <GetAllStacks/>
+        <GetAllStacks />
         <div className="flex flex-col items-center pt-[40px] pb-[60px] px-[5%] bg-[#FBFCFF]">
           <p className="page-blue-heading xl:mb-[11px] mb-[5px]">Our Work</p>
           <h3 className="page-sub-heading font-bold xl:mb-[34px] mb-[19px]">
             Our Popular Services
           </h3>
-          <PopularServices />
+          <Suspense fallback={<div>Loading</div>}>
+            <PopularServices />
+          </Suspense>
         </div>
       </div>
     </div>

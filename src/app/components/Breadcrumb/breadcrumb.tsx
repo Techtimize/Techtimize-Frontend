@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
 import { BreadcrumbItem } from "./breadcrumb-item";
+import { ChevronsRight } from "lucide-react";
 
 const Breadcrumb = () => {
   const pathname = usePathname();
@@ -21,11 +21,11 @@ const Breadcrumb = () => {
   };
 
   return (
-    <div className="flex justify-center gap-x-1 mb-[5px] py-1">
+    <div className="flex justify-center items-center gap-x-1 mb-[5px] py-1">
       <BreadcrumbItem href="/">Home</BreadcrumbItem>
       {rest.map((path, i) => (
         <Fragment key={path}>
-          <span className="text-[16px] text-[#727272]">{">>"}</span>
+          <ChevronsRight className="text-[#727272]" height={20} width={20} />
           <BreadcrumbItem
             href={constructHref(path)}
             isActive={i === rest.length - 1}

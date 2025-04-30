@@ -20,6 +20,11 @@ const DepartmentFilter = ({
       onClick={onClick}
     >
       {children}
+      {isActive && (
+        <div className="flex w-full justify-center">
+          <div className="h-[3px] w-[20px] bg-[#0697D5] rounded-full"></div>
+        </div>
+      )}
     </span>
   );
 };

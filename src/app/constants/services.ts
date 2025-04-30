@@ -3,6 +3,7 @@ export const services = [
     _id: 0,
     serviceName: "Web App Development",
     iconUrl: "/assets/svgs/webDev.svg",
+    type: "App Development",
     width: 30,
     height: 30,
     styling:
@@ -12,6 +13,7 @@ export const services = [
     _id: 1,
     serviceName: "Mobile App Development",
     iconUrl: "/assets/svgs/mobDev.svg",
+    type: "App Development",
     width: 30,
     height: 30,
     styling:
@@ -21,6 +23,7 @@ export const services = [
     _id: 2,
     serviceName: "UI UX Designing",
     iconUrl: "/assets/svgs/ui.svg",
+    type: "UI UX",
     width: 30,
     height: 30,
     styling:
@@ -30,6 +33,7 @@ export const services = [
     _id: 3,
     serviceName: "AI Machine Learning",
     iconUrl: "/assets/svgs/ai.svg",
+    type: "Artificial Intelligence",
     width: 30,
     height: 30,
     styling:
@@ -39,6 +43,7 @@ export const services = [
     _id: 4,
     serviceName: "Staff Augmentation",
     iconUrl: "/assets/svgs/staff.svg",
+    type: "Staff Augmentation",
     width: 30,
     height: 30,
     styling:
@@ -48,6 +53,7 @@ export const services = [
     _id: 5,
     serviceName: "Cloud Services",
     iconUrl: "/assets/svgs/cloud.svg",
+    type: "Cloud Services",
     width: 30,
     height: 30,
     styling:
@@ -57,6 +63,7 @@ export const services = [
     _id: 6,
     serviceName: "Project Management",
     iconUrl: "/assets/svgs/projectManage.svg",
+    type: "Management",
     width: 30,
     height: 30,
     styling:

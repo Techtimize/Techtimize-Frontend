@@ -7,7 +7,7 @@ const TestimonialCard = ({ testimonialData }: { testimonialData?: Successstories
   const isLoading = !testimonialData;
 
   return (
-    <div className="w-[288px] h-[390px] md:w-[302px] md:h-[490px] lg:w-[467px] lg:h-[500px] rounded-[15px] shadow-lg p-4 flex flex-col justify-between">
+    <div className="w-[288px] md:w-[302px] lg:w-[467px] rounded-[15px] shadow-lg p-4 flex flex-col">
       {/* Quote Icon */}
       <div className="w-[64px] h-[64px] lg:w-[82px] lg:h-[82px] flex items-center justify-center bg-blue-1 rounded-br-[15px]">
         {isLoading ? (
@@ -18,12 +18,12 @@ const TestimonialCard = ({ testimonialData }: { testimonialData?: Successstories
       </div>
 
       {/* Review Text */}
-      <p className="w-[240px] lg:w-[365px] ml-[24px] lg:ml-[71px] mt-[18px] lg:mt-[25px] text text-darkGrey h-[100px] overflow-hidden text-ellipsis">
+      <p className="w-[240px] lg:w-[365px] ml-[24px] lg:ml-[71px] mt-[18px] lg:mt-[25px] text text-darkGrey h-[100px] text-ellipsis line-clamp-4">
         {isLoading ? <Skeleton className="h-5 w-full" /> : testimonialData.review}
       </p>
 
       {/* Client Info Section */}
-      <div className="ml-[24px] lg:ml-[71px] lg:mt-[49px] mt-[32px] flex flex-col">
+      <div className="ml-[24px] lg:ml-[71px] mt-8 flex flex-col mb-2">
         <div className="flex items-center gap-2">
           {/* Country Flag */}
           {isLoading ? (

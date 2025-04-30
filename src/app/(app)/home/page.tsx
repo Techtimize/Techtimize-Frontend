@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import { services } from "@/app/constants/services";
 import ProjectLogoSlider from "./components/ProjectLogoSlider";
-import { HiArrowLongRight } from "react-icons/hi2";
 import HeroSection from "./components/HeroSection";
 import Stats from "./components/Stats";
 import Link from "next/link";
@@ -28,9 +27,9 @@ export default async function Home() {
       </div>
 
       {/* Services Section */}
-      <div className="flex xl:flex-row md:flex-row sm:flex-row flex-col xl:gap-[135px] lg:gap-[135px] justify-between bg-[#FBFCFF]">
+      <div className="flex xl:flex-row md:flex-row sm:flex-row flex-col xl:gap-[135px] lg:gap-[135px] pb-[10px] justify-between bg-[#FBFCFF]">
         <div className="xl:ml-[63px] sm:pl-[25px] md:pl-[30px] lg:pl-[40px] sm:pr-0 px-[16px]">
-          <p className="text-blue-1 xl:mt-[90px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px]">
+          <p className="text-blue-1 xl:mt-[50px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px]">
             What do we do?
           </p>
           <h3 className="page-sub-heading font-bold xl:mb-[54px] mb-[19px]">
@@ -41,7 +40,7 @@ export default async function Home() {
             help businesses stay ahead in the ever-evolving digital landscape.
           </p>
           <Link href="/hiring-staff/need-to-consult">
-            <Button variant="outline" className="md:mb-[60.61px] bg-[#0B4D8E] h-12 text-white">
+            <Button variant="outline" className="bg-[#0B4D8E] h-12 text-white">
               Book a Quote
             </Button>
           </Link>
@@ -49,10 +48,10 @@ export default async function Home() {
 
         {/* Service Cards with Skeleton */}
         <div className="xl:mr-[70px] sm:pr-[20px] md:pr-[25px] lg:pr-[30px] md:mt-[84px] sm:mt-[84px] xl:mt-[98px] mt-[55px] overflow-hidden">
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 md:px-0 px-[16px] pb-[60.61px] gap-4">
+          <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 md:px-0 px-[16px] gap-4">
             {services.length > 0 ? (
               services.map((item) => (
-                <Link key={item._id} href={`/services`} className="w-full">
+                <Link key={item._id} href={`/services/?service=${item.type}`} className="w-full">
                   <CardContent className="hover:scale-105 transition-transform duration-200 w-full">
                     <div className="flex items-center space-x-4 rounded-md border p-4 w-full overflow-hidden">
                       <Image src={item.iconUrl} alt={item.serviceName} width={30} height={30} />
@@ -77,7 +76,7 @@ export default async function Home() {
 
       {/* Portfolio Section */}
       <div>
-        <p className="page-blue-heading xl:px-[100px] lg:px-[40px] md:px-[30px] xl:mt-[112px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px] sm:px-[25px] px-[20px]">
+        <p className="page-blue-heading xl:px-[100px] lg:px-[40px] md:px-[30px] xl:mt-[50px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px] sm:px-[25px] px-[20px]">
           Our Work
         </p>
         <h3 className="page-sub-heading xl:px-[100px] lg:px-[40px] md:px-[30px] font-bold xl:mb-[24px] mb-[19px] sm:px-[25px] px-[20px]">
@@ -92,7 +91,7 @@ export default async function Home() {
 
         <div className="flex items-center justify-center mt-[46px]">
           <Link href={"/projects"}>
-            <Button variant="outline" className="md:mb-[60.61px] bg-[#0B4D8E] h-12 text-white">
+            <Button variant="outline" className="bg-[#0B4D8E] h-12 text-white">
               View all Projects
             </Button>
           </Link>
@@ -100,14 +99,14 @@ export default async function Home() {
       </div>
 
       {/* Testimonials Section */}
-      <div className="md:pt-[60px] sm:mt-[150px]">
+      <div className="sm:mt-[60px]">
         <p className="page-blue-heading mt-[67px] md:mt-0 mb-[3px] sm:px-[25px] px-[23px] md:px-[30px] lg:px-[40px] xl:px-[100px]">
           Testimonials
         </p>
         <h5 className="page-sub-heading font-semibold mb-[42px] px-[23px] sm:px-[25px] md:px-[30px] lg:px-[40px] xl:px-[100px]">
           Client Success Stories
         </h5>
-        <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[100px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[144px]">
+        <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[100px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[100px]">
           <Suspense fallback={<Skeleton className="h-[200px] w-full rounded-md" />}>
             <CommentSlider />
           </Suspense>
