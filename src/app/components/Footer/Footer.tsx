@@ -121,15 +121,22 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex gap-[9px] items-center">
               <Link
+                href="https://maps.app.goo.gl/A6k1tpX2ha9vk9Lk6"
+                target="_blank"
+                className="flex gap-[9px] items-center"
+              >
+                <LocationPinIcon />
+                <p>30 N Gould St Ste N, Wyoming 82801</p>
+              </Link>
+            </li>
+            <li className="flex gap-[9px] items-center">
+              <Link
                 href="https://maps.app.goo.gl/Q6BCqsbJ5SRLcsTRA"
                 target="_blank"
                 className="flex gap-[9px] items-center"
               >
                 <LocationPinIcon />
-                <p>
-                  30 N Gould St Ste N, Wyoming 82801<br></br>5cc DHA Rahbar
-                  Phase 1, Lahore, 54000
-                </p>
+                <p>5cc DHA Rahbar Phase 1, Lahore, 54000</p>
               </Link>
             </li>
             <li>

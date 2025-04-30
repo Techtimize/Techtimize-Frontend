@@ -11,7 +11,7 @@ const PortfolioCard = ({ cardData }: { cardData?: projectsProps }) => {
 
   const handleNavigation = () => {
     if (cardData) {
-      router.push(`/projects/${cardData._id}`);
+      router.push(`/projects/${cardData.slug}`);
     }
   };
 
@@ -34,7 +34,7 @@ const PortfolioCard = ({ cardData }: { cardData?: projectsProps }) => {
   return (
     <div
       onClick={handleNavigation} 
-      className="lg:w-[400px] lg:h-[430px] md:w-[308px] md:h-[380px] w-[288px] h-[370px] rounded-[10px] shadow-lg cursor-pointer"
+      className="flex flex-col lg:w-[400px] lg:h-[430px] md:w-[308px] md:h-[380px] w-[288px] h-[370px] rounded-[10px] shadow-lg cursor-pointer"
     >
       <div>
         <Image
@@ -46,14 +46,14 @@ const PortfolioCard = ({ cardData }: { cardData?: projectsProps }) => {
           className="rounded-t-[10px] lg:w-[460px] lg:h-[230px] md:w-[308px] md:h-[216px] w-[294px] h-[205px] object-cover"
         />
       </div>
-      <div className="lg:px-[27px] md:px-[26px] px-[20px]">
+      <div className="flex flex-col flex-1 lg:px-[27px] md:px-[26px] px-[20px]">
         <h5 className="lg:text-[20px] md:text-[20px] text-[19px] font-semibold mt-[20px] lg:mb-[10px] mb-[5px] text-black">
           {cardData.name}
         </h5>
-        <p className="text text-darkGrey">
+        <p className="text text-darkGrey flex-1">
           {cardData.description}
         </p>
-        <div className="flex justify-end lg:mt-[25px] mt-[10px]">
+        <div className="flex flex-1 justify-end items-center">
           <button
             onClick={handleNavigation} 
             className="lg:text-[14px] md:text-[12px] text-[10px] font-semibold text-[#0697D5]"

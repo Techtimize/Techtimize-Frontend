@@ -19,17 +19,14 @@ export default function PortfolioSlider({projectData}:{projectData:projectsProps
         stopOnInteraction: false,
       })
     ]
-  );
-
-  
-  
+  ); 
 
   return (
     <div className="overflow-hidden">
       <div className="embla" ref={emblaRef}>
-        <div className="flex py-2 px-1 gap-[20px]">
+        <div className="flex py-2 px-1">
           {projectData?.map((slide) => (
-            <div key={slide._id} className="embla__slide flex-none flex-grow-0 flex-shrink-0 w-auto">
+            <div key={slide._id} className="embla__slide flex-none flex-grow-0 flex-shrink-0 w-auto mx-4">
               <PortfolioCard cardData={slide} />
             </div>
           ))}
