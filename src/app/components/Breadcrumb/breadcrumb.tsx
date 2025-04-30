@@ -26,7 +26,6 @@ const Breadcrumb = () => {
       {rest.map((path, i) => (
         <Fragment key={path}>
           <ChevronsRight className="text-[#727272]" height={20} width={20} />
-          {/* <span className="text-[16px] text-[#727272]">{">>"}</span> */}
           <BreadcrumbItem
             href={constructHref(path)}
             isActive={i === rest.length - 1}

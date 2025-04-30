@@ -51,7 +51,7 @@ export default async function Home() {
           <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 md:px-0 px-[16px] gap-4">
             {services.length > 0 ? (
               services.map((item) => (
-                <Link key={item._id} href={`/services`} className="w-full">
+                <Link key={item._id} href={`/services/?service=${item.type}`} className="w-full">
                   <CardContent className="hover:scale-105 transition-transform duration-200 w-full">
                     <div className="flex items-center space-x-4 rounded-md border p-4 w-full overflow-hidden">
                       <Image src={item.iconUrl} alt={item.serviceName} width={30} height={30} />

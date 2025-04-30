@@ -7,6 +7,10 @@ import Link from "next/link";
 import { EmailIcon } from "@/icons/email";
 import { PhoneIcon } from "@/icons/phone";
 import { LocationPinIcon } from "@/icons";
+import {
+  LAHORE_LOCATION_MAP_HREF,
+  WYOMING_LOCATION_MAP_HREF,
+} from "@/app/constants/nav-links";
 
 const Footer: React.FC = () => {
   return (
@@ -135,7 +139,7 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex gap-[9px] items-center">
               <Link
-                href="https://maps.app.goo.gl/A6k1tpX2ha9vk9Lk6"
+                href={WYOMING_LOCATION_MAP_HREF}
                 target="_blank"
                 className="flex gap-[9px] items-center"
               >
@@ -145,7 +149,7 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex gap-[9px] items-center">
               <Link
-                href="https://maps.app.goo.gl/Q6BCqsbJ5SRLcsTRA"
+                href={LAHORE_LOCATION_MAP_HREF}
                 target="_blank"
                 className="flex gap-[9px] items-center"
               >
