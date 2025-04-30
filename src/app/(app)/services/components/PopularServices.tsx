@@ -3,6 +3,7 @@ import { serviceCardInfo, serviceOptions } from "@/app/constants/services";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import ServiceCard from "./ServiceCard";
+import { useSearchParams } from "next/navigation";
 
 interface Service {
   id: string;
@@ -19,14 +20,17 @@ const serviceCardVariants = {
 const PopularServices = () => {
   const [selectedService, setSelectedService] = useState<any>(null);
   const [animationKey, setAnimationKey] = useState<number>(0);
-
+  const query = useSearchParams();
+  const tabValue = query.get("service");
+  console.log('render')
   useEffect(() => {
+    const initialSelectedService = tabValue || "App Development";
     const defaultService = serviceCardInfo.find(
-      (service) => service.serviceName === "App Development"
+      (service) => service.serviceName === initialSelectedService
     );
     setSelectedService(defaultService);
     setAnimationKey((prev) => prev + 1);
-  }, []);
+  }, [tabValue]);
 
   const handleServiceSelect = (serviceText: string) => {
     const selectedServiceInfo = serviceCardInfo.find(
@@ -61,18 +65,18 @@ const PopularServices = () => {
         ))}
       </ul>
       <div className="w-full flex justify-center my-[30px]">
-        <div className="h-[3px] rounded-full sm:w-[80%] w-[95%] bg-white drop-shadow-lg" />
+        <div className="h-[3px] flex-1 rounded-full sm:w-[80%] w-[100%] bg-white drop-shadow-lg" />
       </div>
       <p className="text mb-[30px] text-black">
-        We're your dedicated partner in web and mobile app development,
+        We&apos;re your dedicated partner in web and mobile app development,
         specializing in creating bespoke solutions that bring your unique vision
         to life. With a focus on user-centric design, scalability, and robust
-        functionality, we're here to empower your online presence and drive your
-        success.
+        functionality, we&apos;re here to empower your online presence and drive
+        your success.
       </p>
       <h5 className="mb-[20px] text-[22px] text-black">What we Offer</h5>
       <motion.div
-        key={animationKey} 
+        key={animationKey}
         initial="hidden"
         animate="visible"
         variants={serviceCardVariants}

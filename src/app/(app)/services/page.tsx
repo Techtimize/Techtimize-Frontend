@@ -2,8 +2,6 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Image from "next/image";
 import React from "react";
 import PopularServices from "./components/PopularServices";
-import TechSlider from "./components/TechSlider";
-
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
 import GetAllStacks from "./http/fetchstack";

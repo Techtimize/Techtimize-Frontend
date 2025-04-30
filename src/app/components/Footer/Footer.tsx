@@ -93,17 +93,31 @@ const Footer: React.FC = () => {
           <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[87px] lg:mt-[160px] md:mt-[110px] sm:mt-[130px] mb-[26px]">
             Services
           </h3>
-          <Link href="/services">
-            <ul className="text-[14px] lg:text-[15px] gap-[10px] flex flex-col md:mb-[51px]">
+          {/* <Link href="/services"> */}
+          <ul className="text-[14px] lg:text-[15px] gap-[10px] flex flex-col md:mb-[51px]">
+            <Link href="/services?service=Artificial Intelligence">
               <li>Artificial Intelligence</li>
+            </Link>
+            <Link href="/services?service=App Development">
               <li>Mobile App Development</li>
+            </Link>
+            <Link href="/services?service=App Development">
               <li>Web App Development</li>
+            </Link>
+            <Link href="/services?service=Cloud Services">
               <li>Cloud Services</li>
+            </Link>
+            <Link href="/services?service=UI UX">
               <li>UI UX Design</li>
+            </Link>
+            <Link href="/services?service=Management">
               <li>Project Management</li>
+            </Link>
+            <Link href="/services?service=Staff Augmentation">
               <li>Staff Augmentation</li>
-            </ul>
-          </Link>
+            </Link>
+          </ul>
+          {/* </Link> */}
         </div>
         <div className="pl-[19px] lg:pl-0 md:pl-0 sm:pl-0 lg:pr-5 xl:w-[340px] lg:w-[173px] sm:w-[173px] text-black">
           <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[87px] lg:mt-[160px] sm:mt-[130px] md:mt-[110px] mb-[26px] lg:w-[156px]">
