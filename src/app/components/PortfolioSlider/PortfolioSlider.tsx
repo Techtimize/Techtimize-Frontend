@@ -17,6 +17,7 @@ export default function PortfolioSlider({projectData}:{projectData:projectsProps
         speed: 2,
         playOnInit: true,
         stopOnInteraction: false,
+        stopOnMouseEnter: true,
       })
     ]
   ); 
