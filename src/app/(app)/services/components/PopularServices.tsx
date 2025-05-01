@@ -22,7 +22,7 @@ const PopularServices = () => {
   const [animationKey, setAnimationKey] = useState<number>(0);
   const query = useSearchParams();
   const tabValue = query.get("service");
-  console.log('render')
+
   useEffect(() => {
     const initialSelectedService = tabValue || "App Development";
     const defaultService = serviceCardInfo.find(

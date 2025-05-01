@@ -4,19 +4,28 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
 
+const sliderClasses =
+  "embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-auto md:w-[30%] sm:w-[25%] w-[60%]";
+
 const ProjectLogoSlider = () => {
   const [emblaRef, embla] = useEmblaCarousel(
     {
       loop: true,
+      align: "start",
     },
-    [AutoScroll()]
+    [
+      AutoScroll({
+        playOnInit: true,
+        stopOnMouseEnter: true,
+      }),
+    ]
   );
 
   useEffect(() => {
     if (embla) {
       const intervalId = setInterval(() => {
         embla.scrollNext();
-      }, 3000); 
+      }, 3000);
 
       return () => clearInterval(intervalId);
     }
@@ -25,8 +34,8 @@ const ProjectLogoSlider = () => {
   return (
     <div className="overflow-hidden">
       <div className="embla" ref={emblaRef}>
-        <div className="flex py-2 px-[20px]">
-          <div className="embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-[20%] md:w-[30%] sm:w-[25%] w-[60%]">
+        <div className="flex py-2 px-[20px] gap-x-[100px]">
+          <div className={sliderClasses}>
             <div className="flex items-center justify-center lg:w-full lg:h-[104px] md:w-[189px] md:h-[66px] w-[156px] h-[49px]">
               <Image
                 src={"/assets/images/salesMind.png"}
@@ -40,7 +49,7 @@ const ProjectLogoSlider = () => {
               </p>
             </div>
           </div>
-          <div className="embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-[20%] md:w-[30%] sm:w-[25%] w-[60%]">
+          <div className={sliderClasses}>
             <div className="flex items-center justify-center lg:w-full lg:h-[104px] md:w-[189px] md:h-[66px] w-[156px] h-[49px]">
               <Image
                 src={"/assets/images/sunndio.png"}
@@ -51,7 +60,7 @@ const ProjectLogoSlider = () => {
               />
             </div>
           </div>
-          <div className="embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-[20%] md:w-[30%] sm:w-[25%] w-[60%]">
+          <div className={sliderClasses}>
             <div className="flex items-center justify-center lg:w-full lg:h-[104px] md:w-[189px] md:h-[66px] w-[156px] h-[49px]">
               <Image
                 src={"/assets/images/check.png"}
@@ -62,8 +71,8 @@ const ProjectLogoSlider = () => {
               />
             </div>
           </div>
-          <div className="embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-[20%] md:w-[30%] sm:w-[25%] w-[60%]">
-            <div className="flex items-center justify-center xl:gap-[21px] lg:gap-[21px] gap-[10px]  lg:h-[104px] md:h-[66px] h-[49px] w-full">
+          <div className={sliderClasses}>
+            <div className="flex items-center justify-center xl:gap-[21px] lg:gap-[21px] gap-[10px] lg:h-[104px] md:h-[66px] h-[49px] w-[156px]">
               <Image
                 src={"/assets/images/bitcoin.png"}
                 alt={"bitcoin"}
@@ -76,19 +85,19 @@ const ProjectLogoSlider = () => {
               </p>
             </div>
           </div>
-          <div className="embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-[20%] md:w-[30%] sm:w-[25%] w-[60%]">
-            <div className="flex items-center justify-center lg:h-[104px] md:h-[66px] w-full h-[49px]">
+          <div className={sliderClasses}>
+            <div className="flex items-center justify-center lg:h-[104px] md:h-[66px] w-[156px] h-[49px]">
               <Image
                 src={"/assets/images/senSights.png"}
                 alt={"sen sights"}
                 width={239}
                 height={59}
-                style={{ height: "auto" }} 
+                style={{ height: "auto" }}
               />
             </div>
           </div>
-          <div className="embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-[20%] md:w-[30%] sm:w-[25%] w-[60%]">
-            <div className="flex items-center justify-center lg:h-[104px] md:h-[66px] w-full h-[49px]">
+          <div className={sliderClasses}>
+            <div className="flex items-center justify-center lg:h-[104px] md:h-[66px] w-[156px] h-[49px]">
               <Image
                 src={"/assets/images/fresha.png"}
                 alt={"fresha"}

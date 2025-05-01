@@ -30,7 +30,7 @@ export default async function Home() {
       <div className="flex xl:flex-row md:flex-row sm:flex-row flex-col xl:gap-[135px] lg:gap-[135px] pb-[10px] justify-between bg-[#FBFCFF]">
         <div className="xl:ml-[63px] sm:pl-[25px] md:pl-[30px] lg:pl-[40px] sm:pr-0 px-[16px]">
           <p className="text-blue-1 xl:mt-[50px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px]">
-            What do we do?
+            What We Do
           </p>
           <h3 className="page-sub-heading font-bold xl:mb-[54px] mb-[19px]">
             Our Services
@@ -76,7 +76,7 @@ export default async function Home() {
 
       {/* Portfolio Section */}
       <div>
-        <p className="page-blue-heading xl:px-[100px] lg:px-[40px] md:px-[30px] xl:mt-[50px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px] sm:px-[25px] px-[20px]">
+        <p className="page-blue-heading !text-blue-1 xl:px-[100px] lg:px-[40px] md:px-[30px] xl:mt-[50px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px] sm:px-[25px] px-[20px]">
           Our Work
         </p>
         <h3 className="page-sub-heading xl:px-[100px] lg:px-[40px] md:px-[30px] font-bold xl:mb-[24px] mb-[19px] sm:px-[25px] px-[20px]">
@@ -90,7 +90,7 @@ export default async function Home() {
         </div>
 
         <div className="flex items-center justify-center mt-[46px]">
-          <Link href={"/projects"}>
+          <Link href={"/hiring-staff/need-to-consult"}>
             <Button variant="outline" className="bg-[#0B4D8E] h-12 text-white">
               View all Projects
             </Button>
@@ -100,7 +100,7 @@ export default async function Home() {
 
       {/* Testimonials Section */}
       <div className="sm:mt-[60px]">
-        <p className="page-blue-heading mt-[67px] md:mt-0 mb-[3px] sm:px-[25px] px-[23px] md:px-[30px] lg:px-[40px] xl:px-[100px]">
+        <p className="page-blue-heading !text-blue-1 mt-[67px] md:mt-0 mb-[3px] sm:px-[25px] px-[23px] md:px-[30px] lg:px-[40px] xl:px-[100px]">
           Testimonials
         </p>
         <h5 className="page-sub-heading font-semibold mb-[42px] px-[23px] sm:px-[25px] md:px-[30px] lg:px-[40px] xl:px-[100px]">

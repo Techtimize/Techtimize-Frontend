@@ -19,6 +19,7 @@ export default function TestimonialSlider({
         speed: 2,
         playOnInit: true,
         stopOnInteraction: false,
+        stopOnMouseEnter: true,
       }),
     ]
   );
