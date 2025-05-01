@@ -115,15 +115,19 @@ const Navbar = () => {
             </li>
           ))}
           <li>
+            <Link
+              href="https://chat.techtimize.org/"
+              target="_blank"
+              className="hover:underline hover:underline-offset-4 hover:text-[#00008B] hover:font-bolder"
+            >
+              AI Assistant
+            </Link>
+          </li>
+          <li>
             <Link href="/contact-us" className="block">
               <Button className="bg-[#0B4D8E] text-white hover:bg-[#0B4D8E] ">
                 Get In Touch
               </Button>
-            </Link>
-          </li>
-          <li>
-            <Link href="https://chat.techtimize.org/" target="_blank">
-              Go to chat
             </Link>
           </li>
         </ul>
