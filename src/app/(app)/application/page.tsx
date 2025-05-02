@@ -37,28 +37,29 @@ const ApplicationForm = () => {
 
     const onSubmit = async (data: z.infer<typeof formSchema>) => {
         console.log(data)
-        // setLoading(true);
-        // try {
-        //     const response = await fetch("/contact-us/api/sendemail", {
-        //         method: "POST",
-        //         headers: { "Content-Type": "application/json" },
-        //         body: JSON.stringify(data),
-        //     });
+        setLoading(true);
+        try {
+            const response = await fetch("/application/api/sendemail", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
 
-        //     if (response.ok) {
+            if (response.ok) {
 
-        //         form.reset();
-        //     } else {
+                form.reset();
+            } else {
 
-        //         form.setError("root", { message: "Failed to send email. Try again later." });
-        //     }
-        // } catch (error) {
+                form.setError("root", { message: "Failed to send email. Try again later." });
+            }
+        } catch (error) {
 
-        //     form.setError("root", { message: "Something went wrong. Please try again." });
-        // } finally {
-        //     setLoading(false);
-        // }
+            form.setError("root", { message: "Something went wrong. Please try again." });
+        } finally {
+            setLoading(false);
+        }
     };
+
     return (
         <div className="relative flex flex-col items-center p-6">
       
