@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import MyCustomFont from "../../public/assets/fonts/fonts";
-import NavbarComponent from "@/app/components/Navbar/Navbar";  
+import NavbarComponent from "@/app/components/Navbar/Navbar";
 import FooterComponent from "@/app/components/Footer/Footer";
 
 export const metadata: Metadata = {
@@ -17,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${MyCustomFont.variable} bg-white`}>
-        <NavbarComponent />  
-        <main className="pt-[120px]">{children}</main> 
+        <NavbarComponent />
+        <main className="xl:pt-[116px] md:pt-[96px] pt-[95px]">
+          {children}
+        </main>
         <FooterComponent />
       </body>
     </html>
