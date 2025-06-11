@@ -1,0 +1,81 @@
+.AccordionRoot {
+    width: 100%;
+}
+
+.AccordionItem {
+    border-radius: 12px;
+    background: white;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.AccordionItem[data-state="open"] {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.AccordionHeader {
+    display: flex;
+    align-items: center;
+}
+
+.AccordionTrigger {
+    all: unset;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #111827;
+    cursor: pointer;
+}
+
+.AccordionTrigger:hover {
+    background-color: #f9fafb;
+}
+
+.AccordionChevron {
+    width: 20px;
+    height: 20px;
+    color: #6b7280;
+    transition: transform 0.3s ease;
+}
+
+.AccordionTrigger[data-state="open"] .AccordionChevron {
+    transform: rotate(45deg);
+    /* mimic an “X” */
+}
+
+.AccordionTrigger[data-state="closed"] .AccordionChevron {
+    transform: rotate(0deg);
+    /* mimic a “+” */
+}
+
+.AccordionContent {
+    background-color: #f3f4f6;
+    color: #4b5563;
+    font-size: 15px;
+    line-height: 1.6;
+    animation-duration: 300ms;
+}
+
+.AccordionContentText {
+    padding: 20px;
+}
+
+.AccordionIcon::before {
+    content: "+";
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.AccordionTrigger[data-state="open"] .AccordionIcon::before {
+    content: "×";
+    /* cross icon */
+}

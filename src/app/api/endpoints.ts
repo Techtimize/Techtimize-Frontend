@@ -5,6 +5,7 @@ export const SUCCESS_STORIES_ENDPOINT = `${baseUrl}/api/v1/successStories/getAll
 
 export const ApiEndpoint = {
   PROJECTS: `${baseUrl}/api/v1/projects/getAllProjects`,
+  FAQS: `${baseUrl}/api/v1/faq`,
   HOME_SLIDER: `${baseUrl}/api/v1/homeSlider/getAllHomeSliders`,
   STACKS: `${baseUrl}/api/v1/stacks/all`,
   SERVICES: `${baseUrl}/api/v1/service/getAllServices`,
