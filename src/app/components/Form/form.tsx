@@ -59,8 +59,8 @@ const FormComponent = () => {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} ref={ref}>
-                <div className="flex flex-col sm:flex-row gap-[40px]">
-                    <div className="sm:basis-[85%] flex flex-col justify-between gap-[30px]">
+                <div className="flex flex-col sm:flex-row gap-[40px] w-full">
+                    <div className="w-full flex flex-col justify-between gap-[30px]">
                         <div className="flex flex-col lg:flex-row items-center xl:gap-[50px] gap-[20px] w-full">
                             <FormField
                                 control={form.control}

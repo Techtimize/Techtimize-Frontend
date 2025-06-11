@@ -8,14 +8,17 @@ import { EmailIcon } from "@/icons/email";
 import { PhoneIcon } from "@/icons/phone";
 import { LocationPinIcon } from "@/icons";
 import {
+  footerQuickLinks,
+  footerServices,
   LAHORE_LOCATION_MAP_HREF,
+  otherFooterLinks,
   WYOMING_LOCATION_MAP_HREF,
 } from "@/app/constants/nav-links";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#F8F8F8] !mx-0 sm:pb-[4%] md:pb-0 flex justify-center">
-      <div className="container !bg-[#F8F8F8] flex lg:flex-row md:flex-row sm:flex-row flex-col xl:gap-[93px] lg:gap-[40px] md:gap-[35px] xl:h-[603px] justify-between">
+    <footer className="bg-[#F8F8F8] !mx-0 sm:pb-[4%] md:pb-0 flex flex-col items-center">
+      <div className="container !bg-[#F8F8F8] flex lg:flex-row md:flex-row sm:flex-row flex-col xl:gap-[93px] lg:gap-[40px] md:gap-[35px] xl:h-[563px] justify-between">
         <div className="pl-[19px] xl:pl-[64px] md:pl-[46px] sm:pl-[46px] md:w-[312px] sm:w-[250px]">
           <Image
             src="/assets/svgs/companyLogo.svg"
@@ -73,24 +76,13 @@ const Footer: React.FC = () => {
             Quick Links
           </h3>
           <ul className="text-[14px] lg:text-[15px] gap-[10px] flex flex-col">
-            <li>
-              <Link href={"/"}>Home</Link>
-            </li>
-            <li>
-              <Link href={"/hiring-staff"}>Hiring Staff</Link>
-            </li>
-            <li>
-              <Link href={"/services"}>Services</Link>
-            </li>
-            <li>
-              <Link href={"/about"}>About</Link>
-            </li>
-            <li>
-              <Link href={"/projects"}>Projects</Link>
-            </li>
-            <li>
-              <Link href={"/contact-us"}>Contact</Link>
-            </li>
+            {footerQuickLinks.map((item, index: number) => {
+              return (
+                <li key={index}>
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
         <div className="pl-[19px] md:pl-0 sm:pl-0 lg:pl-0 md:w-[190px] sm:w-[134px] text-black">
@@ -99,27 +91,13 @@ const Footer: React.FC = () => {
           </h3>
           {/* <Link href="/services"> */}
           <ul className="text-[14px] lg:text-[15px] gap-[10px] flex flex-col md:mb-[51px]">
-            <Link href="/services?service=Artificial Intelligence">
-              <li>Artificial Intelligence</li>
-            </Link>
-            <Link href="/services?service=App Development">
-              <li>Mobile App Development</li>
-            </Link>
-            <Link href="/services?service=App Development">
-              <li>Web App Development</li>
-            </Link>
-            <Link href="/services?service=Cloud Services">
-              <li>Cloud Services</li>
-            </Link>
-            <Link href="/services?service=UI UX">
-              <li>UI UX Design</li>
-            </Link>
-            <Link href="/services?service=Management">
-              <li>Project Management</li>
-            </Link>
-            <Link href="/services?service=Staff Augmentation">
-              <li>Staff Augmentation</li>
-            </Link>
+            {footerServices.map((item, index: number) => {
+              return (
+                <li key={index}>
+                  <Link href={item.link}>{item.name}</Link>
+                </li>
+              );
+            })}
           </ul>
           {/* </Link> */}
         </div>
@@ -168,6 +146,26 @@ const Footer: React.FC = () => {
               </Link>
             </li>
           </ul>
+        </div>
+      </div>
+      <div className="bg-[#4F4F4F]/10 w-full flex justify-center min-h-[40px]">
+        <div className="max-w-[1536px] w-full flex flex-col-reverse md:flex-row items-center justify-between gap-[15px] xl:px-[170px] md:px-[30px] px-[15px] py-[10px]">
+          <p className="text-black text-[14px]">
+            © 2025 Techtimize. All rights reserved.
+          </p>
+          <div className="flex items-center gap-[51px]">
+            {otherFooterLinks.map((item, index: number) => {
+              return (
+                <Link
+                  key={index}
+                  href={item.link}
+                  className="text-[14px] text-black"
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </div>
     </footer>
