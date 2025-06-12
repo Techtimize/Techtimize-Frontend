@@ -1,15 +1,14 @@
 import Image from "next/image";
-import React, { ReactNode } from "react";
+import React from "react";
 import { Breadcrumb } from "../Breadcrumb";
 
 interface PageHeaderProps {
   heading: string;
-  subHeading: ReactNode;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ heading, subHeading }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({ heading }) => {
   return (
-    <div className="h-[292px] bg-[#FBFCFF] flex items-center justify-center relative">
+    <div className="h-[292px] bg-[#FBFCFF] flex items-center justify-center relative w-full">
       <div className="flex justify-end w-full h-full">
         <Image
           src={"/assets/svgs/waves.svg"}
