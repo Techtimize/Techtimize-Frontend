@@ -1,0 +1,24 @@
+.quick-links .services{
+    position: relative;
+}
+
+.quick-links::before, .services::before{
+    position: absolute;
+    left: 12%;
+    height: 57%;
+    width: 5%;
+    background-color: #95CAFF80;
+    content: "";
+    z-index: -1;
+}
+
+.services::before{
+    background-color: #8ADCFF80;
+}
+
+@media screen and (max-width: 767px) {
+    .quick-links::before, .services::before{
+    display: none;
+    }
+}
+
