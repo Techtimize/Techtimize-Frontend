@@ -1,6 +1,7 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import React from "react";
 import Link from 'next/link';
+import { sitelinks, serviceslinks } from "@/app/constants/sitemap";
 import "./sitemap.css"
 
 const SiteMap = () => {
@@ -22,12 +23,16 @@ const SiteMap = () => {
           Quick Links
         </h2>
         <div className="md:pl-[120px] text-[#0B4D8E]">
-        <Link href="home" className="block pb-[18px]">Home</Link>
-        <Link href="About" className="block pb-[18px]">About</Link>
-        <Link href="hiring-staff" className="block pb-[18px]">Hiring Staff</Link>
-        <Link href="services" className="block pb-[18px]">Services</Link>
-        <Link href="contact-us" className="block pb-[18px]">Contact</Link>
-        <Link href="projects" className="block pb-[18px]">Projects</Link>
+        {sitelinks.map(({ label, path }) => (
+          <Link 
+            key={label} 
+            href={path} 
+            className="block pb-[18px] hover:text-blue-500"
+          >
+            {label}
+          </Link>
+        ))}
+
         </div>
           </div>
 
@@ -36,13 +41,15 @@ const SiteMap = () => {
           Services
         </h2>
         <div className="md:pl-[120px] text-[#0B4D8E]">
-        <Link href="/services?service=Artificial Intelligence" className="block pb-[18px]"> Artificial Intelligence</Link>
-        <Link href="/services?service=App Development" className="block pb-[18px]">Mobile App Development</Link>
-        <Link href="/services?service=App Development" className="block pb-[18px]">Web App Development</Link>
-        <Link href="/services?service=Cloud Services" className="block pb-[18px]">Cloud Services</Link>
-        <Link href="/services?service=UI UX" className="block pb-[18px]">UI UX Design</Link>
-        <Link href="/services?service=Management" className="block pb-[18px]">Project Management</Link>
-        <Link href="/services?service=Staff Augmentation" className="block pb-[18px]">Staff Augmentation</Link>
+          {serviceslinks.map(({ label, href }) => (
+          <Link 
+            key={href} 
+            href={href} 
+            className="block pb-[18px] hover:text-blue-500"
+          >
+            {label}
+          </Link>
+        ))}
         </div>
           </div>
     </div>
