@@ -53,9 +53,9 @@ export default async function BlogDetails({ params }: BlogDetailsProps) {
           <div className="follow-us bg-[#0697D5] p-[20px] text-[#fff] rounded-[12px] ">
             <div>  <p className="text-[20px] font-[600]">Follow Us</p> </div>
             <div className="social-icons flex mt-[20px] mb-[10px]">
-              <div className="social-icons-child p-[10px] bg-[#fff] text-[#0697D5] rounded-[30px] mr-[10px]"><Link rel="stylesheet" href=""><FaLinkedinIn className="w-[30px] h-[30px]" /></Link></div>
-              <div className="social-icons-child p-[10px] bg-[#fff] text-[#0697D5] rounded-[30px] mr-[10px]"><Link rel="stylesheet" href=""><FaInstagram className="w-[30px] h-[30px]" /></Link></div>
-              <div className="social-icons-child p-[10px] bg-[#fff] text-[#0697D5] rounded-[30px] mr-[10px]"><Link rel="stylesheet" href=""><FaTwitter className="w-[30px] h-[30px]" /></Link></div>
+              <div className="social-icons-child p-[10px] bg-[#fff] text-[#0697D5] rounded-[30px] mr-[10px]"><Link  href="https://www.linkedin.com/company/techtimize/"><FaLinkedinIn className="w-[30px] h-[30px]" /></Link></div>
+              <div className="social-icons-child p-[10px] bg-[#fff] text-[#0697D5] rounded-[30px] mr-[10px]"><Link  href="https://www.instagram.com/techtimize.pk/"><FaInstagram className="w-[30px] h-[30px]" /></Link></div>
+              <div className="social-icons-child p-[10px] bg-[#fff] text-[#0697D5] rounded-[30px] mr-[10px]"><Link  href="https://www.facebook.com/Techtimize"><FaTwitter className="w-[30px] h-[30px]" /></Link></div>
             </div>
           </div>
           <div className="rounded-[8px] border-[1px] mt-[30px]">
