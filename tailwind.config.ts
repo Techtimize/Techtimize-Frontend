@@ -1,4 +1,6 @@
 import type { Config } from "tailwindcss";
+import lineClamp from "@tailwindcss/line-clamp";
+
 
 const config: Config = {
   darkMode: ["class"],
@@ -20,6 +22,10 @@ const config: Config = {
       backgroundSize: {
         "200%": "200% 200%",
       },
+       screens: {
+  x1100: "1100px",
+  x1300: "1300px",
+},
       colors: {
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -86,5 +92,6 @@ const config: Config = {
       },
     },
   },
+  plugins: [lineClamp]
 };
 export default config;
