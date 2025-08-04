@@ -17,6 +17,9 @@ export const ApiEndpoint = {
   DEPARTMENT_JOB_OPENINGS: (departmentId: string) =>
     `${baseUrl}/api/v1/departments/${departmentId}/job-openings`,
   DEPARTMENTS: `${baseUrl}/api/v1/departments`,
+  BLOGS: `${baseUrl}/api/v1/blog`,
+  BLOGS_CATEGORIES: `${baseUrl}/api/v1/blog-type`,
+  BLOG_BYID : (id : string) => `${baseUrl}/api/v1/blog/${id}`,
 };
 
 export const API = {
