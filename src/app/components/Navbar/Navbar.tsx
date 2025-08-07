@@ -1,13 +1,33 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { links } from "@/app/constants/nav-links";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
+import "./navbar.css"
+import Btn_redesign from "@/components/ui/btn_redesign";
+
 const Navbar = () => {
+   const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.pageYOffset > 0) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+  
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const pathname = usePathname();
 
@@ -25,9 +45,12 @@ const Navbar = () => {
     document.body.style.overflow = "auto";
   };
 
+  
+
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
-      <nav className="container mx-auto flex items-center justify-between px-5 lg:px-[69px] py-4">
+    <header className="fixed top-0 left-0 w-full bg-white z-50 border-black">
+<nav className={`${isSticky ? 'stickynavbar' : ''} transition-all container mx-auto flex items-center justify-between px-5 lg:max-w-[90%] rounded-[8px] sm:mt-[25px] border-[#ECECEC] border-[1px]`}>        
+<div>
         <Link href="/">
           <Image
             priority
@@ -38,7 +61,7 @@ const Navbar = () => {
             alt="techtimize-logo"
           />
         </Link>
-
+</div>
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">
           <ul className="flex items-center gap-6 text-[16px]">
@@ -48,31 +71,22 @@ const Navbar = () => {
                   href={item?.path}
                   className={`cursor-pointer ${
                     item?.path === pathname
-                      ? "text-blue-600 font-bold"
+                      ? "text-[#0697D5] font-bold"
                       : "text-gray-700"
                   }`}
                 >
                   {item?.link}
                 </Link>
-                {item?.path === pathname && (
-                  <div className="absolute left-1/2 transform -translate-x-1/2 bottom-[-5px] w-[25px] h-[3px] bg-blue-600 rounded-full"></div>
-                )}
+              
               </li>
             ))}
-            <Link
-              href="https://chat.techtimize.org/"
-              target="_blank"
-              className="hover:underline hover:underline-offset-4 text-[#0B4D8E] hover:text-[#00008B] hover:font-bolder"
-            >
-              <span className="font-bolder">AI Assistant</span>
-            </Link>
+       
           </ul>
+          </div>
+            <div className="hidden lg:block">
+          
 
-          <Link href="/contact-us">
-            <Button className=" bg-[#0B4D8E] hover:bg-[#0B4D8E] text-white">
-              Get in Touch
-            </Button>
-          </Link>
+        < Btn_redesign content="Get In Touch " url = "/contact-us"/>
         </div>
 
         {/* Mobile Menu Button */}
@@ -124,11 +138,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/contact-us" className="block">
-              <Button className="bg-[#0B4D8E] text-white hover:bg-[#0B4D8E] ">
-                Get In Touch
-              </Button>
-            </Link>
+        < Btn_redesign content="Get In Touch " url = "/contact-us"/>
           </li>
         </ul>
       </div>

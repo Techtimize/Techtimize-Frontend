@@ -1,0 +1,13 @@
+.understanding{
+    position: relative;
+}
+
+.understanding::before{
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 40%;
+    height: 3px;
+    background-color: #0697d5;
+}

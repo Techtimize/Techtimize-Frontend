@@ -4,6 +4,10 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from 'next/link'
 import { Button } from "@/components/ui/button";
+import Typewriter from 'typewriter-effect';
+import Btn_redesign from "@/components/ui/btn_redesign";
+import { MdArrowOutward } from "react-icons/md";
+
 
 const imageVariants = {
   hidden: { opacity: 0, x: 15 },
@@ -20,20 +24,34 @@ const HeroSection = () => {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px]"
       >
-        <h1 className="md:text-[42px] sm:text-[42px] text-[31px] font-bold xl:max-w-[428px] max-w-[305px] text-greyDark xl:mb-[12px] mb-[18px] font-Satoshi-Bold">
-          Transforming Concepts into Code
+        <h1 className="font-[Manrope-bold] md:text-[42px] sm:text-[42px]  text-[31px] font-bold xl:max-w-[600px] max-w-[305px] xl:mb-[12px] mb-[18px] font-Satoshi-Bold text-[#0B4D8E]">
+          Transforming Concepts into <span className="text-[#0697D5]"> Code</span>, from Vision to  <span className="text-[#0697D5]">  
+            <Typewriter
+      options={{
+        strings: ['Execution'],
+        autoStart: true,
+        loop: true,
+        delay: 75,
+        deleteSpeed: 40,
+      }}/></span>
         </h1>
-        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px]">
-          Enterprises . Start Ups. Growing Companies
+        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] max-w-[45%]">
+         We don’t just write code—we translate innovative ideas into robust digital solutions, ensuring every concept evolves into a product that works, scales, and delivers real value.
         </p>
-        <p className="text text-lightGrey xl:max-w-[628px] max-w-[300px] xl:mb-[32px] mb-[25px]">
-          We cater to all sorts of businesses. We help you harness the power of
-          technology to achieve your goals.
-        </p>
-
-        <Link href="/about">
-          <Button variant="outline"  className="md:mb-[60.61px] bg-transparent border-[#0B4D8E] h-12 text-[#0B4D8E]" >Learn More</Button>
+        <div className="flex items-center w-[43%] justify-between my-[25px]">
+          <Image  className="w-[47%] object-contain"
+          src = {"/assets/images/clutch-reviews.png"} alt ={"google reviews"} width={130} height ={130}
+          />
+          <Image  className="w-[47%] object-contain"
+          src = {"/assets/images/google-reviews.png"} alt ={"google reviews"} width={130} height ={130}
+          />
+        </div>
+        <div className="flex ">
+        <Btn_redesign content={"Talk To Our Experts"} url={""} />
+         <Link className="px-[10px] border border-[#000]  sm:px-[30px] ml-[30px] py-[12px] rounded-[8px] font-medium flex items-center" href="/contact-us">
+             Get In Touch <MdArrowOutward className="ml-[10px]"/>
         </Link>
+        </div>
       </motion.div>
       <div className="xl:mr-[74.53px] mt-[50px] md:mt-0">
         <div className="flex items-center justify-center">

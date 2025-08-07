@@ -57,8 +57,18 @@
   font-style: normal;
 }
 
-html{
-  scroll-behavior: smooth;
+@font-face {
+  font-family: "Manrope-bold";
+  src: url("/assets/fonts/manrope/Manrope-bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/Manrope-regular.ttf");
+  font-weight: 400;
+  font-size: normal;
 }
 
 body {
@@ -71,7 +81,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Satoshi-Bold", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 700;
 }
 
@@ -168,4 +178,8 @@ h6 {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.btn-grad{
+  background: linear-gradient(to bottom, #81BCFF 0%, #0697D5 100%);
 }
