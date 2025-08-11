@@ -29,6 +29,7 @@ const BlogParent = React.memo(function BlogParent({
 
   return (
     <div className="blogParent  md:flex-row px-[5%] pt-[50px]" id={blog_category}>
+
       <div className="blog_top md:flex justify-between mb-[5%]  border-b pb-[20px]">
         <h2 className="md:text-[25px] font-[500]">{blog_category}</h2>
         <button
@@ -49,6 +50,7 @@ const BlogParent = React.memo(function BlogParent({
           className="overflow-hidden"
         >
           <div className="blog_container md:flex flex-wrap  justify-between">
+
             {(isExpanded ? blogs : blogs.slice(0, 3)).map((blog) => (
               <Blog_Item key={blog._id} blogdata={blog} />
             ))}

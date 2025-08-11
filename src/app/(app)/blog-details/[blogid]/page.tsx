@@ -29,6 +29,7 @@ export default async function BlogDetails({ params }: BlogDetailsProps) {
       <div className="tabs text-[#727272] md:text-[19px] font-medium">
         <Link href="/" >Home</Link> <span><MdKeyboardDoubleArrowRight className="inline"/></span>
         <Link href="/blogs">Blogs</Link> <span><MdKeyboardDoubleArrowRight className="inline"/></span>
+
         <span className=" text-[#069AD8]">{blog_data.title}</span>
       </div>
       <div className="title text-[30px] sm:text-[40px] md:font-semibold mt-[30px]  mb-[30px] ">{blog_data.title}</div>

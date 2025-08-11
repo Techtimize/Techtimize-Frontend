@@ -11,7 +11,6 @@ export async function getLatestBlogs(): Promise<blogsProps[]> {
   return latestBlogs;
 }
 
-
 export async function get3LatestBlogs(): Promise<blogsProps[]> {
   const blogs = await getBlogs();
 
