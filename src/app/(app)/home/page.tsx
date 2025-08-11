@@ -15,7 +15,12 @@ import './home.css';
 import ProjectSlider from "./components/ProjectSlider";
 import Transforming from "./components/Transforming";
 import Technologies from "./components/Technologies";
-// import { get3LatestBlogs } from "@/app/api/blogs/getlatestblogs";
+import { get3LatestBlogs } from "@/app/api/blogs/getlatestblogs";
+import HomeBlogs from "./components/HomeBlogs";
+import Testimonials from "./components/Testimonials"
+import { Input } from "@/components/ui/input";
+import { FaVideo } from "react-icons/fa";
+
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -26,8 +31,8 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Home() {
   const services = await getServices();
-  // const blogs = await get3LatestBlogs();
-
+  const blogs = await get3LatestBlogs();
+  // console.log(blogs);
   return (
     <div className="bg-white home-page">
       <HeroSection />
@@ -39,11 +44,11 @@ export default async function Home() {
       </div>
       <div>
         <Heading_proto heading="Our Services" para="Discover our Services from our top-loved selections, designed to help you learn, grow, and succeed" />
-        <div className="container flex flex-wrap lg:max-w-[82%] justify-between">
+        <div className=" max-w-[90%] mx-[auto] flex flex-wrap lg:max-w-[82%] justify-between sm:max-w-[80%]">
 
           {services.map((key) => {
             return (
-              <div key={key._id} className="w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35] rounded-[20px] mt-[70px]">
+              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35] rounded-[20px] lg:mt-[70px]">
                 <ServiceCard
                   key={key._id}
                   title={key.serviceName}
@@ -60,31 +65,56 @@ export default async function Home() {
       </div>
       <div>
         <Heading_proto heading="Start to Finish, We've Got You Covered" para="A comprehensive yet sim designed to deliver exactly what you need." />
-        <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between">
-          <div className="sm:w-[40%] flex items-center">
-            <Image className="w-[100%]" src={"/assets/images/picture.svg"} alt={"picture"} width={100} height={60} />
-          </div>
-          <div className="mt-[30px] sm:w-[53%] sm:mt-[0] flex flex-wrap justify-between">
-            {process_Steps.map((step, index) => (
-              <div key={index} className=" sm:w-[100%] pb-[25px] lg:w-[35%] understanding pt-[25px]">
-                <h2 className="text-[18px] font-[800]">{step.title}</h2>
-                <p className="text-[#727272] my-[15px]">{step.content}</p>
-                <div className="flex items-center text-[#0B4D8E]"> <Link href={"/about"}>Learn More </Link>
-                  <FaArrowRight className="ml-[10px]" />
-                </div></div>
-            ))}
+        <div className="relative z-[1]">
+          <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between">
+            <div className="sm:w-[40%] flex items-center">
+              <Image className="w-[100%]" src={"/assets/images/picture.svg"} alt={"picture"} width={100} height={60} />
+              <Image className="start-to-finish-bg" src={"/assets/images/start-to-finish-bg.svg"} alt={"picture"} width={100} height={60} />
+            </div>
+
+
+            <div className="mt-[30px] sm:w-[53%] sm:mt-[0] flex flex-wrap justify-between">
+              {process_Steps.map((step, index) => (
+                <div key={index} className=" sm :w-[100%] pb-[25px] lg:w-[35%] understanding pt-[25px]">
+                  <h2 className="text-[18px] font-[800]">{step.title}</h2>
+                  <p className="text-[#727272] my-[15px]">{step.content}</p>
+                  <div className="flex items-center text-[#0B4D8E]"> <Link href={"/about"}>Learn More </Link>
+                    <FaArrowRight className="ml-[10px]" />
+                  </div></div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      <div className="mx-[auto] sm:container md:max-w-[80%] max-w-[90%] lg:max-w-[82%]">
-        <Heading_proto heading="Our Projects" para="A Detailed Review of Techtimize Project’s" alignment="text-left" />
-        <ProjectSlider />
+      <div className="relative">
+        <Image className="project-bg" src={"/assets/images/projects-bg.svg"} alt="tick" height={20} width={20} />
+        <div className="mx-[auto] sm:container md:max-w-[80%] max-w-[90%] lg:max-w-[82%] ">
+          <Image className="project-bg" src={"/assets/images/projects-bg.svg"} alt="tick" height={20} width={20} />
+          <Heading_proto heading="Our Projects" para="A Detailed Review of Techtimize Project’s" alignment="text-left" />
+          <ProjectSlider />
+        </div>
       </div>
       <Heading_proto heading="Technologies" para="The Technology Stack We Use to Make Optimal Softwares" />
       <Technologies />
 
       <Heading_proto heading="Read our Blogs " para="A comprehensive yet sim designed to deliver exactly what you need." />
-      
+      <HomeBlogs data={blogs} />
+      <div className="text-center my-[40px]">
+        <Btn_redesign content={"View All"} url={"/blogs"} />
+      </div>
+      <Heading_proto heading="Feedback From Our Customers" para="Read the valued opinions and feedback from our customers" />
+      <Testimonials />
+      <div className="relative">
+     <Image src={"/assets/images/aroow.svg"} alt="arrow" width={500} height={500} className="aroow"/>
+        <div className="max-w-[90%] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] lg:max-w-[55%] sm:max-w-[80%] mx-[auto] py-[60px] rounded-[16px] sm:my-[100px] my-[50px] relative z-[9] bg-[#fff]">
+          <Heading_proto heading="Get In Touch" para="Subscribe Us to Get in Touch With Us And Enjoy The Latest Updates " className="!mt-[0px]" />
+          <div className="rounded-[12px] sm:flex max-w-[75%] mx-[auto] text-center" >
+            <Input type="Email" id="Email" className="rounded-[0] h-[unset] sm:rounded-tl-[12px] sm:rounded-bl-[12px]" autoComplete="email" placeholder="Enter Your Email" />
+            <Btn_redesign content="Subscribe" url="#" className="sm:mt-[0] sm:rounded-tl-[0px] sm:rounded-bl-[0px] sm:rounded-tr-[10px] sm:rounded-br-[10px] sm:mt=[0] mt-[15px]" icon={FaVideo} />
+          </div>
+        </div>
+     <Image src={"/assets/images/newsletter-bg.svg"} alt="arrow" width={100} height={100} className="newsletter-bg"/>
+      </div>
     </div>
   );
 }

@@ -2,12 +2,13 @@
   overflow: hidden;
 }
 
-.projectslider  .embla__container {
+.projectslider .embla__container {
   display: flex;
 }
 
-.projectslider  .embla__slide {
-  flex: 0 0 100% !important; /* Show 3 slides at once */
+.projectslider .embla__slide {
+  flex: 0 0 100% !important;
+  /* Show 3 slides at once */
   min-width: 0;
   padding: 0.5rem;
   padding-right: 2%;
@@ -17,20 +18,20 @@
 }
 
 .projectslider .arrows {
-    position: absolute;
-    top: unset;
-    left: 34%;
+  position: absolute;
+  top: unset;
+  left: 34%;
 }
 
 
 
-.projectslider .arrows button{
+.projectslider .arrows button {
   transition: 0.2s ease-in-out;
-  border: 1px solid; 
+  border: 1px solid;
   /* border-color: transparent; */
 }
 
-.projectslider .arrows button:hover{
+.projectslider .arrows button:hover {
   background-color: transparent;
   /* border-color:  #0697D5; */
   color: #0697D5;
@@ -39,28 +40,56 @@
 .projectslider .embla__slide {
   flex: 0 0 100%;
 }
+
 @media (min-width: 640px) {
   .projectslider .embla__slide {
-    flex: 0 0 50% !important; /* 2 slides on small screens */
+    flex: 0 0 50% !important;
+    /* 2 slides on small screens */
   }
 }
+
 @media (min-width: 1024px) {
   .projectslider .embla__slide {
-    flex: 0 0 33.3333% !important; /* 3 slides on large screens */
+    flex: 0 0 33.3333% !important;
+    /* 3 slides on large screens */
   }
 
-  .projectslider  .arrows {
+  .projectslider .arrows {
     position: absolute;
     top: -20%;
     right: 0;
-}
-}
-
-
-@media (max-width: 767px) {
-   .projectslider .embla__slide {
-      border-right: 0;
   }
 }
 
 
+@media (max-width: 1024px) and (min-width : 767px) {
+  .projectslider .arrows {
+    position: absolute;
+    top: unset;
+    left: 43%;
+  }
+}
+
+@media (max-width: 767px) {
+  .projectslider .embla__slide {
+    border-right: 0;
+  }
+
+  .projectslider .arrows {
+    left: 45%;
+  }
+}
+
+
+
+@media (max-width: 500px) {
+  .projectslider .arrows {
+    left: 38%;
+  }
+}
+
+@media (max-width: 350px) {
+  .projectslider .arrows {
+    left: 33%;
+  }
+}
