@@ -3,110 +3,60 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import AutoScroll from "embla-carousel-auto-scroll";
+import { logos } from "@/app/constants/homepage_slider";
 
 const sliderClasses =
   "embla__slide flex-none flex-grow-0 flex-shrink-0 xl:w-auto md:w-[30%] sm:w-[25%] w-[60%]";
 
+
+const repeatedLogos = [...logos, ...logos, ...logos];
+
 const ProjectLogoSlider = () => {
-  const [emblaRef, embla] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     {
       loop: true,
       align: "start",
+      dragFree: true,
     },
     [
       AutoScroll({
-        playOnInit: true,
-        stopOnMouseEnter: true,
+        speed: 1,
+        startDelay: 0,
+        direction: "forward",
+        stopOnInteraction: false,
+        stopOnMouseEnter: false,
       }),
     ]
   );
 
-  useEffect(() => {
-    if (embla) {
-      const intervalId = setInterval(() => {
-        embla.scrollNext();
-      }, 3000);
-
-      return () => clearInterval(intervalId);
-    }
-  }, [embla]);
-
   return (
-    <div className="overflow-hidden">
+    <div className="relative overflow-hidden">
+      {/* Left blur */}
+      <div className="absolute left-0 top-0 h-full w-[60px] z-10 pointer-events-none bg-gradient-to-r from-white via-white/80 to-transparent" />
+      
+      {/* Right blur */}
+      <div className="absolute right-0 top-0 h-full w-[60px] z-10 pointer-events-none bg-gradient-to-l from-white via-white/80 to-transparent" />
+
       <div className="embla" ref={emblaRef}>
         <div className="flex py-2 px-[20px] gap-x-[100px]">
-          <div className={sliderClasses}>
-            <div className="flex items-center justify-center lg:w-full lg:h-[104px] md:w-[189px] md:h-[66px] w-[156px] h-[49px]">
+          {repeatedLogos.map((logo, index) => (
+            <div className={sliderClasses} key={index}>
+              <div className="flex items-center justify-center w-full h-[49px] xl:gap-[21px] lg:gap-[21px] gap-[10px] lg:h-[104px] md:h-[66px]">
               <Image
-                src={"/assets/images/salesMind.png"}
-                alt={"sales mind"}
-                width={89}
-                height={89}
-                className="lg:w-[89px] lg:h-[89px] md:w-[44px] md:h-[44px] w-[43.56px] h-[43.56px]"
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className={logo.className}
               />
+                {logo.label && (
               <p className="xl:text-[25px] lg:text-[25px] md:text-[20px] font-bold">
-                Sales Mind
-              </p>
-            </div>
+                    {logo.label}
+                  </p>
+                )}
           </div>
-          <div className={sliderClasses}>
-            <div className="flex items-center justify-center lg:w-full lg:h-[104px] md:w-[189px] md:h-[66px] w-[156px] h-[49px]">
-              <Image
-                src={"/assets/images/sunndio.png"}
-                alt={"sunndio"}
-                width={201}
-                height={90}
-                className="w-[110px] h-[49px] lg:w-[201px] lg:h-[90px] md:w-[159px] md:h-[66px]"
-              />
             </div>
-          </div>
-          <div className={sliderClasses}>
-            <div className="flex items-center justify-center lg:w-full lg:h-[104px] md:w-[189px] md:h-[66px] w-[156px] h-[49px]">
-              <Image
-                src={"/assets/images/check.png"}
-                alt={"check ai"}
-                width={200}
-                height={104}
-                className="lg:w-[200px] lg:h-[104px] md:h-[89px] md:w-[170px] h-[49px] w-[100px]"
-              />
-            </div>
-          </div>
-          <div className={sliderClasses}>
-            <div className="flex items-center justify-center xl:gap-[21px] lg:gap-[21px] gap-[10px] lg:h-[104px] md:h-[66px] h-[49px] w-[156px]">
-              <Image
-                src={"/assets/images/bitcoin.png"}
-                alt={"bitcoin"}
-                width={63}
-                height={63}
-                className="lg:w-[63px] lg:h-[63px] md:w-[36px] md:h-[36px] w-[40px] h-[40px]"
-              />
-              <p className="xl:text-[25px] lg:text-[25px] md:text-[20px] font-bold">
-                Bitcoin tribe
-              </p>
-            </div>
-          </div>
-          <div className={sliderClasses}>
-            <div className="flex items-center justify-center lg:h-[104px] md:h-[66px] w-[156px] h-[49px]">
-              <Image
-                src={"/assets/images/senSights.png"}
-                alt={"sen sights"}
-                width={239}
-                height={59}
-                style={{ height: "auto" }}
-              />
-            </div>
-          </div>
-          <div className={sliderClasses}>
-            <div className="flex items-center justify-center lg:h-[104px] md:h-[66px] w-[156px] h-[49px]">
-              <Image
-                src={"/assets/images/fresha.png"}
-                alt={"fresha"}
-                width={96}
-                height={31}
-                className="lg:w-[140px] lg:h-[51px] w-[96px] h-[31px]"
-              />
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>

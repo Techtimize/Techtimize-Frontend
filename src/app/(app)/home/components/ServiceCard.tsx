@@ -1,27 +1,23 @@
 import React, { FC } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
-interface ServiceCardProps {
-  text: string;
-  image: string;
-  // imgClass: string; 
+type props ={
+     title  : string;
+     description : string,
+     image : string
 }
 
-const ServiceCard: FC<ServiceCardProps> = ({ text, image, }) => {
-  return (
-    <div className="xl:w-[218px] xl:h-[95px] lg:w-[218px] lg:h-[95px] md:w-[140px] md:h-[76px] sm:w-[135px] sm:h-[76px] h-[90px] flex-1 rounded-[10px] flex xl:gap-[21px] md:gap-[7.5px] sm:gap-[4px] gap-2 items-center justify-center xl:pl-[28px] md:pl-[10.83px] sm:pl-[10.83px] pl-[13.86px] xl:pr-[23.28px] sm:pr-[3.1px] pr-[10px] border-serviceBorder shadow">
-      <Image 
-        src={image} 
-        alt={text} 
-        width={50} 
-        height={50} 
-        // className={imgClass}
-      />
-      <p className="text text-service">
-        {text}
-      </p>
+export default function ServiceCard({title,description, image}:props) {
+  // console.log(image);
+  
+    return(
+        <Link href="#" className="flex sm:p-[30px] py-[30px] px-[15px] xl:justify-around justify-between">
+          <div className=":w-[30%]"><Image src={image} alt="servcie" width={60} height={60}/></div>
+          <div className="w-[70%] sm:w-[65%]">
+            <h2 className="font-[700] text-[18px] mb-[10px] block">{title}</h2>
+            <p className="line-clamp-3 text-[#727272]">{description}</p>
     </div>
-  );
-};
-
-export default ServiceCard;
+    </Link>
+    )
+} 

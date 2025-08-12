@@ -6,6 +6,7 @@ import { Calendar, User } from "lucide-react";
 import Link from "next/link";
 import Blog_details_btn from "@/app/components/Blogs/blog_details_btn";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 type BlogDetailsProps = {
   params: { blogid: string };
@@ -26,8 +27,8 @@ export default async function BlogDetails({ params }: BlogDetailsProps) {
   return (
     <div className="max-w-[90%] md:max-w-[80%] ml-auto mr-auto mt-[50px] mb-[50px]">
       <div className="tabs text-[#727272] md:text-[19px] font-medium">
-        <Link href="/" >Home</Link> <span>{" >> "}</span>
-        <Link href="/blogs">Blogs</Link> <span>{" >> "}</span>
+        <Link href="/" >Home</Link> <span><MdKeyboardDoubleArrowRight className="inline"/></span>
+        <Link href="/blogs">Blogs</Link> <span><MdKeyboardDoubleArrowRight className="inline"/></span>
         <span className=" text-[#069AD8]">{blog_data.title}</span>
       </div>
       <div className="title text-[30px] sm:text-[40px] md:font-semibold mt-[30px]  mb-[30px] ">{blog_data.title}</div>

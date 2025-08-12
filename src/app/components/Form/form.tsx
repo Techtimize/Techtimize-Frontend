@@ -110,26 +110,27 @@ const FormComponent = () => {
                                 render={({ field }) => (
                                     <FormItem className="flex-1 w-full">
                                         <FormLabel>Select Requirement</FormLabel>
-                                        <Select onValueChange={field.onChange} value={field.value}>
-                                            <FormControl>
-                                                <SelectTrigger>
-                                                    <SelectValue placeholder="Select Requirement" />
-                                                </SelectTrigger>
-                                            </FormControl>
-                                            <SelectContent>
-                                                <SelectItem value="Mobile App Development">Mobile App Development</SelectItem>
-                                                <SelectItem value="Web App Development">Web App Development</SelectItem>
-                                                <SelectItem value="Artificial Intelligence">Artificial Intelligence</SelectItem>
-                                                <SelectItem value="Cloud Services">Cloud Services</SelectItem>
-                                                <SelectItem value="UI UX Design">UI UX Design</SelectItem>
-                                                <SelectItem value="Staff Augmentation">Staff Augmentation</SelectItem>
-                                                <SelectItem value="Project Management">Project Management</SelectItem>
-                                            </SelectContent>
-                                        </Select>
+                                        <FormControl>
+                                            <select
+                                                {...field}
+                                                className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border focus:border-black focus:outline-none focus:ring-0"
+                                            >
+                                                <option value="" disabled>
+                                                    Select Requirement
+                                                </option>
+                                                <option value="Mobile App Development">Mobile App Development</option>
+                                                <option value="Web App Development">Web App Development</option>
+                                                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                                <option value="Cloud Services">Cloud Services</option>
+                                                <option value="UI UX Design">UI UX Design</option>
+                                                <option value="Staff Augmentation">Staff Augmentation</option>
+                                                <option value="Project Management">Project Management</option>
+                                            </select>
+                                        </FormControl>
                                         <FormMessage />
                                     </FormItem>
                                 )}
-                            />
+                            />  
                         </div>
 
                         <FormField
