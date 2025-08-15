@@ -1,23 +1,23 @@
 import React from "react";
-import ProjectLogoSlider from "./components/ProjectLogoSlider";
+import ProjectLogoSlider from "../../components/home/ProjectLogoSlider";
 import type { Metadata } from "next";
 import { generateMetadataFromBE } from "@/app/lib/utils";
-import HeroSection from "./components/HeroSection";
+import HeroSection from "../../components/home/HeroSection";
 import Image from "next/image";
 import Btn_redesign from "@/components/ui/btn_redesign";
 import Heading_proto from "@/components/heading_prototype";
 import getServices from "@/app/api/services/get_services";
-import ServiceCard from "./components/ServiceCard";
+import ServiceCard from "../../components/home/ServiceCard";
 import { process_Steps } from "@/app/constants/process_steps";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa";
 import './home.css';
-import ProjectSlider from "./components/ProjectSlider";
-import Transforming from "./components/Transforming";
-import Technologies from "./components/Technologies";
+import ProjectSlider from "../../components/home/ProjectSlider";
+import Transforming from "../../components/home/Transforming";
+import Technologies from "../../components/home/Technologies";
 import { get3LatestBlogs } from "@/app/api/blogs/getlatestblogs";
-import HomeBlogs from "./components/HomeBlogs";
-import Testimonials from "./components/Testimonials"
+import HomeBlogs from "../../components/home/HomeBlogs";
+import Testimonials from "../../components/home/Testimonials"
 import { Input } from "@/components/ui/input";
 import { FaVideo } from "react-icons/fa";
 
@@ -51,6 +51,7 @@ export default async function Home() {
               <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35] rounded-[20px] lg:mt-[70px]">
                 <ServiceCard
                   key={key._id}
+                  url={key.url}
                   title={key.serviceName}
                   description={key.description}
                   image={key.iconUrl}

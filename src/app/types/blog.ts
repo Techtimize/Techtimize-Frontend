@@ -8,7 +8,8 @@ export type blogsProps = {
         isActive: boolean;
         createdAt: string;
         updatedAt: string;
-        __v: number
+        __v: number,
+        slug: string
 };
 
 
