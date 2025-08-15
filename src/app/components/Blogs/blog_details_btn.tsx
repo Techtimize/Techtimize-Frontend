@@ -7,10 +7,10 @@ import { blogsProps } from "@/app/types/blog";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 type BlogProps = {
-  blog_id: string;
+  blog_slug: string;
 };
 
-export default function Blog_details_btn({ blog_id }: BlogProps) {
+export default function Blog_details_btn({ blog_slug }: BlogProps) {
   const [prevBlogId, setPrevBlogId] = useState<string | null>(null);
   const [nextBlogId, setNextBlogId] = useState<string | null>(null);
 
@@ -19,18 +19,18 @@ export default function Blog_details_btn({ blog_id }: BlogProps) {
       let blogsArray: blogsProps[] = [];
       blogsArray = await sortBlogsByLatest(blogsArray);
 
-      const currentIndex = blogsArray.findIndex(blog => blog._id === blog_id);
+      const currentIndex = blogsArray.findIndex(blog => blog.slug === blog_slug);
       if (currentIndex !== -1) {
         const prev = blogsArray[currentIndex + 1]; // comes after in sorted array
         const next = blogsArray[currentIndex - 1]; // comes before in sorted array
 
-        setPrevBlogId(prev?._id || null);
-        setNextBlogId(next?._id || null);
+        setPrevBlogId(prev?.slug || null);
+        setNextBlogId(next?.slug || null);
       }
     }
 
     fetchAndFind();
-  }, [blog_id]);
+  }, [blog_slug]);
 
   return (
     <div className="pr-[5%] sm : mt-[18%] flex justify-center">
