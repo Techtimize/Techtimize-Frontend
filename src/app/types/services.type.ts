@@ -4,5 +4,4 @@ serviceCategoryId:string,
 serviceName:string,
 iconUrl:string,
 description:string,
-url: string
 }
