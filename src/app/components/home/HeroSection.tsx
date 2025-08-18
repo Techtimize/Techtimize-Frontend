@@ -36,7 +36,7 @@ const HeroSection = () => {
         deleteSpeed: 40,
       }}/></span>
         </h1>
-        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[45%]">
+        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[65%]">
          We don’t just write code—we translate innovative ideas into robust digital solutions, ensuring every concept evolves into a product that works, scales, and delivers real value.
         </p>
         <div className="flex items-center w-[43%] justify-between my-[25px]">
@@ -54,7 +54,7 @@ const HeroSection = () => {
         </Link>
         </div>
       </motion.div>
-      <div className="xl:mr-[74.53px] mt-[50px] md:mt-0">
+      <div className="xl:mr-[74.53px] mt-[50px] md:mt-0 sm:w-[40%] flex items-center justify-center">
         <div className="flex items-center justify-center">
           <div className="relative">
             {/* <motion.div
@@ -85,7 +85,7 @@ const HeroSection = () => {
                 width={492}
                 height={529}
                 alt={"hero1"}
-                className="lg:w-[395px] lg:h-[100%] md:h-[390px] sm:h-[320px] md:w-[370px] sm:w-[320px] w-[312px] h-[312px]"
+                className="lg:w-[100%]  lg:h-[100%] md:h-[390px] sm:h-[320px] md:w-[370px] sm:w-[320px] w-[312px] h-[312px]"
               />
               {/* <Image
                 src={"/assets/svgs/polygon.svg"}

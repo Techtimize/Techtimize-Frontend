@@ -11,7 +11,7 @@ type props ={
 
 export default function ServiceCard({title,description, image, url}:props) {
   // console.log(image);
-  console.log(url);
+  // console.log(url);
     return(
         <Link href={`/${url}`} className="flex sm:p-[30px] py-[30px] px-[15px] xl:justify-around justify-between">
           <div className=":w-[30%]"><Image src={image} alt="servcie" width={60} height={60}/></div>
