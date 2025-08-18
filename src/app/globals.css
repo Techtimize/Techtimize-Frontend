@@ -57,6 +57,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Manrope-bold";
+  src: url("/assets/fonts/manrope/Manrope-bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Manrope";
+  src: url("/assets/fonts/manrope/Manrope-regular.ttf");
+  font-weight: 400;
+  font-size: normal;
+}
 html{
   scroll-behavior: smooth;
 }
