@@ -17,7 +17,7 @@ import {
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#F8F8F8] !mx-0 sm:pb-[4%] md:pb-0 flex flex-col items-center">
+    <footer className="bg-[#F8F8F8] !mx-0 sm:pb-[4%] md:pb-0 flex flex-col items-center z-[9] relative">
       <div className="container !bg-[#F8F8F8] flex lg:flex-row md:flex-row sm:flex-row flex-col xl:gap-[93px] lg:gap-[40px] md:gap-[35px] xl:h-[563px] justify-between">
         <div className="pl-[19px] xl:pl-[64px] md:pl-[46px] sm:pl-[46px] md:w-[312px] sm:w-[250px]">
           <Image

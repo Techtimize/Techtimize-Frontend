@@ -9,7 +9,7 @@ export async function getblogbyid(id : string): Promise<blogsProps | null>{
             "Content-Type": "application/json",
         }
        });
-      console.log(response);
+    //   console.log(response);c
        const result = await response.json();
        return result.data;
 
