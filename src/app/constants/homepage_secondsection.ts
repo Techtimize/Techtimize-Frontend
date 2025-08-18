@@ -1,1 +1,0 @@
-export const second_section = ["We craft smart, scalable solutions" , "Park growth and innovation." , "From scrappy startups to growing enterprises" , "Help businesses adapt, evolve, and thrive"]

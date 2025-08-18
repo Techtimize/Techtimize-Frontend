@@ -27,7 +27,6 @@ export default function Blog_Item({blogdata}:blogsItemProp){
     return(
         <>
         <Link  href={`../blog-details/${blogdata._id}`} className="blog_item mb-[45px] w-[100%] md:w-[45%]  lg:w-[31%]">
-        <div className="blog_item mb-[45px] w-[100%] md:w-[45%] mr-[2%] lg:w-[30%] mr-[3%]">
             <img className="md: w-full h-[250px] rounded-[8px] object-cover" loading="lazy" src={`${blogdata.imageUrl}`}/>
             <div className="blog_details md:flex mt-[18px] mb-[18px] justify-between w-[95%] mr-[auto]">
             <div className="blog_category md:text-[13px] pt-[4px] pb-[4px] pl-[12px] pr-[12px] bg-[#0697D533] rounded-[8px] flex items-center">
@@ -43,9 +42,6 @@ export default function Blog_Item({blogdata}:blogsItemProp){
             <h2 className="blog_title md:text-[18px] font-[600] pb-[10px] block">{`${blogdata.title}`}</h2>
             <div className="blog_desc line-clamp-2">{`${blogdata.description}`}</div>
         </Link>
-            <Link href={`../blog-details/${blogdata._id}`} className="blog_title md:text-[18px] font-[600] pb-[10px] block">{`${blogdata.title}`}</Link>
-            <div className="blog_desc line-clamp-2">{`${blogdata.description}`}</div>
-        </div>
         </>
     )
 }
