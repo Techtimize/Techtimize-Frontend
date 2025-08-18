@@ -36,7 +36,7 @@ const ApplicationForm = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof formSchema>) => {
-        console.log(data)
+        
         // setLoading(true);
         // try {
         //     const response = await fetch("/contact-us/api/sendemail", {
