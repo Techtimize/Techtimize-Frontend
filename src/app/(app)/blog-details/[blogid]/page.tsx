@@ -6,7 +6,6 @@ import { Calendar, User } from "lucide-react";
 import Link from "next/link";
 import Blog_details_btn from "@/app/components/Blogs/blog_details_btn";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 
 type BlogDetailsProps = {
   params: { blogid: string };
