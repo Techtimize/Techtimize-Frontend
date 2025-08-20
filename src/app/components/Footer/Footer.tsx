@@ -18,16 +18,16 @@ import {
 const Footer: React.FC = () => {
   return (
     <footer className="bg-[#F8F8F8] !mx-0 sm:pb-[4%] md:pb-0 flex flex-col items-center z-[9] relative">
-      <div className="container !bg-[#F8F8F8] flex lg:flex-row md:flex-row sm:flex-row flex-col xl:gap-[93px] lg:gap-[40px] md:gap-[35px] xl:h-[563px] justify-between">
+      <div className="container !bg-[#F8F8F8] flex lg:flex-row md:flex-row sm:flex-row flex-col xl:gap-[93px] lg:gap-[40px] md:gap-[35px] justify-between">
         <div className="pl-[19px] xl:pl-[64px] md:pl-[46px] sm:pl-[46px] md:w-[312px] sm:w-[250px]">
           <Image
             src="/assets/svgs/companyLogo.svg"
             width={263}
             height={94}
-            className="xl:w-[263px] xl:h-[94px] lg:w-[263px] lg:h-[94px] md:w-[182px] md:h-[64px] sm:w-[182px] sm:h-[64px] w-[174px] h-[65px] mt-[67px] xl:mt-[77px] md:mt-[42px]"
+            className="xl:w-[263px] xl:h-[94px] lg:w-[263px] lg:h-[94px] md:w-[182px] md:h-[64px] sm:w-[182px] sm:h-[64px] w-[174px] h-[65px] mt-[67px] xl:mt-[50px] md:mt-[42px]"
             alt={"techtimize-logo"}
           />
-          <p className="text mt-[12px] lg:mt-[41px] mr-[51px] md:mr-0 lg:mr-0 xl:w-[316px] md:w-[191px] sm:w-[191px] text-black">
+          <p className="text mt-[12px] lg:mt-[0px] mr-[51px] md:mr-0 lg:mr-0 xl:w-[316px] md:w-[191px] sm:w-[191px] text-black">
             At Techtimize, we specialize in JS frameworks, .Net, machine
             learning, and AI. We offer a range of services to help businesses of
             all sizes achieve their goals.
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               </Link>
             </div>
           </div>
-          <div className="mt-[25px] lg:mt-[26px] md:mb-[70.52px]">
+          <div className="mt-[25px] lg:mt-[26px] md:mb-[50.52px]">
             <p className="text-grey text-[16px] mb-[8px]">
               We are Available on
             </p>
@@ -72,7 +72,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="pl-[19px] sm:pl-0 md:pl-0 lg:pl-0 md:w-[150px] sm:w-[100px] xl:w-[156px] text-black">
-          <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[87px] lg:mt-[160px] md:mt-[110px] sm:mt-[130px] mb-[26px]">
+          <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[50px] lg:mt-[60px] md:mt-[110px] sm:mt-[130px] mb-[26px]">
             Quick Links
           </h3>
           <ul className="text-[14px] lg:text-[15px] gap-[10px] flex flex-col">
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
           </ul>
         </div>
         <div className="pl-[19px] md:pl-0 sm:pl-0 lg:pl-0 md:w-[190px] sm:w-[134px] text-black">
-          <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[87px] lg:mt-[160px] md:mt-[110px] sm:mt-[130px] mb-[26px]">
+          <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[50px] lg:mt-[160px] md:mt-[110px] sm:mt-[130px] mb-[26px]">
             Services
           </h3>
           {/* <Link href="/services"> */}
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
           {/* </Link> */}
         </div>
         <div className="pl-[19px] lg:pl-0 md:pl-0 sm:pl-0 lg:pr-5 xl:w-[340px] lg:w-[173px] sm:w-[173px] text-black">
-          <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[87px] lg:mt-[160px] sm:mt-[130px] md:mt-[110px] mb-[26px] lg:w-[156px]">
+          <h3 className="text-[25px] lg:text-[25px] md:text-[16px] sm:text-[16px] font-bold mt-[67px] xl:mt-[50px] lg:mt-[160px] sm:mt-[130px] md:mt-[110px] mb-[26px] lg:w-[156px]">
             Get in Touch
           </h3>
           <ul className="text-[14px] lg:text-[15px] flex flex-col gap-[21px] mb-[51.79px]">

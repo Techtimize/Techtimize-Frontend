@@ -4,7 +4,18 @@ import StarsReview from "@/app/components/home/StarsReview";
 import Image from "next/image";
 import CountryFlag from "@/app/components/reviews/flags";
 import Reviews_Section from "@/app/components/reviews/Reviews-section";
+import { getCanonicalUrl } from "@/app/lib/getCanonial";
+import { Metadata } from "next";
+export async function generateMetadata(): Promise<Metadata> {
+  const canonical = await getCanonicalUrl("/reviews");
 
+  return {
+    title: "Reviews | Techtimize",
+    alternates: {
+      canonical,
+    },
+  };
+}
 
 export default async function Reviews() {
     const fetchreviews = await getReviews();

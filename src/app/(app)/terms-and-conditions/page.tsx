@@ -1,10 +1,22 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import React from "react";
+import { getCanonicalUrl } from "@/app/lib/getCanonial";
+import { Metadata } from "next";
+export async function generateMetadata(): Promise<Metadata> {
+  const canonical = await getCanonicalUrl("/terms-and-conditions");
+
+  return {
+    title: "Terms & Conditions | Techtimize",
+    alternates: {
+      canonical,
+    },
+  };
+}
 
 const TermsAndConditions = () => {
   return (
     <div className="flex flex-col w-full items-center font-montserrat px-4 md:px-12 xl:px-32">
-      <PageHeader heading="Terms & Conditions" />
+      <PageHeader heading="Terms & Conditions" subHeading={""} />
       <div className="max-w-[1536px] w-full md:pt-[84px] pt-[40px] pb-[41px] xl:px-[170px] md:px-[40px] px-[15px]">
         <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
         Terms & Conditions

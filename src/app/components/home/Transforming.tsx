@@ -9,7 +9,7 @@ export default function Transforming() {
   return (
       <div className="relative">
       <Image className="transforming-bg" src={"/assets/images/transforming-before.png"} alt="background" width={200} height={200}/>
-     <div className="transforming max-w-[90%] mx-[auto] mt-[120px] sm:container sm:mt-[120px] sm:flex justify-between">
+     <div className="transforming !max-w-[90%] mx-[auto] sm:mt-[70px] sm:container sm:mt-[120px] sm:flex justify-between">
       
       <div className="sm:w-[47%]">
         <motion.div
@@ -32,7 +32,7 @@ export default function Transforming() {
         className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px]"
       >
         <Image src={"/assets/images/second-section.png"} alt="about us" width={40} height={40}/>
-        <h2 className="text-[#0B4D8E] text-[30px] sm:text-[42px] sm:max-w-[80%] mt-[20px] mb-[20px]">Transforming Concepts into <span className="text-[#0697D5]"> Code </span>, from Vision to <span className="text-[#0697D5]">Life</span></h2>
+        <h2 className="text-[#0B4D8E] text-[30px] sm:text-[42px] sm:max-w-[80%] mt-[20px] mb-[20px] font-[700]">Transforming Concepts into <span className="text-[#0697D5]"> Code </span>, from Vision to <span className="text-[#0697D5]">Life</span></h2>
         <p className="text-[#727272] text-[18px] sm:max-w-[80%] ">At Techtimize, we don’t just build software, we craft smart, scalable solutions that spark growth and innovation. From scrappy startups to growing enterprises, we help businesses adapt, evolve, and thrive in the fast-moving digital world.</p>
       <div className="mt-[30px]">
         {second_section.map((text,index)=>{

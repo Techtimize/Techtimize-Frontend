@@ -9,7 +9,18 @@ import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Services_blogs from "../../../components/services_details_components/Services_blogs";
 import Contact_Us_Comp from "../../../components/services_details_components/Contact-Us-Comp";
+import { getCanonicalUrl } from "@/app/lib/getCanonial";
+import { Metadata } from "next";
+export async function generateMetadata(): Promise<Metadata> {
+  const canonical = await getCanonicalUrl("/Digital-Marketing");
 
+  return {
+    title: "Digital Marketing Services | Techtimize",
+    alternates: {
+      canonical,
+    },
+  };
+}
 export default function Ui_Ux_service_detail() {
     return (
         <>

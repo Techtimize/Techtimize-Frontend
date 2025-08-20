@@ -9,9 +9,16 @@ import Link from "next/link";
 import { ApiEndpoint } from "@/app/api";
 import { Department } from "@/app/types/departments";
 import { Departments } from "./components";
-
+import { getCanonicalUrl } from "@/app/lib/getCanonial";
 export async function generateMetadata(): Promise<Metadata> {
-  return await generateMetadataFromBE("careers");
+  const canonical = await getCanonicalUrl("/careers");
+
+  return {
+    title: "Careers | Techtimize",
+    alternates: {
+      canonical,
+    },
+  };
 }
 
 const Careers = async () => {

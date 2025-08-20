@@ -31,8 +31,8 @@ export default function ProjectSlider() {
             return(
               <div  className="embla__slide" key={index._id}>
                <h3 className="text-[#0697D5] bg-[#F2FBFF] inline px-[15px] py-[10px] rounded-[40px]">{index.tags[1]}</h3>
-               <Image className="w-[100%] h-[250px] rounded-[24px] object-cover mt-[22px]" src={index.previewImage} alt="icon" height={100} width={100}/>
-                <h2 className="my-[20px] text-[18px] font-[600] block">{index.name}</h2> 
+               <Image className="w-[100%] h-[250px] rounded-[24px] object-cover mt-[22px]" src={index.previewImage} alt="icon" height={300} width={300}/>
+                <h3 className="my-[20px] text-[18px] font-[600] block">{index.name}</h3> 
                 
                 <p className="text-[#727272]">{index.description}</p> 
               </div>

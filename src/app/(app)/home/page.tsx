@@ -38,7 +38,7 @@ export default async function Home() {
       <HeroSection />
 
       <Transforming />
-      <div className="pb-10 mb-[40px]">
+      <div className="">
         <Heading_proto heading="Clients Served" />
         <ProjectLogoSlider />
       </div>
@@ -48,7 +48,7 @@ export default async function Home() {
 
           {services.map((key) => {
             return (
-              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35] rounded-[20px] lg:mt-[70px]">
+              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35] rounded-[20px] lg:mt-[20px]">
                 <ServiceCard
                   key={key._id}
                   url={key.url}
@@ -67,7 +67,7 @@ export default async function Home() {
       <div>
         <Heading_proto heading="Start to Finish, We've Got You Covered" para="A comprehensive yet sim designed to deliver exactly what you need." />
         <div className="relative z-[1]">
-          <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between">
+          <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between sm:mt-[50px]">
             <div className="sm:w-[40%] flex items-center">
               <Image className="w-[100%]" src={"/assets/images/picture.svg"} alt={"picture"} width={100} height={60} />
               <Image className="start-to-finish-bg" src={"/assets/images/start-to-finish-bg.svg"} alt={"picture"} width={100} height={60} />
@@ -77,7 +77,7 @@ export default async function Home() {
             <div className="mt-[30px] sm:w-[53%] sm:mt-[0] flex flex-wrap justify-between">
               {process_Steps.map((step, index) => (
                 <div key={index} className=" sm :w-[100%] pb-[25px] lg:w-[35%] understanding pt-[25px]">
-                  <h2 className="text-[18px] font-[800]">{step.title}</h2>
+                  <h3 className="text-[18px] font-[800]">{step.title}</h3>
                   <p className="text-[#727272] my-[15px]">{step.content}</p>
                   <div className="flex items-center text-[#0B4D8E]"> <Link href={"/about"}>Learn More </Link>
                     <FaArrowRight className="ml-[10px]" />
@@ -95,12 +95,12 @@ export default async function Home() {
           <ProjectSlider />
         </div>
       </div>
-      <Heading_proto heading="Technologies" para="The Technology Stack We Use to Make Optimal Softwares" />
+      <Heading_proto heading="Technologies" para="The Technology Stack We Use to Make Optimal Softwares" className="mt-[80px]" />
       <Technologies />
 
       <Heading_proto heading="Read our Blogs " para="A comprehensive yet sim designed to deliver exactly what you need." />
       <HomeBlogs data={blogs} />
-      <div className="text-center my-[40px]">
+      <div className="text-center mt-[30px] mb-[50px] sm:mb-[100px]">
         <Btn_redesign content={"View All"} url={"/blogs"} />
       </div>
       <Heading_proto heading="Feedback From Our Customers" para="Read the valued opinions and feedback from our customers" />
@@ -111,8 +111,8 @@ export default async function Home() {
           <Heading_proto heading="Get In Touch" para="Subscribe Us to Get in Touch With Us And Enjoy The Latest Updates " className="!mt-[0px]" />
           <div className="rounded-[12px] sm:flex max-w-[75%] mx-[auto] text-center" >
             <Input type="Email" id="Email" className="rounded-[0] h-[unset] sm:rounded-tl-[12px] sm:rounded-bl-[12px]" autoComplete="email" placeholder="Enter Your Email" />
-            <Btn_redesign content="Subscribe" url="#" className="sm:mt-[0] sm:rounded-tl-[0px] sm:rounded-bl-[0px] sm:rounded-tr-[10px] sm:rounded-br-[10px] sm:mt=[0] mt-[15px]" icon={FaVideo} />
-          </div>
+            <Btn_redesign content="Subscribe" url="#" className="sm:mt-[0] sm:rounded-tl-[0px] sm:rounded-bl-[0px] sm:rounded-tr-[10px] sm:rounded-br-[10px] sm:mt=[0] mt-[15px]" />
+        </div>
         </div>
      <Image src={"/assets/images/newsletter-bg.svg"} alt="arrow" width={100} height={100} className="newsletter-bg"/>
       </div>

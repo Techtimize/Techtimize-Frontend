@@ -52,10 +52,6 @@ const footerQuickLinks = [
     link: "/hiring-staff",
   },
   {
-    name: "Services",
-    link: "/services",
-  },
-  {
     name: "About",
     link: "/about",
   },
@@ -67,6 +63,18 @@ const footerQuickLinks = [
     name: "Contact Us",
     link: "/contact-us",
   },
+  {
+    name: "Reviews",
+    link: "/reviews",
+  },
+  {
+    name: "Blogs",
+    link: "/blogs",
+  },
+  {
+    name: "Faqs",
+    link: "/faqs",
+  }
 ];
 
 const footerServices = [

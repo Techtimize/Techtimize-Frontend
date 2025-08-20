@@ -7,7 +7,7 @@ export default function Technologies(){
         <>
         
   <article className="wrapper">
-    <div className="marquee pt-[50px] pb-[25px]">
+    <div className="marquee pt-[20px] pb-[35px]">
       <div className="marquee__group">
         {
             first_technologies.map((key)=>{
