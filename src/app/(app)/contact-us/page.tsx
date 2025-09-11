@@ -15,16 +15,8 @@ import {
   WYOMING_LOCATION_MAP_HREF,
 } from "@/app/constants/nav-links";
 
-import { getCanonicalUrl } from "@/app/lib/getCanonial";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/contact-us");
-
-  return {
-    title: "Contact Us | Techtimize",
-    alternates: {
-      canonical,
-    },
-  };
+  return await generateMetadataFromBE("contact-us");
 }
 
 const ContactUs = () => {

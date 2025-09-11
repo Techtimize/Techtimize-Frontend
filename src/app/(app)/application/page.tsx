@@ -59,7 +59,6 @@ const ApplicationForm = () => {
         //     setLoading(false);
         // }
     };
-    
     return (
         <div className="relative flex flex-col items-center p-6">
       

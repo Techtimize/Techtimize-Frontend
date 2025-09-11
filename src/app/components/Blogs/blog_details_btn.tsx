@@ -34,8 +34,8 @@ export default function Blog_details_btn({ blog_slug }: BlogProps) {
 
   return (
     <div className="pr-[5%] sm : mt-[18%] flex justify-center">
-      {prevBlogId && <Link className="bg-[#0B4D8E] rounded-[8px] text-[#fff] p-[20px] pt-[10px] pb-[10px] flex mr-[20px] items-center" href={`../${prevBlogId}`}><FaArrowLeft className="mr-[10px]"/>Previous Blog </Link>} 
-      {nextBlogId && <Link className="bg-[#0B4D8E] rounded-[8px] text-[#fff] p-[20px] pt-[10px] pb-[10px] flex items-center" href={`../${nextBlogId}`}>Next Blog <FaArrowRight className="ml-[10px]"/></Link>}
+      {prevBlogId && <Link className="bg-[#0B4D8E] rounded-[8px] text-[#fff] p-[20px] pt-[10px] pb-[10px] flex mr-[20px] items-center" href={`../blog-details/${prevBlogId}`}><FaArrowLeft className="mr-[10px]"/>Previous Blog </Link>} 
+      {nextBlogId && <Link className="bg-[#0B4D8E] rounded-[8px] text-[#fff] p-[20px] pt-[10px] pb-[10px] flex items-center" href={`../blog-details/${nextBlogId}`}>Next Blog <FaArrowRight className="ml-[10px]"/></Link>}
     </div>
   );
 }

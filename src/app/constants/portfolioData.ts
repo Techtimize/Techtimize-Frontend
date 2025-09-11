@@ -41,7 +41,7 @@ export const projectsData = [
   {
     id: 0,
     tag: "Lifestyle",
-    image: "/assets/svgs/Salesmind.webp",
+    image: "/assets/svgs/Salesmind.svg",
     imageDesktop: "/assets/images/projectSales.png",
     imageMobile: "/assets/images/projectSalesMobile.png",
     imageTablet: "/assets/images/projectSalesTablet.png",

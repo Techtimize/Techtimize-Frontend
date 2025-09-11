@@ -9,7 +9,7 @@ import Image from "next/image";
 
 export default function Contact_Us_Comp(){
     return(
-        <div className="pt-[30px] xl:px-[0px] lg:px-[45px] md:px-[30px] sm:px-[25px] px-[15px] py-[0px]">
+        <div className="pt-[30px] xl:px-[0px] lg:px-[45px] md:px-[30px] sm:px-[25px] px-[15px] pb-[90px]">
         {/* <p className="page-blue-heading xl:mb-[11px] mb-[5px]">Contact Us</p> */}
         <h3 className="page-sub-heading font-bold xl:mb-[34px] mb-[19px] xl:w-[600px] lg:w-[400px] sm:w-[370px]">
           Get In Touch With Us:

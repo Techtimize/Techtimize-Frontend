@@ -24,7 +24,7 @@ export default function BlogContainer({ blog_category, blogs }: BlogContainerPro
 
   return (
     <>
-      <div className="flex flex-col BlogType_Tabs md:flex-row pb-[30px] sm:p-[5%] pb-[0]">
+      <div className="flex flex-col BlogType_Tabs md:flex-row p-[5%] pb-[0]">
         {blog_category.map((category) => (
           <Link
             key={category._id}
