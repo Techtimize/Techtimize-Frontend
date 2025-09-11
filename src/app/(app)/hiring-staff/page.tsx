@@ -7,16 +7,9 @@ import { expertiseData } from "@/app/constants/expertise-data";
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
  
-import { getCanonicalUrl } from "@/app/lib/getCanonial";
-export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/hiring-staff");
 
-  return {
-    title: "Hiring Staff | Techtimize",
-    alternates: {
-      canonical,
-    },
-  };
+export async function generateMetadata(): Promise<Metadata> {
+  return await generateMetadataFromBE("hiring-staff");
 }
 
 const HiringStaff = () => {

@@ -1,31 +1,16 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import React from "react";
 import Link from 'next/link';
-import { sitelinks, serviceslinks } from "@/app/constants/sitemapdata";
+import { sitelinks, serviceslinks } from "@/app/constants/sitemap";
 import "./sitemap.css"
-import type { Metadata } from "next";
-import { getCanonicalUrl } from "@/app/lib/getCanonial";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/sitemap");
-
-  return {
-    title: "SiteMap | Techtimize",
-    // description: "Learn more about Techtimize and our mission.",
-    alternates: {
-      canonical,
-    },
-  };
-}
-
 
 const SiteMap = () => {
   return (
     <div className="flex flex-col w-full items-center">
-      <PageHeader heading="SiteMap" subHeading={""} />
+      <PageHeader heading="Site Map" />
       <div className="max-w-[1536px] w-full md:pt-[84px] pt-[40px] pb-[41px] xl:px-[170px] md:px-[40px] px-[15px]">
         <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
-          SiteMap
+          Site Map
         </h2>
         <div className="w-full flex flex-col gap-[30px] text-[16px] text-black mb-[43px]">
           <p>

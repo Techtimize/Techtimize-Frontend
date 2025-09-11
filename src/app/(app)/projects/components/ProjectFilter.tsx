@@ -44,9 +44,9 @@ export default function ProjectsFilter({ projects }: { projects: projectsProps[]
                     <p className="page-blue-heading xl:mb-[11px] pt-[20px] md:pt-[40px] xl:pt-0 mb-[5px]">
                         Our Portfolio
                     </p>
-                    <h2 className="page-sub-heading font-semibold xl:mb-[54px] mb-[25px]">
+                    <h4 className="page-sub-heading font-semibold xl:mb-[54px] mb-[25px]">
                         Here’s a Look at Our Work
-                    </h2>
+                    </h4>
                 </div>
             </div>
 
