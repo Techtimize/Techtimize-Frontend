@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
   .container {
     @apply max-w-[1536px] mx-auto bg-white;
@@ -36,34 +35,40 @@
   }
 }
 
-html{
-  scroll-behavior: smooth;
+@font-face {
+  font-family: "Satoshi-Variable";
+  src: url("/assets/fonts/Satoshi-Variable.ttf");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi-Bold";
+  src: url("/assets/fonts/Satoshi-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Satoshi-Medium";
+  src: url("/assets/fonts/Satoshi-Medium.ttf");
+  font-weight: 500;
+  font-style: normal;
 }
 
 body {
-  font-family: "Manrope", sans-serif;
-} 
+  font-family: "Satoshi-Variable", sans-serif;
+}
 
-/* h1,
+h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  font-family: "Manrope", sans-serif;
-} */
-
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  font-family: "Satoshi-Bold", sans-serif;
+  font-weight: 700;
 }
-.animate-fadeIn {
-  animation: fadeIn 0.5s ease-in-out forwards;
-}
-
-
-
 
 .satoshi-medium {
   font-family: "Satoshi-Medium", sans-serif;
@@ -156,8 +161,4 @@ h6 {
   body {
     @apply bg-background text-foreground;
   }
-}
-
-.btn-grad{
-  background: linear-gradient(to bottom, #81BCFF 0%, #0697D5 100%);
 }

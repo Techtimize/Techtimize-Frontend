@@ -9,17 +9,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import CommentSlider from "../home/http/fetchtestimonial";
 
-import { getCanonicalUrl } from "@/app/lib/getCanonial";
-import Btn_redesign from "@/components/ui/btn_redesign";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/about");
-
-  return {
-    title: "About Us | Techtimize",
-    alternates: {
-      canonical,
-    },
-  };
+  return await generateMetadataFromBE("about");
 }
 
 const About = () => {
@@ -31,19 +22,27 @@ const About = () => {
           <p className="page-blue-heading xl:mb-[11px] mb-[5px]">
             Meet Our Team
           </p>
-          <h2 className="page-sub-heading font-semibold xl:mb-[54px] mb-[19px]">
+          <h4 className="page-sub-heading font-semibold xl:mb-[54px] mb-[19px]">
             We are a Digital Professional Team
-          </h2>
+          </h4>
           <p className="text-tertiary text xl:max-w-[576px]">
-            Techtimize stands at the forefront of delivering custom technology solutions—from web and mobile applications to AI, cloud services, UI/UX design, and staff augmentation. At Techtimize, we believe technology should not just enable, it should propel.Our journey began with a clear mission: to help businesses harness the power of cutting-edge technology to achieve their goals, no matter their scale—whether you’re an enterprise, startup, or growing venture.
-
+            We are a leading software development company dedicated to creating
+            innovative, customized solutions that empower businesses to achieve
+            their goals. Our team of skilled developers, designers, and project
+            managers work collaboratively to deliver high-quality software that
+            meets the unique needs of each client
           </p>
-        <Btn_redesign content={"Create your App with us "} url={"/contact-us"}  icon={HiArrowLongRight} className="mt-[15px]"/>
+          <Link href="/contact-us">
+            <Button
+              className="bg-[#0B4D8E] text-white w-30 mt-8"
+              variant="outline"
+            >Create your App with us{<HiArrowLongRight size={30} />}</Button>
+          </Link>
         </div>
         <div className="flex flex-col justify-center">
           <div className="relative">
             <Image
-              src={"/assets/images/aboutImg.webp"}
+              src={"/assets/images/aboutImg.png"}
               width={400}
               height={400}
               alt={"about"}
@@ -63,7 +62,7 @@ const About = () => {
         <div className="flex sm:flex-row flex-col-reverse justify-center items-center">
           <div className="relative py-[10px] sm:basis-[50%]">
             <Image
-              src={"/assets/images/map.webp"}
+              src={"/assets/images/map.png"}
               width={763}
               height={472}
               alt={"map"}
@@ -104,23 +103,23 @@ const About = () => {
             </div>
           </div>
           <div className="px-[16px] py-[20px] md:p-[25px] sm:basis-[50%] xl:basis-0">
-            <h2 className="page-sub-heading font-semibold xl:mb-[54px] mb-[19px]">
-             Our Impact
-            </h2>
+            <h4 className="page-sub-heading font-semibold xl:mb-[54px] mb-[19px]">
+              Empowering Your Digital Vision
+            </h4>
             <p className="text xl:w-[472px] text-black">
-              Over the years, Techtimize has partnered with businesses across diverse industries, delivering solutions that combine innovation with measurable results. From helping startups build their very first AI-powered platforms to enabling established enterprises scale with secure cloud deployments and intuitive mobile applications, our track record speaks for itself. Every project we undertake is fueled by our commitment to quality, transparency, and long-term value creation—because for us, success is defined by the success of those we serve.
-
+              Our software IT company offers top-notch web app, mobile app
+              development, and a range of creative services to clients
+              worldwide. With a strong team of experienced professionals, we
+              have established ourselves as a leading player in the industry.
             </p>
 
-            {/* <Link href="/contact-us">
+            <Link href="/contact-us">
               <Button
 
                 variant='outline'
                 className="bg-[#0B4D8E] h-12 rounded-[7px] text-white mt-[30px] px-[20px] py-[10px]"
               >Contact Us</Button>
-            </Link> */}
-
-      <Btn_redesign content={"Contact Us "} url={"/contact-us"} className="mt-[15px]"/>
+            </Link>
 
           </div>
         </div>
@@ -130,9 +129,9 @@ const About = () => {
         <p className="page-blue-heading xl:mb-[11px] pt-[20px] md:pt-[40px] xl:pt-0 mb-[5px] text-center">
           Digital Solutions
         </p>
-        <h2 className="page-sub-heading font-semibold xl:mb-[54px] mb-[25px] px-[16px] text-center">
-          Grow Faster with Techtimize
-        </h2>
+        <h4 className="page-sub-heading font-semibold xl:mb-[54px] mb-[25px] px-[16px] text-center">
+          Grow Faster with Our Help
+        </h4>
         <div className="grid sm:grid-cols-3 grid-cols-1 gap-[20px] xl:w-[90%] w-full px-[16px] pb-[40px]">
           <div className="flex flex-col items-center gap-[10px]">
             <Image
@@ -142,12 +141,12 @@ const About = () => {
               alt={"rating"}
               className="xl:w-[128px] xl:h-[128px] w-[88px] h-[88px]"
             />
-            <h3 className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
-              Smart Solutions
-            </h3>
+            <p className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
+              Rating and Reviews
+            </p>
             <p className="xl:w-[202px] text-center text text-tertiary">
-             From AI to cloud, we design technology that scales with your business.
-
+              Boost your online reputation with our review and rating management
+              software.
             </p>
           </div>
           <div className="flex flex-col items-center gap-[10px]">
@@ -158,11 +157,12 @@ const About = () => {
               alt={"rating"}
               className="xl:w-[128px] xl:h-[128px] w-[88px] h-[88px]"
             />
-            <h3 className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
-             Trusted Expertise
-            </h3>
+            <p className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
+              Sales and Marketing
+            </p>
             <p className="xl:w-[202px] text-center text text-tertiary">
-             A skilled team delivering quality, transparency, and on-time results.
+              Revolutionize your sales and marketing with our software solutions
+              today.
             </p>
           </div>
           <div className="flex flex-col items-center gap-[10px]">
@@ -173,12 +173,12 @@ const About = () => {
               alt={"rating"}
               className="xl:w-[128px] xl:h-[128px] w-[88px] h-[88px]"
             />
-            <h3 className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
-            Future-Ready
-            </h3>
+            <p className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
+              Customer Experience
+            </p>
             <p className="xl:w-[202px] text-center text text-tertiary">
-              Innovations that not only solve today’s needs but prepare you for tomorrow.
-
+              In the end, its all about the customer. Build Trust and harmony
+              with us.
             </p>
           </div>
         </div>
@@ -193,9 +193,9 @@ const About = () => {
                 className="xl:w-[52.05px] xl:h-[52.05px] w-[30px] h-[30px]"
               />
               <div>
-                <h3 className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
+                <p className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
                   Customize your Site
-                </h3>
+                </p>
                 <p className="xl:w-[330px] xl:text-[16px] md:text-[12px] text-tertiary text-[10px]">
                   Create a website that reflects your unique brand and vision
                   with our customizable software solutions.
@@ -211,9 +211,9 @@ const About = () => {
                 className="w-[40px] h-[40px] xl:w-[62.46px] xl:h-[62.46px]"
               />
               <div>
-                <h3 className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
+                <p className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
                   Edit your Mobile View
-                </h3>
+                </p>
                 <p className="xl:text-[16px] md:text-[12px] text-[10px] text-tertiary">
                   Our software company provides the flexibility to edit your
                   mobile view, ensuring a seamless user experience across all
@@ -230,9 +230,9 @@ const About = () => {
                 className="w-[50px] h-[50px] xl:w-[82.23px] xl:h-[82.23px]"
               />
               <div>
-                <h3 className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
+                <p className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
                   Add advanced features
-                </h3>
+                </p>
                 <p className="xl:text-[16px] md:text-[12px] text-[10px] xl:w-[330px] text-tertiary">
                   Elevate your business with our software solutions and
                   customize them with advanced features tailored.
@@ -248,9 +248,9 @@ const About = () => {
                 className="w-[40px] h-[40px] xl:w-[59.33px] xl:h-[59.33px]"
               />
               <div>
-                <h3 className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
+                <p className="xl:text-[19px] md:text-[14px] text-[12px] satoshi-medium mb-[5px] text-black">
                   Optimize for Search Engine
-                </h3>
+                </p>
                 <p className="xl:text-[16px] md:text-[12px] text-[10px] xl:w-[330px] text-tertiary">
                   We help you maximize your online visibility with our
                   softwares SEO optimization tools and improve your search
@@ -268,7 +268,7 @@ const About = () => {
         <h5 className="page-sub-heading font-semibold mb-[42px] page-px">
           Client Success Stories
         </h5>
-        <div className="relative">
+        <div className="overflow-hidden">
           <CommentSlider />
         </div>
 

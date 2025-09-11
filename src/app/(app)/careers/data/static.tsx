@@ -1,27 +1,27 @@
 const data =[
     {
-        "heading":"Innovative Projects",
-        "paragraph":" Work on cutting-edge AI, cloud, and digital solutions that challenge your skills and fuel your creativity."
+        "heading":"Inclusive Work Environment",
+        "paragraph":"Our company fosters a welcoming and diverse workplace, encouraging collaboration, respect, and mutual support among employees."
     },
     {
-        "heading":"Career Growth",
-        "paragraph":" Accelerate your professional journey with continuous learning, mentorship, and skill-development programs."
+        "heading":"Growth-Focused Culture",
+        "paragraph":"We value innovation and encourage our employees to contribute to the company's growth, fostering a culture of creativity and forward thinking."
     },
     {
-        "heading":"Collaborative Culture",
-        "paragraph":"Be part of a diverse, supportive team where knowledge-sharing and teamwork drive success."
+        "heading":"Professional Development",
+        "paragraph":"Our commitment to continuous learning includes ongoing training, workshops, and mentorship programs to help employees enhance their skills."
     },
     {
         "heading":"Work-Life Balance",
-        "paragraph":"Enjoy a flexible, healthy environment that respects personal well-being alongside professional goals."
+        "paragraph":"We value work-life balance, offering flexible schedules and remote work options to support employee well-being."
     },
     {
-        "heading":"Global Exposure ",
-        "paragraph":"Collaborate with international clients and teams, gaining insights into global markets and practices.",
+        "heading":"Learning and Development",
+        "paragraph":"We invest in our employees' growth through training, workshops, and educational opportunities, helping them stay current and excel in their roles.",
     },
     {
         "heading":"Recognition and Rewards",
-        "paragraph":"Your contributions are valued, celebrated, and rewarded through appreciation and growth opportunities.",
+        "paragraph":"We appreciate and acknowledge the hard work and contributions of our employees through various recognition and reward programs, motivating and retaining top talent",
     },
 ]
 

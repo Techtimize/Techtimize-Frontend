@@ -3,18 +3,7 @@ import getCareersJobs from "@/app/api/job/get-job";
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { getCanonicalUrl } from "@/app/lib/getCanonial";
-import { Metadata } from "next";
-export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/job-description");
 
-  return {
-    title: "Job Description | Techtimize",
-    alternates: {
-      canonical,
-    },
-  };
-}
 export default async function JobDescriptionPage({ id: jobId }: { id: string }) {
   const jobdetails = await getCareersJobs();
   const job: jobProps | undefined = jobdetails.find(
