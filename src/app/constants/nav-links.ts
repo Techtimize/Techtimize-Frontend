@@ -18,15 +18,6 @@ const links = [
     id: 3,
     link: "Services",
     path: "/services",
-    children: [
-      { id: "s1", link: "Artificial Intelligence", path: "/services?service=Artificial Intelligence", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/ai-navbar.svg", hovericonurl: "/assets/images/ai-navbar-hover.svg" },
-      { id: "s2", link: "Mobile App Development", path: "/services?service=App Development", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/mobile-app-navbar.svg", hovericonurl: ""},
-      { id: "s3", link: "Web App Development", path: "/services?service=App Development", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/web-app-navbar.svg", hovericonurl: ""},
-      { id: "s4", link: "Cloud Services", path: "/services?service=Cloud Services", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/cloud-services-navbar.svg", hovericonurl: ""},
-      { id: "s5", link: "UI UX Design", path: "/services?service=UI UX", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/ui-ux-navbar.svg", hovericonurl: ""},
-      { id: "s6", link: "Project Management", path: "/services?service=Management", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/project-management-navbar.svg", hovericonurl: ""},
-      { id: "s7", link: "Staff Augmentation", path: "/services?service=Staff Augmentation", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/project-management-navbar.svg", hovericonurl: ""},
-    ],
   },
   {
     id: 4,
@@ -37,83 +28,6 @@ const links = [
     id: 5,
     link: "Careers",
     path: "/careers",
-  },
-];
-
-const otherFooterLinks = [
-  {
-    name: "Terms & Conditions",
-    link: "/terms-and-conditions",
-  },
-  {
-    name: "Privacy Policy",
-    link: "/privacy-policy",
-  },
-];
-
-const footerQuickLinks = [
-  {
-    name: "Home",
-    link: "/",
-  },
-  {
-    name: "Hiring Staff",
-    link: "/hiring-staff",
-  },
-  {
-    name: "About",
-    link: "/about",
-  },
-  {
-    name: "Projects",
-    link: "/projects",
-  },
-  {
-    name: "Contact Us",
-    link: "/contact-us",
-  },
-  {
-    name: "Reviews",
-    link: "/reviews",
-  },
-  {
-    name: "Blogs",
-    link: "/blogs",
-  },
-  {
-    name: "Faqs",
-    link: "/faqs",
-  }
-];
-
-const footerServices = [
-  {
-    name: "Artificial Intelligence",
-    link: "/services?service=Artificial Intelligence",
-  },
-  {
-    name: "Mobile App Development",
-    link: "/services?service=App Development",
-  },
-  {
-    name: "Web App Development",
-    link: "/services?service=App Development",
-  },
-  {
-    name: "Cloud Services",
-    link: "/services?service=Cloud Services",
-  },
-  {
-    name: "UI UX Design",
-    link: "/services?service=UI UX",
-  },
-  {
-    name: "Project Management",
-    link: "/services?service=Management",
-  },
-  {
-    name: "Staff Augmentation",
-    link: "/services?service=Staff Augmentation",
   },
 ];
 
@@ -131,7 +45,4 @@ export {
   WYOMING_LOCATION_MAP_HREF,
   PHONE_NUMBER_HREF,
   EMAIL_ADDRESS_HREF,
-  otherFooterLinks,
-  footerQuickLinks,
-  footerServices,
 };

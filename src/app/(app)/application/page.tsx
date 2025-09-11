@@ -36,7 +36,7 @@ const ApplicationForm = () => {
     });
 
     const onSubmit = async (data: z.infer<typeof formSchema>) => {
-        
+        console.log(data)
         // setLoading(true);
         // try {
         //     const response = await fetch("/contact-us/api/sendemail", {
@@ -59,7 +59,6 @@ const ApplicationForm = () => {
         //     setLoading(false);
         // }
     };
-    
     return (
         <div className="relative flex flex-col items-center p-6">
       
