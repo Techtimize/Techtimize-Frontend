@@ -26,18 +26,19 @@ const HeroSection = () => {
         className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px] sm:w-[60%]"
       >
         <h1 className="md:text-[42px] sm:text-[42px]  text-[28px] font-bold lg:max-w-[600px] max-w-[305px] xl:mb-[12px] mb-[18px] font-Satoshi-Bold text-[#0B4D8E]">
-          Transforming Concepts into <span className="text-[#0697D5]"> Code</span>, from Vision to  <span className="text-[#0697D5]">  
+          Empowering Businesses with Intelligent Software & 
+           <span className="text-[#0697D5]"> AI </span><span className="text-[#0697D5]">  
             <Typewriter
       options={{
-        strings: ['Execution' , 'Reality'],
+        strings: ['Solutions' , 'Automations' , 'Innovation'],
         autoStart: true,
         loop: true,
         delay: 75,
         deleteSpeed: 40,
       }}/></span>
         </h1>
-        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[65%]">
-         We don’t just write code—we translate innovative ideas into robust digital solutions, ensuring every concept evolves into a product that works, scales, and delivers real value.
+        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[70%]">
+ We transform your ideas into scalable, future-ready digital products, enhanced with AI and automation ,enabling smarter operations, sustainable growth, and measurable impact.
         </p>
         <div className="flex items-center w-[100%] sm:w-[60%] justify-between my-[25px]">
           <Image  className="w-[47%] object-contain"

@@ -1,7 +1,7 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import React from "react";
 import Link from 'next/link';
-import { sitelinks, serviceslinks } from "@/app/constants/sitemap";
+import { sitelinks, serviceslinks } from "@/app/constants/sitemapdata";
 import "./sitemap.css"
 import type { Metadata } from "next";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";

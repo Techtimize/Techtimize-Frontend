@@ -1,1 +1,5 @@
-export const second_section = ["We craft smart, scalable solutions" , "Park growth and innovation." , "From scrappy startups to growing enterprises" , "Help businesses adapt, evolve, and thrive"]
+export const second_section = 
+["Expertise in AI, ML, and data science." , 
+    "Proven track record of delivering AI-driven business outcomes." , 
+    "Scalable solutions that evolve with your business." , 
+    "End-to-end support: from strategy to implementation."]
