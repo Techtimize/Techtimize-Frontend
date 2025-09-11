@@ -26,10 +26,6 @@ export const first_technologies = [
     {
         name : "React",
         image: "./assets/images/React.svg"
-    },
-    {
-        name : "NextJs",
-        image: "./assets/images/nextjs.svg"
     }
 ]
 

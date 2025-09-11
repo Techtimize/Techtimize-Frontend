@@ -21,9 +21,9 @@ export default function Design_Process() {
                                 />
                             )}
 
-                            <h3 className="mt-[15px] sm:mt-[30px] mb-[10px] lg:mt-[50px] lg:mb-[20px] text-[18px] " style={{ color: item.color }}>
+                            <h2 className="mt-[15px] sm:mt-[30px] mb-[10px] lg:mt-[50px] lg:mb-[20px] text-[18px] " style={{ color: item.color }}>
                                 {item.heading}
-                            </h3>
+                            </h2>
                             <p className="text-[14px] text-[#535353] max-w-[90%] mx-[auto] mb-[35px]">{item.content}</p>
                             <Image src={item.circleurl} width={50} height={50} alt="circle" className="inline absolute bottom-0 left-[40%] hidden lg:block"/>
                         </div>

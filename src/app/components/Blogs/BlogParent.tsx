@@ -28,11 +28,8 @@ const BlogParent = React.memo(function BlogParent({
   const isExpanded = expandedCategory === blog_category;
 
   return (
-    <div
-      className="blogParent  md:flex-row sm:px-[5%] pb-[15px] sm:pb-[50px]"
-      id={blog_category}
-    >
-      <div className="blog_top md:flex justify-between mb-[3%]  border-b pb-[20px]">
+    <div className="blogParent  md:flex-row px-[5%] pt-[50px]" id={blog_category}>
+      <div className="blog_top md:flex justify-between mb-[5%]  border-b pb-[20px]">
         <h2 className="md:text-[25px] font-[500]">{blog_category}</h2>
         <button
           className="md:text-[18px] text-[#0B4D8E] border-b border-[#0B4D8E]"
@@ -44,12 +41,14 @@ const BlogParent = React.memo(function BlogParent({
 
       <AnimatePresence initial={false}>
         <motion.div
-          layout
-          initial={false}
-          transition={{ type: "spring", stiffness: 320, damping: 32 }}
+          key={isExpanded ? "expanded" : "collapsed"}
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
           className="overflow-hidden"
         >
-          <div className="blog_container md:flex flex-wrap justify-between">
+          <div className="blog_container md:flex flex-wrap  justify-between">
             {(isExpanded ? blogs : blogs.slice(0, 3)).map((blog) => (
               <Blog_Item key={blog._id} blogdata={blog} />
             ))}
@@ -60,4 +59,4 @@ const BlogParent = React.memo(function BlogParent({
   );
 });
 
-export default BlogParent;
+export default BlogParent

@@ -5,17 +5,10 @@ import classNames from "classnames";
 import "./faqs.css";
 
 import { getFaqs } from "@/app/api/faqs/getFaqs";
-import { getCanonicalUrl } from "@/app/lib/getCanonial";
-import { Metadata } from "next";
-export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/faqs");
 
-  return {
-    title: "Frequently Asked Questions | Techtimize",
-    alternates: {
-      canonical,
-    },
-  };
+export async function generateMetadata(): Promise<import('next').Metadata> {
+  const { generateMetadataFromBE } = await import("@/app/lib/utils");
+  return await generateMetadataFromBE("about");
 }
 
 // Custom AccordionTrigger component
