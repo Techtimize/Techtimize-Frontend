@@ -18,28 +18,29 @@ const imageVariants = {
 const HeroSection = () => {
   
   return (
-    <div className="flex md:justify-between my-[45px] sm:my-0 sm:mb-[45px] md:mt-[45px] sm:justify-between justify-center md:flex-row sm:flex-row flex-col md:gap-[10px] sm:px-[25px] md:px-[30px] lg:px-[40px] px-[16px] x2000:justify-center x2000:container">
+    <div className="flex md:justify-between my-[45px] sm:my-0 sm:mb-[0px] md:mt-[45px] sm:justify-between justify-center md:flex-row sm:flex-row flex-col md:gap-[10px] sm:px-[25px] md:px-[30px] lg:px-[40px] px-[16px] x2000:justify-center x2000:max-w-[90%] x2000:mx-[auto]">
       <motion.div
         initial={{ opacity: 0, x: -15 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px] sm:w-[60%]"
       >
-        <h1 className="font-[Manrope-bold] md:text-[42px] sm:text-[42px]  text-[28px] font-bold lg:max-w-[600px] max-w-[305px] xl:mb-[12px] mb-[18px] font-Satoshi-Bold text-[#0B4D8E]">
-          Transforming Concepts into <span className="text-[#0697D5]"> Code</span>, from Vision to  <span className="text-[#0697D5]">  
+        <h1 className="md:text-[42px] sm:text-[42px]  text-[28px] font-bold lg:max-w-[600px] max-w-[305px] xl:mb-[12px] mb-[18px] font-Satoshi-Bold text-[#0B4D8E]">
+          Empowering Businesses with Intelligent Software & 
+           <span className="text-[#0697D5]"> AI </span><span className="text-[#0697D5]">  
             <Typewriter
       options={{
-        strings: ['Execution' , 'Reality'],
+        strings: ['Solutions' , 'Automations' , 'Innovation'],
         autoStart: true,
         loop: true,
         delay: 75,
         deleteSpeed: 40,
       }}/></span>
         </h1>
-        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[45%]">
-         We don’t just write code—we translate innovative ideas into robust digital solutions, ensuring every concept evolves into a product that works, scales, and delivers real value.
+        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[70%]">
+ We transform your ideas into scalable, future-ready digital products, enhanced with AI and automation ,enabling smarter operations, sustainable growth, and measurable impact.
         </p>
-        <div className="flex items-center w-[43%] justify-between my-[25px]">
+        <div className="flex items-center w-[100%] sm:w-[60%] justify-between my-[25px]">
           <Image  className="w-[47%] object-contain"
           src = {"/assets/images/clutch-reviews.png"} alt ={"google reviews"} width={130} height ={130}
           />
@@ -47,14 +48,21 @@ const HeroSection = () => {
           src = {"/assets/images/google-reviews.png"} alt ={"google reviews"} width={130} height ={130}
           />
         </div>
-        <div className="max-w-[180px] sm:flex sm:max-w-[unset]">
+        <div className="max-w-[185px] sm:flex sm:max-w-[unset]">
         <Btn_redesign content={"Schedule Meeting"} url={""} icon={FaVideo} className="sm:w-[unset] w-[100%]"/>
          <Link className="px-[10px] border border-[#000] sm:mt-[0] mt-[15px] sm:px-[30px] sm:ml-[30px] py-[12px] rounded-[8px] font-medium flex items-center" href="/contact-us">
              Get In Touch <MdArrowOutward className="ml-[10px]"/>
         </Link>
         </div>
       </motion.div>
-      <div className="xl:mr-[74.53px] mt-[50px] md:mt-0">
+    
+      <div className="xl:mr-[74.53px] sm:mt-[50px] md:mt-0 sm:w-[40%] flex items-center justify-center">
+          <motion.div
+        initial={{ opacity: 0, x: 15 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className=""
+      >
         <div className="flex items-center justify-center">
           <div className="relative">
             {/* <motion.div
@@ -85,7 +93,7 @@ const HeroSection = () => {
                 width={492}
                 height={529}
                 alt={"hero1"}
-                className="lg:w-[395px] lg:h-[100%] md:h-[390px] sm:h-[320px] md:w-[370px] sm:w-[320px] w-[312px] h-[312px]"
+                className="lg:w-[100%]  lg:h-[100%] md:h-[390px] sm:h-[320px] md:w-[370px] sm:w-[320px] w-[312px] h-[312px]"
               />
               {/* <Image
                 src={"/assets/svgs/polygon.svg"}
@@ -112,6 +120,7 @@ const HeroSection = () => {
              </motion.div> */}
           </div>
         </div>
+             </motion.div>
       </div>
     </div>
   );

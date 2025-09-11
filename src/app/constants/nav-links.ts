@@ -18,6 +18,15 @@ const links = [
     id: 3,
     link: "Services",
     path: "/services",
+    children: [
+      { id: "s1", link: "Artificial Intelligence", path: "/services?service=Artificial Intelligence", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/ai-navbar.svg", hovericonurl: "/assets/images/ai-navbar-hover.svg" },
+      { id: "s2", link: "Mobile App Development", path: "/services?service=App Development", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/mobile-app-navbar.svg", hovericonurl: ""},
+      { id: "s3", link: "Web App Development", path: "/services?service=App Development", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/web-app-navbar.svg", hovericonurl: ""},
+      { id: "s4", link: "Cloud Services", path: "/services?service=Cloud Services", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/cloud-services-navbar.svg", hovericonurl: ""},
+      { id: "s5", link: "UI UX Design", path: "/services?service=UI UX", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/ui-ux-navbar.svg", hovericonurl: ""},
+      { id: "s6", link: "Project Management", path: "/services?service=Management", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/project-management-navbar.svg", hovericonurl: ""},
+      { id: "s7", link: "Staff Augmentation", path: "/services?service=Staff Augmentation", para: "Transforming data into intelligent solutions with techtimize.", iconurl: "/assets/images/project-management-navbar.svg", hovericonurl: ""},
+    ],
   },
   {
     id: 4,
@@ -52,10 +61,6 @@ const footerQuickLinks = [
     link: "/hiring-staff",
   },
   {
-    name: "Services",
-    link: "/services",
-  },
-  {
     name: "About",
     link: "/about",
   },
@@ -67,6 +72,18 @@ const footerQuickLinks = [
     name: "Contact Us",
     link: "/contact-us",
   },
+  {
+    name: "Reviews",
+    link: "/reviews",
+  },
+  {
+    name: "Blogs",
+    link: "/blogs",
+  },
+  {
+    name: "Faqs",
+    link: "/faqs",
+  }
 ];
 
 const footerServices = [

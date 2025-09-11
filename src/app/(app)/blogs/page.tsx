@@ -4,12 +4,25 @@ import { GetBlogCategories } from "@/app/api/blogs/getblogcategories";
 import { blogsProps } from "@/app/types/blog";
 import BlogContainer from "@/app/components/Blogs/blog_container";
 
+import { getCanonicalUrl } from "@/app/lib/getCanonial";
+import { Metadata } from "next";
+export async function generateMetadata(): Promise<Metadata> {
+  const canonical = await getCanonicalUrl("/blogs");
+
+  return {
+    title: "Blogs | Techtimize",
+    alternates: {
+      canonical,
+    },
+  };
+}
+
 export default async function Blogs() {
   const blogCategory = await GetBlogCategories();
   const blogs: blogsProps[] = await getBlogs();
 
   return (
-    <div className="p-[20px] md:p-[40px]" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+    <div className="p-[20px] md:p-[40px] !pb-[0]" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
       <PageHeader subHeading="Blogs" heading="Blogs" />
       <div style={{ width: "100%", maxWidth: "1500px" }}>
         <BlogContainer blog_category={blogCategory} blogs={blogs} />

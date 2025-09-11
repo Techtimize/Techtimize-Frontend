@@ -1,7 +1,5 @@
-import { getStories } from "@/app/api/stories/get_Stories";
-import TestimonialSlider from "@/app/components/TestimonialSlider/TestimonialSlider";
+import Testimonials from "@/app/components/home/Testimonials";
 
 export default async function CommentSlider(){
-    const clientreviews = await getStories();
-    return <TestimonialSlider clientreviews={clientreviews}/>
+    return <Testimonials className="pb-[30px] mb-[30px]"/>
 }

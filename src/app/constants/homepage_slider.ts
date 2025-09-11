@@ -1,7 +1,7 @@
 
 export const logos = [
   {
-    src: "/assets/images/salesMind.png",
+    src: "/assets/images/salesMind.webp",
     alt: "Sales Mind",
     width: 89,
     height: 89,
@@ -9,7 +9,7 @@ export const logos = [
     label: "Sales Mind",
   },
   {
-    src: "/assets/images/sunndio.png",
+    src: "/assets/images/sunndio.webp",
     alt: "Sunndio",
     width: 201,
     height: 90,
@@ -38,7 +38,7 @@ export const logos = [
     className: "w-auto h-auto",
   },
   {
-    src: "/assets/images/fresha.png",
+    src: "/assets/images/fresha.webp",
     alt: "Fresha",
     width: 96,
     height: 31,

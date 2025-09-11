@@ -21,6 +21,7 @@ export const ApiEndpoint = {
   BLOGS_CATEGORIES: `${baseUrl}/api/v1/blog-type`,
   BLOG_BYID : (id : string) => `${baseUrl}/api/v1/blog/${id}`,
   BLOG_BYSLUG : (slug : string) => `${baseUrl}/api/v1/blog/slug/${slug}`,
+  REVIEWS :  `${baseUrl}/api/v1/reviews`,
 };
 
 export const API = {

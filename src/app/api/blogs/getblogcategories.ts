@@ -11,7 +11,7 @@ export async function GetBlogCategories():Promise<blog_Category_type>{
         })
         
         const result = await response.json();
-        console.log(result)
+        // console.log(result)
         return result.data;
     } catch (error) {
         console.log("error coming in fethc");
