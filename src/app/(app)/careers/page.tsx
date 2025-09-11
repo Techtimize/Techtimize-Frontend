@@ -9,9 +9,16 @@ import Link from "next/link";
 import { ApiEndpoint } from "@/app/api";
 import { Department } from "@/app/types/departments";
 import { Departments } from "./components";
-
+import { getCanonicalUrl } from "@/app/lib/getCanonial";
 export async function generateMetadata(): Promise<Metadata> {
-  return await generateMetadataFromBE("careers");
+  const canonical = await getCanonicalUrl("/careers");
+
+  return {
+    title: "Careers | Techtimize",
+    alternates: {
+      canonical,
+    },
+  };
 }
 
 const Careers = async () => {
@@ -52,7 +59,7 @@ const Careers = async () => {
 
       <div className="text-center mt-10">
         <p className="text-blue-1">Our Perks</p>
-        <h1 className="text-xl md:text-2xl font-thin mb-6">
+        <h1 className="text-xl md:text-2xl font-[600] mb-6">
           Benefits in Working with Us
         </h1>
       </div>
@@ -60,7 +67,7 @@ const Careers = async () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full text-center mt-10 px-4">
         {data.map((item) => (
           <div key={item.heading} className="flex flex-col items-center p-4">
-            <h3 className="font-thin text-lg">{item.heading}</h3>
+            <h3 className="font-[600] text-lg">{item.heading}</h3>
             <p className="mt-2 text-sm text-justify">{item.paragraph}</p>
           </div>
         ))}

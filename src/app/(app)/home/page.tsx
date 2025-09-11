@@ -1,116 +1,120 @@
-import React, { Suspense } from "react";
-import { services } from "@/app/constants/services";
-import ProjectLogoSlider from "./components/ProjectLogoSlider";
-import HeroSection from "./components/HeroSection";
-import Stats from "./components/Stats";
-import Link from "next/link";
+import React from "react";
+import ProjectLogoSlider from "../../components/home/ProjectLogoSlider";
 import type { Metadata } from "next";
 import { generateMetadataFromBE } from "@/app/lib/utils";
-import { Button } from "@/components/ui/button";
-import { CardContent } from "@/components/ui/card";
+import HeroSection from "../../components/home/HeroSection";
 import Image from "next/image";
-import ProjectList from "./http/fetchproduct";
-import CommentSlider from "./http/fetchtestimonial";
-import { Skeleton } from "@/components/ui/skeleton";
+import Btn_redesign from "@/components/ui/btn_redesign";
+import Heading_proto from "@/components/heading_prototype";
+import getServices from "@/app/api/services/get_services";
+import ServiceCard from "../../components/home/ServiceCard";
+import { process_Steps } from "@/app/constants/process_steps";
+import Link from "next/link";
+import { FaArrowRight } from "react-icons/fa";
+import './home.css';
+import ProjectSlider from "../../components/home/ProjectSlider";
+import Transforming from "../../components/home/Transforming";
+import Technologies from "../../components/home/Technologies";
+import { get3LatestBlogs } from "@/app/api/blogs/getlatestblogs";
+import HomeBlogs from "../../components/home/HomeBlogs";
+import Testimonials from "../../components/home/Testimonials"
+import { Input } from "@/components/ui/input";
+import { FaVideo } from "react-icons/fa";
+
+
 
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("home");
 }
 
+
+
 export default async function Home() {
+  const services = await getServices();
+  const blogs = await get3LatestBlogs();
+  // console.log(blogs);
   return (
-    <div className="bg-white">
+    <div className="bg-white home-page">
       <HeroSection />
-      <Stats />
-      <div className="pt-20 pb-10">
+
+      <Transforming />
+      <div className="">
+        <Heading_proto heading="Clients Served" />
         <ProjectLogoSlider />
       </div>
+      <div>
+        <Heading_proto heading="Our Services" para="Discover services designed to help your business grow and succeed." />
+        <div className=" max-w-[90%] mx-[auto] flex flex-wrap lg:max-w-[82%] justify-between sm:max-w-[80%]">
 
-      {/* Services Section */}
-      <div className="flex xl:flex-row md:flex-row sm:flex-row flex-col xl:gap-[135px] lg:gap-[135px] pb-[10px] justify-between bg-[#FBFCFF]">
-        <div className="xl:ml-[63px] sm:pl-[25px] md:pl-[30px] lg:pl-[40px] sm:pr-0 px-[16px]">
-          <p className="text-blue-1 xl:mt-[50px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px]">
-            What We Do
-          </p>
-          <h3 className="page-sub-heading font-bold xl:mb-[54px] mb-[19px]">
-            Our Services
-          </h3>
-          <p className="text text-darkGrey xl:max-w-[397px] max-w-[342px] xl:mb-[70px] md:mb-[42px] mb-[55px]">
-            With a focus on innovation, creativity, and reliability, we aim to
-            help businesses stay ahead in the ever-evolving digital landscape.
-          </p>
-          <Link href="/hiring-staff/need-to-consult">
-            <Button variant="outline" className="bg-[#0B4D8E] h-12 text-white">
-              Book a Quote
-            </Button>
-          </Link>
+          {services.map((key) => {
+            return (
+              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35] rounded-[20px] lg:mt-[20px]">
+                <ServiceCard
+                  key={key._id}
+                  url={key.url}
+                  title={key.serviceName}
+                  description={key.description}
+                  image={key.iconUrl}
+                />
+              </div>
+            );
+          })}
         </div>
+        <div className="mt-[30px] text-center">
+          <Btn_redesign content="View All Services" url="#" />
+        </div>
+      </div>
+      <div>
+        <Heading_proto heading="Why choose Techtimize" para="Start to Finish, We've Got You Covered" />
+        <div className="relative z-[1]">
+          <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between sm:mt-[50px]">
+            <div className="sm:w-[40%] flex items-center">
+              <Image className="w-[100%]" src={"/assets/images/picture.svg"} alt={"picture"} width={100} height={100} />
+              <Image className="start-to-finish-bg" src={"/assets/images/start-to-finish-bg.svg"} alt={"picture"} width={100} height={60} />
+            </div>
 
-        {/* Service Cards with Skeleton */}
-        <div className="xl:mr-[70px] sm:pr-[20px] md:pr-[25px] lg:pr-[30px] md:mt-[84px] sm:mt-[84px] xl:mt-[98px] mt-[55px] overflow-hidden">
-          <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 grid-cols-1 md:px-0 px-[16px] gap-4">
-            {services.length > 0 ? (
-              services.map((item) => (
-                <Link key={item._id} href={`/services/?service=${item.type}`} className="w-full">
-                  <CardContent className="hover:scale-105 transition-transform duration-200 w-full">
-                    <div className="flex items-center space-x-4 rounded-md border p-4 w-full overflow-hidden">
-                      <Image src={item.iconUrl} alt={item.serviceName} width={30} height={30} />
-                      <div className="flex-1 space-y-1 min-w-0">
-                        <p className="text-sm font-medium leading-none break-words truncate">
-                          {item.serviceName}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Link>
-              ))
-            ) : (
-              // Skeleton Loader
-              [...Array(6)].map((_, index) => (
-                <Skeleton key={index} className="h-[80px] w-full rounded-md" />
-              ))
-            )}
+
+            <div className="mt-[30px] sm:w-[53%] sm:mt-[0] flex flex-wrap justify-between">
+              {process_Steps.map((step, index) => (
+                <div key={index} className=" sm :w-[100%] pb-[25px] lg:w-[42%] understanding pt-[25px]">
+                  <h3 className="text-[18px] font-[800]">{step.title}</h3>
+                  <p className="text-[#727272] my-[15px]">{step.content}</p>
+                  <div className="flex items-center text-[#0B4D8E]"> <Link href={"/about"}>Learn More </Link>
+                    <FaArrowRight className="ml-[10px]" />
+                  </div></div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
-      {/* Portfolio Section */}
-      <div>
-        <p className="page-blue-heading !text-blue-1 xl:px-[100px] lg:px-[40px] md:px-[30px] xl:mt-[50px] md:mt-[76px] sm:mt-[76px] mt-[48px] xl:mb-[11px] mb-[5px] sm:px-[25px] px-[20px]">
-          Our Work
-        </p>
-        <h3 className="page-sub-heading xl:px-[100px] lg:px-[40px] md:px-[30px] font-bold xl:mb-[24px] mb-[19px] sm:px-[25px] px-[20px]">
-          Our Portfolio
-        </h3>
-
-        <div className="xl:pl-[84px] xl:pr-[30px] lg:pl-[30px] lg:pr-[10px] lg:px-0 md:px-[18px] sm:px-[18px]">
-          <Suspense fallback={<Skeleton className="h-[300px] w-full rounded-md" />}>
-            <ProjectList />
-          </Suspense>
-        </div>
-
-        <div className="flex items-center justify-center mt-[46px]">
-          <Link href={"/hiring-staff/need-to-consult"}>
-            <Button variant="outline" className="bg-[#0B4D8E] h-12 text-white">
-              View all Projects
-            </Button>
-          </Link>
+      <div className="relative">
+        <Image className="project-bg" src={"/assets/images/projects-bg.svg"} alt="tick" height={20} width={20} />
+        <div className="mx-[auto] sm:container md:max-w-[80%] max-w-[90%] lg:max-w-[82%] ">
+          <Image className="project-bg" src={"/assets/images/projects-bg.svg"} alt="tick" height={20} width={20} />
+          <Heading_proto heading="Our Projects" para="A Detailed Review of Techtimize Project’s" alignment="text-left" />
+          <ProjectSlider />
         </div>
       </div>
+      <Heading_proto heading="Technologies" para="The Technology Stack We Use to Make Optimal Softwares" className="mt-[80px]" />
+      <Technologies />
 
-      {/* Testimonials Section */}
-      <div className="sm:mt-[60px]">
-        <p className="page-blue-heading !text-blue-1 mt-[67px] md:mt-0 mb-[3px] sm:px-[25px] px-[23px] md:px-[30px] lg:px-[40px] xl:px-[100px]">
-          Testimonials
-        </p>
-        <h5 className="page-sub-heading font-semibold mb-[42px] px-[23px] sm:px-[25px] md:px-[30px] lg:px-[40px] xl:px-[100px]">
-          Client Success Stories
-        </h5>
-        <div className="mb-[99px] md:mb-[118px] md:pl-[30px] md:pr-[20px] xl:pl-[100px] xl:pr-[30px] sm:pl-[20px] sm:pr-[10px] lg:mb-[100px]">
-          <Suspense fallback={<Skeleton className="h-[200px] w-full rounded-md" />}>
-            <CommentSlider />
-          </Suspense>
+      <Heading_proto heading="Read our Blogs " para="Stay updated with the latest insights, tips, and trends." />
+      <HomeBlogs data={blogs} />
+      <div className="text-center mt-[30px] mb-[50px] sm:mb-[100px]">
+        <Btn_redesign content={"View All"} url={"/blogs"} />
+      </div>
+      <Heading_proto heading="What Our Valued Customers Say" para="Trusted by Clients, Loved for Results" />
+      <Testimonials />
+      <div className="relative">
+     <Image src={"/assets/images/aroow.svg"} alt="arrow" width={500} height={500} className="aroow"/>
+        <div className="max-w-[90%] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] lg:max-w-[55%] sm:max-w-[80%] mx-[auto] py-[60px] rounded-[16px] sm:my-[100px] my-[50px] relative z-[9] bg-[#fff]">
+          <Heading_proto heading="Get In Touch" para="Subscribe Us to Get in Touch With Us And Enjoy The Latest Updates " className="!mt-[0px]" />
+          <div className="rounded-[12px] sm:flex max-w-[75%] mx-[auto] text-center" >
+            <Input type="Email" id="Email" className="rounded-[0] h-[unset] sm:rounded-tl-[12px] sm:rounded-bl-[12px]" autoComplete="email" placeholder="Enter Your Email" />
+            <Btn_redesign content="Subscribe" url="#" className="sm:mt-[0] sm:rounded-tl-[0px] sm:rounded-bl-[0px] sm:rounded-tr-[10px] sm:rounded-br-[10px] sm:mt=[0] mt-[15px]" />
         </div>
+        </div>
+     <Image src={"/assets/images/newsletter-bg.svg"} alt="arrow" width={100} height={100} className="newsletter-bg"/>
       </div>
     </div>
   );

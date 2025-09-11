@@ -15,7 +15,7 @@ export default function TechSlider({
   const query = useSearchParams();
   const [emblaRef] = useEmblaCarousel({ loop: true, align: "start" }, [
     AutoScroll({
-      speed: 4, // Increase speed to make it noticeable
+      speed: 2, 
       stopOnInteraction: false,
     }),
   ]);
