@@ -1,18 +1,18 @@
 export const process_Steps = [
   {
-    title: "Understanding Goals",
-    content: "Our process begins with a deep dive into your needs, challenges, and objectives"
+    title: "Expert Team",
+    content: "Skilled professionals with proven industry experience. Our experts bring deep technical knowledge and real-world problem-solving skills."
   },
   {
-    title: "Customized Strategy",
-    content: "Once we fully understand your vision, we craft a detailed and personalized roadmap"
+    title: "Custom Solutions",
+    content: "Software tailored to your business needs. Every solution is designed to fit your unique goals and challenges."
   },
   {
-    title: "Executing with Care",
-    content: "With the strategy in hand, our team works diligently to bring the plan to life"
+    title: "After-Sales Support",
+    content: "Ongoing assistance to keep your systems running smoothly. We ensure long-term reliability with continuous updates and support."
   },
   {
-    title: "Celebrating Success",
-    content: "We celebrate the milestones together and help you identify new opportunities for growth"
+    title: "Global Trust",
+    content: " Partnered with startups and enterprises across industries. Businesses worldwide trust us to deliver innovation with consistency."
   }
 ];

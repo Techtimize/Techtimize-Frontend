@@ -35,11 +35,8 @@ const About = () => {
             We are a Digital Professional Team
           </h2>
           <p className="text-tertiary text xl:max-w-[576px]">
-            We are a leading software development company dedicated to creating
-            innovative, customized solutions that empower businesses to achieve
-            their goals. Our team of skilled developers, designers, and project
-            managers work collaboratively to deliver high-quality software that
-            meets the unique needs of each client
+            Techtimize stands at the forefront of delivering custom technology solutions—from web and mobile applications to AI, cloud services, UI/UX design, and staff augmentation. At Techtimize, we believe technology should not just enable, it should propel.Our journey began with a clear mission: to help businesses harness the power of cutting-edge technology to achieve their goals, no matter their scale—whether you’re an enterprise, startup, or growing venture.
+
           </p>
         <Btn_redesign content={"Create your App with us "} url={"/contact-us"}  icon={HiArrowLongRight} className="mt-[15px]"/>
         </div>
@@ -108,13 +105,11 @@ const About = () => {
           </div>
           <div className="px-[16px] py-[20px] md:p-[25px] sm:basis-[50%] xl:basis-0">
             <h2 className="page-sub-heading font-semibold xl:mb-[54px] mb-[19px]">
-              Empowering Your Digital Vision
+             Our Impact
             </h2>
             <p className="text xl:w-[472px] text-black">
-              Our software IT company offers top-notch web app, mobile app
-              development, and a range of creative services to clients
-              worldwide. With a strong team of experienced professionals, we
-              have established ourselves as a leading player in the industry.
+              Over the years, Techtimize has partnered with businesses across diverse industries, delivering solutions that combine innovation with measurable results. From helping startups build their very first AI-powered platforms to enabling established enterprises scale with secure cloud deployments and intuitive mobile applications, our track record speaks for itself. Every project we undertake is fueled by our commitment to quality, transparency, and long-term value creation—because for us, success is defined by the success of those we serve.
+
             </p>
 
             {/* <Link href="/contact-us">
@@ -136,7 +131,7 @@ const About = () => {
           Digital Solutions
         </p>
         <h2 className="page-sub-heading font-semibold xl:mb-[54px] mb-[25px] px-[16px] text-center">
-          Grow Faster with Our Help
+          Grow Faster with Techtimize
         </h2>
         <div className="grid sm:grid-cols-3 grid-cols-1 gap-[20px] xl:w-[90%] w-full px-[16px] pb-[40px]">
           <div className="flex flex-col items-center gap-[10px]">
@@ -148,11 +143,11 @@ const About = () => {
               className="xl:w-[128px] xl:h-[128px] w-[88px] h-[88px]"
             />
             <h3 className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
-              Rating and Reviews
+              Smart Solutions
             </h3>
             <p className="xl:w-[202px] text-center text text-tertiary">
-              Boost your online reputation with our review and rating management
-              software.
+             From AI to cloud, we design technology that scales with your business.
+
             </p>
           </div>
           <div className="flex flex-col items-center gap-[10px]">
@@ -164,11 +159,10 @@ const About = () => {
               className="xl:w-[128px] xl:h-[128px] w-[88px] h-[88px]"
             />
             <h3 className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
-              Sales and Marketing
+             Trusted Expertise
             </h3>
             <p className="xl:w-[202px] text-center text text-tertiary">
-              Revolutionize your sales and marketing with our software solutions
-              today.
+             A skilled team delivering quality, transparency, and on-time results.
             </p>
           </div>
           <div className="flex flex-col items-center gap-[10px]">
@@ -180,11 +174,11 @@ const About = () => {
               className="xl:w-[128px] xl:h-[128px] w-[88px] h-[88px]"
             />
             <h3 className="xl:text-[20px] satoshi-bold xl:w-[175px] text-center text-black">
-              Customer Experience
+            Future-Ready
             </h3>
             <p className="xl:w-[202px] text-center text text-tertiary">
-              In the end, its all about the customer. Build Trust and harmony
-              with us.
+              Innovations that not only solve today’s needs but prepare you for tomorrow.
+
             </p>
           </div>
         </div>

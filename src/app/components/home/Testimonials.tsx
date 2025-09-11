@@ -3,10 +3,13 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, memo } from "react";
 import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
-import { testimonials } from "@/app/constants/testimonials";
 import StarsReview from "./StarsReview";
 import Image from "next/image";
 import clsx from "clsx";
+import { getReviews } from "@/app/api/reviews/getreviews";
+
+const reviews = await getReviews();
+// console.log(reviews);
 
 type TestimonialsProps = {
   className?: string;
@@ -42,7 +45,7 @@ function TestimonialsComponent({ className }: TestimonialsProps) {
         {/* Carousel Viewport */}
         <div className="overflow-hidden p-[50px] pt-[30px]" ref={emblaRef}>
           <div className="flex">
-            {testimonials.map((item, i) => (
+            {reviews.map((item, i) => (
               <div
                 key={i}
                 className="flex-[0_0_110%] sm:flex-[0_0_45%] lg:flex-[0_0_50%] px-4"
@@ -50,18 +53,18 @@ function TestimonialsComponent({ className }: TestimonialsProps) {
                 <div className="bg-white rounded-2xl p-6 h-full shadow-[rgba(17,17,26,0.1)_0px_1px_0px,_rgba(17,17,26,0.1)_0px_8px_24px,_rgba(17,17,26,0.1)_0px_16px_48px]">
                   <div className="mb-[10px] pb-[10px] sm:flex justify-between border-b border-b-[#C7C7C7] sm:mb-[15px]">
                     <div className="sm:flex items-center gap-4 mb-3">
-                      <img
+                      {/* <img
                         src={item.clientphoto}
                         alt={item.clientname}
                         className="w-12 h-12 rounded-full"
                         loading="lazy"
-                      />
+                      /> */}
                       <div>
                         <h3 className="font-semibold text-[18px] mb-[10px]">
-                          {item.clientname}
+                          {item.name}
                         </h3>
                         <p className="text-sm text-[18px] text-[#727272]">
-                          {item.designation}
+                          {item.clientdesignation}
                         </p>
                       </div>
                     </div>
@@ -69,8 +72,8 @@ function TestimonialsComponent({ className }: TestimonialsProps) {
                       <StarsReview stars={4} />
                     </div>
                   </div>
-                  <p className="mb-4 text-[18px] text-[#727272]">{item.reviews}</p>
-                  <p className="text-[#323232]">{item.date}</p>
+                  <p className="mb-4 text-[18px] text-[#727272]">{item.content}</p>
+                  {/* <p className="text-[#323232]">{reviews.date}</p> */}
                 </div>
               </div>
             ))}
