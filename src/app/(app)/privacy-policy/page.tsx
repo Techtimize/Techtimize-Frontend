@@ -2,6 +2,7 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import React from "react";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
+
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/privacy-policy");
 
@@ -12,94 +13,106 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   };
 }
+
 const PrivacyPolicy = () => {
   return (
-    <div className="flex flex-col w-full items-center">
+    <div className="flex flex-col w-full items-center font-montserrat px-4 md:px-12 xl:px-32">
       <PageHeader heading="Privacy Policy" subHeading={""} />
       <div className="max-w-[1536px] w-full md:pt-[84px] pt-[40px] pb-[41px] xl:px-[170px] md:px-[40px] px-[15px]">
+        
+        {/* Intro */}
         <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
           Privacy Policy
         </h2>
-        <div className="max-w-[520px] w-full flex flex-col gap-[30px] text-[16px] text-black mb-[43px]">
+        <div className="max-w-[1200px] w-full flex flex-col gap-[20px] text-[16px] text-black mb-[43px]">
           <p>
-            We are committed to protecting your privacy and safeguarding your
-            personal information. This Privacy Policy outlines how we collect,
-            use, disclose, and protect your information when you visit our
-            website or use our services.At the core of our UI/UX design process
-            is a deep understanding of your users and business goals. We begin
-            with thorough research and discovery to gather insights that inform
-            every design decision.{" "}
-          </p>
-          <p>
-            Our team then maps out intuitive user flows and organizes content
-            through effective information architecture. We bring ideas to life
-            with wireframes and interactive prototypes.
+            At Techtimize, we value your privacy and are committed to protecting
+            your personal information. This Privacy Policy explains how we
+            collect, use, and safeguard your data when you visit our website
+            Techtimize.co or use our services. By using our website, you agree
+            to the practices described in this policy.
           </p>
         </div>
-        <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
-          Information We Collect
-        </h2>
-        <div className="max-w-[560px] w-full mb-[43px]">
-          <p className="text-[16px] text-black">
-            We may collect the following information:
-          </p>
-          <ul className="text-[16px] text-black list-disc list-inside">
+
+        {/* Information We Collect & How We Use It */}
+        <div className="max-w-[1200px] w-full flex flex-col gap-[15px] text-[16px] text-black mb-[43px]">
+          <h2 className="text-[28px] font-semibold">
+            Information We Collect & How We Use It
+          </h2>
+          <p>We may collect personal and non-personal information in the following ways:</p>
+          <ul className="list-disc pl-5">
             <li>
-              Personal details (e.g., name, email, phone number) when you
-              contact us
+              <strong>Personal Information</strong> – such as your name, email address, phone number, or company details when you fill out forms, request services, or contact us.
             </li>
             <li>
-              Professional details (e.g., medical practice information) for
-              service inquiries
+              <strong>Technical Information</strong> – such as your IP address, browser type, device details, and pages visited, collected automatically through cookies and analytics tools.
             </li>
-            <li>Website usage data through cookies and analytics tools</li>
+            <li>
+              <strong>Usage Data</strong> – information about how you interact with our website and services, which helps us improve user experience and performance.
+            </li>
+          </ul>
+          <p>We use this information to:</p>
+          <ul className="list-disc pl-5">
+            <li>Provide and improve our services.</li>
+            <li>Respond to inquiries, support requests, or career applications.</li>
+            <li>Communicate updates, offers, or relevant information (only if you opt in).</li>
+            <li>Analyze website usage and enhance user experience.</li>
+          </ul>
+          <p>We do not sell, rent, or trade your personal data to third parties.</p>
+        </div>
+
+        {/* Data Sharing & Protection */}
+        <div className="max-w-[1200px] w-full flex flex-col gap-[15px] text-[16px] text-black mb-[43px]">
+          <h2 className="text-[28px] font-semibold">Data Sharing & Protection</h2>
+          <p>Your information may be shared only in the following cases:</p>
+          <ul className="list-disc pl-5">
+            <li>
+              With trusted partners – such as hosting providers or third-party tools (e.g., cloud platforms, analytics services) who assist us in delivering services.
+            </li>
+            <li>
+              For legal compliance – if required by law, regulation, or valid government request.
+            </li>
+          </ul>
+          <p>We take strict measures to protect your data, including:</p>
+          <ul className="list-disc pl-5">
+            <li>Using secure servers and encryption protocols.</li>
+            <li>Restricting access to authorized personnel only.</li>
+            <li>Regular monitoring to prevent unauthorized access, misuse, or loss of data.</li>
           </ul>
         </div>
 
-        <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
-          How We Use Your Information
-        </h2>
-        <div className="max-w-[560px] w-full mb-[43px]">
-          <p className="text-[16px] text-black">We use your information to:</p>
-          <ul className="text-[16px] text-black list-disc list-inside">
-            <li>Respond to inquiries and provide requested services</li>
-            <li>Improve our website, services, and customer experience</li>
-            <li>
-              Communicate important updates or marketing (with your consent)
-            </li>
+        {/* Cookies & Tracking Technologies */}
+        <div className="max-w-[1200px] w-full flex flex-col gap-[15px] text-[16px] text-black mb-[43px]">
+          <h2 className="text-[28px] font-semibold">Cookies & Tracking Technologies</h2>
+          <p>Our website may use cookies and similar technologies to:</p>
+          <ul className="list-disc pl-5">
+            <li>Enhance browsing experience.</li>
+            <li>Remember preferences.</li>
+            <li>Collect analytics data for site performance and improvements.</li>
           </ul>
+          <p>
+            You can manage or disable cookies through your browser settings, but some features of the site may not function properly without them.
+          </p>
         </div>
-        <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
-          Sharing of Information
-        </h2>
-        <p className="text-[16px] text-black mb-[43px]">
-          We do not sell or rent your information. We may share information with
-          trusted third-party partners who assist in providing services, under
-          strict confidentiality agreements, or as required by law.
-        </p>
-        <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
-          Data Security
-        </h2>
-        <p className="text-[16px] text-black mb-[43px]">
-          We implement technical and organizational measures to protect your
-          data from unauthorized access, disclosure, alteration, or destruction.
-        </p>
-        <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
-          Your Rights
-        </h2>
-        <p className="text-[16px] text-black mb-[43px]">
-          You have the right to access, update, or request deletion of your
-          personal information. Contact us at [contact email] for any
-          privacy-related requests.
-        </p>
-        <h2 className="lg:text-[46px] text-[40px] text-[#1D1D1D] font-semibold mb-[15px]">
-          Updates to This Policy
-        </h2>
-        <p className="text-[16px] text-black">
-          We may update this policy from time to time. The latest version will
-          always be available on our website. By using our website or services,
-          you agree to this Privacy Policy.
-        </p>
+
+        {/* Your Rights & Choices */}
+        <div className="max-w-[1200px] w-full flex flex-col gap-[15px] text-[16px] text-black mb-[43px]">
+          <h2 className="text-[28px] font-semibold">Your Rights & Choices</h2>
+          <p>As a user, you have the right to:</p>
+          <ul className="list-disc pl-5">
+            <li>Access, update, or correct your personal information.</li>
+            <li>Request deletion of your personal data, subject to legal obligations.</li>
+            <li>Opt out of receiving marketing emails at any time.</li>
+            <li>Restrict certain data collection through browser or device settings.</li>
+          </ul>
+          <p>
+            For any such requests, you can contact us directly at{" "}
+            <a href="mailto:info@techtimize.co" className="text-blue-600 underline">
+              info@techtimize.co
+            </a>.
+          </p>
+        </div>
+
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Heading_proto from "@/components/heading_prototype";
 import "../services.css"
 import Image from "next/image";
-import AnimatedContent from "../../../components/services_details_components/Decade_section";
+import AnimatedContent from "../../../components/services_details_components/Animated_Content";
 import Design_Process from "../../../components/services_details_components/Process";
 import Six_box_dynamic from "../../../components/services_details_components/Six_box_dynamic";
 import Link from "next/link";

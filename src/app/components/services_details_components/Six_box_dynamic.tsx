@@ -44,7 +44,7 @@ export default function Six_box_dynamic({ fileName, arrayName }: Props) {
             width={40}
             className="inline transition-all duration-300 ease-in-out"
           />
-          <h3 className="pt-[30px] pb-[12px]">{item.name}</h3>
+          <h3 className="pt-[30px] pb-[12px] font-[600] text-[18px]">{item.name}</h3>
           <p>{item.content}</p>
         </div>
       ))}
