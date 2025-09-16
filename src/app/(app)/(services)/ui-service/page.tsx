@@ -27,8 +27,7 @@ export default function Ui_Ux_service_detail() {
             <PageHeader heading="UI/UX design" subHeading="" />
             <div className="custom-container sm:flex items-center">
                 <div className="sm:w-[50%]">
-                    <Heading_proto heading="Overview" alignment="left" para="At the core of our UI/UX design process is a deep understanding of your users and business goals. We begin with thorough research and discovery to gather insights that inform every design decision. Our team then maps out intuitive user flows and organizes content through effective information architecture."
-                        para2="We bring ideas to life with wireframes and interactive prototypes, allowing you to visualize the user journey early on. Once the structure is refined, we craft visually stunning interfaces that align with your brand and deliver a consistent experience across all devices. " />
+                    <Heading_proto heading="Overview" alignment="left" para="At Techtimize, we craft digital experiences that are not only visually stunning but also intuitive and user-friendly. Our UI/UX design services focus on understanding user behavior, streamlining interactions, and creating designs that keep users engaged. From wireframes to final interfaces, we ensure every touchpoint reflects your brand while delivering a seamless journey across devices." />
                 </div>
                 <div className="sm:w-[50%]">
                     <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/overview.svg"} alt="overview" height={250} width={250} />
@@ -39,13 +38,13 @@ export default function Ui_Ux_service_detail() {
                 <Six_box_dynamic fileName="ui_ux_details" arrayName="what_we_are_good_at" />
             </div>
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Benefits of Our UI/UX Services" para="Engaging with Techtimize’s UI/UX design services means leveraging 10 years of our experience working with Multi-national firms. We offer expertise in front-end design, customer experience mapping, low-code mobile platforms, app analytics and more." />
+                <Heading_proto heading="Benefits of Our UI/UX Services" para="Great design is more than aesthetics—it’s about creating digital experiences that drive results. At Techtimize, our UI/UX solutions improve user engagement, boost conversions, and strengthen brand loyalty. By combining creativity with usability, we help businesses turn visitors into long-term customers." />
             </div>
-            <AnimatedContent />
+            <AnimatedContent fileName="ui_ux_details" arrayName="Benefits_of_Our_UI_UX_Services" />
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Our UI/UX Design Process" para="At the core of our UI/UX design process is a deep understanding of your users and business goals. We begin with thorough research and discovery to gather insights that inform every design decision. Our team then maps out intuitive user flows and organizes content through effective information architecture." />
+                <Heading_proto heading="Our UI/UX Design Process" para="At Techtimize, we follow a structured design process to ensure creativity and functionality go hand in hand:" />
             </div>
-            <Design_Process />
+            <Design_Process fileName="ui_ux_details" arrayName="design_process" />
             <div className="custom-container">
             <Heading_proto heading="Industry We Focus" className="mt-[0] sm:mt-[65px]"/>
             <Six_box_dynamic fileName={"ui_ux_details"} arrayName={"industry_we_focus"} />

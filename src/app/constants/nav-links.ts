@@ -89,32 +89,28 @@ const footerQuickLinks = [
 const footerServices = [
   {
     name: "Artificial Intelligence",
-    link: "/services?service=Artificial Intelligence",
+    link: "/AI-ML",
   },
   {
     name: "Mobile App Development",
-    link: "/services?service=App Development",
+    link: "/App-development",
   },
   {
     name: "Web App Development",
-    link: "/services?service=App Development",
-  },
-  {
-    name: "Cloud Services",
-    link: "/services?service=Cloud Services",
+    link: "/Web-development",
   },
   {
     name: "UI UX Design",
-    link: "/services?service=UI UX",
-  },
-  {
-    name: "Project Management",
-    link: "/services?service=Management",
+    link: "/ui-service",
   },
   {
     name: "Staff Augmentation",
-    link: "/services?service=Staff Augmentation",
+    link: "/Staff-Augmentation",
   },
+  {
+    name: "Marketing ",
+    link: "/Digital-Marketing",
+  }
 ];
 
 const LAHORE_LOCATION_MAP_HREF = "https://maps.app.goo.gl/Q6BCqsbJ5SRLcsTRA";
