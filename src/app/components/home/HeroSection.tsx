@@ -27,8 +27,9 @@ const HeroSection = () => {
       >
         <h1 className="md:text-[42px] sm:text-[42px]  text-[28px] font-bold lg:max-w-[600px] max-w-[305px] xl:mb-[12px] mb-[18px] font-Satoshi-Bold text-[#0B4D8E]">
           Empowering Businesses with Intelligent Software & 
-           <span className="text-[#0697D5]"> AI </span><span className="text-[#0697D5]">  
-            <Typewriter
+           <span className="text-[#0697D5]"> AI </span>
+           <span className="text-[#0697D5] inline sm:block">  
+            <Typewriter 
       options={{
         strings: ['Solutions' , 'Automations' , 'Innovation'],
         autoStart: true,

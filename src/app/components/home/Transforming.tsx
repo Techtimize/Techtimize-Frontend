@@ -18,7 +18,7 @@ export default function Transforming() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px]"
       >
-      <Image className="w-[100%] h-[100%]" src={"/assets/images/about-us.svg"}  alt="ABout Us image" height={100}  width={100}/>
+      <Image className="w-[100%] h-[100%] rounded-[16px] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px]" src={"/assets/images/google_ai_second.png"}  alt="ABout Us image" height={500}  width={500}/>
         </motion.div>
       </div>
     
@@ -29,7 +29,7 @@ export default function Transforming() {
         initial={{ opacity: 0, x: -15 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px]"
+        className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px] mt-[20px] sm:mt-[0px]"
       >
         <Image src={"/assets/images/second-section.png"} alt="about us" width={40} height={40}/>
         <h2 className="text-[#0B4D8E] text-[30px] sm:text-[42px] sm:max-w-[80%] mt-[20px] mb-[20px] font-[700]"><span className="text-[#0697D5]"> AI-Powered   </span>Innovation That Drives Results <span className="text-[#0697D5]"></span></h2>

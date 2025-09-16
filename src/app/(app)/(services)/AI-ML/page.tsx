@@ -29,28 +29,27 @@ export default function Ui_Ux_service_detail() {
             <PageHeader heading="AI/ML Services" subHeading="" />
             <div className="custom-container sm:flex items-center">
                 <div className="sm:w-[50%]">
-                    <Heading_proto heading="Overview" alignment="left" para="At the core of our UI/UX design process is a deep understanding of your users and business goals. We begin with thorough research and discovery to gather insights that inform every design decision. Our team then maps out intuitive user flows and organizes content through effective information architecture."
-                        para2="We bring ideas to life with wireframes and interactive prototypes, allowing you to visualize the user journey early on. Once the structure is refined, we craft visually stunning interfaces that align with your brand and deliver a consistent experience across all devices. " />
+                    <Heading_proto heading="Overview" alignment="left" para="At Techtimize, we help businesses harness the true power of Artificial Intelligence to transform data into decisions and ideas into intelligent solutions. From predictive analytics to generative AI, our services enable enterprises, startups, and growing ventures to innovate faster, reduce costs, and deliver personalized experiences. We don’t just build AI tools—we build future-ready ecosystems that drive measurable business growth." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/overview.svg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/ai-ml.jpg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />
             <div className="!mb-[0] sm:mb-[50px] custom-container">
-                <Six_box_dynamic fileName="ui_ux_details" arrayName="what_we_are_good_at" />
+                <Six_box_dynamic fileName="AI_ML_details" arrayName="what_we_are_good_at" />
             </div>
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Benefits of Our UI/UX Services" para="Engaging with Techtimize’s UI/UX design services means leveraging 10 years of our experience working with Multi-national firms. We offer expertise in front-end design, customer experience mapping, low-code mobile platforms, app analytics and more." />
+                <Heading_proto heading="Benefits of Our UI/UX Services" para="Our AI expertise goes beyond technology—it’s about solving real business problems. We ensure every solution aligns with your business goals, industry standards, and customer needs." />
             </div>
-            <AnimatedContent />
+            <AnimatedContent fileName="AI_ML_details" arrayName="Benefits_of_Our_UI_UX_Services" />
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Our UI/UX Design Process" para="At the core of our UI/UX design process is a deep understanding of your users and business goals. We begin with thorough research and discovery to gather insights that inform every design decision. Our team then maps out intuitive user flows and organizes content through effective information architecture." />
+                <Heading_proto heading="Our AI Development Process" para="At the core of our UI/UX design process is a deep understanding of your users and business goals. We begin with thorough research and discovery to gather insights that inform every design decision. Our team then maps out intuitive user flows and organizes content through effective information architecture." />
             </div>
-            <Design_Process />
+            <Design_Process fileName="AI_ML_details" arrayName="design_process" />
             <div className="custom-container">
-            <Heading_proto heading="Industry We Focus" className="mt-[0] sm:mt-[65px]"/>
-            <Six_box_dynamic fileName={"ui_ux_details"} arrayName={"industry_we_focus"} />
+            <Heading_proto heading="Industries We Focus On" className="mt-[0] sm:mt-[65px]"/>
+            <Six_box_dynamic fileName="ui_ux_details" arrayName="industry_we_focus" />
             </div>
             <div className='flex flex-wrap justify-between relative text-white p-[15px] sm:p-[40px]  lg:p-[110px] lg:pt-[90px] bg-[#0B4D8E] rounded-[10px] max-w-[90%] mx-[auto] bg-no-repeat items-center '>
               <Image src={"/assets/images/expand-business.svg"} alt={"expand"} width={500} height={300} className="absolute right-0 bottom-0 w-[61%] z-0 x1750:w-[57%] x2000:w-[40%]" />

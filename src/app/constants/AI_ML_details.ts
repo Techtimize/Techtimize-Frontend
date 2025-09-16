@@ -1,37 +1,37 @@
 export const what_we_are_good_at = [
     {
-        name: "User Research & Insights",
-        content: "We dive deep into user behavior, goals, and pain points to design experiences that truly connect.",
+        name: "AI-Powered Automation",
+        content: "Streamline repetitive workflows and improve operational efficiency with intelligent automation tools.",
         iconurl: "./assets/images/first.svg",
         hovericonurl: "./assets/images/first-hover.svg"
     },
     {
-        name: "Information Architecture",
-        content: "Our team structures content and workflows logically, ensuring effortless navigation and smooth interactions.",
+        name: "Predictive Analytics & Forecasting",
+        content: "Leverage data-driven insights to anticipate trends, understand customer behavior, and make smarter decisions.",
         iconurl: "./assets/images/second.svg",
         hovericonurl: "./assets/images/second-hover.svg"
     },
     {
-        name: "Usability Testing",
-        content: "We validate designs with real users, optimizing for accessibility, responsiveness, and performance.",
+        name: "Conversational AI & Chatbots",
+        content: "Deploy intelligent chatbots and voice assistants for seamless customer engagement and support.",
         iconurl: "./assets/images/third.svg",
         hovericonurl: "./assets/images/third-hover.svg"
     },
     {
-        name: "Wireframing & Prototyping",
-        content: "Ideas are transformed into interactive prototypes, giving you a clear vision before development begins.",
+        name: "Machine Learning Solutions",
+        content: "Custom ML models trained to solve industry-specific challenges—from fraud detection to recommendation engines.",
         iconurl: "./assets/images/forth.svg",
         hovericonurl: "./assets/images/forth-hover.svg"
     },
     {
-        name: "Visual Interface Design",
-        content: "Clean, modern, and brand-aligned visuals that create lasting impressions and enhance user trust.",
+        name: "Computer Vision & Image Recognition",
+        content: "AI solutions for image analysis, medical imaging, security, and quality control in manufacturing.",
         iconurl: "./assets/images/fifth.svg",
         hovericonurl: "./assets/images/fifth-hover.svg"
     },
     {
-        name: "Design-to-Development Handoff",
-        content: "We ensure pixel-perfect translation from design to development, saving time and reducing errors.",
+        name: "Generative AI Solutions",
+        content: "Harness the latest in generative AI for content creation, design, product ideation, and automation of creative workflows.",
         iconurl: "./assets/images/sixth.svg",
         hovericonurl: "./assets/images/sixth-hover.svg"
     }
@@ -41,58 +41,60 @@ export const what_we_are_good_at = [
 export const Benefits_of_Our_UI_UX_Services = [
     {
         imageurl: "./assets/images/decade-1.svg",
-        heading: "User-Centric Approach",
-        content: "Designs built around real user needs, behaviors, and expectations."
+        heading: "Smarter, Scalable, and Cost-Efficient",
+        content: "Transform raw data into actionable insights, automate time-consuming tasks, and scale effortlessly—all while reducing operational costs and maximizing ROI."
     },
     {
         imageurl: "./assets/images/decade-2.svg",
-        heading: "Higher Engagement & Conversions",
-        content: "Intuitive experiences that guide users effortlessly toward action."
+        heading: "Personalized Customer Experiences",
+        content: "Deliver highly tailored, responsive, and engaging interactions through AI-powered solutions that adapt to your customers’ unique needs."
     },
     {
         imageurl: "./assets/images/decade-3.svg",
-        heading: "Brand Consistency",
-        content: "Every design element reflects your brand identity, building trust and recognition."
+        heading: "Innovation & Competitive Edge",
+        content: "Stay ahead of the curve with cutting-edge AI advancements, designed as industry-specific solutions that give your business a lasting advantage."
     }
 ]
 
 export const design_process = [
     {
-        heading: "Discovery & Research",
-        content: "Analyze goals, audience, and market trends to uncover opportunities and challenges.",
+        heading: "Discovery & Strategy",
+        content: "Identify areas where AI delivers measurable value, from automation to customer experience, ensuring alignment with business goals.",
         iconurl: "./assets/images/process-1.svg",
         circleurl: "./assets/images/circle-1.svg",
         color: "#559FFF"
     },
     {
-        heading: "Wireframing & Prototyping",
-        content: "Build structured layouts and interactive prototypes to test usability and user flow.",
+        heading: "Data Collection & Preparation",
+        content: "Clean, structure, and optimize high-quality data to build a solid foundation for AI/ML models.",
         iconurl: "./assets/images/process-2.svg",
         circleurl: "./assets/images/circle-2.svg",
         color: "#A34CFF"
     },
     {
-        heading: "Visual Design",
-        content: "Create modern, brand-aligned visuals with intuitive interfaces.",
+        heading: "Model Development & Training",
+        content: "Design and train custom AI/ML models with a focus on accuracy, scalability, and adaptability.",
         iconurl: "./assets/images/process-3.svg",
         circleurl: "./assets/images/circle-3.svg",
         color: "#FF5E81"
     },
     {
-        heading: "Development Collaboration",
-        content: "Provide clear specifications and assets for smooth design-to-development execution.",
+        heading: "Testing & Optimization",
+        content: "Validate and fine-tune models against real-world scenarios for performance and reliability.",
         iconurl: "./assets/images/process-4.svg",
         circleurl: "./assets/images/circle-4.svg",
         color: "#FFA01B"
     },
     {
-        heading: "Iteration & Improvement",
-        content: "Refine continuously using user feedback and performance insights.",
+        heading: "Deployment & Integration",
+        content: "Seamlessly integrate AI into your systems with ongoing monitoring, updates, and improvements for long-term success.",
         iconurl: "./assets/images/process-5.svg",
         circleurl: "./assets/images/circle-5.svg",
         color: "#3BDF6C"
     }
 ]
+
+
 
 
 

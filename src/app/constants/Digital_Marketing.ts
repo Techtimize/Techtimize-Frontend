@@ -1,93 +1,95 @@
 export const what_we_are_good_at = [
     {
-        name: "User Research & Insights",
-        content: "We dive deep into user behavior, goals, and pain points to design experiences that truly connect.",
+        name: "Search Engine Optimization (SEO)",
+        content: "Boost your online visibility with optimized websites, content, and strategies that drive organic traffic and long-term growth.",
         iconurl: "./assets/images/first.svg",
         hovericonurl: "./assets/images/first-hover.svg"
     },
     {
-        name: "Information Architecture",
-        content: "Our team structures content and workflows logically, ensuring effortless navigation and smooth interactions.",
+        name: "Social Media Marketing (SMM)",
+        content: "Engage and grow your audience through targeted campaigns across Facebook, Instagram, LinkedIn, and more.",
         iconurl: "./assets/images/second.svg",
         hovericonurl: "./assets/images/second-hover.svg"
     },
     {
-        name: "Usability Testing",
-        content: "We validate designs with real users, optimizing for accessibility, responsiveness, and performance.",
+        name: "Pay-Per-Click Advertising (PPC)",
+        content: "Maximize ROI with highly targeted Google Ads and social ads that generate immediate leads and conversions.",
         iconurl: "./assets/images/third.svg",
         hovericonurl: "./assets/images/third-hover.svg"
     },
     {
-        name: "Wireframing & Prototyping",
-        content: "Ideas are transformed into interactive prototypes, giving you a clear vision before development begins.",
+        name: "Content Marketing",
+        content: "Deliver value with compelling blogs, articles, case studies, and branded content tailored to your audience.",
         iconurl: "./assets/images/forth.svg",
         hovericonurl: "./assets/images/forth-hover.svg"
     },
     {
-        name: "Visual Interface Design",
-        content: "Clean, modern, and brand-aligned visuals that create lasting impressions and enhance user trust.",
+        name: "Email Marketing",
+        content: "Personalized email campaigns that nurture leads, retain customers, and build loyalty.",
         iconurl: "./assets/images/fifth.svg",
         hovericonurl: "./assets/images/fifth-hover.svg"
     },
     {
-        name: "Design-to-Development Handoff",
-        content: "We ensure pixel-perfect translation from design to development, saving time and reducing errors.",
+        name: "Analytics & Performance Tracking",
+        content: "We track KPIs, analyze data, and fine-tune campaigns to ensure consistent improvement and higher ROI.",
         iconurl: "./assets/images/sixth.svg",
         hovericonurl: "./assets/images/sixth-hover.svg"
     }
-]
+];
 
 
 export const Benefits_of_Our_UI_UX_Services = [
     {
         imageurl: "./assets/images/decade-1.svg",
-        heading: "User-Centric Approach",
-        content: "Designs built around real user needs, behaviors, and expectations."
+        heading: "Enhanced User Engagement & Visibility",
+        content: "Mobile apps put your brand directly in users’ hands, creating personalized experiences that build loyalty."
     },
     {
         imageurl: "./assets/images/decade-2.svg",
-        heading: "Higher Engagement & Conversions",
-        content: "Intuitive experiences that guide users effortlessly toward action."
+        heading: "Business Growth & Revenue Opportunities",
+        content: "Unlock new sales channels, streamline interactions, and tap into mobile-first markets for faster growth."
     },
     {
         imageurl: "./assets/images/decade-3.svg",
-        heading: "Brand Consistency",
-        content: "Every design element reflects your brand identity, building trust and recognition."
+        heading: "Scalability & Long-Term Value",
+        content: "Apps evolve with your business, ensuring long-term sustainability and higher ROI."
     }
 ]
 
+
+
 export const design_process = [
     {
-        heading: "Discovery & Research",
-        content: "Analyze goals, audience, and market trends to uncover opportunities and challenges.",
+        heading: "Discovery & Planning",
+        content: "Analyze business goals, target users, and technical needs to create a clear roadmap.",
         iconurl: "./assets/images/process-1.svg",
         circleurl: "./assets/images/circle-1.svg",
         color: "#559FFF"
     },
     {
-        heading: "Wireframing & Prototyping",
-        content: "Build structured layouts and interactive prototypes to test usability and user flow.",
+        heading: "UI/UX Design",
+        content: "Design wireframes, prototypes, and engaging interfaces focused on usability and seamless interaction.",
         iconurl: "./assets/images/process-2.svg",
         circleurl: "./assets/images/circle-2.svg",
         color: "#A34CFF"
     },
     {
-        heading: "Visual Design",
-        content: "Create modern, brand-aligned visuals with intuitive interfaces.",
+        heading: "Development & Integration",
+        content: "Build secure, scalable apps with smooth API, third-party, and backend integrations.",
         iconurl: "./assets/images/process-3.svg",
         circleurl: "./assets/images/circle-3.svg",
         color: "#FF5E81"
     },
     {
-        heading: "Development Collaboration",
-        content: "Provide clear specifications and assets for smooth design-to-development execution.",
+        heading: "Testing & Deployment",
+        content: "Run rigorous QA for performance, security, and compatibility, then handle store submission and launch.",
         iconurl: "./assets/images/process-4.svg",
         circleurl: "./assets/images/circle-4.svg",
         color: "#FFA01B"
     },
     {
-        heading: "Iteration & Improvement",
-        content: "Refine continuously using user feedback and performance insights.",
+        heading: "Maintenance & Growth",
+        content: "Provide monitoring, updates, and enhancements to keep apps secure, competitive, and future-ready.",
         iconurl: "./assets/images/process-5.svg",
         circleurl: "./assets/images/circle-5.svg",
         color: "#3BDF6C"
