@@ -61,7 +61,7 @@ export default async function Home() {
           })}
         </div>
         <div className="mt-[30px] text-center">
-          <Btn_redesign content="View All Services" url="#" />
+          <Btn_redesign content="View All Services" url="/services" />
         </div>
       </div>
       <div>
