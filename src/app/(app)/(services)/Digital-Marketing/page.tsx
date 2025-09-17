@@ -30,7 +30,7 @@ export default function Ui_Ux_service_detail() {
                     <Heading_proto heading="Overview" alignment="left" para="In today’s fast-paced digital world, having a great product or service isn’t enough—it needs the right audience, strategy, and visibility. At Techtimize, our Marketing Services are designed to help businesses grow smarter and faster. We combine creativity, data-driven strategies, and the latest tools to deliver campaigns that build trust, engage audiences, and drive measurable results. From startups to enterprises, we empower brands to stand out in competitive markets." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/marketing.jpg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/digi-marketing.svg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />

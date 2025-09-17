@@ -30,7 +30,7 @@ export default function Ui_Ux_service_detail() {
                     <Heading_proto heading="Overview" alignment="left" para="Techtimize design and develop mobile applications that combine innovation, performance, and user experience. Our apps are crafted to help businesses connect with their audiences anytime, anywhere—whether through Android, iOS, or cross-platform solutions. From startups launching their first app to enterprises expanding their digital ecosystem, we deliver secure, scalable, and engaging mobile applications that turn ideas into real-world impact." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/mobile-dev.jpg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/app-dev.svg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />

@@ -30,7 +30,7 @@ export default function Ui_Ux_service_detail() {
                     <Heading_proto heading="Overview" alignment="left" para="Scaling your team doesn’t have to be complicated. At Techtimize, our Staff Augmentation services give you direct access to highly skilled professionals—on demand, when you need them most. Whether you’re looking for developers, designers, data scientists, or project managers, we extend your in-house capabilities with the right talent, without the hassle of long-term hiring. Our approach ensures you maintain full control over your projects while gaining the flexibility and expertise to accelerate growth." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/staff.jpg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/staff-aug.svg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />

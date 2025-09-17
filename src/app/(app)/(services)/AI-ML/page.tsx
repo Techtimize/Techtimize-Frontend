@@ -32,7 +32,7 @@ export default function Ui_Ux_service_detail() {
                     <Heading_proto heading="Overview" alignment="left" para="At Techtimize, we help businesses harness the true power of Artificial Intelligence to transform data into decisions and ideas into intelligent solutions. From predictive analytics to generative AI, our services enable enterprises, startups, and growing ventures to innovate faster, reduce costs, and deliver personalized experiences. We don’t just build AI tools—we build future-ready ecosystems that drive measurable business growth." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/ai-ml.jpg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/ai.svg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />

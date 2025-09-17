@@ -30,7 +30,7 @@ export default function Ui_Ux_service_detail() {
                     <Heading_proto heading="Overview" alignment="left" para="At Techtimize, our web development services are designed to build powerful, scalable, and user-friendly websites that align with your business goals. We go beyond simple design by creating solutions that combine functionality, performance, and aesthetics to deliver exceptional user experiences. Whether you need a corporate site, an eCommerce platform, or a custom web application, our team leverages the latest technologies and frameworks to ensure reliability and future growth. With a focus on speed, security, and seamless integration, we craft digital solutions that not only look great but also perform flawlessly across all devices." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/web.jpg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/web-dev.svg"} alt="overview" height={250} width={250} loading="lazy"/>
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />
