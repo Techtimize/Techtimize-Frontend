@@ -69,7 +69,7 @@ export default async function Home() {
         <div className="relative z-[1]">
           <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between sm:mt-[50px]">
             <div className="sm:w-[40%] flex items-center">
-              <Image className="w-[100%]" src={"/assets/images/picture.svg"} alt={"picture"} width={100} height={100} />
+              <Image className="w-[100%]" src={"/assets/images/Picture.svg"} alt={"picture"} width={100} height={100} />
               <Image className="start-to-finish-bg" src={"/assets/images/start-to-finish-bg.svg"} alt={"picture"} width={100} height={60} />
             </div>
 
@@ -106,7 +106,7 @@ export default async function Home() {
       <Heading_proto heading="What Our Valued Customers Say" para="Trusted by Clients, Loved for Results" />
       <Testimonials />
       <div className="relative">
-     <Image src={"/assets/images/aroow.svg"} alt="arrow" width={500} height={500} className="aroow"/>
+     <Image src={"/assets/images/Aroow.svg"} alt="arrow" width={500} height={500} className="aroow"/>
         <div className="max-w-[90%] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] lg:max-w-[55%] sm:max-w-[80%] mx-[auto] py-[60px] rounded-[16px] sm:my-[100px] my-[50px] relative z-[9] bg-[#fff]">
           <Heading_proto heading="Get In Touch" para="Subscribe Us to Get in Touch With Us And Enjoy The Latest Updates " className="!mt-[0px]" />
           <div className="rounded-[12px] sm:flex max-w-[75%] mx-[auto] text-center" >
