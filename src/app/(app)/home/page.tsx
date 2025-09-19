@@ -20,6 +20,7 @@ import HomeBlogs from "../../components/home/HomeBlogs";
 import Testimonials from "../../components/home/Testimonials"
 import { Input } from "@/components/ui/input";
 import { FaVideo } from "react-icons/fa";
+import Ai_transformation from "@/app/components/home/Ai_transformation";
 
 
 
@@ -38,10 +39,10 @@ export default async function Home() {
       <HeroSection />
 
       <Transforming />
-      <div className="">
-        <Heading_proto heading="Clients Served" />
-        <ProjectLogoSlider />
-      </div>
+    <Heading_proto heading="Technologies" para="The Technology Stack We Use to Make Optimal Softwares" className="mt-[80px]" />
+      <Technologies />
+
+   
       <div>
         <Heading_proto heading="Our Services" para="Discover services designed to help your business grow and succeed." />
         <div className=" max-w-[90%] mx-[auto] flex flex-wrap lg:max-w-[82%] justify-between sm:max-w-[80%]">
@@ -60,10 +61,11 @@ export default async function Home() {
             );
           })}
         </div>
-        <div className="mt-[30px] text-center">
+        <div className="mt-[20px] sm:mt-[30px] text-center">
           <Btn_redesign content="View All Services" url="/services" />
         </div>
       </div>
+      <Ai_transformation />
       <div>
         <Heading_proto heading="Why choose Techtimize" para="Start to Finish, We've Got You Covered" />
         <div className="relative z-[1]">
@@ -93,10 +95,15 @@ export default async function Home() {
           <Image className="project-bg" src={"/assets/images/projects-bg.svg"} alt="tick" height={20} width={20} />
           <Heading_proto heading="Our Projects" para="A Detailed Review of Techtimize Project’s" alignment="text-left" />
           <ProjectSlider />
+             <div className="mt-[80px] lg:mt-[30px] text-center">
+          <Btn_redesign content="View All Projects" url="/projects" />
         </div>
+        </div>
+           <div>
+        <Heading_proto heading="Clients Served" />
+        <ProjectLogoSlider />
       </div>
-      <Heading_proto heading="Technologies" para="The Technology Stack We Use to Make Optimal Softwares" className="mt-[80px]" />
-      <Technologies />
+      </div>
 
       <Heading_proto heading="Read our Blogs " para="Stay updated with the latest insights, tips, and trends." />
       <HomeBlogs data={blogs} />

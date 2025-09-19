@@ -1,6 +1,6 @@
 export type Reviewsprops ={
     content: string,
-    clientdesignation:string,
+    clientDesignation:string,
     clientCountry: string,
     rating: number,
     name: string

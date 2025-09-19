@@ -37,7 +37,7 @@ export default function Technologies(){
       </div>
     </div>
 
-    <div className="marquee marquee--reverse pt-[25px] pb-[50px]">
+    <div className="marquee marquee--reverse pt-[25px] pb-[30px]">
       <div className="marquee__group">
         {
             second_technologies.map((key)=>{

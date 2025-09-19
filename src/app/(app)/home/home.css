@@ -24,7 +24,7 @@
     height: 100%;
     width: 30%;
     top: 65%;
-    z-index: 99;
+    z-index: 1;
 }
 
 .start-to-finish-bg {
@@ -57,6 +57,15 @@
     height: 100%;
     bottom: -60%;
     left: 23%;
+}
+
+.ai-powered-before {
+    position: absolute;
+    left: 0;
+    top: -40%;
+    width: 20%;
+    height: 70%;
+    z-index: 9;
 }
 
 @media screen and (max-width: 1025px) {
