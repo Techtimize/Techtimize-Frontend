@@ -26,7 +26,7 @@ export async function getLatestReview(): Promise<Reviewsprops> {
         console.error("error fetching reviews: " + error);
         return {
             content: "Failed to load reviews.",
-            clientdesignation: "",
+            clientDesignation: "",
             clientCountry: "",
             rating: 0,
             name: "System",

@@ -28,7 +28,7 @@ const HeroSection = () => {
         <h1 className="md:text-[42px] sm:text-[42px]  text-[28px] font-bold lg:max-w-[600px] max-w-[305px] xl:mb-[12px] mb-[18px] font-Satoshi-Bold text-[#0B4D8E]">
           Empowering Businesses with Intelligent Software & 
            <span className="text-[#0697D5]"> AI </span>
-           <span className="text-[#0697D5] inline sm:block">  
+           <span className="text-[#0697D5] inline sm:block typewriter-parent">  
             <Typewriter 
       options={{
         strings: ['Solutions' , 'Automations' , 'Innovation'],
@@ -42,12 +42,16 @@ const HeroSection = () => {
  We transform your ideas into scalable, future-ready digital products, enhanced with AI and automation ,enabling smarter operations, sustainable growth, and measurable impact.
         </p>
         <div className="flex items-center w-[100%] sm:w-[60%] justify-between my-[25px]">
-          <Image  className="w-[47%] object-contain"
-          src = {"/assets/images/clutch-reviews.png"} alt ={"google reviews"} width={130} height ={130}
+          <Link href="https://clutch.co/profile/techtimize" className="w-[47%]">
+          <Image  className="w-[100%] object-contain"
+          src = {"/assets/images/clutch-reviews.svg"} alt ={"google reviews"} width={130} height ={130}
           />
-          <Image  className="w-[47%] object-contain"
-          src = {"/assets/images/google-reviews.png"} alt ={"google reviews"} width={130} height ={130}
+          </Link>
+          <Link href={"#"} className="w-[47%]">
+          <Image  className="w-[100%] object-contain"
+          src = {"/assets/images/google-reviews.svg"} alt ={"google reviews"} width={130} height ={130}
           />
+          </Link>
         </div>
         <div className="max-w-[185px] sm:flex sm:max-w-[unset]">
         <Btn_redesign content={"Schedule Meeting"} url={""} icon={FaVideo} className="sm:w-[unset] w-[100%]"/>
