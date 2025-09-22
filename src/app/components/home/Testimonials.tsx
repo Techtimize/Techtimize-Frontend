@@ -9,7 +9,7 @@ import clsx from "clsx";
 import { getReviews } from "@/app/api/reviews/getreviews";
 
 const reviews = await getReviews();
-console.log(reviews);
+// console.log(reviews);
 
 type TestimonialsProps = {
   className?: string;
