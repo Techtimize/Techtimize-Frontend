@@ -88,7 +88,7 @@ const Navbar = () => {
             <div className="hidden lg:block">
           
 
-        < Btn_redesign content="Techtimize GPT " url = "#" icon={HiOutlineSparkles}/>
+        < Btn_redesign content="Techtimize GPT " url = "/techtimizegpt" icon={HiOutlineSparkles}/>
         </div>
 
         {/* Mobile Menu Button */}

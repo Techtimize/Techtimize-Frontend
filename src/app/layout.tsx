@@ -2,10 +2,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import NavbarComponent from "@/app/components/Navbar/Navbar";
-import FooterComponent from "@/app/components/Footer/Footer";
 import { headers } from "next/headers";
 
 import { Manrope } from "next/font/google";
+import FooterWrapper from "./components/Footer/FooterWrapper";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -49,7 +49,7 @@ export default function RootLayout({
         <main className="xl:pt-[116px] md:pt-[96px] pt-[95px]">
           {children}
         </main>
-        <FooterComponent />
+        <FooterWrapper />
       </body>
     </html>
   );
