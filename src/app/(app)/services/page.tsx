@@ -55,7 +55,7 @@ const Services = () => {
         
                   {services.map((key) => {
                     return (
-                      <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35] rounded-[20px] lg:mt-[20px]">
+                      <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35px] rounded-[20px] lg:mt-[20px]">
                         <ServiceCard
                           key={key._id}
                           url={key.url}
