@@ -11,7 +11,7 @@ export default function Transforming() {
      <div className="max-w-[90%] rounded-[40px] shadow-[0px_7px_29px_0px_rgba(100,100,111,0.2)] mx-[auto] mt-[40px] sm:mt-[80px] lg:pt-[10px] sm:pb-[35px] lg:pb-[50px] mb-[40px] sm:py-[0] pt-[1px] pb-[19px]">
      <div className="transforming !max-w-[98%] mx-[auto]  sm:container  sm:flex justify-between rounded-[50px] sm:px-[0] px-[15px]" >
          
-      <div className="lg:w-[47%] sm:w-[50%] xl:ml-[30px] md:mt-[36px] sm:mt-[36px] mt-[20px] sm:mt-[0px]">
+      <div className="lg:w-[47%] sm:w-[50%] xl:ml-[30px] md:mt-[36px] sm:mt-[36px] mt-[20px] sm:mt-[0px] z-[9]">
         
         <h2 className="text-[#0B4D8E] text-[30px] sm:text-[42px] sm:max-w-[100%] lg:max-w-[80%] mt-[20px] mb-[20px] font-[700]"><span className="text-[#0697D5]"> AI-Powered   </span>Innovation That Drives Results <span className="text-[#0697D5]"></span></h2>
         <p className="text-[#727272] text-[18px] sm:max-w-[100%] lg:max-w-[88%]">At Techtimize, we believe AI is more than a trend — it’s a game-changer. By combining advanced algorithms with practical business insights, we design solutions that automate processes, unlock hidden opportunities, and deliver measurable growth.</p>
