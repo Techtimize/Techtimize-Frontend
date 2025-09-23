@@ -38,10 +38,10 @@ const HeroSection = () => {
         deleteSpeed: 40,
       }}/></span>
         </h1>
-        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[70%]">
+        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[74%]">
  We transform your ideas into scalable, future-ready digital products, enhanced with AI and automation ,enabling smarter operations, sustainable growth, and measurable impact.
         </p>
-        <div className="flex items-center w-[100%] sm:w-[60%] justify-between my-[25px]">
+        <div className="flex items-center w-[100%] sm:w-[50%] justify-between my-[25px]">
           <Link href="https://clutch.co/profile/techtimize" className="w-[47%]">
           <Image  className="w-[100%] object-contain"
           src = {"/assets/images/clutch-reviews.svg"} alt ={"google reviews"} width={130} height ={130}
@@ -61,7 +61,7 @@ const HeroSection = () => {
         </div>
       </motion.div>
     
-      <div className="xl:mr-[74.53px] sm:mt-[50px] md:mt-0 sm:w-[40%] flex items-center justify-center">
+      <div className="xl:mr-[74.53px] sm:mt-[50px] md:mt-0 sm:w-[47%] flex items-center justify-center">
           <motion.div
         initial={{ opacity: 0, x: 15 }}
         animate={{ opacity: 1, x: 0 }}
