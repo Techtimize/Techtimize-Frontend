@@ -46,9 +46,10 @@
 
 .aroow {
     position: absolute;
-    width: 80%;
-    left: 10%;
-    bottom: 0%;
+    width: 90%;
+    left: 5%;
+    top: unset;
+    bottom: -40%;
 }
 
 .newsletter-bg {
@@ -81,21 +82,43 @@
 @media screen and (min-width: 1670px) {
     .aroow {
         position: absolute;
-        width: 75%;
-        left: 13%;
-        top: -42%;
+        width: 90%;
+        left: 5%;
+        top: unset;
     }
 }
 
 @media screen and (min-width: 1940px) {
-    
 
-    .aroow {
+.aroow {
         position: absolute;
-        width: 75%;
-        left: 13%;
-        top: -70%;
-        transform: rotate(7deg);
+        width: 85%;
+        left: 7%;
+        top: unset;
+        bottom: -50%;
+    }
+}
+
+@media screen and (min-width: 2060px) {
+
+.aroow {
+        position: absolute;
+        width: 70%;
+        left: 15%;
+        top: unset;
+        bottom: -50%;
+    }
+}
+
+
+@media screen and (min-width: 2660px) {
+
+.aroow {
+        position: absolute;
+        width: 65%;
+        left: 17%;
+        top: unset;
+        bottom: -50%;
     }
 }
 

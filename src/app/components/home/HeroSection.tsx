@@ -23,7 +23,7 @@ const HeroSection = () => {
         initial={{ opacity: 0, x: -15 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px] sm:w-[60%]"
+        className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px] sm:w-[50%]"
       >
         <h1 className="md:text-[42px] sm:text-[42px]  text-[28px] font-bold lg:max-w-[600px] max-w-[305px] xl:mb-[12px] mb-[18px] font-Satoshi-Bold text-[#0B4D8E]">
           Empowering Businesses with Intelligent Software & 
@@ -38,7 +38,7 @@ const HeroSection = () => {
         deleteSpeed: 40,
       }}/></span>
         </h1>
-        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[74%]">
+        <p className="text-lightGrey xl:text-[18px] text-[14px] xl:mb-[12px] mb-[18px] sm:max-w-[78%]">
  We transform your ideas into scalable, future-ready digital products, enhanced with AI and automation ,enabling smarter operations, sustainable growth, and measurable impact.
         </p>
         <div className="flex items-center w-[100%] sm:w-[50%] justify-between my-[25px]">
@@ -53,23 +53,22 @@ const HeroSection = () => {
           />
           </Link>
         </div>
-        <div className="max-w-[185px] sm:flex sm:max-w-[unset]">
+        <div className="max-w-[210px] sm:flex sm:max-w-[unset]">
         <Btn_redesign content={"Schedule Meeting"} url={""} icon={FaVideo} className="sm:w-[unset] w-[100%]"/>
          <Link className="px-[10px] border border-[#000] sm:mt-[0] mt-[15px] sm:px-[30px] sm:ml-[30px] py-[12px] rounded-[8px] font-medium flex items-center" href="/contact-us">
              Get In Touch <MdArrowOutward className="ml-[10px]"/>
-        </Link>
+        </Link> 
         </div>
       </motion.div>
     
-      <div className="xl:mr-[74.53px] sm:mt-[50px] md:mt-0 sm:w-[47%] flex items-center justify-center">
+      <div className="sm:mt-[50px] md:mt-0 sm:w-[47%]">
           <motion.div
         initial={{ opacity: 0, x: 15 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className=""
       >
-        <div className="flex items-center justify-center">
-          <div className="relative">
+          <div className="relative flex justify-center md:block">
             {/* <motion.div
               initial="hidden"
               animate="visible"
@@ -94,11 +93,11 @@ const HeroSection = () => {
             > */}
               <Image
               priority
-                src={"/assets/images/banner-bg.svg"}
+                src={"/assets/images/banner-bg.png"}
                 width={492}
                 height={529}
                 alt={"hero1"}
-                className="lg:w-[100%]  lg:h-[100%] md:h-[390px] sm:h-[320px] md:w-[370px] sm:w-[320px] w-[312px] h-[312px]"
+                className="lg:w-[100%] object-contain lg:object-[unset] lg:h-[100%] md:h-[390px] sm:h-[320px] md:w-[370px] sm:w-[320px] w-[312px] h-[312px]"
               />
               {/* <Image
                 src={"/assets/svgs/polygon.svg"}
@@ -124,7 +123,6 @@ const HeroSection = () => {
               /> 
              </motion.div> */}
           </div>
-        </div>
              </motion.div>
       </div>
     </div>
