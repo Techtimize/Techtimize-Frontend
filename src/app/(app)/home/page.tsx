@@ -49,7 +49,7 @@ export default async function Home() {
 
           {services.map((key) => {
             return (
-              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35px] rounded-[20px] lg:mt-[20px] z-[9]">
+              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[31.2%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[15px] rounded-[20px] lg:mt-[20px] z-[9]">
                 <ServiceCard
                   key={key._id}
                   url={key.url}
@@ -69,10 +69,11 @@ export default async function Home() {
       <div>
         <Heading_proto heading="Why choose Techtimize" para="Start to Finish, We've Got You Covered" />
         <div className="relative z-[1]">
-          <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between sm:mt-[50px]">
-            <div className="sm:w-[40%] flex items-center">
-              <Image className="w-[100%]" src={"/assets/images/Picture.svg"} alt={"picture"} width={100} height={100} />
               <Image className="start-to-finish-bg" src={"/assets/images/start-to-finish-bg.svg"} alt={"picture"} width={100} height={60} />
+          <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between sm:mt-[50px]">
+            <div className="sm:w-[40%] flex items-center relative">
+          <Image className="absolute w-[46%] -top-[8%] -left-[7%] " src={"/assets/images/haseeb-top.png"} alt={"picture"} width={500} height={500} />
+              <Image className="w-[100%]" src={"/assets/images/Picture.png"} alt={"picture"} width={500} height={500} />
             </div>
 
 
