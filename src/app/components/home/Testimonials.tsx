@@ -83,7 +83,7 @@ function TestimonialsComponent({ className }: TestimonialsProps) {
         <button
           onClick={scrollPrev}
           aria-label="Previous testimonial"
-          className="absolute z-[5] bottom-[-3%] sm:bottom-[0%] left-[29%] sm:left-[40%] lg:left-[44%] top-auto rounded-full p-2"
+          className="absolute z-[5] bottom-[-3%] sm:bottom-[0%] left-[29%] sm:left-[40%] lg:left-[45%] top-auto rounded-full p-2"
         >
           <IoIosArrowRoundBack size={50} className="text-[#999999]" />
         </button>
@@ -91,7 +91,7 @@ function TestimonialsComponent({ className }: TestimonialsProps) {
         <button
           onClick={scrollNext}
           aria-label="Next testimonial"
-          className="absolute z-[5] bottom-[-3%] sm:bottom-[0%] right-[29%] sm:right-[40%] lg:right-[44%] top-auto rounded-full p-2"
+          className="absolute z-[5] bottom-[-3%] sm:bottom-[0%] right-[29%] sm:right-[40%] lg:right-[45%] top-auto rounded-full p-2"
         >
           <IoIosArrowRoundForward size={50} className="text-[#999999]" />
         </button>
