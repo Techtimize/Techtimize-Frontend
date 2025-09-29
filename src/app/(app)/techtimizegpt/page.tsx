@@ -25,7 +25,7 @@ const ChatBotHome = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://15.207.220.252:1700/api/v1/ask", {
+      const response = await fetch("https://bot.api.techtimize.co/api/v1/ask", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
