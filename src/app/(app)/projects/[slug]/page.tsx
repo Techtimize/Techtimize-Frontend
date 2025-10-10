@@ -8,7 +8,16 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  return generateMetadataFromBE(`projects/${slug}`);
+  const baseMetadata = await generateMetadataFromBE(`projects/${slug}`);
+  const canonical = `https://techtimize.co/projects/${slug}`;
+
+  return {
+    ...baseMetadata,
+    alternates: {
+      // Keep only the canonical we explicitly set for project pages
+      canonical,
+    },
+  };
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {

@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import { IoClose } from "react-icons/io5";
 import { links } from "@/app/constants/nav-links";
 import { usePathname } from "next/navigation";
-import { Button } from "@/components/ui/button";
 import { HiOutlineSparkles } from "react-icons/hi2";
 
 
@@ -128,15 +127,6 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
-          <li>
-            <Link
-              href="https://chat.techtimize.org/"
-              target="_blank"
-              className="hover:underline hover:underline-offset-4 hover:text-[#00008B] hover:font-bolder"
-            >
-              AI Assistant
-            </Link>
-          </li>
           <li>
             < Btn_redesign content="Techtimize GPT " url="/techtimizegpt" icon={HiOutlineSparkles} />
           </li>

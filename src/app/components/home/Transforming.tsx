@@ -32,8 +32,8 @@ export default function Transforming() {
         className="xl:ml-[30px] md:mt-[36px] sm:mt-[36px] mt-[20px] sm:mt-[0px]"
       >
         <Image src={"/assets/images/second-section.svg"} alt="about us" width={40} height={40}/>
-        <h2 className="text-[#0B4D8E] text-[30px] sm:text-[42px] sm:max-w-[100%] mt-[20px] mb-[20px] font-[700]"><span className="text-[#0697D5]"> AI-Powered   </span>Innovation That Drives Results <span className="text-[#0697D5]"></span></h2>
-        <p className="text-[#727272] text-[18px] sm:max-w-[88%] ">At Techtimize, we believe AI is more than a trend — it’s a game-changer. By combining advanced algorithms with practical business insights, we design solutions that automate processes, unlock hidden opportunities, and deliver measurable growth.</p>
+        <h2 className="text-[#0B4D8E] text-[30px] sm:text-[42px] sm:max-w-[100%] mt-[20px] mb-[20px] font-[700]"><span className="text-[#0697D5]"></span>Our <span className="text-[#0697D5]">Software Development Life Cycle</span></h2>
+        <p className="text-[#727272] text-[18px] sm:max-w-[88%] ">We follow a structured and transparent Software Development Life Cycle to ensure quality, efficiency, and timely delivery of projects. Each step is carefully executed to align with your business goals and user needs.</p>
       <div className="mt-[30px]">
         {second_section.map((text,index)=>{
           return(

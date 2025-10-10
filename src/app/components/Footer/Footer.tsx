@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             <p className="text-grey text-[16px] mb-[8px]">
               We are Available on
             </p>
-            <Link href="http://clutch.co/profile/techtimize">
+            <Link href="https://clutch.co/profile/techtimize">
               <Image
                 src={"/assets/svgs/clutchLogo.svg"}
                 width={139.24}
@@ -113,6 +113,15 @@ const Footer: React.FC = () => {
               >
                 <PhoneIcon />
                 <p>+92 328 1616127</p>
+              </Link>
+            </li>
+            <li className="flex gap-[9px] items-center">
+              <Link
+                href="tel:+923281616127"
+                className="flex gap-[9px] items-center"
+              >
+                <PhoneIcon />
+                <p>+1 240 696 2111</p>
               </Link>
             </li>
             <li className="flex gap-[9px] items-center">
