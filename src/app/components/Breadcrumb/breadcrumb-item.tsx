@@ -10,14 +10,25 @@ const BreadcrumbItem = ({
   href: string;
   isActive?: boolean;
 }>) => {
+  if (isActive) {
+    return (
+      <p>
+        <span
+          className={cn(
+            "capitalize satoshi-medium text-[#069AD8] text-[16px] tracking-wider"
+          )}
+        >
+          {children}
+        </span>
+      </p>
+    );
+  }
+
   return (
-    <Link href={href} className={cn(isActive && "pointer-events-none")}>
+    <Link href={href}>
       <span
         className={cn(
-          "capitalize satoshi-medium text-[#727272] text-[16px] tracking-wider",
-          {
-            "text-[#069AD8]": isActive,
-          }
+          "capitalize satoshi-medium text-[#727272] text-[16px] tracking-wider"
         )}
       >
         {children}

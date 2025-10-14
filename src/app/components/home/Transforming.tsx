@@ -11,7 +11,7 @@ export default function Transforming() {
       <Image className="transforming-bg" src={"/assets/images/transforming-before.png"} alt="background" width={200} height={200}/>
      <div className="transforming !max-w-[90%] mx-[auto] sm:mt-[70px] sm:container sm:mt-[120px] sm:flex justify-between">
       
-      <div className="sm:w-[47%]">
+      <div className="sm:w-[47%] flex">
         <motion.div
         initial={{ opacity: 0, x: -15 }}
         animate={{ opacity: 1, x: 0 }}

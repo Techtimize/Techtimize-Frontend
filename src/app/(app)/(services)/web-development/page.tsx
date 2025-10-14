@@ -12,7 +12,7 @@ import Contact_Us_Comp from "../../../components/services_details_components/Con
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/Web-development");
+  const canonical = await getCanonicalUrl("/web-development");
 
   return {
     title: "Web Development Services | Techtimize",

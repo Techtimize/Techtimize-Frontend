@@ -101,7 +101,7 @@ const footerServices = [
   },
   {
     name: "UI UX Design",
-    link: "/ui-service",
+    link: "/ui-ux-designing",
   },
   {
     name: "Staff Augmentation",

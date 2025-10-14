@@ -66,8 +66,7 @@ export default function Technologies(){
     </div>
   </article>
 
-  <script src="script.js"></script>
-
+  {/* <script src="script.js"></script> */}
         </>
     )
 }
