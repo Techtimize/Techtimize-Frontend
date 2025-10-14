@@ -93,7 +93,7 @@ const HeroSection = () => {
             > */}
               <Image
               priority
-                src={"/assets/images/banner-bg.png"}
+                src={"/assets/images/banner-bg-temp.png"}
                 width={492}
                 height={529}
                 alt={"hero1"}
