@@ -4,12 +4,7 @@ const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
 export async function GET() {
   try {
-    console.log("Fetching sitemap from:", `${baseUrl}/api/v1/sitemap.xml`);
-
     const res = await fetch(`${baseUrl}/api/v1/sitemap.xml`, {
-      headers: {
-        "Content-Type": "application/xml",
-      },
       cache: "no-store",
     });
 
@@ -17,14 +12,14 @@ export async function GET() {
       console.error("Sitemap fetch failed with status:", res.status);
       return new NextResponse("Failed to fetch sitemap", { status: 500 });
     }
-
-    const data = await res.text();
-    console.log("Sitemap fetched successfully, length:", data.length);
-
-    return new NextResponse(data, {
+    console.log("before xml : " , res)
+    const xml = await res.text();
+    console.log("after xml : " , xml)
+    // 🔥 Ensure we return pure XML text with no encoding issues
+    return new NextResponse(xml, {
       status: 200,
       headers: {
-        "Content-Type": "application/xml",
+        "Content-Type": "application/xml; charset=utf-8",
       },
     });
   } catch (error) {
