@@ -12,7 +12,7 @@ import Contact_Us_Comp from "../../../components/services_details_components/Con
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/ui-service");
+  const canonical = await getCanonicalUrl("/ui-ux-designing");
 
   return {
     title: "UI Services Services | Techtimize",
