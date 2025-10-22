@@ -89,27 +89,27 @@ const footerQuickLinks = [
 const footerServices = [
   {
     name: "Artificial Intelligence",
-    link: "/artificial-intelligence",
+    link: "/services/artificial-intelligence",
   },
   {
     name: "Mobile App Development",
-    link: "/app-development",
+    link: "/services/app-development",
   },
   {
     name: "Web App Development",
-    link: "/web-development",
+    link: "/services/web-development",
   },
   {
     name: "UI UX Design",
-    link: "/ui-ux-designing",
+    link: "/services/ui-ux-designing",
   },
   {
     name: "Staff Augmentation",
-    link: "/staff-augmentation",
+    link: "/services/staff-augmentation",
   },
   {
     name: "Marketing ",
-    link: "/digital-marketing",
+    link: "/services/digital-marketing",
   }
 ];
 
