@@ -47,7 +47,7 @@ const HeroSection = () => {
           src = {"/assets/images/clutch-reviews.svg"} alt ={"google reviews"} width={130} height ={130}
           />
           </Link>
-          <Link href={"#"} className="w-[47%]">
+          <Link target="_blank" href={"https://www.google.com/search?kgmid=/g/11yk59lcvf&hl=en-US&q=Techtimize&shndl=30&shem=lcuae,lscta1,shrtsdl&source=sh/x/loc/osrp/m5/1&kgs=8fe6daa0c99b1721&utm_source=lcuae,lscta1,shrtsdl,sh/x/loc/osrp/m5/1#lrd=0x39190100393805a9:0x5fa5a9445539d707,1"} className="w-[47%]">
           <Image  className="w-[100%] object-contain"
           src = {"/assets/images/google-reviews.svg"} alt ={"google reviews"} width={130} height ={130}
           />

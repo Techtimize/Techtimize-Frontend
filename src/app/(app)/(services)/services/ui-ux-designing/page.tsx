@@ -2,20 +2,20 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Heading_proto from "@/components/heading_prototype";
 import "../services.css"
 import Image from "next/image";
-import AnimatedContent from "../../../components/services_details_components/Animated_Content";
-import Design_Process from "../../../components/services_details_components/Process";
-import Six_box_dynamic from "../../../components/services_details_components/Six_box_dynamic";
+import AnimatedContent from "../../../../components/services_details_components/Animated_Content";
+import Design_Process from "../../../../components/services_details_components/Process";
+import Six_box_dynamic from "../../../../components/services_details_components/Six_box_dynamic";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Services_blogs from "../../../components/services_details_components/Services_blogs";
-import Contact_Us_Comp from "../../../components/services_details_components/Contact-Us-Comp";
+import Services_blogs from "../../../../components/services_details_components/Services_blogs";
+import Contact_Us_Comp from "../../../../components/services_details_components/Contact-Us-Comp";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/app-development");
+  const canonical = await getCanonicalUrl("/services/ui-ux-designing");
 
   return {
-    title: "App Development Services | Techtimize",
+    title: "UI Services Services | Techtimize",
     alternates: {
       canonical,
     },
@@ -24,13 +24,13 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Ui_Ux_service_detail() {
     return (
         <>
-            <PageHeader heading="Application Development" subHeading="" />
+            <PageHeader heading="UI/UX design" subHeading="" />
             <div className="custom-container sm:flex items-center">
                 <div className="sm:w-[50%]">
-                    <Heading_proto heading="Overview" alignment="left" para="Techtimize design and develop mobile applications that combine innovation, performance, and user experience. Our apps are crafted to help businesses connect with their audiences anytime, anywhere—whether through Android, iOS, or cross-platform solutions. From startups launching their first app to enterprises expanding their digital ecosystem, we deliver secure, scalable, and engaging mobile applications that turn ideas into real-world impact." />
+                    <Heading_proto heading="Overview" alignment="left" para="At Techtimize, we craft digital experiences that are not only visually stunning but also intuitive and user-friendly. Our UI/UX design services focus on understanding user behavior, streamlining interactions, and creating designs that keep users engaged. From wireframes to final interfaces, we ensure every touchpoint reflects your brand while delivering a seamless journey across devices." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/app-dev.svg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/overview.svg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />
@@ -38,13 +38,13 @@ export default function Ui_Ux_service_detail() {
                 <Six_box_dynamic fileName="ui_ux_details" arrayName="what_we_are_good_at" />
             </div>
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Benefits of Our Mobile App Development Services" para="Engaging with Techtimize’s Mobile App Design Services means benefiting from 10 years of experience with leading multinational firms. We specialize in intuitive front-end design, seamless user journeys, low-code mobile platforms, in-app analytics, and more—ensuring your app is both engaging and performance-driven." />
+                <Heading_proto heading="Benefits of Our UI/UX Services" para="Great design is more than aesthetics—it’s about creating digital experiences that drive results. At Techtimize, our UI/UX solutions improve user engagement, boost conversions, and strengthen brand loyalty. By combining creativity with usability, we help businesses turn visitors into long-term customers." />
             </div>
-            <AnimatedContent fileName="App_development" arrayName="Benefits_of_Our_UI_UX_Services"/>
+            <AnimatedContent fileName="ui_ux_details" arrayName="Benefits_of_Our_UI_UX_Services" />
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Our Mobile App Development Process" para="At the core of our Mobile App Design process is a deep understanding of your users and business goals. We start with in-depth research and discovery to gather insights that guide every design choice. From there, our team creates intuitive user flows and structures content with clear information architecture—ensuring smooth navigation and a seamless app experience." />
+                <Heading_proto heading="Our UI/UX Design Process" para="At Techtimize, we follow a structured design process to ensure creativity and functionality go hand in hand:" />
             </div>
-            <Design_Process fileName="App_development" arrayName="design_process" />
+            <Design_Process fileName="ui_ux_details" arrayName="design_process" />
             <div className="custom-container">
             <Heading_proto heading="Industry We Focus" className="mt-[0] sm:mt-[65px]"/>
             <Six_box_dynamic fileName={"ui_ux_details"} arrayName={"industry_we_focus"} />

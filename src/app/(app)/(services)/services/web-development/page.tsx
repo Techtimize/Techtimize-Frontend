@@ -2,17 +2,17 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Heading_proto from "@/components/heading_prototype";
 import "../services.css"
 import Image from "next/image";
-import AnimatedContent from "../../../components/services_details_components/Animated_Content";
-import Design_Process from "../../../components/services_details_components/Process";
-import Six_box_dynamic from "../../../components/services_details_components/Six_box_dynamic";
+import AnimatedContent from "../../../../components/services_details_components/Animated_Content";
+import Design_Process from "../../../../components/services_details_components/Process";
+import Six_box_dynamic from "../../../../components/services_details_components/Six_box_dynamic";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Services_blogs from "../../../components/services_details_components/Services_blogs";
-import Contact_Us_Comp from "../../../components/services_details_components/Contact-Us-Comp";
+import Services_blogs from "../../../../components/services_details_components/Services_blogs";
+import Contact_Us_Comp from "../../../../components/services_details_components/Contact-Us-Comp";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/web-development");
+  const canonical = await getCanonicalUrl("/services/web-development");
 
   return {
     title: "Web Development Services | Techtimize",

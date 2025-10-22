@@ -2,20 +2,20 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Heading_proto from "@/components/heading_prototype";
 import "../services.css"
 import Image from "next/image";
-import AnimatedContent from "../../../components/services_details_components/Animated_Content";
-import Design_Process from "../../../components/services_details_components/Process";
-import Six_box_dynamic from "../../../components/services_details_components/Six_box_dynamic";
+import AnimatedContent from "../../../../components/services_details_components/Animated_Content";
+import Design_Process from "../../../../components/services_details_components/Process";
+import Six_box_dynamic from "../../../../components/services_details_components/Six_box_dynamic";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Services_blogs from "../../../components/services_details_components/Services_blogs";
-import Contact_Us_Comp from "../../../components/services_details_components/Contact-Us-Comp";
+import Services_blogs from "../../../../components/services_details_components/Services_blogs";
+import Contact_Us_Comp from "../../../../components/services_details_components/Contact-Us-Comp";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/staff-augmentation");
+  const canonical = await getCanonicalUrl("/services/app-development");
 
   return {
-    title: "Staff Augmentation Services | Techtimize",
+    title: "App Development Services | Techtimize",
     alternates: {
       canonical,
     },
@@ -24,30 +24,30 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Ui_Ux_service_detail() {
     return (
         <>
-            <PageHeader heading="Staff Augmentation" subHeading="" />
+            <PageHeader heading="Application Development" subHeading="" />
             <div className="custom-container sm:flex items-center">
                 <div className="sm:w-[50%]">
-                    <Heading_proto heading="Overview" alignment="left" para="Scaling your team doesn’t have to be complicated. At Techtimize, our Staff Augmentation services give you direct access to highly skilled professionals—on demand, when you need them most. Whether you’re looking for developers, designers, data scientists, or project managers, we extend your in-house capabilities with the right talent, without the hassle of long-term hiring. Our approach ensures you maintain full control over your projects while gaining the flexibility and expertise to accelerate growth." />
+                    <Heading_proto heading="Overview" alignment="left" para="Techtimize design and develop mobile applications that combine innovation, performance, and user experience. Our apps are crafted to help businesses connect with their audiences anytime, anywhere—whether through Android, iOS, or cross-platform solutions. From startups launching their first app to enterprises expanding their digital ecosystem, we deliver secure, scalable, and engaging mobile applications that turn ideas into real-world impact." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/staff-aug.svg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/app-dev.svg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />
             <div className="!mb-[0] sm:mb-[50px] custom-container">
-                <Six_box_dynamic fileName="Staff_Augmentation" arrayName="what_we_are_good_at" />
+                <Six_box_dynamic fileName="App_development" arrayName="what_we_are_good_at" />
             </div>
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Benefits of Our Staff Augmentation Services" para="Our service is not just about filling seats—it’s about strategically empowering your business with the right talent. With our transparent and client-focused model, you stay in control while we handle sourcing, onboarding, and management support." />
+                <Heading_proto heading="Benefits of Our Mobile App Development Services" para="Engaging with Techtimize’s Mobile App Design Services means benefiting from 10 years of experience with leading multinational firms. We specialize in intuitive front-end design, seamless user journeys, low-code mobile platforms, in-app analytics, and more—ensuring your app is both engaging and performance-driven." />
             </div>
-            <AnimatedContent fileName="Staff_Augmentation" arrayName="Benefits_of_Our_UI_UX_Services" />
+            <AnimatedContent fileName="App_development" arrayName="Benefits_of_Our_UI_UX_Services"/>
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Our Staff Augmentation Process" para="At the core of our UI/UX design process is a deep understanding of your users and business goals. We begin with thorough research and discovery to gather insights that inform every design decision. Our team then maps out intuitive user flows and organizes content through effective information architecture." />
+                <Heading_proto heading="Our Mobile App Development Process" para="At the core of our Mobile App Design process is a deep understanding of your users and business goals. We start with in-depth research and discovery to gather insights that guide every design choice. From there, our team creates intuitive user flows and structures content with clear information architecture—ensuring smooth navigation and a seamless app experience." />
             </div>
-            <Design_Process fileName="Staff_Augmentation" arrayName="design_process" />
+            <Design_Process fileName="App_development" arrayName="design_process" />
             <div className="custom-container">
             <Heading_proto heading="Industry We Focus" className="mt-[0] sm:mt-[65px]"/>
-            <Six_box_dynamic fileName="Staff_Augmentation" arrayName="industry_we_focus" />
+            <Six_box_dynamic fileName={"App_development"} arrayName={"industry_we_focus"} />
             </div>
             <div className='flex flex-wrap justify-between relative text-white p-[15px] sm:p-[40px]  lg:p-[110px] lg:pt-[90px] bg-[#0B4D8E] rounded-[10px] max-w-[90%] mx-[auto] bg-no-repeat items-center '>
               <Image src={"/assets/images/expand-business.svg"} alt={"expand"} width={500} height={300} className="absolute right-0 bottom-0 w-[61%] z-0 x1750:w-[57%] x2000:w-[40%]" />

@@ -2,20 +2,20 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Heading_proto from "@/components/heading_prototype";
 import "../services.css"
 import Image from "next/image";
-import AnimatedContent from "../../../components/services_details_components/Animated_Content";
-import Design_Process from "../../../components/services_details_components/Process";
-import Six_box_dynamic from "../../../components/services_details_components/Six_box_dynamic";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import Services_blogs from "../../../components/services_details_components/Services_blogs";
-import Contact_Us_Comp from "../../../components/services_details_components/Contact-Us-Comp";
+import Services_blogs from "../../../../components/services_details_components/Services_blogs";
+import AnimatedContent from "../../../../components/services_details_components/Animated_Content";
+import Contact_Us_Comp from "../../../../components/services_details_components/Contact-Us-Comp";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
+import Design_Process from "@/app/components/services_details_components/Process";
+import Six_box_dynamic from "@/app/components/services_details_components/Six_box_dynamic";
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/ui-ux-designing");
+  const canonical = await getCanonicalUrl("/services/staff-augmentation");
 
   return {
-    title: "UI Services Services | Techtimize",
+    title: "Staff Augmentation Services | Techtimize",
     alternates: {
       canonical,
     },
@@ -24,30 +24,30 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function Ui_Ux_service_detail() {
     return (
         <>
-            <PageHeader heading="UI/UX design" subHeading="" />
+            <PageHeader heading="Staff Augmentation" subHeading="" />
             <div className="custom-container sm:flex items-center">
                 <div className="sm:w-[50%]">
-                    <Heading_proto heading="Overview" alignment="left" para="At Techtimize, we craft digital experiences that are not only visually stunning but also intuitive and user-friendly. Our UI/UX design services focus on understanding user behavior, streamlining interactions, and creating designs that keep users engaged. From wireframes to final interfaces, we ensure every touchpoint reflects your brand while delivering a seamless journey across devices." />
+                    <Heading_proto heading="Overview" alignment="left" para="Scaling your team doesn’t have to be complicated. At Techtimize, our Staff Augmentation services give you direct access to highly skilled professionals—on demand, when you need them most. Whether you’re looking for developers, designers, data scientists, or project managers, we extend your in-house capabilities with the right talent, without the hassle of long-term hiring. Our approach ensures you maintain full control over your projects while gaining the flexibility and expertise to accelerate growth." />
                 </div>
                 <div className="sm:w-[50%]">
-                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/overview.svg"} alt="overview" height={250} width={250} />
+                    <Image className="max-w-[70%] w-[100%] mx-[auto]" src={"/assets/images/staff-aug.svg"} alt="overview" height={250} width={250} />
                 </div>
             </div>
                 <Heading_proto heading="What We Are Good At" />
             <div className="!mb-[0] sm:mb-[50px] custom-container">
-                <Six_box_dynamic fileName="ui_ux_details" arrayName="what_we_are_good_at" />
+                <Six_box_dynamic fileName="Staff_Augmentation" arrayName="what_we_are_good_at" />
             </div>
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Benefits of Our UI/UX Services" para="Great design is more than aesthetics—it’s about creating digital experiences that drive results. At Techtimize, our UI/UX solutions improve user engagement, boost conversions, and strengthen brand loyalty. By combining creativity with usability, we help businesses turn visitors into long-term customers." />
+                <Heading_proto heading="Benefits of Our Staff Augmentation Services" para="Our service is not just about filling seats—it’s about strategically empowering your business with the right talent. With our transparent and client-focused model, you stay in control while we handle sourcing, onboarding, and management support." />
             </div>
-            <AnimatedContent fileName="ui_ux_details" arrayName="Benefits_of_Our_UI_UX_Services" />
+            <AnimatedContent fileName="Staff_Augmentation" arrayName="Benefits_of_Our_UI_UX_Services" />
             <div className="max-w-[90%] sm:max-w-[60%] mx-[auto]">
-                <Heading_proto heading="Our UI/UX Design Process" para="At Techtimize, we follow a structured design process to ensure creativity and functionality go hand in hand:" />
+                <Heading_proto heading="Our Staff Augmentation Process" para="At the core of our UI/UX design process is a deep understanding of your users and business goals. We begin with thorough research and discovery to gather insights that inform every design decision. Our team then maps out intuitive user flows and organizes content through effective information architecture." />
             </div>
-            <Design_Process fileName="ui_ux_details" arrayName="design_process" />
+            <Design_Process fileName="Staff_Augmentation" arrayName="design_process" />
             <div className="custom-container">
             <Heading_proto heading="Industry We Focus" className="mt-[0] sm:mt-[65px]"/>
-            <Six_box_dynamic fileName={"ui_ux_details"} arrayName={"industry_we_focus"} />
+            <Six_box_dynamic fileName="Staff_Augmentation" arrayName="industry_we_focus" />
             </div>
             <div className='flex flex-wrap justify-between relative text-white p-[15px] sm:p-[40px]  lg:p-[110px] lg:pt-[90px] bg-[#0B4D8E] rounded-[10px] max-w-[90%] mx-[auto] bg-no-repeat items-center '>
               <Image src={"/assets/images/expand-business.svg"} alt={"expand"} width={500} height={300} className="absolute right-0 bottom-0 w-[61%] z-0 x1750:w-[57%] x2000:w-[40%]" />
