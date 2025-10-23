@@ -50,6 +50,21 @@ export default function Contact_Us_Comp(){
             <CompanyInfoCard
               icon={
                 <Image
+                  src="/assets/svgs/phone.svg"
+                  alt="phone"
+                  width={20}
+                  height={20}
+                />
+              }
+              heading={"Phone Number"}
+              href={"tel:+1 240 696 2111"}
+              text={"+1 240 696 2111"}
+              className="bg-[#F2F6FF]"
+            />
+            
+            <CompanyInfoCard
+              icon={
+                <Image
                   src="/assets/svgs/email.svg"
                   alt="email"
                   width={20}
