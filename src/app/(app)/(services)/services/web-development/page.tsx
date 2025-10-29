@@ -1,3 +1,4 @@
+// app/services/web-development/page.tsx
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Heading_proto from "@/components/heading_prototype";
 import "../services.css"
@@ -11,19 +12,62 @@ import Services_blogs from "../../../../components/services_details_components/S
 import Contact_Us_Comp from "../../../../components/services_details_components/Contact-Us-Comp";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
+import { generateMetadataFromBE } from "@/app/lib/utils";
+
+// Your structured data
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Web Development Services",
+  "description": "At Techtimize, our web development services are designed to build powerful, scalable, and user-friendly websites that align with your business goals. Whether you need a corporate site, an eCommerce platform, or a custom web application, we leverage the latest technologies and frameworks to ensure reliability and future growth.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Techtimize",
+    "url": "https://techtimize.co/"
+  },
+  "serviceType": "Web Development",
+  "url": "https://techtimize.co/services/web-development",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Web Development Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Corporate Website",
+        "description": "Professional and responsive corporate websites designed to enhance your brand presence, engage clients, and drive business growth.",
+      },
+      {
+        "@type": "Offer",
+        "name": "E-Commerce Platform",
+        "description": "Full-featured eCommerce solutions with secure payment gateways, custom integrations, and scalable architecture for online business success.",
+      },
+      {
+        "@type": "Offer",
+        "name": "Custom Web Application",
+        "description": "Tailored web applications built to meet unique business needs, offering advanced functionality, seamless performance, and long-term scalability.",
+      }
+    ]
+  }
+};
+
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/services/web-development");
+  const baseMetadata = await generateMetadataFromBE("webAppDevelopment");
 
   return {
-    title: "Web Development Services | Techtimize",
+    ...baseMetadata,
     alternates: {
       canonical,
     },
+    other: {
+      'application/ld+json': JSON.stringify(structuredData),
+    },
   };
 }
+
 export default function Ui_Ux_service_detail() {
     return (
-        <>
+        <>           
             <PageHeader heading="Web Development Services" subHeading="" />
             <div className="custom-container sm:flex items-center">
                 <div className="sm:w-[50%]">
@@ -54,7 +98,7 @@ export default function Ui_Ux_service_detail() {
               <Image src={"/assets/images/expand-business.svg"} alt={"expand"} width={500} height={300} className="absolute right-0 bottom-0 w-[61%] z-0 x1750:w-[57%] x2000:w-[40%]" />
                 <div className="w-[100%] sm:w-[70%] lg:w-[55%]">
                     <h2 className="text-[24px] sm:text-[31px] mb-[20px]">Expand Your Business With Techtimize!</h2>
-                    <p>Do you have a business and want to impress your clients with your website and digital platform? then we’re ready to help!</p>
+                    <p>Do you have a business and want to impress your clients with your website and digital platform? then we're ready to help!</p>
                 </div>
                 <div className="w-[52%] mt-[20px] sm:mt-[0] sm:w-[20%] lg:w-[16%] x1400:w-[13%]  z-[10] x1750:w-[11%] x2000:w-[7%]">
                 <Link className="flex bg-white text-black p-[10px] sm:px-[10px] sm:py-[15px] rounded-[7px] items-center justify-between w-[100%] z-[10]" href={"/contact-us"}>

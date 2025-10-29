@@ -14,8 +14,10 @@ import Btn_redesign from "@/components/ui/btn_redesign";
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/about");
 
+  const baseMetadata = await generateMetadataFromBE("about");
+
   return {
-    title: "About Us | Techtimize",
+    ...baseMetadata, 
     alternates: {
       canonical,
     },

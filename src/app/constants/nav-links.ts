@@ -49,6 +49,10 @@ const otherFooterLinks = [
     name: "Privacy Policy",
     link: "/privacy-policy",
   },
+  {
+    name: "Sitemap",
+    link: "/sitemap",
+  },
 ];
 
 const footerQuickLinks = [

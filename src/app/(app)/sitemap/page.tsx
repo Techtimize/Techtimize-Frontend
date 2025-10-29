@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/sitemap");
 
   return {
-    title: "SiteMap | Techtimize",
+    title: "SiteMap ",
     // description: "Learn more about Techtimize and our mission.",
     alternates: {
       canonical,

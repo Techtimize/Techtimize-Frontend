@@ -6,11 +6,14 @@ import BlogContainer from "@/app/components/Blogs/blog_container";
 
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
+import { generateMetadataFromBE } from "@/app/lib/utils";
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/blogs");
 
+  const baseMetadata = await generateMetadataFromBE("blogs");
+
   return {
-    title: "Blogs | Techtimize",
+    ...baseMetadata,
     alternates: {
       canonical,
     },

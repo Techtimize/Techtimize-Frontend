@@ -5,7 +5,7 @@ import ProjectDetails from "../components/ProjectDetails";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>;  
 }): Promise<Metadata> {
   const { slug } = await params;
   const baseMetadata = await generateMetadataFromBE(`projects/${slug}`);

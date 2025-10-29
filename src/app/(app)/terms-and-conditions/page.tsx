@@ -2,12 +2,15 @@ import PageHeader from "@/app/components/PageHeader/PageHeader";
 import React from "react";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
+import { generateMetadataFromBE } from "@/app/lib/utils";
 
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/terms-and-conditions");
 
+  const baseMetadata = await generateMetadataFromBE("terms");
+
   return {
-    title: "Terms & Conditions | Techtimize",
+    ...baseMetadata,
     alternates: {
       canonical,
     },

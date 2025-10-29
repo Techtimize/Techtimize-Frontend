@@ -23,17 +23,14 @@ import { FaVideo } from "react-icons/fa";
 import Ai_transformation from "@/app/components/home/Ai_transformation";
 
 
-
 export async function generateMetadata(): Promise<Metadata> {
   return await generateMetadataFromBE("home");
 }
 
 
-
 export default async function Home() {
   const services = await getServices();
   const blogs = await get3LatestBlogs();
-  // console.log(blogs);
   return (
     <div className="bg-white home-page">
       <HeroSection />

@@ -1,6 +1,6 @@
 export const sitelinks = [
-          { label: "Home", path: "home" },
-          { label: "About", path: "About" },
+          { label: "Home", path: "/" },
+          { label: "About", path: "about" },
           { label: "Hiring Staff", path: "hiring-staff" },
           { label: "Services", path: "services" },
           { label: "Contact", path: "contact-us" },
@@ -10,30 +10,26 @@ export const sitelinks = [
 export const serviceslinks = [
   { 
     label: "Artificial Intelligence", 
-    href: "/services?service=Artificial Intelligence" 
+    href: "/services/artificial-intelligence" 
   },
   { 
     label: "Mobile App Development", 
-    href: "/services?service=App Development" 
+    href: "/services/app-development" 
   },
   { 
     label: "Web App Development", 
-    href: "/services?service=App Development" 
-  },
-  { 
-    label: "Cloud Services", 
-    href: "/services?service=Cloud Services" 
+    href: "/services/web-development" 
   },
   { 
     label: "UI UX Design", 
-    href: "/services?service=UI UX" 
+    href: "/services/ui-ux-designing" 
   },
   { 
-    label: "Project Management", 
-    href: "/services?service=Management" 
+    label: "Digital Marketing", 
+    href: "/services/digital-marketing" 
   },
   { 
     label: "Staff Augmentation", 
-    href: "/services?service=Staff Augmentation" 
+    href: "/services/staff-augmentation" 
   },
 ];

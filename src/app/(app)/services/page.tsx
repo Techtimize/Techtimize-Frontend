@@ -12,14 +12,15 @@ import getServices from "@/app/api/services/get_services";
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/services");
 
+  const baseMetadata = await generateMetadataFromBE("services");
+
   return {
-    title: "Services | Techtimize",
+    ...baseMetadata,
     alternates: {
       canonical,
     },
   };
-};
-
+}
   const services = await getServices();
 
 

@@ -7,11 +7,14 @@ import "./faqs.css";
 import { getFaqs } from "@/app/api/faqs/getFaqs";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
+import { generateMetadataFromBE } from "@/app/lib/utils";
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/faqs");
 
+  const baseMetadata = await generateMetadataFromBE("faqs");
+
   return {
-    title: "Frequently Asked Questions | Techtimize",
+    ...baseMetadata,
     alternates: {
       canonical,
     },

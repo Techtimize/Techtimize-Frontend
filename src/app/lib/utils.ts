@@ -1,13 +1,14 @@
+// src/app/lib/utils.ts
+
 import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import type { Metadata } from 'next';
+import { pageMeta } from "@/app/constants/metadata";
+
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
-
-import type { Metadata } from 'next';
-import { SEO_ENDPOINT } from "@/app/api/endpoints";
 
 const DEFAULT_METADATA: Metadata = {
     title: "Techtimize",
@@ -15,22 +16,24 @@ const DEFAULT_METADATA: Metadata = {
     keywords: "Techtimize",
 };
 
+// 👇 This function is now REFACTORED
 export async function generateMetadataFromBE(slug: string): Promise<Metadata> {
     try {
-        const response = await fetch(SEO_ENDPOINT(slug));
-        if (!response.ok) {
-         return DEFAULT_METADATA;
+        // Check if the slug exists as a key in your pageMeta object
+        if (pageMeta[slug]) {
+            const meta = pageMeta[slug]; // Get the data
+            return {
+                title: meta.title,
+                description: meta.description,
+                // You can add keywords here later if you add them to metadata.ts
+            };
         }
+        
+        // If no specific slug is found, return the default
+        return DEFAULT_METADATA;
 
-        const seoData = await response.json();
-        return {
-            title: seoData.metaTitle || DEFAULT_METADATA.title,
-            description: seoData.metaDescription || DEFAULT_METADATA.description,
-            keywords: seoData.metaKeywords || DEFAULT_METADATA.keywords,
-        };
     } catch (error) {
-        console.error("Error fetching SEO data:", error);
+        console.error("Error reading static metadata:", error);
         return DEFAULT_METADATA;
     }
 }
-

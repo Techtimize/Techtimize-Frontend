@@ -6,13 +6,17 @@ import { expertiseData } from "@/app/constants/expertise-data";
 
 import type { Metadata } from 'next';
 import { generateMetadataFromBE } from "@/app/lib/utils";
- 
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
+
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/hiring-staff");
 
+  // 2. Call your helper function with the correct key
+  const baseMetadata = await generateMetadataFromBE("hiringStaff");
+
+  // 3. Combine the base metadata (title, description) with the canonical URL
   return {
-    title: "Hiring Staff | Techtimize",
+    ...baseMetadata, // This adds title and description
     alternates: {
       canonical,
     },

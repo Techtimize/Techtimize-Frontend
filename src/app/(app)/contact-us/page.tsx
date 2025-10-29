@@ -19,8 +19,10 @@ import { getCanonicalUrl } from "@/app/lib/getCanonial";
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/contact-us");
 
+  const baseMetadata = await generateMetadataFromBE("contact");
+
   return {
-    title: "Contact Us | Techtimize",
+    ...baseMetadata,
     alternates: {
       canonical,
     },
@@ -110,7 +112,7 @@ const ContactUs = () => {
                     />
                   </Link>
                   <Link
-                    href="http://clutch.co/profile/techtimize"
+                    href="https://clutch.co/profile/techtimize"
                     target="_blank"
                   >
                     <SocialIcon

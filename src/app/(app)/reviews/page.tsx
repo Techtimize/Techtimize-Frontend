@@ -6,11 +6,14 @@ import CountryFlag from "@/app/components/reviews/flags";
 import Reviews_Section from "@/app/components/reviews/Reviews-section";
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { Metadata } from "next";
+import { generateMetadataFromBE } from "@/app/lib/utils";
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/reviews");
 
+  const baseMetadata = await generateMetadataFromBE("reviews");
+
   return {
-    title: "Reviews | Techtimize",
+    ...baseMetadata,
     alternates: {
       canonical,
     },
