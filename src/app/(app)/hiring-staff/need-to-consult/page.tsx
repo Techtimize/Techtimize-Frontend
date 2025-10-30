@@ -5,7 +5,7 @@ import { generateMetadataFromBE } from "@/app/lib/utils";
 import CalendlyWidget from "@/app/components/need-to-consult/CalendlyWidget";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const canonical = await getCanonicalUrl("/need-to-consult");
+  const canonical = await getCanonicalUrl("/hiring-staff/need-to-consult");
   const baseMetadata = await generateMetadataFromBE("needToConsult");
 
   return {
