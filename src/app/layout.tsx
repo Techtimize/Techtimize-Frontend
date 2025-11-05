@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
 
   const host = headersList.get("host") || "www.techtimize.co";
-  const protocol = process.env.NODE_ENV === "production" ? "https:" : "http";
+  const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
 
   const pathname =
     headersList.get("x-invoke-path") ||

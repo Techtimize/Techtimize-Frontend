@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     alternates: {
-      canonical: "https://techtimize.co/hiring-staff/need-to-consult",
+      canonical: "https://techtimize.co/hiring-staff",
     },
   };
 }
