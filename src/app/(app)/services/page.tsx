@@ -1,10 +1,9 @@
 import PageHeader from "@/app/components/PageHeader/PageHeader";
 import Image from "next/image";
-import React, { Suspense } from "react";
+import React from "react";
 import type { Metadata } from "next";
 import { generateMetadataFromBE } from "@/app/lib/utils";
 import GetAllStacks from "./http/fetchstack"
-
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import ServiceCard from "@/app/components/home/ServiceCard";
 import Heading_proto from "@/components/heading_prototype";
@@ -21,8 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
   };
 }
-  const services = await getServices();
-
+const services = await getServices();
 
 const Services = () => {
   return (
@@ -51,24 +49,24 @@ const Services = () => {
         </div>
         {/* <TechSlider /> */}
         <GetAllStacks />
-          <Heading_proto heading="Our Services" para="Discover our Services from our top-loved selections, designed to help you learn, grow, and succeed" />
-                <div className=" max-w-[90%] mx-[auto] flex flex-wrap lg:max-w-[82%] justify-between sm:max-w-[80%]">
-        
-                  {services.map((key) => {
-                    return (
-                      <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[30%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[35px] rounded-[20px] lg:mt-[20px]">
-                        <ServiceCard
-                          key={key._id}
-                          url={key.url}
-                          title={key.serviceName}
-                          description={key.description}
-                          image={key.iconUrl}
-                        />
-                      </div>
-                    );
-                  })}
+        <Heading_proto heading="Our Services" para="Discover our Services from our top-loved selections, designed to help you learn, grow, and succeed" />
+        <div className=" max-w-[90%] mx-[auto] flex flex-wrap lg:max-w-[82%] justify-between sm:max-w-[80%]">
+
+          {services.map((key) => {
+            return (
+              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[31.2%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[15px] rounded-[20px] lg:mt-[20px] z-[9]">
+                <ServiceCard
+                  key={key._id}
+                  url={key.url}
+                  title={key.serviceName}
+                  description={key.description}
+                  image={key.iconUrl}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
     </div>
   );
 };
