@@ -73,7 +73,7 @@ export const design_process = [
     },
     {
         heading: "Creative Design & Content",
-        content: "From eye-catching visuals to persuasive ad copy and SEO-optimized content, we design assets tailored to each platform—driving engagement and brand consistency.",
+        content: "From visuals to ad copy and SEO content, we create platform-ready assets that boost engagement and keep your brand consistent.",
         iconurl: "/assets/images/process-3.svg",
         circleurl: "/assets/images/circle-3.svg",
         color: "#FF5E81"

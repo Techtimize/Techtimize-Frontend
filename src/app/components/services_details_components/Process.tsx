@@ -34,7 +34,7 @@ export default function Design_Process({ fileName, arrayName }: Props) {
         alt="line"
         height={5}
         width={1000}
-        className="absolute bottom-[6%] left-[10%] w-[80%] hidden lg:block"
+        className="absolute bottom-[-4%]  x1330:bottom-[5%] left-[10%] w-[80%] hidden lg:block"
       />
 
       {data.map((item, i) => (
@@ -76,7 +76,7 @@ export default function Design_Process({ fileName, arrayName }: Props) {
             width={50}
             height={50}
             alt="circle"
-            className="inline absolute bottom-0 left-[40%] hidden lg:block"
+            className="inline absolute bottom-[-10%] x1330:bottom-[0] left-[40%] hidden lg:block "
           />
         </div>
       ))}
