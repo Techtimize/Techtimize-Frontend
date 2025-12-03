@@ -141,7 +141,7 @@ const Footer: React.FC = () => {
                 className="flex gap-[9px] items-center"
               >
                 <LocationPinIcon />
-                <p>50 Pine Ave, Block B OPF Housing Scheme, Lahore</p>
+                <p>50 Pine Ave, Block B OPF Housing Scheme, Lahore, Pakistan</p>
               </Link>
             </li>
             <li>
