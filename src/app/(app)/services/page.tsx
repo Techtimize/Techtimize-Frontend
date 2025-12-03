@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import { generateMetadataFromBE } from "@/app/lib/utils";
 import GetAllStacks from "./http/fetchstack"
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
-import ServiceCard from "@/app/components/home/ServiceCard";
+import ServiceCard from "../../components/home/ServiceCard";
 import Heading_proto from "@/components/heading_prototype";
 import getServices from "@/app/api/services/get_services";
 export async function generateMetadata(): Promise<Metadata> {
@@ -21,6 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 const services = await getServices();
+  console.log("api calling data " : services);
 
 const Services = () => {
   return (
