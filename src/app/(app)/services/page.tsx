@@ -21,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 const services = await getServices();
-  console.log("api calling data " : services);
+  console.log("api calling data : " , services);
 
 const Services = () => {
   return (
