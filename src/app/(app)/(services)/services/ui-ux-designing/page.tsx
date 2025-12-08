@@ -50,30 +50,26 @@ const structuredData = {
   ],
   "serviceType": "UI/UX Design",
   "url": "https://techtimize.co/services/ui-ux-designing",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "UI/UX Design Packages",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Web UI Design",
-        "description": "Custom web interface designs that combine creativity with user-centric layouts for enhanced engagement and conversion.",
-        "url": "https://techtimize.co/services/ui-ux-designing#webui"
-      },
-      {
-        "@type": "Offer",
-        "name": "Mobile App UI/UX",
-        "description": "Visually appealing and intuitive mobile app designs that deliver smooth and delightful user experiences on all platforms.",
-        "url": "https://techtimize.co/services/ui-ux-designing#mobileui"
-      },
-      {
-        "@type": "Offer",
-        "name": "User Research & Prototyping",
-        "description": "Comprehensive user research, wireframing, and prototyping services to validate ideas and ensure a seamless user journey.",
-        "url": "https://techtimize.co/services/ui-ux-designing#prototype"
-      }
-    ]
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Web UI Design",
+      "description": "Custom web interface designs that combine creativity with user-centric layouts for enhanced engagement and conversion.",
+      "url": "https://techtimize.co/services/ui-ux-designing#webui"
+    },
+    {
+      "@type": "Offer",
+      "name": "Mobile App UI/UX",
+      "description": "Visually appealing and intuitive mobile app designs that deliver smooth and delightful user experiences on all platforms.",
+      "url": "https://techtimize.co/services/ui-ux-designing#mobileui"
+    },
+    {
+      "@type": "Offer",
+      "name": "User Research & Prototyping",
+      "description": "Comprehensive user research, wireframing, and prototyping services to validate ideas and ensure a seamless user journey.",
+      "url": "https://techtimize.co/services/ui-ux-designing#prototype"
+    }
+  ]
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -85,15 +81,16 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical,
     },
-    other: {
-      'application/ld+json': JSON.stringify(structuredData),
-    },
   };
 }
 
 export default function UiUxServiceDetail() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <PageHeader heading="UI/UX Design" subHeading="" />
       
       <div className="custom-container sm:flex items-center">

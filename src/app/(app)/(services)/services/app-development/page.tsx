@@ -12,7 +12,7 @@ import Contact_Us_Comp from "../../../../components/services_details_components/
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { generateMetadataFromBE } from "@/app/lib/utils";
 import { Metadata } from "next";
-import Script from "next/script";
+// Note: we intentionally inject JSON-LD via `generateMetadata` for server-side rendering
 
 // --- JSON-LD Structured Data ---
 const structuredData = {
@@ -54,45 +54,26 @@ const structuredData = {
   ],
   "serviceType": "App Development",
   "url": "https://techtimize.co/services/app-development",
-  "hasOfferCatalog": {
-    "@type": "ItemList",
-    "name": "App Development Solutions",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Offer",
-          "name": "Android App Development",
-          "description":
-            "Custom Android applications designed for performance, security, and seamless user experience.",
-          "url": "https://techtimize.co/services/app-development#android"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Offer",
-          "name": "iOS App Development",
-          "description":
-            "iOS applications optimized for Apple’s performance ecosystem.",
-          "url": "https://techtimize.co/services/app-development#ios"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Offer",
-          "name": "Cross-Platform Apps",
-          "description":
-            "Cross-platform mobile apps using React Native and Flutter.",
-          "url": "https://techtimize.co/services/app-development#crossplatform"
-        }
-      }
-    ]
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Android App Development",
+      "description": "Custom Android applications designed for performance, security, and seamless user experience.",
+      "url": "https://techtimize.co/services/app-development#android"
+    },
+    {
+      "@type": "Offer",
+      "name": "iOS App Development",
+      "description": "iOS applications optimized for Apple's performance ecosystem.",
+      "url": "https://techtimize.co/services/app-development#ios"
+    },
+    {
+      "@type": "Offer",
+      "name": "Cross-Platform Apps",
+      "description": "Cross-platform mobile apps using React Native and Flutter.",
+      "url": "https://techtimize.co/services/app-development#crossplatform"
+    }
+  ]
 };
 
 // --- Page Metadata ---
@@ -102,18 +83,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...baseMetadata,
-    alternates: { canonical }
+    alternates: { canonical },
   };
 }
 
 export default function AppDevelopmentServiceDetail() {
   return (
     <>
-      {/* ✅ JSON-LD injected into <head> (Google will detect it) */}
-      <Script
-        id="app-dev-schema"
+      {/* JSON-LD Structured Data */}
+      <script
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 

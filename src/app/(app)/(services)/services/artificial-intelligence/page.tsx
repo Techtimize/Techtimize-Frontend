@@ -50,30 +50,26 @@ const structuredData = {
   ],
   "serviceType": "Artificial Intelligence",
   "url": "https://techtimize.co/services/artificial-intelligence",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Artificial Intelligence Solutions",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Machine Learning Models",
-        "description": "Custom machine learning models designed to predict outcomes, automate decisions, and enhance operational efficiency.",
-        "url": "https://techtimize.co/services/artificial-intelligence#machinelearning"
-      },
-      {
-        "@type": "Offer",
-        "name": "Natural Language Processing (NLP)",
-        "description": "Advanced NLP solutions for chatbots, sentiment analysis, and text analytics that help businesses understand and engage customers effectively.",
-        "url": "https://techtimize.co/services/artificial-intelligence#nlp"
-      },
-      {
-        "@type": "Offer",
-        "name": "Predictive Analytics",
-        "description": "Data-driven predictive analytics tools that forecast trends, customer behavior, and market opportunities for better business planning.",
-        "url": "https://techtimize.co/services/artificial-intelligence#predictive"
-      }
-    ]
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Machine Learning Models",
+      "description": "Custom machine learning models designed to predict outcomes, automate decisions, and enhance operational efficiency.",
+      "url": "https://techtimize.co/services/artificial-intelligence#machinelearning"
+    },
+    {
+      "@type": "Offer",
+      "name": "Natural Language Processing (NLP)",
+      "description": "Advanced NLP solutions for chatbots, sentiment analysis, and text analytics that help businesses understand and engage customers effectively.",
+      "url": "https://techtimize.co/services/artificial-intelligence#nlp"
+    },
+    {
+      "@type": "Offer",
+      "name": "Predictive Analytics",
+      "description": "Data-driven predictive analytics tools that forecast trends, customer behavior, and market opportunities for better business planning.",
+      "url": "https://techtimize.co/services/artificial-intelligence#predictive"
+    }
+  ]
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -85,15 +81,16 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical,
     },
-    other: {
-      'application/ld+json': JSON.stringify(structuredData),
-    },
   };
 }
 
 export default function ArtificialIntelligenceServiceDetail() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <PageHeader heading="Artificial Intelligence Services" subHeading="" />
       
       <div className="custom-container sm:flex items-center">

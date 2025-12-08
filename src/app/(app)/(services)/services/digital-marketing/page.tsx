@@ -50,30 +50,26 @@ const structuredData = {
   ],
   "serviceType": "Digital Marketing",
   "url": "https://techtimize.co/services/digital-marketing",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Digital Marketing Packages",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Search Engine Optimization (SEO)",
-        "description": "Comprehensive SEO services designed to improve website visibility, organic rankings, and drive targeted traffic to your business.",
-        "url": "https://techtimize.co/services/digital-marketing#seo"
-      },
-      {
-        "@type": "Offer",
-        "name": "Pay-Per-Click (PPC) Advertising",
-        "description": "Strategic PPC campaigns that maximize ROI through data-driven ad placements on Google, Meta, and other major platforms.",
-        "url": "https://techtimize.co/services/digital-marketing#ppc"
-      },
-      {
-        "@type": "Offer",
-        "name": "Social Media Marketing",
-        "description": "Creative and engaging social media marketing services to build brand awareness and foster customer relationships across all channels.",
-        "url": "https://techtimize.co/services/digital-marketing#socialmedia"
-      }
-    ]
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Search Engine Optimization (SEO)",
+      "description": "Comprehensive SEO services designed to improve website visibility, organic rankings, and drive targeted traffic to your business.",
+      "url": "https://techtimize.co/services/digital-marketing#seo"
+    },
+    {
+      "@type": "Offer",
+      "name": "Pay-Per-Click (PPC) Advertising",
+      "description": "Strategic PPC campaigns that maximize ROI through data-driven ad placements on Google, Meta, and other major platforms.",
+      "url": "https://techtimize.co/services/digital-marketing#ppc"
+    },
+    {
+      "@type": "Offer",
+      "name": "Social Media Marketing",
+      "description": "Creative and engaging social media marketing services to build brand awareness and foster customer relationships across all channels.",
+      "url": "https://techtimize.co/services/digital-marketing#socialmedia"
+    }
+  ]
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -85,15 +81,16 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical,
     },
-    other: {
-      'application/ld+json': JSON.stringify(structuredData),
-    },
   };
 }
 
 export default function DigitalMarketingServiceDetail() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <PageHeader heading="Digital Marketing Services" subHeading="" />
       
       <div className="custom-container sm:flex items-center">

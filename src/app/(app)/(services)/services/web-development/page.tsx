@@ -27,27 +27,23 @@ const structuredData = {
   },
   "serviceType": "Web Development",
   "url": "https://techtimize.co/services/web-development",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Web Development Packages",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Corporate Website",
-        "description": "Professional and responsive corporate websites designed to enhance your brand presence, engage clients, and drive business growth.",
-      },
-      {
-        "@type": "Offer",
-        "name": "E-Commerce Platform",
-        "description": "Full-featured eCommerce solutions with secure payment gateways, custom integrations, and scalable architecture for online business success.",
-      },
-      {
-        "@type": "Offer",
-        "name": "Custom Web Application",
-        "description": "Tailored web applications built to meet unique business needs, offering advanced functionality, seamless performance, and long-term scalability.",
-      }
-    ]
-  }
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Corporate Website",
+      "description": "Professional and responsive corporate websites designed to enhance your brand presence, engage clients, and drive business growth."
+    },
+    {
+      "@type": "Offer",
+      "name": "E-Commerce Platform",
+      "description": "Full-featured eCommerce solutions with secure payment gateways, custom integrations, and scalable architecture for online business success."
+    },
+    {
+      "@type": "Offer",
+      "name": "Custom Web Application",
+      "description": "Tailored web applications built to meet unique business needs, offering advanced functionality, seamless performance, and long-term scalability."
+    }
+  ]
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -59,15 +55,16 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical,
     },
-    other: {
-      'application/ld+json': JSON.stringify(structuredData),
-    },
   };
 }
 
 export default function Ui_Ux_service_detail() {
     return (
-        <>           
+        <>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+            />
             <PageHeader heading="Web Development Services" subHeading="" />
             <div className="custom-container sm:flex items-center">
                 <div className="sm:w-[50%]">

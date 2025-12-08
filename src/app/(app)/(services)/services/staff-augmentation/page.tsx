@@ -50,30 +50,26 @@ const structuredData = {
   ],
   "serviceType": "Staff Augmentation",
   "url": "https://techtimize.co/services/staff-augmentation",
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Staff Augmentation Packages",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "name": "Dedicated Developers",
-        "description": "Hire skilled developers to work exclusively on your projects, ensuring quality and consistent communication throughout development.",
-        "url": "https://techtimize.co/services/staff-augmentation#developers"
-      },
-      {
-        "@type": "Offer",
-        "name": "Design & Creative Teams",
-        "description": "Expand your in-house design capabilities with professional UI/UX designers, graphic experts, and creative strategists.",
-        "url": "https://techtimize.co/services/staff-augmentation#designers"
-      },
-      {
-        "@type": "Offer",
-        "name": "Technical Project Managers",
-        "description": "Add experienced project managers to your team for improved workflow, coordination, and timely project delivery.",
-        "url": "https://techtimize.co/services/staff-augmentation#pm"
-      }
-    ]
-  }                        
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Dedicated Developers",
+      "description": "Hire skilled developers to work exclusively on your projects, ensuring quality and consistent communication throughout development.",
+      "url": "https://techtimize.co/services/staff-augmentation#developers"
+    },
+    {
+      "@type": "Offer",
+      "name": "Design & Creative Teams",
+      "description": "Expand your in-house design capabilities with professional UI/UX designers, graphic experts, and creative strategists.",
+      "url": "https://techtimize.co/services/staff-augmentation#designers"
+    },
+    {
+      "@type": "Offer",
+      "name": "Technical Project Managers",
+      "description": "Add experienced project managers to your team for improved workflow, coordination, and timely project delivery.",
+      "url": "https://techtimize.co/services/staff-augmentation#pm"
+    }
+  ]                        
 };
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -85,15 +81,16 @@ export async function generateMetadata(): Promise<Metadata> {
     alternates: {
       canonical,
     },
-    other: {
-      'application/ld+json': JSON.stringify(structuredData),
-    },
   };
 }
 
 export default function StaffAugmentationServiceDetail() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <PageHeader heading="Staff Augmentation" subHeading="" />
       
       <div className="custom-container sm:flex items-center">
