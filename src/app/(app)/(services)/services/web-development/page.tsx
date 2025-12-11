@@ -63,6 +63,8 @@ export default function Ui_Ux_service_detail() {
         <>
             <script
               type="application/ld+json"
+              async
+  src=" "
               dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
             <PageHeader heading="Web Development Services" subHeading="" />
