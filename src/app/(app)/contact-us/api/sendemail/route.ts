@@ -9,9 +9,11 @@ export async function POST(req: Request) {
     const { username, email, phone, options, message } = await req.json();
 
     await resend.emails.send({
-      from: "no-reply@yourdomain.com",
+      from: "Techtimize <contact@techtimize.co>",
       to: "contact@techtimize.co",
-      subject: "Connect with us",
+       replyTo: email,
+      subject: "New Contact Request – Techtimize",
+
       react: EmailTemplate({
         firstName: username,
         email: email,

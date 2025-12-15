@@ -117,7 +117,7 @@ const footerServices = [
   }
 ];
 
-const LAHORE_LOCATION_MAP_HREF = "https://maps.app.goo.gl/Q6BCqsbJ5SRLcsTRA";
+const LAHORE_LOCATION_MAP_HREF = "https://maps.app.goo.gl/owsiPpaQcPeVEPNH7";
 
 const WYOMING_LOCATION_MAP_HREF = "https://maps.app.goo.gl/A6k1tpX2ha9vk9Lk6";
 

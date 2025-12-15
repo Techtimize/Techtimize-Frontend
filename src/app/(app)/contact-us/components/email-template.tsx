@@ -47,17 +47,17 @@ export default function EmailTemplate({
           <hr style={{border: "1px solid #ddd", margin: "10px 0"}}/>
           <p><strong>Name:</strong> {firstName}</p><p><strong>Email:</strong> {email}</p><p>
               <strong>Phone:</strong> {phone}</p><p><strong>Requirement:</strong> {requirement}</p><p>
-              <strong>Message:</strong></p><p
-              style={{
-                  backgroundColor: "#fff",
-                  padding: "10px",
-                  borderRadius: "5px",
-                  border: "1px solid #ddd",
-              }}
+              <strong>Message:</strong></p>{message}<p
+            //   style={{
+            //       backgroundColor: "#fff",
+            //       padding: "10px",
+            //       borderRadius: "5px",
+            //       border: "1px solid #ddd",
+            //   }}
           >
-          <Row>
+          {/* <Row>
               <Text>   {message}</Text>
-          </Row>
+          </Row> */}
 
           </p>
           <hr style={{border: "1px solid #ddd", margin: "20px 0"}}/>
