@@ -19,7 +19,6 @@ import { get3LatestBlogs } from "@/app/api/blogs/getlatestblogs";
 import HomeBlogs from "../../components/home/HomeBlogs";
 import Testimonials from "../../components/home/Testimonials"
 import { Input } from "@/components/ui/input";
-import { FaVideo } from "react-icons/fa";
 import Ai_transformation from "@/app/components/home/Ai_transformation";
 
 

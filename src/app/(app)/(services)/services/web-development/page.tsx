@@ -63,8 +63,6 @@ export default function Ui_Ux_service_detail() {
         <>
             <script
               type="application/ld+json"
-              async
-  src=" "
               dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
             <PageHeader heading="Web Development Services" subHeading="" />
@@ -97,7 +95,7 @@ export default function Ui_Ux_service_detail() {
               <Image src={"/assets/images/expand-business.svg"} alt={"expand"} width={500} height={300} className="absolute right-0 bottom-0 w-[61%] z-0 x1750:w-[57%] x2000:w-[40%]" />
                 <div className="w-[100%] sm:w-[70%] lg:w-[55%]">
                     <h2 className="text-[24px] sm:text-[31px] mb-[20px]">Expand Your Business With Techtimize!</h2>
-                    <p>Do you have a business and want to impress your clients with your website and digital platform? then we're ready to help!</p>
+                    <p>Do you have a business and want to impress your clients with your website and digital platform? then we&apos;re ready to help!</p>
                 </div>
                 <div className="w-[52%] mt-[20px] sm:mt-[0] sm:w-[20%] lg:w-[16%] x1400:w-[13%]  z-[10] x1750:w-[11%] x2000:w-[7%]">
                 <Link className="flex bg-white text-black p-[10px] sm:px-[10px] sm:py-[15px] rounded-[7px] items-center justify-between w-[100%] z-[10]" href={"/contact-us"}>

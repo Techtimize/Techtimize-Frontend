@@ -2,6 +2,7 @@ import Tag from "@/app/components/Tag/Tag";
 import { jobProps } from "@/app/types/job.type";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import Link from "next/link";
 import { PropsWithChildren } from "react";
 import { BsClock } from "react-icons/bs";
@@ -31,9 +32,9 @@ const JobOpeningCard = ({
 }) => {
   return (
     <div className="border rounded-[10px] bg-white relative flex justify-end w-full z-20 [box-shadow:0px_8px_24px_0px_#959DA533]">
-      <div className="flex flex rounded-[10px] bg-white w-full p-4 md:p-6 sm:gap-4 z-20">
+      <div className="flex rounded-[10px] bg-white w-full p-4 md:p-6 sm:gap-4 z-20">
         <div className="h-11 flex items-center">
-          <img
+          <Image
             src="/assets/svgs/suitcaseIcon.svg"
             alt="suitcase"
             className="hidden sm:inline"

@@ -1,4 +1,5 @@
 import { getCode } from "country-list";
+import Image from "next/image";
 
 type Props = {
   countryName: string;
@@ -15,13 +16,12 @@ export default function CountryFlag({ countryName }: Props) {
   const normalizedName = countryNameMap[countryName.trim()] || countryName;
 
   const code = getCode(normalizedName);
-
   if (!code) {
     return <span>🌍 {countryName}</span>; 
   }
 
   return (
-    <img
+    <Image
       src={`https://flagcdn.com/${code.toLowerCase()}.svg`}
       alt={`${normalizedName} Flag`}
       width={32}

@@ -54,7 +54,7 @@ const HeroSection = () => {
           </Link>
         </div>
         <div className="max-w-[210px] sm:flex sm:max-w-[unset]">
-        <Btn_redesign content={"Schedule Meeting"} url={""} icon={FaVideo} className="sm:w-[unset] w-[100%]"/>
+        <Btn_redesign content={"Schedule Meeting"} url={"/hiring-staff/need-to-consult"} icon={FaVideo} className="sm:w-[unset] w-[100%]"/>
          <Link className="px-[10px] border border-[#000] sm:mt-[0] mt-[15px] sm:px-[30px] sm:ml-[30px] py-[12px] rounded-[8px] font-medium flex items-center" href="/contact-us">
              Get In Touch <MdArrowOutward className="ml-[10px]"/>
         </Link> 

@@ -134,14 +134,16 @@ const Footer: React.FC = () => {
                 <p>30 N Gould St Ste N, Wyoming 82801</p>
               </Link>
             </li>
-            <li className="flex gap-[9px] items-center">
+            <li className="flex gap-[9px] items-start">
               <Link
                 href={LAHORE_LOCATION_MAP_HREF}
                 target="_blank"
-                className="flex gap-[9px] items-center"
+                className="flex gap-[9px] items-start"
               >
-                <LocationPinIcon />
-                <p>50 Pine Ave, Block B OPF Housing Scheme, Lahore, Pakistan</p>
+                <div className="mt-[2px] flex-shrink-0">
+                  <LocationPinIcon />
+                </div>
+                <p className="leading-[1.5] break-words">50 Pine Ave, Block B OPF Housing Scheme,<br />Lahore, Pakistan</p>
               </Link>
             </li>
             <li>
