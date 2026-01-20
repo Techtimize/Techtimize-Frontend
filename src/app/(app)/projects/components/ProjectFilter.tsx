@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { projectTags } from "@/app/constants/portfolioData";
 import projectsProps from "@/app/types/project.type";
 
 export default function ProjectsFilter({ projects }: { projects: projectsProps[] }) {

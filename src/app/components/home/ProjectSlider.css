@@ -8,7 +8,6 @@
 
 .projectslider .embla__slide {
   flex: 0 0 100% !important;
-  /* Show 3 slides at once */
   min-width: 0;
   padding: 0.5rem;
   padding-right: 2%;
@@ -23,22 +22,14 @@
   left: 34%;
 }
 
-
-
 .projectslider .arrows button {
   transition: 0.2s ease-in-out;
   border: 1px solid;
-  /* border-color: transparent; */
 }
 
 .projectslider .arrows button:hover {
   background-color: transparent;
-  /* border-color:  #0697D5; */
   color: #0697D5;
-}
-
-.projectslider .embla__slide {
-  flex: 0 0 100%;
 }
 
 @media (min-width: 640px) {
@@ -61,6 +52,13 @@
   }
 }
 
+/* 2XL - 4 slides */
+@media (min-width: 1536px) {
+  .projectslider .embla__slide {
+    flex: 0 0 25% !important;
+    /* 4 slides on 2xl screens */
+  }
+}
 
 @media (max-width: 1024px) and (min-width : 767px) {
   .projectslider .arrows {
@@ -79,8 +77,6 @@
     left: 45%;
   }
 }
-
-
 
 @media (max-width: 500px) {
   .projectslider .arrows {
