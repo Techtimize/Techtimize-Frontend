@@ -40,7 +40,7 @@ const JobOpenings = ({ departmentId }: { departmentId: string | null }) => {
     return () => {
       ignore = true;
     };
-  }, [departmentId]);
+  }, [departmentId, page]);
 
   return (
     <div className="h-[700px] flex-1 flex flex-col gap-y-6 p-2">
@@ -66,7 +66,7 @@ const JobOpenings = ({ departmentId }: { departmentId: string | null }) => {
             onClick={() => handleNavigation(p)}
             key={p}
             className={cn("border border-gray rounded-md px-3", {
-              "text-blue-1 bg-blue-1 text-white": p === page,
+              " bg-blue-1 text-white": p === page,
             })}
           >
             {p}

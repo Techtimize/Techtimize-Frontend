@@ -25,7 +25,7 @@ export const ApiEndpoint = {
 };
 
 export const API = {
-  JOB_OPENING: `/api/v1/job-opening`,
+  JOB_OPENING: `${baseUrl}/api/v1/job-opening`,
   DEPARTMENT_JOB_OPENINGS: (departmentId: string) =>
-    `/api/v1/departments/${departmentId}/job-openings`,
+    `${baseUrl}/api/v1/departments/${departmentId}/job-openings`,
 };
