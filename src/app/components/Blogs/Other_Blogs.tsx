@@ -1,4 +1,5 @@
 import { blogsProps } from "@/app/types/blog";
+import Image from "next/image";
 import Link from "next/link";
 
 type OtherBlogProps = {
@@ -8,22 +9,24 @@ type OtherBlogProps = {
 export default function Other_Blogs({ blog }: OtherBlogProps) {
   return (
     <Link href={`/blog/${blog.slug}`} className="flex justify-between p-[10px]">
-      <div className="w-[40%]">
-         <img
-          className="h-[80px] object-cover rounded-[8px] w-[100%]"
+      <div className="w-[40%] relative h-[80px]">
+        <Image
+          className="rounded-[8px] object-cover"
           src={blog.imageUrl}
           alt={blog.title}
+          fill
+          sizes="(max-width: 768px) 40vw, 200px"
           loading="lazy"
-        /> 
+        />
       </div>
       <div className="w-[55%]">
-          <p className="text-[14px] line-clamp-2">{blog.title}</p>
+        <p className="text-[14px] line-clamp-2">{blog.title}</p>
         <div className="mt-[7px]">
           <p className="inline text-[10px] bg-[#0697D533] p-[14px] pb-[7px] pt-[7px] rounded-[8px]">
             {blog.blogTypeId.type}
           </p>
         </div>
-        </div>
-      </Link>
+      </div>
+    </Link>
   );
 }

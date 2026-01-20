@@ -2,6 +2,7 @@ import { blogsProps } from "@/app/types/blog";
 import { Calendar, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import DOMPurify from "isomorphic-dompurify";
 
 type blogsItemProp = {
   blogdata: blogsProps;
@@ -17,6 +18,8 @@ export function convert_Date(isodate: string): string {
 }
 
 export default function Blog_Item({ blogdata }: blogsItemProp) {
+  const sanitizedDescription = DOMPurify.sanitize(blogdata.description);
+
   return (
     <Link href={`/blog/${blogdata.slug}`} className="blog_item mb-[15px] w-[100%] md:w-[45%] lg:w-[32%] block">
       <Image
@@ -41,7 +44,10 @@ export default function Blog_Item({ blogdata }: blogsItemProp) {
         </div>
       </div>
       <h3 className="blog_title md:text-[18px] font-[600] pb-[10px] block">{blogdata.title}</h3>
-      <div className="blog_desc line-clamp-2">{blogdata.description}</div>
+      <div 
+        className="blog_desc line-clamp-2"
+        dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
+      />
     </Link>
   );
 }

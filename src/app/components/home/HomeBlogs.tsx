@@ -12,7 +12,15 @@ export default function HomeBlogs({data} : {data: blogsProps[]}){
                 data.map((index)=>{
                     return(
                         <Link href={`../blog/${index.slug}`} key={index._id} className="w-[100%] mb-[30px] rounded-[24px] block p-[25px] sm:w-[48%] lg:w-[32%] mr-[1%] shadow-[rgba(17,17,26,0.1)_0px_4px_16px,_rgba(17,17,26,0.05)_0px_8px_32px]">
-                        <Image className="rounded-[8px] h-[240px] w-[100%] sm:object-cover"  src={index.imageUrl} alt="blog icon" width={100} height={100}/>
+                        <div className="relative w-full aspect-[16/9] rounded-[8px] overflow-hidden">
+                            <Image 
+                                className="object-cover" 
+                                src={index.imageUrl} 
+                                alt={index.title}
+                                fill
+                                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 48vw, 32vw"
+                            />
+                        </div>
                         <div className="sm:flex my-[22px]">
                         <p className="text-[#0697D5] mb-[15px] font-[600] text-[14px] px-[12px] py-[7px] bg-[#F2FBFF] rounded-[40px] sm:mb-[0] sm:mr-[30px]">{index.blogTypeId.type}</p>
                         <p className="text-[#E0AD24] text-[14px] font-[600] px-[12px] py-[7px] bg-[#FFFCF2] rounded-[40px] capitalize">{index.createdBy}</p>

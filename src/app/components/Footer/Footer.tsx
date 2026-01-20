@@ -162,7 +162,7 @@ const Footer: React.FC = () => {
       <div className="bg-[#4F4F4F]/10 w-full flex justify-center min-h-[40px]">
         <div className="max-w-[1536px] w-full flex flex-col-reverse md:flex-row items-center justify-between gap-[15px] xl:px-[170px] md:px-[30px] px-[15px] py-[10px]">
           <p className="text-black text-[14px]">
-            © 2025 Techtimize. All rights reserved.
+            © {new Date().getFullYear()} Techtimize. All rights reserved.
           </p>
           <div className="flex items-center gap-[51px]">
             {otherFooterLinks.map((item, index: number) => {

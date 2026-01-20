@@ -8,33 +8,35 @@ import { Calendar, User } from "lucide-react";
 import { FaInstagram, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import Link from "next/link";
+import Image from "next/image";
 import { headers } from "next/headers";
+import DOMPurify from "isomorphic-dompurify";
 
 type Props = {
   params: { blogslug: string };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const headersList = await headers();
+  const { blogslug } = await params;
+  const headersList = await headers(); // Add await here
   const host = headersList.get("host") || "www.techtimize.co";
   const protocol = process.env.NODE_ENV === "production" ? "https" : "http";
 
-  const pathname = `/blog/${params.blogslug}`;
+  const pathname = `/blog/${blogslug}`;
   const canonical = `${protocol}://${host}${pathname}`;
 
   return {
-    title: `Blog | ${params.blogslug}`,
+    title: `Blog | ${blogslug}`,
     alternates: {
       canonical,
     },
   };
 }
 
-
 const otherblogsdata = await getLatestBlogs();
 
 export default async function BlogDetails({ params }: Props) {
-  const { blogslug } = params;
+  const { blogslug } = await params;
   const blog_data = await getblogbyslug(blogslug);
 
   if (!blog_data) {
@@ -45,12 +47,14 @@ export default async function BlogDetails({ params }: Props) {
     );
   }
 
+  const sanitizedDescription = DOMPurify.sanitize(blog_data.description);
+
   return (
     <div className="max-w-[90%] md:max-w-[80%] ml-auto mr-auto mt-[50px] mb-[50px]">
       <div className="tabs text-[#727272] md:text-[19px] font-medium">
         <Link href="/">Home</Link>{" "}
         <MdKeyboardDoubleArrowRight className="inline" />
-        <Link href="/blogs">Blogs</Link>{" "}
+        <Link href="/blogs">Blog</Link>{" "}
         <MdKeyboardDoubleArrowRight className="inline" />
         <span className=" text-[#069AD8]">{blog_data.title}</span>
       </div>
@@ -77,20 +81,23 @@ export default async function BlogDetails({ params }: Props) {
         </div>
       </div>
 
-      <div className="md:mt-[30px] mb-[30px]">
-        <img
-          className="rounded-[8px] h-[300px] w-[95%] sm:h-[450px] w-[100%] object-cover"
-          loading="lazy"
+      <div className="md:mt-[30px] mb-[30px] relative w-full aspect-video ">
+        <Image
+          className="rounded-[8px] object-cover"
           src={blog_data.imageUrl}
           alt={blog_data.title}
+          fill
+          priority
+          sizes="(max-width: 768px) 95vw, 80vw"
         />
       </div>
 
       <div className="lg:flex justify-between">
         <div className="left-panel w-full lg:w-[60%]">
-          <div className="description leading-[1.6]">
-            <p>{blog_data.description}</p>
-          </div>
+          <div
+            className="description prose sm:prose-lg max-w-none  prose-a:text-[#0697D5] prose-a:no-underline hover:prose-a:underline  prose-li:marker:text-[#0697D5]"
+            dangerouslySetInnerHTML={{ __html: sanitizedDescription }}
+          />
           <Blog_details_btn blog_slug={blogslug} />
         </div>
 

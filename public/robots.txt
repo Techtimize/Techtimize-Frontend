@@ -1,0 +1,15 @@
+# Allow all search engines to crawl the site
+User-agent: *
+
+# Block sensitive or technical paths
+Disallow: /admin/
+Disallow: /config/
+Disallow: /api/
+Disallow: /private/
+
+# Allow crawling of all public assets
+Allow: /assets/
+Allow: /images/
+
+# Sitemap link for Google and other search engines
+Sitemap: https://techtimize.co/sitemap.xml
