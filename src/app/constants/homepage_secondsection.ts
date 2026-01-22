@@ -1,6 +1,5 @@
 export const second_section = [
     "Understanding your business objectives, challenges, and project scope to define clear requirements.",
-    "Creating a detailed roadmap with timelines, resources, and strategies for smooth project execution.",
     "Building wireframes, UI/UX designs, and system architecture focused on usability and performance.",
     "Turning designs into fully functional software with clean, scalable, and secure code.",
     "Conducting rigorous QA to ensure functionality, performance, and bug-free experience.",
