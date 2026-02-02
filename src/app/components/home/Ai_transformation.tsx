@@ -33,7 +33,7 @@ export default function Transforming() {
            
       <div className="sm:w-[47%] xl:ml-[0px] md:mt-[36px] sm:mt-[36px]">
       
-      <Image loading="lazy" className="w-[100%] max-w-[92%] mx-[auto] h-[100%] mt-[28px] sm:my-[0] rounded-[16px] x1750:object-cover x1750:h-[550px] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] object-cover" src={"https://techtimize-app-720869613f134d34bdacf758feb5bedc-production.s3.ap-south-1.amazonaws.com/images/robot-image.png"}  alt="ABout Us image" height={500}  width={500}/>
+      <Image loading="lazy" className="w-[100%] max-w-[92%] mx-[auto] h-[100%] mt-[28px] sm:my-[0] rounded-[16px] x1750:object-cover x1750:h-[550px] shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] object-cover" src={"https://techtimize-app-720869613f134d34bdacf758feb5bedc-production.s3.ap-south-1.amazonaws.com/images/robot-image.png?v=2"}  alt="About Us image" height={500}  width={500}/>
       </div>
       </div>
 </div>

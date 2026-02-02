@@ -93,7 +93,7 @@ const HeroSection = () => {
             > */}
               <Image
               priority
-                src={"https://techtimize-app-720869613f134d34bdacf758feb5bedc-production.s3.ap-south-1.amazonaws.com/images/hero-section-image.png"}
+                src={"https://techtimize-app-720869613f134d34bdacf758feb5bedc-production.s3.ap-south-1.amazonaws.com/images/hero-section-image.png?v=2"}
                 width={492}
                 height={529}
                 alt={"hero1"}
