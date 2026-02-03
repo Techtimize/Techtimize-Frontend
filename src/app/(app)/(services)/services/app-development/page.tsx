@@ -12,71 +12,7 @@ import Contact_Us_Comp from "../../../../components/services_details_components/
 import { getCanonicalUrl } from "@/app/lib/getCanonial";
 import { generateMetadataFromBE } from "@/app/lib/utils";
 import { Metadata } from "next";
-// Note: we intentionally inject JSON-LD via `generateMetadata` for server-side rendering
 
-// --- JSON-LD Structured Data ---
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": "https://techtimize.co/services/app-development#service",
-  "mainEntityOfPage": "https://techtimize.co/services/app-development",
-  "name": "App Development Services",
-  "description":
-    "Techtimize delivers high-quality mobile app development services, creating innovative and performance-driven applications for Android, iOS, and cross-platform environments.",
-  "provider": {
-    "@type": "Organization",
-    "name": "Techtimize",
-    "url": "https://techtimize.co/"
-  },
-  "areaServed": [
-    {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "50 Pine Ave, Block B Opf Housing Scheme",
-        "addressLocality": "Lahore",
-        "addressRegion": "Punjab",
-        "postalCode": "54000",
-        "addressCountry": "PK"
-      }
-    },
-    {
-      "@type": "Place",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "30 N Gould St Ste N",
-        "addressLocality": "Wyoming",
-        "addressRegion": "WY",
-        "postalCode": "82801",
-        "addressCountry": "US"
-      }
-    }
-  ],
-  "serviceType": "App Development",
-  "url": "https://techtimize.co/services/app-development",
-  "offers": [
-    {
-      "@type": "Offer",
-      "name": "Android App Development",
-      "description": "Custom Android applications designed for performance, security, and seamless user experience.",
-      "url": "https://techtimize.co/services/app-development#android"
-    },
-    {
-      "@type": "Offer",
-      "name": "iOS App Development",
-      "description": "iOS applications optimized for Apple's performance ecosystem.",
-      "url": "https://techtimize.co/services/app-development#ios"
-    },
-    {
-      "@type": "Offer",
-      "name": "Cross-Platform Apps",
-      "description": "Cross-platform mobile apps using React Native and Flutter.",
-      "url": "https://techtimize.co/services/app-development#crossplatform"
-    }
-  ]
-};
-
-// --- Page Metadata ---
 export async function generateMetadata(): Promise<Metadata> {
   const canonical = await getCanonicalUrl("/services/app-development");
   const baseMetadata = await generateMetadataFromBE("mobileAppDevelopment");
@@ -90,12 +26,6 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function AppDevelopmentServiceDetail() {
   return (
     <>
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-
       <PageHeader heading="Application Development" subHeading="" />
 
       <div className="custom-container sm:flex items-center">
