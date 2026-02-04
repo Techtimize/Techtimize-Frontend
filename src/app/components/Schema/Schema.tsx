@@ -3,225 +3,263 @@
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 
-const DOMAIN = "https://techtimize.co";
-
-const BREADCRUMB_NAMES: Record<string, string> = {
-  "ui-ux-designing": "UI/UX Designing",
-  "techtimizegpt": "Techtimize GPT"
-};
-
-const ORGANIZATION = {
-  "@type": "Organization",
-  "@id": `${DOMAIN}/#organization`,
-  "name": "Techtimize",
-  "url": `${DOMAIN}/`,
-  "logo": {
-    "@type": "ImageObject",
-    "@id": `${DOMAIN}/#logo`,
-    "url": `${DOMAIN}/assets/svgs/companyLogo.svg`,
-    "contentUrl": `${DOMAIN}/assets/svgs/companyLogo.svg`,
-    "caption": "Techtimize Logo"
-  },
-  "image": { "@id": `${DOMAIN}/#logo` },
-  "contactPoint": [
-    {
-      "@type": "ContactPoint",
-      "telephone": "+92 328 1616127",
-      "contactType": "customer service",
-      "areaServed": "PK",
-      "availableLanguage": ["English", "Urdu"]
-    },
-    {
-      "@type": "ContactPoint",
-      "telephone": "+1 240 696 2111",
-      "contactType": "sales",
-      "areaServed": "US",
-      "availableLanguage": ["English"]
-    }
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/company/techtimize/posts/?feedView=all",
-    "https://www.instagram.com/techtimize.pk/",
-    "https://clutch.co/profile/techtimize"
-  ]
-};
-
-const OFFICES = [
-  {
-    "@type": "ProfessionalService",
-    "@id": `${DOMAIN}/#lahore-office`,
-    "name": "Techtimize - Lahore Office",
-    "parentOrganization": { "@id": `${DOMAIN}/#organization` },
-    "telephone": "+92 328 1616127",
-    "priceRange": "$$",
-    "image": { "@id": `${DOMAIN}/#logo` },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "50 Pine Ave, Block B Opf Housing Scheme",
-      "addressLocality": "Lahore",
-      "addressRegion": "Punjab",
-      "postalCode": "54000",
-      "addressCountry": "PK"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": 31.405, "longitude": 74.23 },
-    "openingHours": ["Mo-Fr 09:00-18:00", "Sa 10:00-14:00"]
-  },
-  {
-    "@type": "ProfessionalService",
-    "@id": `${DOMAIN}/#usa-office`,
-    "name": "Techtimize - USA Office",
-    "parentOrganization": { "@id": `${DOMAIN}/#organization` },
-    "telephone": "+1 240 696 2111",
-    "priceRange": "$$",
-    "image": { "@id": `${DOMAIN}/#logo` },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "30 N Gould St Ste N",
-      "addressLocality": "Sheridan",
-      "addressRegion": "WY",
-      "postalCode": "82801",
-      "addressCountry": "US"
-    },
-    "geo": { "@type": "GeoCoordinates", "latitude": 44.7973, "longitude": -106.9562 },
-    "openingHours": ["Mo-Fr 08:00-17:00"]
-  }
-];
-
-const WEBSITE = {
-  "@type": "WebSite",
-  "@id": `${DOMAIN}/#website`,
-  "url": `${DOMAIN}/`,
-  "name": "Techtimize",
-  "publisher": { "@id": `${DOMAIN}/#organization` },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": `${DOMAIN}/?s={search_term_string}`,
-    "query-input": "required name=search_term_string"
-  }
-};
-
 const Schema = () => {
-  const pathname = usePathname() || "";
-  const pathParts = pathname.split("/").filter(Boolean);
+  const pathname = usePathname();
+  const domain = process.env.NEXT_PUBLIC_SITE_URL || "https://techtimize.co";
 
-  const currentUrl = useMemo(() => `${DOMAIN}${pathname}`, [pathname]);
+  const jsonLd = useMemo(() => {
+    if (!pathname) return null;
 
-  const breadcrumbsElements = useMemo(() => {
-    const elements: Array<{ "@type": string; position: number; name: string; item: string }> = [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": `${DOMAIN}/` }
+    const currentUrl = `${domain}${pathname}`;
+    const pathParts = pathname.split("/").filter(Boolean);
+
+    /* =========================
+        1. GLOBAL IDENTITY
+    ========================= */
+    const organization: Record<string, unknown> = {
+      "@type": "Organization",
+      "@id": `${domain}/#organization`,
+      name: "Techtimize",
+      url: `${domain}/`,
+      logo: {
+        "@type": "ImageObject",
+        "@id": `${domain}/#logo`,
+        url: `${domain}/assets/svgs/companyLogo.svg`,
+        contentUrl: `${domain}/assets/svgs/companyLogo.svg`,
+        caption: "Techtimize Logo",
+      },
+      image: { "@id": `${domain}/#logo` },
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: "+92 328 1616127",
+          contactType: "customer service",
+          areaServed: "PK",
+          availableLanguage: ["English", "Urdu"],
+        },
+        {
+          "@type": "ContactPoint",
+          telephone: "+1 240 696 2111",
+          contactType: "sales",
+          areaServed: "US",
+          availableLanguage: ["English"],
+        },
+      ],
+      sameAs: [
+        "https://www.linkedin.com/company/techtimize/posts/?feedView=all",
+        "https://www.instagram.com/techtimize.pk/",
+        "https://clutch.co/profile/techtimize",
+      ],
+    };
+
+    /* =========================
+        7. GLOBAL REVIEWS (ADDED)
+    ========================= */
+    organization.aggregateRating = {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "150",
+      bestRating: "5",
+      worstRating: "1",
+    };
+
+    /* =========================
+        2. LOCAL BUSINESS
+    ========================= */
+    const offices = [
+      {
+        "@type": "ProfessionalService",
+        "@id": `${domain}/#lahore-office`,
+        name: "Techtimize - Lahore Office",
+        parentOrganization: { "@id": `${domain}/#organization` },
+        telephone: "+92 328 1616127",
+        priceRange: "$$",
+        image: { "@id": `${domain}/#logo` },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "50 Pine Ave, Block B Opf Housing Scheme",
+          addressLocality: "Lahore",
+          addressRegion: "Punjab",
+          postalCode: "54000",
+          addressCountry: "PK",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 31.405,
+          longitude: 74.23,
+        },
+        openingHours: ["Mo-Fr 09:00-18:00", "Sa 10:00-14:00"],
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${domain}/#usa-office`,
+        name: "Techtimize - USA Office",
+        parentOrganization: { "@id": `${domain}/#organization` },
+        telephone: "+1 240 696 2111",
+        priceRange: "$$",
+        image: { "@id": `${domain}/#logo` },
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "30 N Gould St Ste N",
+          addressLocality: "Sheridan",
+          addressRegion: "WY",
+          postalCode: "82801",
+          addressCountry: "US",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 44.7973,
+          longitude: -106.9562,
+        },
+        openingHours: ["Mo-Fr 08:00-17:00"],
+      },
     ];
+
+    /* =========================
+        3. BREADCRUMBS
+    ========================= */
+    const breadcrumbNames: Record<string, string> = {
+      "ui-ux-designing": "UI/UX Designing",
+      techtimizegpt: "Techtimize GPT",
+      "ai-development": "AI Development",
+    };
+
+    const formatName = (slug: string): string => {
+      if (breadcrumbNames[slug]) return breadcrumbNames[slug];
+      return slug
+        .split("-")
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
+    };
+
+    const breadcrumbsElements: Array<{
+      "@type": string;
+      position: number;
+      name: string;
+      item: string;
+    }> = [
+        { "@type": "ListItem", position: 1, name: "Home", item: `${domain}/` },
+      ];
+
     let runningPath = "";
     pathParts.forEach((part, index) => {
       runningPath += `/${part}`;
-      const name =
-        BREADCRUMB_NAMES[part] ||
-        part
-          .split("-")
-          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-          .join(" ");
-      elements.push({
+      breadcrumbsElements.push({
         "@type": "ListItem",
-        "position": index + 2,
-        "name": name,
-        "item": `${DOMAIN}${runningPath}`
+        position: index + 2,
+        name: formatName(part),
+        item: `${domain}${runningPath}`,
       });
     });
-    return elements;
-  }, [pathParts]);
 
-  const pageName = breadcrumbsElements[breadcrumbsElements.length - 1]?.name ?? "Techtimize";
-
-  const graph = useMemo(() => {
-    const items: object[] = [ORGANIZATION, ...OFFICES, WEBSITE];
+    const pageName =
+      breadcrumbsElements.length > 1
+        ? breadcrumbsElements[breadcrumbsElements.length - 1].name
+        : "Home";
 
     /* =========================
-        5. PAGE ENTITIES
+        4. SHARED DATA
     ========================= */
+    const website = {
+      "@type": "WebSite",
+      "@id": `${domain}/#website`,
+      url: `${domain}/`,
+      name: "Techtimize",
+      publisher: { "@id": `${domain}/#organization` },
+      potentialAction: {
+        "@type": "SearchAction",
+        target: `${domain}/?s={search_term_string}`,
+        "query-input": "required name=search_term_string",
+      },
+    };
 
-    let aboutEntity: { "@id": string } = { "@id": `${DOMAIN}/#organization` };
+    /* =========================
+        5. CONSTRUCT GRAPH
+    ========================= */
+    const graph: object[] = [organization, ...offices, website];
+    let aboutEntity: { "@id": string } = { "@id": `${domain}/#organization` };
 
     if (pathParts.includes("services")) {
       if (pathParts.length > 1) {
         const serviceId = `${currentUrl}#service`;
-        items.push({
+        graph.push({
           "@type": "Service",
           "@id": serviceId,
-          "name": pageName,
-          "provider": { "@id": `${DOMAIN}/#organization` },
-          "areaServed": ["PK", "US", "Global"],
-          "mainEntityOfPage": { "@id": `${currentUrl}#webpage` }
+          name: pageName,
+          provider: { "@id": `${domain}/#organization` },
+          areaServed: ["PK", "US", "Global"],
+          mainEntityOfPage: { "@id": `${currentUrl}#webpage` },
         });
         aboutEntity = { "@id": serviceId };
       } else {
-        items.push({
+        graph.push({
           "@type": "ItemList",
           "@id": `${currentUrl}#services-list`,
-          "name": "Techtimize Services",
-          "itemListElement": [
+          name: "Techtimize Services",
+          itemListElement: [
             "Artificial Intelligence",
             "App Development",
             "Web Development",
             "UI/UX Design",
             "Digital Marketing",
-            "Staff Augmentation"
+            "Staff Augmentation",
           ].map((service, index) => ({
             "@type": "ListItem",
-            "position": index + 1,
-            "name": service
-          }))
+            position: index + 1,
+            name: service,
+          })),
         });
       }
     } else if (pathParts.includes("projects") && pathParts.length > 1) {
       const projectId = `${currentUrl}#project`;
-      items.push({
+      graph.push({
         "@type": "CreativeWork",
         "@id": projectId,
-        "name": pageName,
-        "creator": { "@id": `${DOMAIN}/#organization` },
-        "mainEntityOfPage": { "@id": `${currentUrl}#webpage` }
+        name: pageName,
+        creator: { "@id": `${domain}/#organization` },
+        mainEntityOfPage: { "@id": `${currentUrl}#webpage` },
       });
       aboutEntity = { "@id": projectId };
     } else if (pathParts.includes("techtimizegpt")) {
       const softwareId = `${currentUrl}#software`;
-      items.push({
+      graph.push({
         "@type": "SoftwareApplication",
         "@id": softwareId,
-        "name": "Techtimize GPT",
-        "applicationCategory": "AI Business Tool",
-        "operatingSystem": "Web",
-        "author": { "@id": `${DOMAIN}/#organization` },
-        "mainEntityOfPage": { "@id": `${currentUrl}#webpage` }
+        name: "Techtimize GPT",
+        applicationCategory: "AI Business Tool",
+        operatingSystem: "Web",
+        author: { "@id": `${domain}/#organization` },
+        mainEntityOfPage: { "@id": `${currentUrl}#webpage` },
       });
       aboutEntity = { "@id": softwareId };
     }
 
     /* =========================
-        6. WEBPAGE + BREADCRUMB
+        6. FINAL WEBPAGE
     ========================= */
-
-    items.push({
+    graph.push({
       "@type": "WebPage",
       "@id": `${currentUrl}#webpage`,
-      "url": currentUrl,
-      "name": pageName,
-      "isPartOf": { "@id": `${DOMAIN}/#website` },
-      "breadcrumb": { "@id": `${currentUrl}#breadcrumb` },
-      "about": aboutEntity
+      url: currentUrl,
+      name: pageName,
+      isPartOf: { "@id": `${domain}/#website` },
+      breadcrumb: { "@id": `${currentUrl}#breadcrumb` },
+      about: aboutEntity,
     });
 
-    items.push({
+    graph.push({
       "@type": "BreadcrumbList",
       "@id": `${currentUrl}#breadcrumb`,
-      "itemListElement": breadcrumbsElements
+      itemListElement: breadcrumbsElements,
     });
 
-    return items;
-  }, [pathParts, currentUrl, pageName, breadcrumbsElements]);
+    return JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": graph,
+    });
+  }, [pathname, domain]);
 
-  const jsonLd = useMemo(
-    () => JSON.stringify({ "@context": "https://schema.org", "@graph": graph }),
-    [graph]
-  );
+  if (!jsonLd) return null;
 
   return (
     <script
