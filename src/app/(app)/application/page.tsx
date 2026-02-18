@@ -14,6 +14,7 @@ const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB in bytes
 
 const ApplicationForm = () => {
     const [loading, setLoading] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
     const form = useForm({
         resolver: zodResolver(applicationSchema),
         defaultValues: {
@@ -52,7 +53,7 @@ const ApplicationForm = () => {
 
             if (response.ok) {
                 form.reset();
-                // You can add a success toast/notification here
+                setSubmitted(true);
             } else {
                 form.setError("root", { message: "Failed to submit application. Try again later." });
             }
@@ -237,6 +238,75 @@ const ApplicationForm = () => {
                     </form>
                 </Form>
             </div>
+
+            {/* Success Modal */}
+            {submitted && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-md animate-in fade-in duration-300 p-4">
+                    <div className="relative bg-gradient-to-br from-white to-blue-50 rounded-2xl shadow-2xl p-6 max-w-sm w-full my-auto transform animate-in zoom-in-95 duration-300 border border-blue-100">
+                        {/* Decorative Elements */}
+                        <div className="absolute top-0 right-0 w-20 h-20 bg-[#0697D5]/10 rounded-full blur-2xl -z-10"></div>
+                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-blue-400/10 rounded-full blur-2xl -z-10"></div>
+                        
+                        <div className="flex flex-col items-center text-center space-y-3 relative">
+                            {/* Success Icon with Animation */}
+                            <div className="relative">
+                                <div className="w-16 h-16 bg-gradient-to-br from-[#0697D5] to-blue-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-300/50 animate-in zoom-in duration-500">
+                                    <svg 
+                                        className="w-9 h-9 text-white animate-in zoom-in duration-700" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={3}
+                                    >
+                                        <path 
+                                            strokeLinecap="round" 
+                                            strokeLinejoin="round" 
+                                            d="M5 13l4 4L19 7" 
+                                        />
+                                    </svg>
+                                </div>
+                                {/* Pulsing Ring Effect */}
+                                <div className="absolute inset-0 w-16 h-16 bg-[#0697D5]/30 rounded-full animate-ping"></div>
+                            </div>
+
+                            {/* Success Message */}
+                            <div className="space-y-1">
+                                <h2 className="text-2xl font-bold bg-gradient-to-r from-[#0697D5] to-blue-600 bg-clip-text text-transparent">
+                                    Thanks!
+                                </h2>
+                                <p className="text-base font-semibold text-gray-700">
+                                    You have applied for a job
+                                </p>
+                            </div>
+
+                            {/* Divider */}
+                            <div className="w-14 h-0.5 bg-gradient-to-r from-transparent via-[#0697D5] to-transparent rounded-full"></div>
+
+                            {/* Additional Info */}
+                            <p className="text-xs text-gray-600 leading-relaxed px-2">
+                                We've received your application and our team will review it shortly. We'll get back to you soon!
+                            </p>
+
+                            {/* Action Buttons */}
+                            <div className="w-full pt-1">
+                                <Button
+                                    onClick={() => setSubmitted(false)}
+                                    className="w-full bg-gradient-to-r from-[#0697D5] to-blue-600 hover:from-blue-600 hover:to-[#0697D5] text-white font-semibold px-6 py-2.5 rounded-xl shadow-lg shadow-blue-300/40 hover:shadow-xl hover:shadow-blue-400/50 transition-all duration-300 transform hover:scale-105"
+                                >
+                                    Close
+                                </Button>
+                            </div>
+
+                            {/* Success Checkmark Dots */}
+                            <div className="flex gap-2 pt-0.5">
+                                <div className="w-1.5 h-1.5 bg-[#0697D5] rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                                <div className="w-1.5 h-1.5 bg-[#0697D5] rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                                <div className="w-1.5 h-1.5 bg-[#0697D5] rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
