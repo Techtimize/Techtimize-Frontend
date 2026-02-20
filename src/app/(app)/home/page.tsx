@@ -7,10 +7,7 @@ import Image from "next/image";
 import Btn_redesign from "@/components/ui/btn_redesign";
 import Heading_proto from "@/components/heading_prototype";
 import getServices from "@/app/api/services/get_services";
-import ServiceCard from "../../components/home/ServiceCard";
-import { process_Steps } from "@/app/constants/process_steps";
-import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
+import ServicesSection from "../../components/home/ServicesSection";
 import './home.css';
 import ProjectSlider from "../../components/home/ProjectSlider";
 import Transforming from "../../components/home/Transforming";
@@ -19,7 +16,9 @@ import { get3LatestBlogs } from "@/app/api/blogs/getlatestblogs";
 import HomeBlogs from "../../components/home/HomeBlogs";
 import Testimonials from "../../components/home/Testimonials"
 import { Input } from "@/components/ui/input";
+import WhyChooseSection from "../../components/home/WhyChooseSection";
 import Ai_transformation from "@/app/components/home/Ai_transformation";
+import BlogsSection from "@/app/components/home/BlogsSection";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -39,53 +38,9 @@ export default async function Home() {
       <Technologies />
 
    
-      <div>
-        <Heading_proto heading="Our Services" para="Discover services designed to help your business grow and succeed." />
-        <div className=" max-w-[90%] mx-[auto] flex flex-wrap lg:max-w-[82%] justify-between sm:max-w-[80%]">
-
-          {services.map((key) => {
-            return (
-              <div key={key._id} className="sm:w-[48%] sm:mt-[30px] lg:w-[31.2%] shadow-[rgba(0,0,0,0.1)_0px_10px_50px] mb-[15px] rounded-[20px] lg:mt-[20px] z-[9]">
-                <ServiceCard
-                  key={key._id}
-                  url={key.url}
-                  title={key.serviceName}
-                  description={key.description}
-                  image={key.iconUrl}
-                />
-              </div>
-            );
-          })}
-        </div>
-        <div className="mt-[20px] sm:mt-[30px] text-center">
-          <Btn_redesign content="View All Services" url="/services" />
-        </div>
-      </div>
+      <ServicesSection services={services} />
       <Ai_transformation />
-      <div>
-        <Heading_proto heading="Why choose Techtimize" para="Start to Finish, We've Got You Covered" />
-        <div className="relative z-[1]">
-              <Image className="start-to-finish-bg" src={"/assets/images/start-to-finish-bg.svg"} alt={"picture"} width={100} height={60} />
-          <div className="mx-[auto] max-w-[90%] sm:flex sm:container md:max-w-[80%] lg:max-w-[82%] justify-between sm:mt-[50px]">
-            <div className="sm:w-[40%] flex items-center relative">
-          <Image className="absolute w-[46%] -top-[8%] -left-[7%] " src={"/assets/images/haseeb-top.png"} alt={"picture"} width={500} height={500} />
-              <Image className="w-[100%]" src={"/assets/images/Picture.png"} alt={"picture"} width={500} height={500} />
-            </div>
-
-
-            <div className="mt-[30px] sm:w-[53%] sm:mt-[0] flex flex-wrap justify-between">
-              {process_Steps.map((step, index) => (
-                <div key={index} className=" sm :w-[100%] pb-[25px] lg:w-[42%] understanding pt-[25px]">
-                  <h3 className="text-[18px] font-[800]">{step.title}</h3>
-                  <p className="text-[#727272] my-[15px]">{step.content}</p>
-                  <div className="flex items-center text-[#0B4D8E]"> <Link href={"/about"}>Learn More </Link>
-                    <FaArrowRight className="ml-[10px]" />
-                  </div></div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      <WhyChooseSection />
       <div className="relative">
         <Image className="project-bg" src={"/assets/images/projects-bg.svg"} alt="tick" height={20} width={20} />
         <div className="mx-[auto] sm:container md:max-w-[80%] max-w-[90%] lg:max-w-[82%] ">
@@ -102,11 +57,7 @@ export default async function Home() {
       </div>
       </div>
 
-      <Heading_proto heading="Read our Blogs " para="Stay updated with the latest insights, tips, and trends." />
-      <HomeBlogs data={blogs} />
-      <div className="text-center mt-[30px] mb-[50px] sm:mb-[100px]">
-        <Btn_redesign content={"View All"} url={"/blogs"} />
-      </div>
+      <BlogsSection data={blogs} />
       <Heading_proto heading="What Our Valued Customers Say" para="Trusted by Clients, Loved for Results" />
       <Testimonials />
       <div className="relative">

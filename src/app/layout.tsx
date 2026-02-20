@@ -91,11 +91,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${manrope.className} bg-white`}>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${manrope.className} bg-white`} suppressHydrationWarning>
         <Schema />
         <NavbarComponent />
-        <main className="xl:pt-[116px] md:pt-[96px] pt-[95px]">
+        <main className="xl:pt-[116px] md:pt-[96px] pt-[95px] animate-fadeIn">
           {children}
         </main>
         <FooterWrapper />

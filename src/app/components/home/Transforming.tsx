@@ -13,9 +13,10 @@ export default function Transforming() {
       
       <div className="sm:w-[47%] flex">
         <motion.div
-        initial={{ opacity: 0, x: -15 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        initial={{ opacity: 0, x: -120 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px]"
       >
       <Image className="w-[100%] h-[100%] rounded-[16px]  x1750:w-[1000px] x1750:h-[550px]" src={"/assets/images/sdlc.svg"}  alt="ABout Us image" height={500}  width={500}/>
@@ -26,9 +27,10 @@ export default function Transforming() {
        
       <div className="sm:w-[47%]">
         <motion.div
-        initial={{ opacity: 0, x: -15 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
+        initial={{ opacity: 0, y: -120 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
         className="xl:ml-[30px] md:mt-[36px] sm:mt-[36px] mt-[20px] sm:mt-[0px]"
       >
         <Image src={"/assets/images/second-section.svg"} alt="about us" width={40} height={40}/>
