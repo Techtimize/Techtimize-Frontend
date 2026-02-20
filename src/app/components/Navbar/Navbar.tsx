@@ -48,7 +48,7 @@ const Navbar = () => {
 
 
   return (
-    <header className="fixed top-0 left-0 w-full  z-[9999999] border-black">
+    <header className="fixed top-0 left-0 w-full  z-[9999999] border-black animate-slideDown">
       {/* <nav className={`${isSticky ? 'stickynavbar' : ''}  transition-all container mx-auto flex items-center justify-between px-5 lg:max-w-[90%] rounded-[8px] sm:mt-[25px] border-[#ECECEC] border-[1px]`}>         */}
       <nav className={`stickynavbar   transition-all container mx-auto flex items-center justify-between px-5 !max-w-[93%] rounded-[8px] mt-[25px] border-[#ECECEC] border-[1px]`}>
         <div>

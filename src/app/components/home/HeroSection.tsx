@@ -20,7 +20,7 @@ const HeroSection = () => {
   return (
     <div className="flex md:justify-between my-[45px] sm:my-0 sm:mb-[0px] md:mt-[45px] sm:justify-between justify-center md:flex-row sm:flex-row flex-col md:gap-[10px] sm:px-[25px] md:px-[30px] lg:px-[40px] px-[16px] x2000:justify-center x2000:max-w-[90%] x2000:mx-[auto]">
       <motion.div
-        initial={{ opacity: 0, x: -15 }}
+        initial={{ opacity: 0, x: -25 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className="xl:ml-[64px] md:mt-[36px] sm:mt-[36px] sm:w-[50%]"
@@ -63,7 +63,7 @@ const HeroSection = () => {
     
       <div className="sm:mt-[50px] md:mt-0 sm:w-[47%]">
           <motion.div
-        initial={{ opacity: 0, x: 15 }}
+        initial={{ opacity: 0, x:25 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         className=""
