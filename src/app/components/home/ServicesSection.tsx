@@ -13,9 +13,7 @@ type Service = {
   iconHoverUrl?: string;
 };
 
-export default function ServicesSection({ services }: { services: Service[] }) {
-  console.log("Services",services);
-  
+export default function ServicesSection({ services }: { services: Service[] }) {  
   return (
     <div>
       {/* Heading: slide top → bottom */}
