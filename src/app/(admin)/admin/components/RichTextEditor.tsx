@@ -2,14 +2,10 @@
 
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
+import "react-quill-new/dist/quill.snow.css";
 
-// Dynamically import ReactQuill + CSS to prevent SSR and build-resolution issues
-const ReactQuill = dynamic(
-  () => import("react-quill-new").then((mod) => {
-    require("react-quill-new/dist/quill.snow.css");
-    return mod;
-  }),
-  {
+// Dynamically import ReactQuill to prevent SSR issues
+const ReactQuill = dynamic(() => import("react-quill-new"), {
   ssr: false,
   loading: () => (
     <div
