@@ -2,6 +2,7 @@
 
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
+import "react-quill-new/dist/quill.snow.css";
 
 // Dynamically import ReactQuill to prevent SSR issues
 const ReactQuill = dynamic(() => import("react-quill-new"), {

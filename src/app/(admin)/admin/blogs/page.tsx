@@ -5,7 +5,6 @@ import CrudPage from "../components/CrudPage";
 import { blogApi, blogTypeApi } from "../lib/api";
 import RichTextEditor from "../components/RichTextEditor";
 import { BlogType } from "../types";
-import "react-quill-new/dist/quill.snow.css";
 import "../admin.css";
 
 export default function BlogsPage() {
