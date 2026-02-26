@@ -8,7 +8,13 @@ import { headers } from "next/headers";
 import { Manrope } from "next/font/google";
 import FooterWrapper from "./components/Footer/FooterWrapper";
 import Schema from "./components/Schema/Schema";
-import { pageMeta } from "@/app/constants/metadata"; // 👈 Import your metadata
+import { pageMeta } from "@/app/constants/metadata";
+
+async function getIsAdminRoute() {
+  const headersList = await headers();
+  const pathname = headersList.get("x-current-path") || "";
+  return pathname.startsWith("/admin");
+}
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -85,20 +91,26 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isAdmin = await getIsAdminRoute();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${manrope.className} bg-white`} suppressHydrationWarning>
-        <Schema />
-        <NavbarComponent />
-        <main className="xl:pt-[116px] md:pt-[96px] pt-[95px] animate-fadeIn">
+        {!isAdmin && (
+          <>
+            <Schema />
+            <NavbarComponent />
+          </>
+        )}
+        <main className={isAdmin ? "" : "xl:pt-[116px] md:pt-[96px] pt-[95px] animate-fadeIn"}>
           {children}
         </main>
-        <FooterWrapper />
+        {!isAdmin && <FooterWrapper />}
       </body>
     </html>
   );
