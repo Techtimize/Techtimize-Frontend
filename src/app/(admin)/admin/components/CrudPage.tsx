@@ -25,6 +25,12 @@ export interface ColumnConfig<T> {
   align?: "left" | "center" | "right";
 }
 
+export interface FormContext<T> {
+  formData: Record<string, any>;
+  updateField: (key: string, val: any) => void;
+  editingItem: T | null;
+}
+
 interface CrudPageProps<T> {
   title: string;
   apiGetAll: () => Promise<any>;
@@ -32,10 +38,16 @@ interface CrudPageProps<T> {
   apiUpdate: (id: string, data: any) => Promise<any>;
   apiDelete: (id: string) => Promise<any>;
   columns: ColumnConfig<T>[];
-  fields: FieldConfig[];
+  fields?: FieldConfig[];
+  renderForm?: (ctx: FormContext<T>) => React.ReactNode;
+  detailFields?: DetailField[];
+  defaultFormData?: () => Record<string, any>;
+  onBeforeEdit?: (item: T) => Record<string, any>;
   dataExtractor?: (res: any) => T[];
   idKey?: string;
   entityName?: string;
+  onModalOpen?: () => void;
+  deleteMessage?: string;
 }
 
 export default function CrudPage<T extends Record<string, any>>({
@@ -46,9 +58,15 @@ export default function CrudPage<T extends Record<string, any>>({
   apiDelete,
   columns,
   fields,
+  renderForm,
+  detailFields,
+  defaultFormData,
+  onBeforeEdit,
   dataExtractor,
   idKey = "_id",
   entityName = "item",
+  onModalOpen,
+  deleteMessage,
 }: CrudPageProps<T>) {
   const [data, setData] = useState<T[]>([]);
   const [loading, setLoading] = useState(true);
@@ -81,27 +99,41 @@ export default function CrudPage<T extends Record<string, any>>({
 
   const openCreate = () => {
     setEditingItem(null);
-    const initial: Record<string, any> = {};
-    fields.forEach((f) => {
-      initial[f.key] = f.type === "checkbox" ? false : f.type === "tags" ? [] : "";
-    });
-    setFormData(initial);
+    if (defaultFormData) {
+      setFormData(defaultFormData());
+    } else if (fields) {
+      const initial: Record<string, any> = {};
+      fields.forEach((f) => {
+        initial[f.key] = f.type === "checkbox" ? false : f.type === "tags" ? [] : "";
+      });
+      setFormData(initial);
+    } else {
+      setFormData({});
+    }
     setError("");
+    onModalOpen?.();
     setModalOpen(true);
   };
 
   const openEdit = (item: T) => {
     setEditingItem(item);
-    const initial: Record<string, any> = {};
-    fields.forEach((f) => {
-      if (f.type === "tags") {
-        initial[f.key] = Array.isArray(item[f.key]) ? item[f.key] : [];
-      } else {
-        initial[f.key] = item[f.key] ?? (f.type === "checkbox" ? false : "");
-      }
-    });
-    setFormData(initial);
+    if (onBeforeEdit) {
+      setFormData(onBeforeEdit(item));
+    } else if (fields) {
+      const initial: Record<string, any> = {};
+      fields.forEach((f) => {
+        if (f.type === "tags") {
+          initial[f.key] = Array.isArray(item[f.key]) ? item[f.key] : [];
+        } else {
+          initial[f.key] = item[f.key] ?? (f.type === "checkbox" ? false : "");
+        }
+      });
+      setFormData(initial);
+    } else {
+      setFormData({});
+    }
     setError("");
+    onModalOpen?.();
     setModalOpen(true);
   };
 
@@ -155,6 +187,7 @@ export default function CrudPage<T extends Record<string, any>>({
 
   // Group fields: pair up half-width fields
   const renderFields = () => {
+    if (!fields) return null;
     const elements: React.ReactNode[] = [];
     let i = 0;
     while (i < fields.length) {
@@ -301,7 +334,7 @@ export default function CrudPage<T extends Record<string, any>>({
         onClose={() => setViewItem(null)}
         title={`${entityName} Details`}
         item={viewItem}
-        fields={fields.map((f) => ({ key: f.key, label: f.label }))}
+        fields={detailFields || (fields ? fields.map((f) => ({ key: f.key, label: f.label })) : [])}
       />
 
       {/* Create / Edit Modal */}
@@ -325,7 +358,7 @@ export default function CrudPage<T extends Record<string, any>>({
         }
       >
         {error && modalOpen && <div className="admin-error-message">{error}</div>}
-        {renderFields()}
+        {renderForm ? renderForm({ formData, updateField, editingItem }) : renderFields()}
       </AdminModal>
 
       {/* Delete Confirmation */}
@@ -335,7 +368,7 @@ export default function CrudPage<T extends Record<string, any>>({
         onConfirm={handleDelete}
         loading={deleting}
         title={`Delete ${entityName}?`}
-        message={`Are you sure you want to delete this ${entityName.toLowerCase()}? This action cannot be undone.`}
+        message={deleteMessage || `Are you sure you want to delete this ${entityName.toLowerCase()}? This action cannot be undone.`}
       />
     </DashboardLayout>
   );

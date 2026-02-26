@@ -13,14 +13,7 @@ import {
   successStoriesApi,
   departmentsApi,
 } from "../lib/api";
-
-interface StatCard {
-  label: string;
-  value: number | string;
-  icon: string;
-  bg: string;
-  color: string;
-}
+import { StatCard } from "../types";
 
 export default function DashboardPage() {
   const [stats, setStats] = useState<StatCard[]>([]);
